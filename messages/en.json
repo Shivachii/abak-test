@@ -1,4 +1,152 @@
 {
+  "About": {
+    "title": "The AhlulBayt Assembly of Kenya",
+    "intro": "The Ahlul Bayt (a.s) Assembly of Kenya (ABAK) is a non-profit organization committed to promoting the noble teachings of Islam as conveyed by the Ahlul Bayt (a.s), the pure progeny of our beloved",
+    "intromid": " Prophet Muhammad (s.a.w.w).",
+    "intro2": "Our goal is to foster success in both this life and the hereafter, by sharing these teachings with the broader community.",
+    "learnMore": "Learn More",
+    "joinUs": "Join Us",
+    "latestNews": "Latest News",
+    "readMore": "Read More",
+    "aboutUs": "About Us"
+  },
+
+  "Announcements": {
+    "heading": "Key Announcements & Causes",
+    "title": "Help Us Make a Difference",
+    "intro": "Your support enables us to continue providing education, aid, and spiritual guidance. Stay informed and get involved in our latest initiatives.",
+
+    "monthlyDonation": {
+      "title": "Monthly Donation Drive – Support Our Mission",
+      "description": "ABAK needs $10,000 monthly to sustain its educational, religious, and humanitarian programs. Help us spread the message of AhlulBayt (a.s).",
+      "cta": "Donate Now"
+    },
+    "ramadhanRelief": {
+      "title": "Ramadhan Food Relief Program",
+      "description": "Join our cause to distribute food packages to hundreds of underprivileged families this Ramadhan across Kenya.",
+      "cta": "Support the Campaign"
+    },
+    "muharramPrograms": {
+      "title": "Upcoming Muharram Programs",
+      "description": "Commemorate the legacy of Imam Hussain (a.s) with us. Find event schedules and locations for this year's Muharram gatherings.",
+      "cta": "View Schedule"
+    }
+  },
+
+  "CorePrinciples": {
+    "values": {
+      "heading": "Our Core Values",
+      "title": "Fundamental Principles that Guide ABAK",
+      "description": "The AhlulBayt Assembly is built upon six foundational principles that shape our mission, actions, and community.",
+      "principles": {
+        "faithfulness": "Faithfulness to Ahlul Bayt (a.s) Teachings",
+        "unity": "Unity and Peaceful Coexistence",
+        "inclusivity": "Inclusivity and Collaboration",
+        "community": "Community-Centered Service",
+        "empowerment": "Empowerment through Knowledge",
+        "accountability": "Accountability and Transparency"
+      }
+    },
+    "mv": {
+      "heading": "Our Mission & Vision",
+      "mission": {
+        "title": "Mission",
+        "description": "To establish institutions and channels that propagate Islam to everyone, offering guidance for practicing the faith as taught by the Prophet (s.a.w.w) and his Ahlul Bayt (a.s)."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To build a strong, prosperous community, improving the well-being of Kenyan society in all aspects of life."
+      }
+    }
+  },
+
+  "QuranReflections": {
+    "heroTitle": "Qur’an Reflections",
+    "heroSubtitle": "Discover deep reflections and lessons from the Holy Qur’an to guide your daily life.",
+    "reflections": {
+      "patience": {
+        "title": "Patience in the Face of Trials",
+        "verse": "Surah Al-Baqarah 2:153",
+        "text": "Indeed, Allah is with those who are patient. This verse reminds us that trials are not punishments but opportunities to grow spiritually."
+      },
+      "trust": {
+        "title": "Trusting Allah's Plan",
+        "verse": "Surah Al-Tawbah 9:51",
+        "text": "Nothing will happen to us except what Allah has decreed. This helps believers let go of anxiety and embrace divine will."
+      },
+      "forgiveness": {
+        "title": "The Power of Forgiveness",
+        "verse": "Surah Al-Nur 24:22",
+        "text": "Do you not wish that Allah should forgive you? We’re encouraged to forgive others to receive divine mercy in return."
+      }
+    }
+  },
+
+  "Projects": {
+    "title": "Our Projects",
+    "description": "These initiatives reflect ABAK's ongoing efforts to build spiritual, educational, and social capacity across Kenya and beyond.",
+    "button": "Learn More",
+    "items": {
+      "hawza": {
+        "title": "Hawza Seminary Development",
+        "description": "Establishing a post-secondary Islamic seminary to train future scholars and leaders grounded in Ahlul Bayt teachings.",
+        "image": "/hawza.jpg",
+        "href": "/our-work/hawza"
+      },
+      "clinics": {
+        "title": "Mobile Clinics & Health Outreach",
+        "description": "Providing essential healthcare and wellness education to underserved communities through mobile medical camps.",
+        "image": "/mashallah.jpg",
+        "href": "/our-work/community-services"
+      },
+      "education": {
+        "title": "Islamic Education Infrastructure",
+        "description": "Building schools that integrate Islamic values with Kenya's formal education system to nurture well-rounded students.",
+        "image": "/mosqueteachings.jpeg",
+        "href": "/our-work/learning-institutions"
+      },
+      "media": {
+        "title": "Content Production Studio",
+        "description": "Producing high-quality Islamic content like video, audio, articles to educate, inspire, and combat misinformation.",
+        "image": "/dua.jpg",
+        "href": "/our-work/content-creation"
+      }
+    }
+  },
+
+  "ProgramsObjectives": {
+    "heading": "Our Mission in Action",
+    "title": "Our Objectives",
+    "description": "ABAK carries out a variety of structured programs and goals aimed at promoting Islamic knowledge, social welfare, and communal development.",
+    "cta": "Learn more about our objectives",
+    "objectives": {
+      "propagation": {
+        "title": "Propagation of Islam",
+        "description": "Preaching the teachings of Ahlul Bayt (a.s) through sermons, literature, events, and interfaith dialogue."
+      },
+      "communities": {
+        "title": "Organizing Shia Communities",
+        "description": "Empowering communities through leadership training, mentorship, youth camps, student support, and economic upliftment."
+      },
+      "mubaligheen": {
+        "title": "Training of Mubaligheen",
+        "description": "Establishing institutions to train Islamic preachers and scholars to serve society with deep knowledge and purpose."
+      },
+      "content": {
+        "title": "Content Development",
+        "description": "Producing sermons, articles, documentaries, and drama-based content to promote Islamic values and culture."
+      },
+      "education": {
+        "title": "Educational Institutions",
+        "description": "Setting up schools and seminaries (Hawza) with Islamic-integrated curricula to nurture future generations of informed Muslims."
+      },
+      "services": {
+        "title": "Community Services",
+        "description": "Offering medical aid, counseling, relief programs, mobile clinics, and disaster response mechanisms for societal welfare."
+      }
+    }
+  },
+
   "about": {
     "title": "About Us",
     "name": "The AhlulBayt Assembly of Kenya (ABAK)",
@@ -59,16 +207,62 @@
     "waysTitle": "Ways to Donate",
     "button": "Donate Now"
   },
+  "Posts": {
+    "latestPosts": "Latest Posts",
+    "communityNewsUpdates": "Community News & Updates",
+    "description": "Stay informed with the latest news, articles, and updates from our community. Explore our blog for insights and stories that matter to you.",
+    "readMore": "Read more",
+    "comingSoon": "Posts Coming Soon!",
+    "comingSoonDescription": "We're working hard to bring you fresh content. Stay tuned for exciting updates."
+  },
   "events": {
     "upcomingEvents": "Upcoming Events",
     "joinCommunityInitiatives": "Join Our Community Initiatives",
-    "stayUpdated": "Stay updated with ABAK's impactful events across Kenya—spiritual, educational, and humanitarian.",
-    "eventDetails": {
-      "title": "Title",
-      "date": "Date",
-      "location": "Location",
-      "description": "Description"
-    }
+    "stayUpdated": "Stay informed about upcoming programs, symposia, and spiritual gatherings.",
+    "list": [
+      {
+        "title": "Muballigheen Symposium",
+        "date": "May 4, 2025",
+        "location": "Western",
+        "description": "A regional symposium for Western-based Muballigheen focused on strengthening regional outreach and Islamic education programs."
+      },
+      {
+        "title": "Nikah for One of the Mubalighat",
+        "date": "April 27, 2025",
+        "location": "Kichaka Mkwaju, Coast",
+        "description": "A blessed Nikah celebration attended by Shk. Ali Samojah, Shk. Juma Shughuli, and Shk. Salim Mwaega, honoring a Muballighat's new journey."
+      },
+      {
+        "title": "Arbaeen for Late Shk. Maradi & Meeting with Muballighiin",
+        "date": "April 6, 2025",
+        "location": "Kibuyuni, Kwale",
+        "description": "Commemorating the life of Late Shk. Maradi and uniting Muballighiin in a meaningful gathering for reflection and planning."
+      },
+      {
+        "title": "Ramadhan Classes",
+        "date": "March 1 – April 1, 2025",
+        "location": "Parkroad",
+        "description": "A month-long series of educational sessions during Ramadhan 1446, focusing on spiritual growth and community engagement."
+      },
+      {
+        "title": "Majlis Fa'tiha for Shahid Sayyid Hassan Nasrullah & Shahid Sayyid Hashim Swafiyudin",
+        "date": "February 23, 2025",
+        "location": "Parkroad",
+        "description": "A solemn Majlis to honor the lives and legacies of two esteemed martyrs, fostering remembrance and unity."
+      },
+      {
+        "title": "Muballigheen Symposium",
+        "date": "February 8, 2025",
+        "location": "Parklands Plaza",
+        "description": "A symposium bringing together Muballigheen to exchange ideas, receive training, and enhance their spiritual leadership skills."
+      },
+      {
+        "title": "Muballighiin Meeting",
+        "date": "September 11, 2024",
+        "location": "Ngumo",
+        "description": "A focused gathering of Muballigheiin to discuss current initiatives, share feedback, and strategize for future community outreach."
+      }
+    ]
   },
   "programs": {
     "objectivesTitle": "Our Objectives",
@@ -76,41 +270,146 @@
     "objectivesDescription": "At the AhlulBayt Assembly of Kenya (ABAK), our mission is guided by a series of well-defined programs and objectives. These focus on spiritual guidance, community development, education, and empowerment. Each objective represents a step toward creating a more informed, unified, and compassionate society rooted in the teachings of the Ahlul Bayt (a.s)."
   },
   "hawza": {
-    "title": "Hawza Seminary",
-    "subtitle": "Empowering the next generation of female Islamic scholars in Kenya.",
-
-    "about": "About Hawza Seyyidah Zeinab (s.a)",
-    "about_subtitle": "  A Thriving Center for Islamic Learning",
-
-    "establishment": "Establishment of the Hawza",
-
-    "admissions_criteria": "Admissions Criteria",
-
-    "support_section": "You Can Support",
-    "support_section_p": " Help empower future female Islamic scholars. Sponsor a student with just 1,000 USD per year, covering accommodation and tuition.",
-    "section_subtitle": "A Thriving Center for Islamic Learning",
-    "about_description": "The Hawzah Seyyidah Zeinab (s.a) is an esteemed Islamic educational institution established by the Ahlulbayt Assembly of Kenya (ABAK). It provides a nurturing environment for young women to deepen their knowledge and understanding of the Islamic faith.",
-
-    "vision": "Vision",
-    "vision_desc": "To develop a new generation of well-grounded, knowledgeable, and spiritually committed female Islamic scholars who will contribute meaningfully to the community and uphold the teachings of the Ahlulbayt (a.s).",
-
-    "mission": "Mission",
-    "mission_desc": "To provide high-quality Islamic education rooted in the teachings of the Holy Qur’an and Ahlulbayt (a.s), empowering young women with knowledge, moral values, and leadership skills.",
-
-    "impact": "Our Impact",
-    "impact_desc": "Since its inception, the Hawza has empowered dozens of young women, many of whom now actively serve in various religious, educational, and social capacities within their communities across Kenya.",
-
-    "facilities": "Facilities and Resources",
-    "facilitiesDetails": {
-      "title": "Title",
-      "date": "Date",
-      "location": "Location",
-      "description": "Description"
+    "title": "Hawza Studies Program",
+    "subtitle": "A journey into Islamic knowledge and leadership",
+    "about": {
+      "title": "About the Hawza",
+      "subtitle": "A Thriving Center for Islamic Learning",
+      "description": "The Hawzah Seyyidah Zeinab (s.a) is an esteemed Islamic educational institution established by the Ahlulbayt Assembly of Kenya (ABAK). It provides a nurturing environment for young women to deepen their knowledge and understanding of the Islamic faith."
+    },
+    "establishment": {
+      "title": "Vision, Mission & Impact",
+      "vision": {
+        "title": "Our Vision",
+        "description": "To develop a new generation of well-grounded, knowledgeable, and spiritually committed female Islamic scholars who will contribute meaningfully to the community and uphold the teachings of the Ahlulbayt (a.s)."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide high-quality Islamic education rooted in the teachings of the Holy Qur’an and Ahlulbayt (a.s), empowering young women with knowledge, moral values, and leadership skills.."
+      },
+      "impact": {
+        "title": "Our Impact",
+        "description": "Since its inception, the Hawza has empowered dozens of young women, many of whom now actively serve in various religious, educational, and social capacities within their communities across Kenya."
+      }
+    },
+    "admissions": {
+      "title": "Admission Criteria",
+      "criteria": [
+        {
+          "title": "Educational Background",
+          "description": "Applicants must have successfully completed high school and earned their KCSE certification."
+        },
+        {
+          "title": "Age Requirement",
+          "description": "Students must be at least 18 years of age to be eligible for admission."
+        },
+        {
+          "title": "Commitment to Learning",
+          "description": "A strong passion for Islamic studies and a dedication to academic excellence are essential."
+        }
+      ]
+    },
+    "students": {
+      "title": "Student Profile",
+      "profile": [
+        {
+          "title": "Diverse Backgrounds",
+          "description": "Students come from various regions and socioeconomic backgrounds, fostering a rich and inclusive learning environment."
+        },
+        {
+          "title": "Academic Achievements",
+          "description": "Selected students demonstrate exceptional academic performance, most achieving top KCSE scores."
+        },
+        {
+          "title": "Shared Passion",
+          "description": "Each student shares a deep commitment to Islamic studies and leadership in their communities."
+        }
+      ]
+    },
+    "curriculum": {
+      "title": "Curriculum and Programs",
+      "items": [
+        {
+          "title": "Core Curriculum",
+          "description": "Students receive a well-rounded foundation in Islamic studies and community leadership."
+        },
+        {
+          "title": "Specialized Tracks",
+          "description": "Focused study in Islamic history, Arabic language, and interfaith dialogue."
+        },
+        {
+          "title": "Practical Training",
+          "description": "Hands-on workshops and internships that build leadership and community service skills."
+        }
+      ]
+    },
+    "facilities": {
+      "title": "Facilities",
+      "items": [
+        {
+          "title": "Extensive Library",
+          "description": "A vast collection of Islamic texts, journals, and digital resources."
+        },
+        {
+          "title": "Lecture Halls",
+          "description": "Modern halls equipped with educational tech for interactive learning."
+        },
+        {
+          "title": "Computer Labs",
+          "description": "Digital workspaces for writing, research, and skill development."
+        },
+        {
+          "title": "Prayer Facilities",
+          "description": "Spacious and serene spaces for daily prayers and spiritual growth."
+        }
+      ]
+    },
+    "support": {
+      "title": "Support the Hawza",
+      "description": "Help empower future female Islamic scholars. Sponsor a student with just 1,000 USD per year, covering accommodation and tuition.",
+      "bank_details": [
+        {
+          "label": "Bank:",
+          "value": "Diamond Trust Bank, Lavington Branch"
+        },
+        {
+          "label": "Account Name:",
+          "value": "Ahlulbayt (a.s) Assembly"
+        },
+        {
+          "label": "Account Type:",
+          "value": "Current Account"
+        },
+        {
+          "label": "KES Account:",
+          "value": "0025429001"
+        },
+        {
+          "label": "USD Account:",
+          "value": "0025429002"
+        }
+      ]
     }
   },
   "publications": {
     "title": "Publications",
     "subtitle": "Explore our research, reports, and community publications.",
     "view_button": "View / Download"
+  },
+  "galleries": {
+    "title": "Media Galleries",
+    "subtitle": " Welcome to our Media Galleries – a curated collection of images, videos and documents showcasing our events, initiatives, and impact. Explore each gallery to get a visual glimpse into our work and community stories.",
+    "error": "No preview"
+  },
+  "volunteer": {
+    "title": "Become a Volunteer",
+    "subtitle": "Join hands with ABAK to serve the community, spread knowledge, and make a lasting impact. Your time and skills are valuable in building a better future.",
+    "opportunitytitle": " Volunteer Opportunities",
+    "opportunities": {
+      "one": "Teaching and Mentorship",
+      "two": "Event Support and Logistics",
+      "three": "Media & Content Creation",
+      "four": "Community Outreach Programs"
+    }
   }
 }

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Sidebar from "./Sidebar";
 import { usePathname } from "next/navigation";
+import LocaleSwitcher from "../Buttons/LocaleSwitcher";
 
 interface LinksProps {
   name: string;
@@ -156,6 +157,7 @@ export default function Navbar() {
             <span className="animate-pulse transition duration-700 bg-red-500 h-3 w-3 rounded-full absolute translate-x-14 -translate-y-3" />
             Donate
           </Link>
+          <LocaleSwitcher />
         </div>
       </div>
 

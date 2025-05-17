@@ -1,5 +1,8 @@
+"use client";
+
 import UnderlineLink from "@/components/Animations/Underline";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Post = {
   title: string;
@@ -14,20 +17,20 @@ interface LatestPostsProps {
 }
 
 export default function LatestPosts({ posts }: LatestPostsProps) {
+  const t = useTranslations("Posts");
+
   return (
     <section className="w-full px-4 py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto flex flex-col gap-6">
         <div className="text-center">
           <h2 className="text-secondary text-sm md:text-base text-center font-bold tracking-widest uppercase">
-            Latest Posts
+            {t("latestPosts")}
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold text-primary text-center mt-2">
-            Community News & Updates
+            {t("communityNewsUpdates")}
           </h3>
           <p className="mt-2 text-gray-700 text-base md:text-lg max-w-2xl mx-auto">
-            Stay informed with the latest news, articles, and updates from our
-            community. Explore our blog for insights and stories that matter to
-            you.
+            {t("description")}
           </p>
         </div>
 
@@ -55,8 +58,8 @@ export default function LatestPosts({ posts }: LatestPostsProps) {
                 </div>
                 <div className="my-2">
                   <UnderlineLink
-                    linkText="Read more"
-                    href={`/blog/${post.slug}`}
+                    linkText={t("readMore")}
+                    href={`resources/blog/${post.slug}`}
                   />
                 </div>
               </div>

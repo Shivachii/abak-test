@@ -7,7 +7,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { NavbarLogoSmall } from "../Logos/Logo";
+import { FooterLogo } from "../Logos/Logo";
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Logo + Mission */}
         <div className="flex flex-col gap-4">
           <Link href="/">
-            <NavbarLogoSmall />
+            <FooterLogo />
           </Link>
           <p className="text-sm leading-relaxed text-white">
             ABAK (AhlulBayt Assembly of Kenya) is committed to spreading the

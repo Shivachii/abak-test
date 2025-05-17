@@ -1,4 +1,3 @@
-// queries.ts
 export const galleryQueryBySlug = `
   *[_type == "gallery" && slug.current == $slug][0]{
     _id,
@@ -60,4 +59,14 @@ export const allGalleriesQuery = `
     slug,
     "previewImage": previewImage.asset->url
   }
+`;
+
+export const publicationsQuery = `
+*[_type == "publications"] | order(_createdAt desc) {
+  _id,
+  title,
+  description,
+  slug,
+  "pdfUrl": pdfFile.asset->url
+}
 `;

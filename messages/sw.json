@@ -1,78 +1,411 @@
 {
+  "About": {
+    "title": "Jumuiya ya AhlulBayt ya Kenya",
+    "intro": "Jumuiya ya Ahlul Bayt (a.s) ya Kenya (ABAK) ni shirika lisilo la faida linalojitolea kueneza mafundisho ya Uislamu yaliyofundishwa na Ahlul Bayt (a.s), kizazi kitakatifu cha Mtume wetu mpenzi",
+    "intromid": " Muhammad (s.a.w.w).",
+    "intro2": "Lengo letu ni kuleta mafanikio katika maisha haya na ya Akhera kwa kushirikisha jamii pana mafundisho haya.",
+    "learnMore": "Jifunze Zaidi",
+    "joinUs": "Jiunge Nasi",
+    "latestNews": "Habari Mpya",
+    "readMore": "Soma Zaidi",
+    "aboutUs": "Kuhusu Sisi"
+  },
+
+  "Announcements": {
+    "heading": "Matangazo Muhimu na Mipango",
+    "title": "Tusaidie Kufanya Tofauti",
+    "intro": "Msaada wako unatuwezesha kuendelea kutoa elimu, misaada, na mwongozo wa kiroho. Endelea kupata taarifa na jiunge nasi katika miradi yetu ya hivi karibuni.",
+
+    "monthlyDonation": {
+      "title": "Kampeni ya Michango ya Kila Mwezi – Saidia Dhamira Yetu",
+      "description": "ABAK inahitaji $10,000 kila mwezi ili kuendesha programu zake za elimu, dini, na misaada ya kibinadamu. Tusaidie kueneza ujumbe wa AhlulBayt (a.s).",
+      "cta": "Changia Sasa"
+    },
+    "ramadhanRelief": {
+      "title": "Mpango wa Misaada ya Chakula Ramadhan",
+      "description": "Jiunge nasi katika kusambaza vifurushi vya chakula kwa familia elfu kadhaa maskini wakati wa Ramadhan kote Kenya.",
+      "cta": "Saidi Kampeni"
+    },
+    "muharramPrograms": {
+      "title": "Programu Zinazoja za Muharram",
+      "description": "Kumbuka urithi wa Imam Hussain (a.s) pamoja nasi. Pata ratiba na maeneo ya mikutano ya Muharram ya mwaka huu.",
+      "cta": "Tazama Ratiba"
+    }
+  },
+  "CorePrinciples": {
+    "values": {
+      "heading": "Maadili Yetu Muhimu",
+      "title": "Misingi Msingi Inayoongoza ABAK",
+      "description": "Baraza la AhlulBayt limejengwa juu ya misingi sita muhimu inayotengeneza dhamira yetu, vitendo, na jamii yetu.",
+      "principles": {
+        "faithfulness": "Uaminifu kwa Mafundisho ya Ahlul Bayt (a.s)",
+        "unity": "Umoja na Kuishi kwa Amani",
+        "inclusivity": "Ushirikishwaji na Ushirikiano",
+        "community": "Huduma Inayozingatia Jamii",
+        "empowerment": "Kuwezeshwa Kupitia Maarifa",
+        "accountability": "Uwajibikaji na Uwazi"
+      }
+    },
+    "mv": {
+      "heading": "Dhamira Yetu & Maono",
+      "mission": {
+        "title": "Dhamira",
+        "description": "Kuanzisha taasisi na njia zinazotangaza Uislamu kwa kila mtu, na kutoa mwongozo wa kuishi imani kama ilivyofundishwa na Mtume (s.a.w.w) na Ahlul Bayt wake (a.s)."
+      },
+      "vision": {
+        "title": "Maono",
+        "description": "Kujenga jamii imara, yenye mafanikio, na kuboresha ustawi wa jamii ya Kenya katika nyanja zote za maisha."
+      }
+    }
+  },
+  "QuranReflections": {
+    "heroTitle": "Tafakari za Qur’an",
+    "heroSubtitle": "Gundua tafakari za kina na mafundisho kutoka katika Qur’an Tukufu ya kuongoza maisha yako ya kila siku.",
+    "reflections": {
+      "patience": {
+        "title": "Subira Katika Matarajio Magumu",
+        "verse": "Surah Al-Baqarah 2:153",
+        "text": "Hakika, Allah yupo pamoja na wale wanaosubiri kwa subira. Aya hii inatukumbusha kwamba matatizo sio adhabu bali ni fursa za kukua kiroho."
+      },
+      "trust": {
+        "title": "Kumwamini Mpango wa Allah",
+        "verse": "Surah Al-Tawbah 9:51",
+        "text": "Hakutapatikani jambo lolote kwetu isipokuwa lile Allah aliloliamuru. Hii huwasaidia waumini kuachilia wasiwasi na kukumbatia mapenzi ya Mungu."
+      },
+      "forgiveness": {
+        "title": "Nguvu ya Kusamehe",
+        "verse": "Surah Al-Nur 24:22",
+        "text": "Je, hupendi kwamba Allah asamehe wewe? Tunahimizwa kusamehe wengine ili tupokee rehema za Mungu."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Miradi Yetu",
+    "description": "Mikakati hii inaonyesha jitihada zinazoendelea za ABAK za kujenga uwezo wa kiroho, kielimu, na kijamii kote Kenya na zaidi.",
+    "button": "Jifunze Zaidi",
+    "items": {
+      "hawza": {
+        "title": "Maendeleo ya Seminari ya Hawza",
+        "description": "Kuanzisha seminari ya Kiislamu ya baada ya sekondari kwa ajili ya kuwafundisha wasomi na viongozi wa baadaye walioko kwenye mafundisho ya Ahlul Bayt.",
+        "image": "/hawza.jpg",
+        "href": "/our-work/hawza"
+      },
+      "clinics": {
+        "title": "Kliniki za Kusafirishwa & Huduma za Afya",
+        "description": "Kutoa huduma muhimu za afya na elimu ya ustawi kwa jamii zisizopata huduma kupitia kambi za matibabu zinazotembea.",
+        "image": "/mashallah.jpg",
+        "href": "/our-work/community-services"
+      },
+      "education": {
+        "title": "Miundombinu ya Elimu ya Kiislamu",
+        "description": "Kujenga shule zinazochanganya maadili ya Kiislamu na mfumo rasmi wa elimu wa Kenya ili kukuza wanafunzi waliokomaa kiakili na kiroho.",
+        "image": "/mosqueteachings.jpeg",
+        "href": "/our-work/learning-institutions"
+      },
+      "media": {
+        "title": "Studio ya Uzalishaji wa Maudhui",
+        "description": "Kutengeneza maudhui bora ya Kiislamu kama video, sauti, makala kwa ajili ya kuelimisha, kuhamasisha, na kupambana na taarifa zisizo sahihi.",
+        "image": "/dua.jpg",
+        "href": "/our-work/content-creation"
+      }
+    }
+  },
+  "ProgramsObjectives": {
+    "heading": "Dhamira Yetu Katika Vitendo",
+    "title": "Malengo Yetu",
+    "description": "ABAK hufanya programu mbalimbali zilizopangwa na malengo yanayolenga kueneza maarifa ya Kiislamu, ustawi wa kijamii, na maendeleo ya jamii.",
+    "cta": "Jifunze zaidi kuhusu malengo yetu",
+    "objectives": {
+      "propagation": {
+        "title": "Kueneza Uislamu",
+        "description": "Kuhubiri mafundisho ya Ahlul Bayt (a.s) kupitia mihadhara, maandiko, matukio, na mazungumzo ya dini tofauti."
+      },
+      "communities": {
+        "title": "Kuandaa Jamii za Shia",
+        "description": "Kuwezesha jamii kupitia mafunzo ya uongozi, ushauri, kambi za vijana, msaada kwa wanafunzi, na kuinua hali za kiuchumi."
+      },
+      "mubaligheen": {
+        "title": "Mafunzo ya Mubaligheen",
+        "description": "Kuanzisha taasisi za kuwafundisha waumini na wasomi wa Kiislamu ili kuhudumia jamii kwa maarifa ya kina na madhumuni."
+      },
+      "content": {
+        "title": "Maendeleo ya Maudhui",
+        "description": "Kutengeneza mihadhara, makala, nyaraka za hadithi, na maudhui ya tamthilia kukuza maadili na utamaduni wa Kiislamu."
+      },
+      "education": {
+        "title": "Taasisi za Elimu",
+        "description": "Kuweka shule na seminari (Hawza) zenye mtaala uliounganishwa na mafundisho ya Kiislamu kukuza vizazi vijavyo vya Waislamu wenye maarifa."
+      },
+      "services": {
+        "title": "Huduma za Jamii",
+        "description": "Kutoa msaada wa tiba, ushauri, programu za misaada, kliniki zinazotembea, na mifumo ya kukabiliana na majanga kwa ustawi wa jamii."
+      }
+    }
+  },
   "about": {
     "title": "Kuhusu Sisi",
-    "name": "Shirika la AhlulBayt Kenya (ABAK)",
-    "who": "Sisi ni nani",
-    "description": "ABAK ni shirika lisilo la kiserikali la kidini linalojitolea kueneza mafundisho tukufu ya Qur'ani Tukufu, Mtume Muhammad (s.a.w.w), na AhlulBayt (a.s). Tunajitahidi kukuza jamii yenye maarifa ya kiroho na huruma kupitia elimu, uhamasishaji, na uwezeshaji.",
+    "name": "Kikao cha AhlulBayt cha Kenya (ABAK)",
+    "who": "Nani Sisi",
+    "description": "ABAK ni shirika lisilo la faida linalotegemea imani, likijitahidi kueneza mafundisho mema ya Qur’ani Tukufu, Mtume Muhammad (s.a.w.w), na AhlulBayt (a.s). Tunajitahidi kuendeleza jamii yenye uelewa wa kiroho na huruma kupitia elimu, mawasiliano, na kuwawezesha watu.",
     "missionTitle": "Dhamira Yetu",
-    "mission": "Kuwaalika watu wote kwenye njia ya haki kama ilivyowasilishwa na Qur'ani na mafundisho ya Mtume wa Mwisho, Muhammad (s.a.w.w), na kizazi chake kitakatifu — AhlulBayt (a.s).",
+    "mission": "Kuwaita watu wote kwenye njia halisi kama ilivyoonyeshwa na Qur’ani na mafundisho ya Mtume wa Mwisho, Muhammad (s.a.w.w), na wazao wake safi — AhlulBayt (a.s).",
     "visionTitle": "Maono Yetu",
-    "vision": "Kukuza jamii ya Wakenya iliyo na mshikamano, haki, na iliyojaa maadili ya Kiislamu na maarifa ya kiroho."
+    "vision": "Kuendeleza jamii ya Kenya yenye mshikamano, haki, na yenye utajiri wa kiroho iliyojengwa juu ya maadili na maadili ya Uislamu."
   },
   "leadership": {
     "title": "Uongozi",
     "chairman": {
-      "title": "Mwenyekiti – Sheikh Ali Saidi Samojah",
+      "title": "Kaimu Mwenyekiti – Sheikh Ali Saidi Samojah",
       "name": "Sheikh Ali Saidi Samojah",
-      "description": "Sheikh Samojah ni mwanazuoni mashuhuri, kiongozi wa jamii, na Mwenyekiti wa ABAK. Maarifa yake ya kina, juhudi za kuelimisha jamii, na kujitolea kwake kwa mafundisho ya AhlulBayt (a.s) yamewahamasisha maelfu kote Kenya na nje ya mipaka."
+      "description": "Sheikh Samojah ni mtaalamu maarufu, kiongozi wa jamii, na Mwenyekiti wa ABAK. Maarifa yake ya kina, juhudi za mawasiliano, na dhamira yake thabiti kwa mafundisho ya AhlulBayt (a.s) yamehamasisha maelfu kote Kenya na hata zaidi."
     },
     "viceChairman": {
       "title": "Makamu Mwenyekiti – Sheikh Juma Shughuli",
       "name": "Sheikh Juma Shughuli",
-      "description": "Sheikh Juma Shughuli ni Makamu Mwenyekiti wa ABAK, akisaidia kusimamia mipango inayokuza elimu ya jamii na miradi ya kidini."
+      "description": "Sheikh Juma Shughuli ni Makamu Mwenyekiti wa ABAK, akisaidia programu zinazoongeza elimu ya jamii na mipango inayotegemea imani."
     },
     "treasurer": {
-      "title": "Mweka Hazina – Sheikh Khamis Mwanjirani",
+      "title": "Mhasibu – Sheikh Khamis Mwanjirani",
       "name": "Sheikh Khamis Mwanjirani",
-      "description": "Kama Mweka Hazina, Sheikh Mwanjirani anahakikisha uwazi na uwajibikaji katika usimamizi wa fedha na ugawaji wa rasilimali za ABAK."
+      "description": "Kama Mhasibu, Sheikh Mwanjirani anahakikisha uwazi na uwajibikaji katika usimamizi wa fedha na ugawaji wa rasilimali za ABAK."
     },
     "secretary": {
       "title": "Katibu – Ndugu Athman Farsiy",
       "name": "Ndugu Athman Farsiy",
-      "description": "Ndugu Athman ni Katibu wa ABAK, anayesimamia mawasiliano, hati, na kuhakikisha shughuli zote za shirika zinafanyika vizuri."
+      "description": "Ndugu Athman ni Katibu wa ABAK, akaratibu mawasiliano, uhifadhi wa nyaraka, na kuhakikisha shughuli zote za shirika zinafanyika kwa utulivu."
     },
     "members": {
       "title": "Wajumbe wa Bodi",
-      "description": "Bodi ya ABAK pia inajumuisha wawakilishi kutoka maeneo mbalimbali ya Kenya, kuhakikisha uwakilishi jumuishi wa vituo tofauti vya jamii na sauti zao."
+      "description": "Bodi ya ABAK pia ina wajumbe kutoka maeneo mbalimbali ya Kenya, kuhakikisha uwakilishi mpana wa vituo na sauti tofauti za jamii."
     }
   },
   "contact": {
     "sectionTitle": "Wasiliana Nasi",
     "headline": "Tungependa Kusikia Kutoka Kwako",
-    "intro": "Iwe una maswali, maoni, au ungependa kushirikiana nasi—tafadhali wasiliana kupitia fomu au maelezo yaliyotolewa hapa chini.",
+    "intro": "Kama una maswali, maoni, au ungependa kushirikiana nasi—tutafute kupitia fomu au maelezo ya mawasiliano yaliyo hapa chini.",
     "info": {
       "title": "Maelezo Yetu ya Mawasiliano",
-      "note": "Kwa maswali ya dharura, tafadhali tumia maelezo ya mawasiliano hapa chini.",
-      "addressTitle": "Anuani Yetu",
+      "note": "Kwa maswali ya dharura, tafadhali tumia maelezo ya mawasiliano hapa chini",
+      "addressTitle": "Anwani Yetu ya Ofisi",
       "address": "Nairobi, Kenya",
-      "emailTitle": "Barua Pepe Yetu",
+      "emailTitle": "Barua Pepe Zetu",
       "emails": ["ahlulbaytassembly9@gmail.com", "alisamojah@gmail.com"],
-      "phoneTitle": "Tupigie Simu",
+      "phoneTitle": "Piga Simu Kwa",
       "phones": ["+254 704 788924", "+254 722 338485"]
     },
-    "mapTitle": "Tupate kwenye ramani"
+    "mapTitle": "Tupate kwenye Ramani"
+  },
+  "Posts": {
+    "latestPosts": "Machapisho ya Hivi Karibuni",
+    "communityNewsUpdates": "Habari na Sasisho za Jamii",
+    "description": "Jua habari mpya, makala, na sasisho kutoka kwa jamii yetu. Tembelea blogu yetu kwa maarifa na hadithi zinazokuhusu.",
+    "readMore": "Soma zaidi",
+    "comingSoon": "Machapisho Yanayokuja Hayaendi Saa!",
+    "comingSoonDescription": "Tunafanya kazi kwa bidii kuleta maudhui mapya kwako. Endelea kuwa nasi kwa sasisho za kusisimua."
   },
   "donate": {
-    "title": "Saidia Dhamira Yetu",
-    "description": "Mchango wako unasaidia ABAK kueneza mafundisho ya Ahlul Bayt (a.s), kuinua jamii, na kuwawezesha vizazi vijavyo kupitia elimu, huduma, na imani.",
-    "waysTitle": "Njia za Kuchangia",
-
+    "title": "Tusaidie Kufanikisha Dhamira Yetu",
+    "description": "Mchango wako husaidia ABAK kueneza mafundisho ya Ahlul Bayt (a.s), kuinua jamii, na kuwawezesha vizazi vijavyo kupitia elimu, huduma, na imani.",
+    "waysTitle": "Njia za Kutoa Mchango",
     "button": "Changia Sasa"
   },
   "events": {
-    "upcomingEvents": "Matukio Yajayo",
-    "joinCommunityInitiatives": "Jiunge na Juhudi Zetu za Jamii",
-    "stayUpdated": "Kuwa na taarifa za matukio ya ABAK kote Kenya—kiroho, kielimu, na kibinadamu.",
-    "eventDetails": {
-      "title": "Kichwa",
-      "date": "Tarehe",
-      "location": "Mahali",
-      "description": "Maelezo"
-    }
+    "upcomingEvents": "Matukio Yanayokuja",
+    "joinCommunityInitiatives": "Jiunge na Mipango ya Jamii",
+    "stayUpdated": "Kaa na Habari Mpya Kuhusu Matukio Yetu",
+    "list": [
+      {
+        "title": "Mkutano wa Muballigheen",
+        "date": "Mei 4, 2025",
+        "location": "Magharibi",
+        "description": "Mkutano wa kikanda kwa Muballigheen wanaofanya kazi Magharibi ukilenga kuimarisha mafunzo ya kijumuiya na elimu ya Kiislamu."
+      },
+      {
+        "title": "Nikah kwa Mmoja wa Mubalighat",
+        "date": "Aprili 27, 2025",
+        "location": "Kichaka Mkwaju, Pwani",
+        "description": "Sherehe ya Nikah yenye baraka iliyohudhurwa na Shk. Ali Samojah, Shk. Juma Shughuli, na Shk. Salim Mwaega, kuadhimisha safari mpya ya Mubalighat."
+      },
+      {
+        "title": "Arbaeen kwa Marehemu Shk. Maradi & Mkutano wa Muballighiin",
+        "date": "Aprili 6, 2025",
+        "location": "Kibuyuni, Kwale",
+        "description": "Kumbukumbu ya maisha ya Marehemu Shk. Maradi na kuwaleta pamoja Muballighiin kwa mkutano wa tafakari na mipango."
+      },
+      {
+        "title": "Mafunzo ya Ramadhani",
+        "date": "Machi 1 – Aprili 1, 2025",
+        "location": "Parkroad",
+        "description": "Mfululizo wa masomo ya mwezi mzima wakati wa Ramadhani 1446, ukizingatia ukuaji wa kiroho na ushiriki wa jamii."
+      },
+      {
+        "title": "Majlis Fa'tiha kwa Shahid Sayyid Hassan Nasrullah & Shahid Sayyid Hashim Swafiyudin",
+        "date": "Februari 23, 2025",
+        "location": "Parkroad",
+        "description": "Majlis ya heshima kwa maisha na urithi wa mashahidi wawili waliothaminiwa, ikiboresha kumbukumbu na umoja."
+      },
+      {
+        "title": "Mkutano wa Muballigheen",
+        "date": "Februari 8, 2025",
+        "location": "Parklands Plaza",
+        "description": "Mkutano unaowaunganisha Muballigheen kubadilishana mawazo, kupokea mafunzo, na kuboresha uongozi wao wa kiroho."
+      },
+      {
+        "title": "Mkutano wa Muballighiin",
+        "date": "Septemba 11, 2024",
+        "location": "Ngumo",
+        "description": "Mkutano wa karibu wa Muballighiin kujadili mipango ya sasa, kushirikiana maoni, na kupanga mikakati ya ushawishi wa jamii."
+      }
+    ]
   },
   "programs": {
     "objectivesTitle": "Malengo Yetu",
-    "mainObjectivesHeader": "Tunayo malengo 8 kuu",
-    "objectivesDescription": "Katika AhlulBayt Assembly of Kenya (ABAK), dhamira yetu inaongozwa na mfululizo wa mipango na malengo yaliyo wazi. Hii inalenga miongozo ya kiroho, maendeleo ya jamii, elimu, na uwezeshaji. Kila lengo linawakilisha hatua kuelekea jamii iliyoelimika, iliyo na umoja, na yenye huruma inayojaa mafundisho ya Ahlul Bayt (a.s)."
+    "mainObjectivesHeader": "Tuna malengo makuu 8",
+    "objectivesDescription": "Katika Kikao cha AhlulBayt cha Kenya (ABAK), dhamira yetu inaongozwa na mfululizo wa mipango na malengo yaliyopangwa vizuri. Haya yanazingatia mwongozo wa kiroho, maendeleo ya jamii, elimu, na kuwawezesha watu. Kila lengo linaonyesha hatua kuelekea kuunda jamii yenye uelewa, mshikamano, na huruma iliyojikita katika mafundisho ya Ahlul Bayt (a.s)."
+  },
+
+  "hawza": {
+    "title": "Mpango wa Masomo ya Hawza",
+    "subtitle": "Safari ya kuelekea kwenye maarifa ya Kiislamu na uongozi",
+    "about": {
+      "title": "Kuhusu Hawza",
+      "subtitle": "Kituo cha Mafanikio cha Elimu ya Kiislamu",
+      "description": "Hawzah Seyyidah Zeinab (s.a) ni taasisi maarufu ya elimu ya Kiislamu iliyoanzishwa na Jumuiya ya Ahlulbayt ya Kenya (ABAK). Inatoa mazingira ya kulea kwa wasichana vijana ili kuimarisha maarifa yao na uelewa wa dini ya Kiislamu."
+    },
+    "establishment": {
+      "title": "Dira, Misheni na Athari",
+      "vision": {
+        "title": "Dira Yetu",
+        "description": "Kukuza kizazi kipya cha wasomi wa Kiislamu wanawake waliobobea kielimu, kidini na kiroho, ambao watachangia kwa njia chanya katika jamii na kudumisha mafundisho ya Ahlulbayt (a.s)."
+      },
+      "mission": {
+        "title": "Misheni Yetu",
+        "description": "Kutoa elimu bora ya Kiislamu yenye mizizi katika mafundisho ya Qur’ani Tukufu na Ahlulbayt (a.s), kwa kuwawezesha wasichana kwa maarifa, maadili mema na ujuzi wa uongozi."
+      },
+      "impact": {
+        "title": "Athari Yetu",
+        "description": "Tangu kuanzishwa kwake, Hawza imewawezesha wasichana wengi, wengi wao sasa wakihudumu katika nyanja mbalimbali za kidini, kielimu na kijamii katika jamii zao kote nchini Kenya."
+      }
+    },
+    "admissions": {
+      "title": "Vigezo vya Kujiunga",
+      "criteria": [
+        {
+          "title": "Historia ya Kielimu",
+          "description": "Waombaji lazima wawe wamekamilisha masomo ya shule ya upili na kupata cheti cha KCSE."
+        },
+        {
+          "title": "Umri unaohitajika",
+          "description": "Wanafunzi lazima wawe na umri wa angalau miaka 18 ili kustahiki kujiunga."
+        },
+        {
+          "title": "Uhamasisho wa Kujifunza",
+          "description": "Shauku kubwa ya kusoma masomo ya Kiislamu na kujitolea katika ubora wa masomo ni muhimu."
+        }
+      ]
+    },
+    "students": {
+      "title": "Wasifu wa Wanafunzi",
+      "profile": [
+        {
+          "title": "Asili Tofauti",
+          "description": "Wanafunzi wanatoka katika maeneo na mazingira tofauti ya kijamii, hali inayochangia mazingira ya ujifunzaji jumuishi na tajiri."
+        },
+        {
+          "title": "Ufanisi wa Kielimu",
+          "description": "Wanafunzi walioteuliwa huonyesha ufanisi mkubwa wa kitaaluma, wengi wao wakipata alama za juu katika KCSE."
+        },
+        {
+          "title": "Shauku ya Pamoja",
+          "description": "Kila mwanafunzi anashiriki ari ya dhati ya kusoma masomo ya Kiislamu na uongozi katika jamii zao."
+        }
+      ]
+    },
+    "curriculum": {
+      "title": "Mitaala na Programu",
+      "items": [
+        {
+          "title": "Mtaala wa Msingi",
+          "description": "Wanafunzi hupata msingi mpana katika masomo ya Kiislamu na uongozi wa kijamii."
+        },
+        {
+          "title": "Mielekeo Maalum",
+          "description": "Masomo maalum ya historia ya Kiislamu, lugha ya Kiarabu na mazungumzo baina ya dini."
+        },
+        {
+          "title": "Mafunzo ya Vitendo",
+          "description": "Warsha za vitendo na mafunzo kwa vitendo yanayojenga ujuzi wa uongozi na huduma kwa jamii."
+        }
+      ]
+    },
+    "facilities": {
+      "title": "Miundombinu",
+      "items": [
+        {
+          "title": "Maktaba Kubwa",
+          "description": "Mkusanyiko mkubwa wa maandiko ya Kiislamu, majarida na rasilimali za kidijitali."
+        },
+        {
+          "title": "Ukumbi wa Mihadhara",
+          "description": "Kumbi za kisasa zilizo na teknolojia ya kielimu kwa ujifunzaji shirikishi."
+        },
+        {
+          "title": "Maabara za Kompyuta",
+          "description": "Sehemu za kidijitali kwa uandishi, utafiti na kukuza ujuzi."
+        },
+        {
+          "title": "Sehemu za Kuswalia",
+          "description": "Sehemu tulivu na za kutosha kwa ajili ya swala za kila siku na kukuza kiroho."
+        }
+      ]
+    },
+    "support": {
+      "title": "Saidia Hawza",
+      "description": "Saidia kuwawezesha wasomi wa Kiislamu wa kike wa siku zijazo. Dhamini mwanafunzi kwa USD 1,000 tu kwa mwaka, ikijumuisha malazi na ada ya masomo.",
+      "bank_details": [
+        {
+          "label": "Benki:",
+          "value": "Diamond Trust Bank, Tawi la Lavington"
+        },
+        {
+          "label": "Jina la Akaunti:",
+          "value": "Ahlulbayt (a.s) Assembly"
+        },
+        {
+          "label": "Aina ya Akaunti:",
+          "value": "Akaunti ya Kawaida"
+        },
+        {
+          "label": "Akaunti ya KES:",
+          "value": "0025429001"
+        },
+        {
+          "label": "Akaunti ya USD:",
+          "value": "0025429002"
+        }
+      ]
+    }
+  },
+
+  "publications": {
+    "title": "Machapisho",
+    "subtitle": "Gundua tafiti zetu, ripoti, na machapisho ya jamii.",
+    "view_button": "Tazama / Pakua"
+  },
+  "galleries": {
+    "title": "Makumbusho ya Vyombo vya Habari",
+    "subtitle": "Karibu kwenye Makumbusho yetu ya Vyombo vya Habari – mkusanyiko wa picha, video, na nyaraka zinazoonyesha matukio yetu, mipango, na athari zetu. Tembelea kila makumbusho kupata picha halisi za kazi na hadithi za jamii yetu.",
+    "error": "Hakuna onyesho la awali"
+  },
+  "volunteer": {
+    "title": "Kuwa Msaidizi wa Kujitolea",
+    "subtitle": "Jiunge na ABAK kuhudumia jamii, kueneza maarifa, na kuleta mabadiliko ya kudumu. Muda na ujuzi wako ni muhimu katika kujenga mustakabali bora.",
+    "opportunitytitle": "Fursa za Kujitolea",
+    "opportunities": {
+      "one": "Kufundisha na Uwezeshaji",
+      "two": "Msaada wa Matukio na Mipangilio",
+      "three": "Utengenezaji wa Vyombo vya Habari & Maudhui",
+      "four": "Mipango ya Kueneza Huduma kwa Jamii"
+    }
   }
 }
