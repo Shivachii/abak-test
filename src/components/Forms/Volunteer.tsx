@@ -50,7 +50,7 @@ export default function VolunteerDialog() {
       <DialogTrigger className="bg-secondary text-white px-6 py-3 rounded-md shadow-md hover:bg-secondary/90 transition">
         Sign Up to Volunteer
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="w-[90vw] max-w-xl mx-auto p-6 rounded-2xl max-h-[90vh] overflow-y-auto shadow-lg border">
         <DialogHeader>
           <DialogTitle>Fill in the form to volunteer with us</DialogTitle>
           <DialogDescription>

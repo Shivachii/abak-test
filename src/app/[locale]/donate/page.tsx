@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import DonationDialog from "@/components/Dialogs/Donation";
 
 export default function DonatePage() {
   const t = useTranslations("donate");
@@ -22,11 +23,9 @@ export default function DonatePage() {
         </ul>
       </div>
 
-      <div className="text-center">
-        <button className="bg-primary text-white px-6 py-3 rounded-md shadow-md hover:bg-primary/90 transition">
-          {t("button")}
-        </button>
-      </div>
+      <section className="text-center">
+        <DonationDialog />
+      </section>
     </section>
   );
 }

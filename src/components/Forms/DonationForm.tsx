@@ -56,8 +56,7 @@ export function DonationForm() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 rounded-2xl shadow-lg border">
-      <h2 className="text-2xl font-bold mb-4">Make a Donation</h2>
+    <div className="">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField

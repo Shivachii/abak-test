@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Sidebar from "./Sidebar";
 import { usePathname } from "next/navigation";
+// import LocaleSwitcher from "../LocaleComps/LocaleSwitcher";
 import LocaleSwitcher from "../Buttons/LocaleSwitcher";
 
 interface LinksProps {

@@ -1,4 +1,9 @@
 {
+  "LocaleSwitcher": {
+    "label": "Chagua Lugha",
+    "locale": "{locale, select, en {Kiingereza} sw {Kiswahili} ar {Kiarabu} other {Haijulikani}}"
+  },
+
   "About": {
     "title": "Jumuiya ya AhlulBayt ya Kenya",
     "intro": "Jumuiya ya Ahlul Bayt (a.s) ya Kenya (ABAK) ni shirika lisilo la faida linalojitolea kueneza mafundisho ya Uislamu yaliyofundishwa na Ahlul Bayt (a.s), kizazi kitakatifu cha Mtume wetu mpenzi",

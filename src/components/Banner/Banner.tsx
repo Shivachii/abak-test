@@ -33,7 +33,7 @@ export default function Banner({
           <div className="absolute inset-0 bg-black/50" />
         </>
       ) : (
-        <div className="absolute inset-0 bg-secondary opacity-85 text-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary md:bg-none md:bg-secondary opacity-80 text-black">
           {/* Abstract shapes (Tailwind utility based shapes) */}
           <div className="hidden md:block absolute top-0 left-0 w-full h-full bg-white rounded-full translate-y-[200px]" />
         </div>

@@ -1,4 +1,9 @@
 {
+  "LocaleSwitcher": {
+    "label": "Select Language",
+    "locale": "{locale, select, en {English} sw {Kiswahili} ar {Arabic} other {Unknown}}"
+  },
+
   "About": {
     "title": "The AhlulBayt Assembly of Kenya",
     "intro": "The Ahlul Bayt (a.s) Assembly of Kenya (ABAK) is a non-profit organization committed to promoting the noble teachings of Islam as conveyed by the Ahlul Bayt (a.s), the pure progeny of our beloved",

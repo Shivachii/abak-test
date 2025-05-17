@@ -120,19 +120,12 @@ export const contentData: {
         </div>
 
         {/* Image */}
-        <div className="hidden md:flex md:flex-shrink-0 flex-row gap-3 rounded-md shadow-md overflow-hidden">
+        <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/HAWZA1.jpg"
+            src="/hawza/hawzalogo.jpeg"
             alt="ABAK Hawza Seminary"
             width={200}
-            height={100}
-            className="rounded-md object-cover"
-          />
-          <Image
-            src="/hawza.jpg"
-            alt="ABAK Hawza Seminary"
-            width={200}
-            height={300}
+            height={200}
             className="rounded-md object-cover"
           />
         </div>
