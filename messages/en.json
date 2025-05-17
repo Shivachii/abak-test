@@ -1,0 +1,116 @@
+{
+  "about": {
+    "title": "About Us",
+    "name": "The AhlulBayt Assembly of Kenya (ABAK)",
+    "who": "Who we are",
+    "description": "ABAK is a faith-based non-profit organization committed to spreading the noble teachings of the Holy Qur'an, Prophet Muhammad (s.a.w.w), and the AhlulBayt (a.s). We strive to foster a spiritually aware and compassionate society through education, outreach, and empowerment.",
+    "missionTitle": "Our Mission",
+    "mission": "To invite all people to the true path as presented by the Qur'an and the teachings of the Final Messenger, Prophet Muhammad (s.a.w.w), and his purified progeny—the AhlulBayt (a.s).",
+    "visionTitle": "Our Vision",
+    "vision": "To nurture a united, just, and spiritually enriched Kenyan society grounded in the ethics and values of Islam."
+  },
+  "leadership": {
+    "title": "Leadership",
+    "chairman": {
+      "title": "Chairman – Sheikh Ali Saidi Samojah",
+      "name": "Sheikh Ali Saidi Samojah",
+      "description": "Sheikh Samojah is a leading scholar, community leader, and the Chairman of ABAK. His deep knowledge, outreach efforts, and unwavering commitment to the mission of AhlulBayt (a.s) teachings have inspired thousands across Kenya and beyond."
+    },
+    "viceChairman": {
+      "title": "Vice Chairman – Sheikh Juma Shughuli",
+      "name": "Sheikh Juma Shughuli",
+      "description": "Sheikh Juma Shughuli serves as the Vice Chairman of ABAK, supporting programs that strengthen community education and faith-based initiatives."
+    },
+    "treasurer": {
+      "title": "Treasurer – Sheikh Khamis Mwanjirani",
+      "name": "Sheikh Khamis Mwanjirani",
+      "description": "As Treasurer, Sheikh Mwanjirani ensures transparency and accountability in ABAK's financial stewardship and resource allocation."
+    },
+    "secretary": {
+      "title": "Secretary – Brother Athman Farsiy",
+      "name": "Brother Athman Farsiy",
+      "description": "Brother Athman serves as the Secretary of ABAK, coordinating communication, documentation, and ensuring the smooth operation of all activities across the organization."
+    },
+    "members": {
+      "title": "Board Members",
+      "description": "ABAK’s board also includes representatives from various regions of Kenya, ensuring inclusive representation of different community centers and voices."
+    }
+  },
+
+  "contact": {
+    "sectionTitle": "Contact Us",
+    "headline": "We'd Love to Hear From You",
+    "intro": "Whether you have questions, feedback, or would like to collaborate—reach out using the form or the contact details provided.",
+    "info": {
+      "title": "Our Contact Info",
+      "note": "For time sensitive enquiries, please use the contact details below",
+      "addressTitle": "Our Physical Address",
+      "address": "Nairobi, Kenya",
+      "emailTitle": "Our Email",
+      "emails": ["ahlulbaytassembly9@gmail.com", "alisamojah@gmail.com"],
+      "phoneTitle": "Call us on",
+      "phones": ["+254 704 788924", "+254 722 338485"]
+    },
+    "mapTitle": "Find us on the map"
+  },
+  "donate": {
+    "title": "Support Our Mission",
+    "description": "Your donation helps ABAK spread the teachings of Ahlul Bayt (a.s), uplift communities, and empower future generations through education, service, and faith.",
+    "waysTitle": "Ways to Donate",
+    "button": "Donate Now"
+  },
+  "events": {
+    "upcomingEvents": "Upcoming Events",
+    "joinCommunityInitiatives": "Join Our Community Initiatives",
+    "stayUpdated": "Stay updated with ABAK's impactful events across Kenya—spiritual, educational, and humanitarian.",
+    "eventDetails": {
+      "title": "Title",
+      "date": "Date",
+      "location": "Location",
+      "description": "Description"
+    }
+  },
+  "programs": {
+    "objectivesTitle": "Our Objectives",
+    "mainObjectivesHeader": "We have 8 main objectives",
+    "objectivesDescription": "At the AhlulBayt Assembly of Kenya (ABAK), our mission is guided by a series of well-defined programs and objectives. These focus on spiritual guidance, community development, education, and empowerment. Each objective represents a step toward creating a more informed, unified, and compassionate society rooted in the teachings of the Ahlul Bayt (a.s)."
+  },
+  "hawza": {
+    "title": "Hawza Seminary",
+    "subtitle": "Empowering the next generation of female Islamic scholars in Kenya.",
+
+    "about": "About Hawza Seyyidah Zeinab (s.a)",
+    "about_subtitle": "  A Thriving Center for Islamic Learning",
+
+    "establishment": "Establishment of the Hawza",
+
+    "admissions_criteria": "Admissions Criteria",
+
+    "support_section": "You Can Support",
+    "support_section_p": " Help empower future female Islamic scholars. Sponsor a student with just 1,000 USD per year, covering accommodation and tuition.",
+    "section_subtitle": "A Thriving Center for Islamic Learning",
+    "about_description": "The Hawzah Seyyidah Zeinab (s.a) is an esteemed Islamic educational institution established by the Ahlulbayt Assembly of Kenya (ABAK). It provides a nurturing environment for young women to deepen their knowledge and understanding of the Islamic faith.",
+
+    "vision": "Vision",
+    "vision_desc": "To develop a new generation of well-grounded, knowledgeable, and spiritually committed female Islamic scholars who will contribute meaningfully to the community and uphold the teachings of the Ahlulbayt (a.s).",
+
+    "mission": "Mission",
+    "mission_desc": "To provide high-quality Islamic education rooted in the teachings of the Holy Qur’an and Ahlulbayt (a.s), empowering young women with knowledge, moral values, and leadership skills.",
+
+    "impact": "Our Impact",
+    "impact_desc": "Since its inception, the Hawza has empowered dozens of young women, many of whom now actively serve in various religious, educational, and social capacities within their communities across Kenya.",
+
+    "facilities": "Facilities and Resources",
+    "facilitiesDetails": {
+      "title": "Title",
+      "date": "Date",
+      "location": "Location",
+      "description": "Description"
+    }
+  },
+  "publications": {
+    "title": "Publications",
+    "subtitle": "Explore our research, reports, and community publications.",
+    "view_button": "View / Download"
+  }
+}

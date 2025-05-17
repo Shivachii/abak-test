@@ -1,0 +1,78 @@
+{
+  "about": {
+    "title": "Kuhusu Sisi",
+    "name": "Shirika la AhlulBayt Kenya (ABAK)",
+    "who": "Sisi ni nani",
+    "description": "ABAK ni shirika lisilo la kiserikali la kidini linalojitolea kueneza mafundisho tukufu ya Qur'ani Tukufu, Mtume Muhammad (s.a.w.w), na AhlulBayt (a.s). Tunajitahidi kukuza jamii yenye maarifa ya kiroho na huruma kupitia elimu, uhamasishaji, na uwezeshaji.",
+    "missionTitle": "Dhamira Yetu",
+    "mission": "Kuwaalika watu wote kwenye njia ya haki kama ilivyowasilishwa na Qur'ani na mafundisho ya Mtume wa Mwisho, Muhammad (s.a.w.w), na kizazi chake kitakatifu — AhlulBayt (a.s).",
+    "visionTitle": "Maono Yetu",
+    "vision": "Kukuza jamii ya Wakenya iliyo na mshikamano, haki, na iliyojaa maadili ya Kiislamu na maarifa ya kiroho."
+  },
+  "leadership": {
+    "title": "Uongozi",
+    "chairman": {
+      "title": "Mwenyekiti – Sheikh Ali Saidi Samojah",
+      "name": "Sheikh Ali Saidi Samojah",
+      "description": "Sheikh Samojah ni mwanazuoni mashuhuri, kiongozi wa jamii, na Mwenyekiti wa ABAK. Maarifa yake ya kina, juhudi za kuelimisha jamii, na kujitolea kwake kwa mafundisho ya AhlulBayt (a.s) yamewahamasisha maelfu kote Kenya na nje ya mipaka."
+    },
+    "viceChairman": {
+      "title": "Makamu Mwenyekiti – Sheikh Juma Shughuli",
+      "name": "Sheikh Juma Shughuli",
+      "description": "Sheikh Juma Shughuli ni Makamu Mwenyekiti wa ABAK, akisaidia kusimamia mipango inayokuza elimu ya jamii na miradi ya kidini."
+    },
+    "treasurer": {
+      "title": "Mweka Hazina – Sheikh Khamis Mwanjirani",
+      "name": "Sheikh Khamis Mwanjirani",
+      "description": "Kama Mweka Hazina, Sheikh Mwanjirani anahakikisha uwazi na uwajibikaji katika usimamizi wa fedha na ugawaji wa rasilimali za ABAK."
+    },
+    "secretary": {
+      "title": "Katibu – Ndugu Athman Farsiy",
+      "name": "Ndugu Athman Farsiy",
+      "description": "Ndugu Athman ni Katibu wa ABAK, anayesimamia mawasiliano, hati, na kuhakikisha shughuli zote za shirika zinafanyika vizuri."
+    },
+    "members": {
+      "title": "Wajumbe wa Bodi",
+      "description": "Bodi ya ABAK pia inajumuisha wawakilishi kutoka maeneo mbalimbali ya Kenya, kuhakikisha uwakilishi jumuishi wa vituo tofauti vya jamii na sauti zao."
+    }
+  },
+  "contact": {
+    "sectionTitle": "Wasiliana Nasi",
+    "headline": "Tungependa Kusikia Kutoka Kwako",
+    "intro": "Iwe una maswali, maoni, au ungependa kushirikiana nasi—tafadhali wasiliana kupitia fomu au maelezo yaliyotolewa hapa chini.",
+    "info": {
+      "title": "Maelezo Yetu ya Mawasiliano",
+      "note": "Kwa maswali ya dharura, tafadhali tumia maelezo ya mawasiliano hapa chini.",
+      "addressTitle": "Anuani Yetu",
+      "address": "Nairobi, Kenya",
+      "emailTitle": "Barua Pepe Yetu",
+      "emails": ["ahlulbaytassembly9@gmail.com", "alisamojah@gmail.com"],
+      "phoneTitle": "Tupigie Simu",
+      "phones": ["+254 704 788924", "+254 722 338485"]
+    },
+    "mapTitle": "Tupate kwenye ramani"
+  },
+  "donate": {
+    "title": "Saidia Dhamira Yetu",
+    "description": "Mchango wako unasaidia ABAK kueneza mafundisho ya Ahlul Bayt (a.s), kuinua jamii, na kuwawezesha vizazi vijavyo kupitia elimu, huduma, na imani.",
+    "waysTitle": "Njia za Kuchangia",
+
+    "button": "Changia Sasa"
+  },
+  "events": {
+    "upcomingEvents": "Matukio Yajayo",
+    "joinCommunityInitiatives": "Jiunge na Juhudi Zetu za Jamii",
+    "stayUpdated": "Kuwa na taarifa za matukio ya ABAK kote Kenya—kiroho, kielimu, na kibinadamu.",
+    "eventDetails": {
+      "title": "Kichwa",
+      "date": "Tarehe",
+      "location": "Mahali",
+      "description": "Maelezo"
+    }
+  },
+  "programs": {
+    "objectivesTitle": "Malengo Yetu",
+    "mainObjectivesHeader": "Tunayo malengo 8 kuu",
+    "objectivesDescription": "Katika AhlulBayt Assembly of Kenya (ABAK), dhamira yetu inaongozwa na mfululizo wa mipango na malengo yaliyo wazi. Hii inalenga miongozo ya kiroho, maendeleo ya jamii, elimu, na uwezeshaji. Kila lengo linawakilisha hatua kuelekea jamii iliyoelimika, iliyo na umoja, na yenye huruma inayojaa mafundisho ya Ahlul Bayt (a.s)."
+  }
+}
