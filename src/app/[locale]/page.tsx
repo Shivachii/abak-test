@@ -7,6 +7,7 @@ import AnnouncementsSection from "./landing/Announcements";
 import { samplePosts } from "../../../lib/sampleposts";
 
 import LatestPosts from "@/components/Posts/Latest/LatestPosts";
+import FadeInSection from "@/components/Animations/FadeInSection";
 
 export default function Home() {
   return (
@@ -16,16 +17,21 @@ export default function Home() {
       {/* DONATE LINK */}
       <DonationCTA />
       <div className="flex flex-col gap-4 md:gap-8 p-4">
-        {/* ABOUT SECTION */}
-        <About />
-        {/* CORE PRINCIPLES */}
-        <CorePrinciples />
-        {/* OBJECTIVES/PROGRAMS */}
-        <ProgramsObjectives />
-        {/* Announcements */}
-        <AnnouncementsSection />
-        {/* Posts */}
-        <LatestPosts posts={samplePosts} />
+        <FadeInSection>
+          <About />
+        </FadeInSection>
+        <FadeInSection delay={0.1}>
+          <CorePrinciples />
+        </FadeInSection>
+        <FadeInSection delay={0.2}>
+          <ProgramsObjectives />
+        </FadeInSection>
+        <FadeInSection delay={0.3}>
+          <AnnouncementsSection />
+        </FadeInSection>
+        <FadeInSection delay={0.4}>
+          <LatestPosts posts={samplePosts} />
+        </FadeInSection>
       </div>
     </div>
   );

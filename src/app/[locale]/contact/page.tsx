@@ -1,3 +1,4 @@
+import Banner from "@/components/Banner/Banner";
 import ContactForm from "@/components/Forms/ContactForm";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -6,13 +7,11 @@ export default function ContactPage() {
   const t = useTranslations("contact");
 
   return (
-    <section className="w-full px-4 py-16 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col gap-16">
+    <section className="w-full  bg-white">
+      <Banner title={t("sectionTitle")} />
+      <div className="max-w-7xl px-4 py-16 mx-auto flex flex-col gap-16">
         {/* Header */}
         <div className="text-center px-4">
-          <h2 className="text-secondary text-sm md:text-base font-bold tracking-widest uppercase">
-            {t("sectionTitle")}
-          </h2>
           <p className="text-3xl md:text-4xl font-bold text-primary mt-2">
             {t("headline")}
           </p>

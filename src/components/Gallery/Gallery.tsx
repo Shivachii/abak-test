@@ -54,6 +54,7 @@ export default function GalleryViewer({ gallery }: { gallery: Gallery }) {
                     alt={media.caption || gallery.title}
                     fill
                     className="object-cover rounded-t-2xl"
+                    priority
                   />
                 </div>
               )}
@@ -65,7 +66,7 @@ export default function GalleryViewer({ gallery }: { gallery: Gallery }) {
                     href={media.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 underline text-sm"
+                    className="text-secondary underline text-sm"
                   >
                     View file
                   </Link>

@@ -9,11 +9,7 @@ const Hawza = () => {
 
   return (
     <section>
-      <Banner
-        title={t("title")}
-        subtitle={t("subtitle")}
-        backgroundImage="/hawza/IMG19.JPG"
-      />
+      <Banner title={t("title")} subtitle={t("subtitle")} />
       <div className="w-full px-4 py-12 bg-white text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* About Section */}

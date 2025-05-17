@@ -155,7 +155,6 @@ export default function Navbar() {
             href={"/donate"}
             className="bg-primary text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-primary/90 relative "
           >
-            <span className="animate-pulse transition duration-700 bg-red-500 h-3 w-3 rounded-full absolute translate-x-14 -translate-y-3" />
             Donate
           </Link>
           <LocaleSwitcher />

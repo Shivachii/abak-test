@@ -12,7 +12,11 @@ export default function ProjectsPage() {
 
   return (
     <section className="w-full max-w-7xl mx-auto ">
-      <Banner title={t("title")} subtitle={t("description")} />
+      <Banner
+        title={t("title")}
+        subtitle={t("description")}
+        backgroundImage=""
+      />
       <div className="px-4 py-16">
         {/* Project Cards */}
         <div className="grid gap-10 md:grid-cols-2">

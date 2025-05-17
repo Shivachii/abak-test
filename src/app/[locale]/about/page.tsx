@@ -3,6 +3,7 @@
 import Banner from "@/components/Banner/Banner";
 import LeadershipSection from "./Leadership";
 import { useTranslations } from "next-intl";
+import FadeInSection from "@/components/Animations/FadeInSection";
 
 export default function AboutPage() {
   const t = useTranslations("about");
@@ -26,20 +27,22 @@ export default function AboutPage() {
           </div>
 
           {/* Mission & Vision */}
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-secondary mb-2">
-                {t("missionTitle")}
-              </h3>
-              <p className="text-gray-700">{t("mission")}</p>
+          <FadeInSection delay={0.1}>
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
+                  {t("missionTitle")}
+                </h3>
+                <p className="text-gray-700">{t("mission")}</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
+                  {t("visionTitle")}
+                </h3>
+                <p className="text-gray-700">{t("vision")}</p>
+              </div>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-secondary mb-2">
-                {t("visionTitle")}
-              </h3>
-              <p className="text-gray-700">{t("vision")}</p>
-            </div>
-          </div>
+          </FadeInSection>
 
           <LeadershipSection />
         </div>
