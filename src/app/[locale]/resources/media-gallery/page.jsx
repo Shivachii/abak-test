@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { allGalleriesQuery } from "../../../../../../sanity/lib/queries";
-import { sanityFetch } from "../../../../../../sanity/lib/live";
+import { allGalleriesQuery } from "../../../../../sanity/lib/queries";
+import { sanityFetch } from "../../../../../sanity/lib/live";
 
 import { ArrowRight } from "lucide-react";
 

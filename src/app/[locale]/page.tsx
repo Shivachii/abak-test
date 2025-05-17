@@ -4,7 +4,7 @@ import About from "./landing/About";
 import DonationCTA from "@/components/CTA/DonationCTA";
 import ProgramsObjectives from "./landing/Programs";
 import AnnouncementsSection from "./landing/Announcements";
-import { samplePosts } from "../../../../lib/sampleposts";
+import { samplePosts } from "../../../lib/sampleposts";
 
 import LatestPosts from "@/components/Posts/Latest/LatestPosts";
 

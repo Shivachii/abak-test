@@ -9,7 +9,7 @@ import {
   XCircle,
   Loader2,
 } from "lucide-react";
-import { SanityLive } from "../../../../sanity/lib/live";
+import { SanityLive } from "../../../sanity/lib/live";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "../../i18n/routing";
