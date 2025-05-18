@@ -194,6 +194,7 @@
     "sectionTitle": "Contact Us",
     "headline": "We'd Love to Hear From You",
     "intro": "Whether you have questions, feedback, or would like to collaborate—reach out using the form or the contact details provided.",
+    "intro1": "Reach out to us for inquiries, support, or more information.",
     "info": {
       "title": "Our Contact Info",
       "note": "For time sensitive enquiries, please use the contact details below",
@@ -210,7 +211,8 @@
     "title": "Support Our Mission",
     "description": "Your donation helps ABAK spread the teachings of Ahlul Bayt (a.s), uplift communities, and empower future generations through education, service, and faith.",
     "waysTitle": "Ways to Donate",
-    "button": "Donate Now"
+    "button": "Donate Now",
+    "intro": "Support AhlulBayt Assembly of Kenya by donating through M-Pesa, bank transfer, or sponsoring our programs."
   },
   "Posts": {
     "latestPosts": "Latest Posts",

@@ -3,6 +3,54 @@ import React from "react";
 import { Activity, Binoculars, Target } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "hawza",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+    description: t("subtitle"),
+    keywords: [
+      "Hawza studies Kenya",
+      "Islamic seminary Nairobi",
+      "Shia education",
+      "AhlulBayt learning",
+      "Islamic curriculum Kenya",
+      "Religious education East Africa",
+    ],
+    openGraph: {
+      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+      description: t("subtitle"),
+      url: `${baseUrl}/${params.locale}/hawza`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/hawza/img29.jpg`,
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/hawza`,
+    },
+  };
+}
 
 const Hawza = () => {
   const t = useTranslations("hawza");

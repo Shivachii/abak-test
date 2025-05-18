@@ -1,9 +1,56 @@
-"use client";
-
 import Banner from "@/components/Banner/Banner";
 import LeadershipSection from "./Leadership";
 import { useTranslations } from "next-intl";
 import FadeInSection from "@/components/Animations/FadeInSection";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "about",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+    description: "Learn more about ABAK, our mission, vision, and leadership.",
+    keywords: [
+      "Islamic organization Kenya",
+      "AhlulBayt Kenya",
+      "Shia community Kenya",
+      "ABAK",
+      "Islamic charity Nairobi",
+      "Muslim NGO Kenya",
+    ],
+    openGraph: {
+      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+      description:
+        "Learn more about ABAK, our mission, vision, and leadership.",
+      url: `${baseUrl}/${params.locale}/about`,
+      type: "website",
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/about`,
+    },
+  };
+}
 
 export default function AboutPage() {
   const t = useTranslations("about");

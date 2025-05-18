@@ -1,7 +1,55 @@
-"use client";
-
 import { BookOpen } from "lucide-react";
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "QuranReflections",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("heroTitle")} | AhlulBayt Assembly of Kenya`,
+    description: t("heroSubtitle"),
+    keywords: [
+      "Quran reflections",
+      "Islamic teachings",
+      "Spirituality in the Quran",
+      "Patience in Islam",
+      "Trust in God",
+      "Forgiveness in the Quran",
+      "AhlulBayt Assembly",
+      "Islamic guidance Kenya",
+    ],
+    openGraph: {
+      title: `${t("heroTitle")} | AhlulBayt Assembly of Kenya`,
+      description: t("heroSubtitle"),
+      url: `${baseUrl}/${params.locale}/programs/quran-reflections`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/images/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: t("heroTitle"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/programs/quran-reflections`,
+    },
+  };
+}
 
 export default function QuranReflectionsPage() {
   const t = useTranslations("QuranReflections");

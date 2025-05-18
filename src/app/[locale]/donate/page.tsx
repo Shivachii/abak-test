@@ -1,5 +1,56 @@
 import { useTranslations } from "next-intl";
-import DonationDialog from "@/components/Dialogs/Donation";
+import DonationbyMpesaDialog from "@/components/Dialogs/DonationbyMpesa";
+
+import { type Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "donate",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+    description: t("intro"),
+    keywords: [
+      "donate ABAK",
+      "Islamic donation Kenya",
+      "charity M-Pesa Kenya",
+      "AhlulBayt donation",
+      "sponsor Islamic programs",
+      "Zakat Kenya",
+      "donate education Kenya",
+      "ABAK M-Pesa Paybill",
+    ],
+    openGraph: {
+      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+      description: t("intro"),
+      url: `${baseUrl}/${params.locale}/donate`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image.png`, // Customize with your OG image
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/donate`,
+    },
+  };
+}
 
 export default function DonatePage() {
   const t = useTranslations("donate");
@@ -23,8 +74,8 @@ export default function DonatePage() {
         </ul>
       </div>
 
-      <section className="text-center">
-        <DonationDialog />
+      <section className="flex gap-8">
+        <DonationbyMpesaDialog />
       </section>
     </section>
   );

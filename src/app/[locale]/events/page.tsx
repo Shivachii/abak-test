@@ -1,8 +1,54 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import { Calendar, MapPin } from "lucide-react";
 import Banner from "@/components/Banner/Banner";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "events",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("upcomingEvents")} | AhlulBayt Assembly of Kenya`,
+    description: t("stayUpdated"),
+    keywords: [
+      "events ABAK",
+      "Islamic events Kenya",
+      "community initiatives Kenya",
+      "AhlulBayt events",
+      "Kenya Islamic gatherings",
+      "ABAK community",
+    ],
+    openGraph: {
+      title: `${t("upcomingEvents")} | AhlulBayt Assembly of Kenya`,
+      description: t("stayUpdated"),
+      url: `${baseUrl}/${params.locale}/events`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: t("upcomingEvents"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/events`,
+    },
+  };
+}
 
 interface Event {
   title: string;

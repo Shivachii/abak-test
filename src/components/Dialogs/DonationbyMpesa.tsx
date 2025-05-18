@@ -9,15 +9,15 @@ import {
   DialogClose,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { DonationForm } from "@/components/Forms/DonationForm";
+import PaymentForm from "../Mpesa/PaymentForm";
 
-export default function DonationDialog() {
+export default function DonationbyMpesaDialog() {
   return (
     <>
       {/* Dialog */}
       <Dialog>
-        <DialogTrigger className="bg-primary text-gray-700 px-6 py-3 rounded-md shadow-md hover:bg-primary/90 transition">
-          Make a Donation
+        <DialogTrigger className="bg-secondary text-white px-6 py-3 rounded-md shadow-md hover:bg-secondary/80 transition">
+          Make a Donation via M-pesa
         </DialogTrigger>
         <DialogContent className="w-[90vw] max-w-xl mx-auto p-6 rounded-2xl max-h-[90vh] overflow-y-auto shadow-lg border">
           <DialogHeader>
@@ -28,7 +28,7 @@ export default function DonationDialog() {
           </DialogHeader>
 
           {/* Your form */}
-          <DonationForm />
+          <PaymentForm />
 
           {/* Optional close button inside dialog */}
           <DialogClose />

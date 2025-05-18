@@ -34,7 +34,7 @@ import {
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is too short"),
-  email: z.string().email("Invalid email"),
+  // email: z.string().email("Invalid email"),
   category: z.enum([
     "Family Iftar Food Basket",
     "Muharram Majlis",
@@ -60,7 +60,7 @@ export default function StickyDonateForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      email: "",
+      // email: "",
       category: undefined,
       amount: "",
     },
@@ -83,7 +83,7 @@ export default function StickyDonateForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="bg-white border shadow-xl rounded-xl px-4 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end"
+            className="bg-white border shadow-xl rounded-xl px-4 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end"
           >
             <FormField
               control={form.control}
@@ -99,7 +99,7 @@ export default function StickyDonateForm() {
               )}
             />
 
-            <FormField
+            {/* <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
@@ -115,7 +115,7 @@ export default function StickyDonateForm() {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
 
             <FormField
               control={form.control}
@@ -155,13 +155,11 @@ export default function StickyDonateForm() {
               name="amount"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Amount</FormLabel>
+                  <FormLabel>Amount (Ksh)</FormLabel>
                   <FormControl>
                     <Input type="number" placeholder="500" {...field} />
                   </FormControl>
-                  <FormDescription className="text-xs">
-                    Enter amount in Ksh or USD.
-                  </FormDescription>
+
                   <FormMessage />
                 </FormItem>
               )}
@@ -178,7 +176,7 @@ export default function StickyDonateForm() {
       <div className="block md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-primary text-white px-6 py-3 rounded-full shadow-md">
+            <Button className="bg-primary text-white px-6 py-3 rounded-md shadow-md">
               Donate
             </Button>
           </DialogTrigger>
@@ -206,7 +204,7 @@ export default function StickyDonateForm() {
                   )}
                 />
 
-                <FormField
+                {/* <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
@@ -222,7 +220,7 @@ export default function StickyDonateForm() {
                       <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
 
                 <FormField
                   control={form.control}

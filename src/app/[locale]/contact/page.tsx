@@ -1,7 +1,55 @@
 import Banner from "@/components/Banner/Banner";
 import ContactForm from "@/components/Forms/ContactForm";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "contact",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("sectionTitle")} | AhlulBayt Assembly of Kenya`,
+    description: t("intro1"),
+    keywords: [
+      "contact ABAK",
+      "AhlulBayt Kenya contact",
+      "Islamic organization Kenya",
+      "Shia NGO Kenya",
+      "Islamic charity Nairobi",
+      "ABAK email phone address",
+    ],
+    openGraph: {
+      title: `${t("sectionTitle")} | AhlulBayt Assembly of Kenya`,
+      description: t("intro1"),
+      url: `${baseUrl}/${params.locale}/contact`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image.png`, // customize this path
+          width: 1200,
+          height: 630,
+          alt: t("sectionTitle"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/contact`,
+    },
+  };
+}
 
 export default function ContactPage() {
   const t = useTranslations("contact");

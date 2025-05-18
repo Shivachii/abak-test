@@ -1,10 +1,58 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import Banner from "@/components/Banner/Banner";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "Projects",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+    description: t("description"),
+    keywords: [
+      "ABAK Projects",
+      "Islamic education",
+      "Hawza Kenya",
+      "Free clinics",
+      "Media da'wah",
+      "Community programs",
+      "AhlulBayt Assembly",
+      "Social impact Islam",
+    ],
+    openGraph: {
+      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
+      description: t("description"),
+      url: `${baseUrl}/${params.locale}/programs/projects`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/programs/projects`,
+    },
+  };
+}
 
 export default function ProjectsPage() {
   const t = useTranslations("Projects");

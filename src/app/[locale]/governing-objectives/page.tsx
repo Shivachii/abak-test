@@ -1,6 +1,53 @@
 import { useTranslations } from "next-intl";
 import Banner from "@/components/Banner/Banner";
 import { ObjectivesTabs } from "@/components/Tabs/Tabs";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "programs",
+  });
+
+  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
+
+  return {
+    title: `${t("objectivesTitle")} | AhlulBayt Assembly of Kenya`,
+    description: t("objectivesDescription"),
+    keywords: [
+      "Islamic programs Kenya",
+      "community objectives ABAK",
+      "AhlulBayt programs",
+      "education Kenya",
+      "Islamic community development",
+    ],
+    openGraph: {
+      title: `${t("objectivesTitle")} | AhlulBayt Assembly of Kenya`,
+      description: "Get to know about our governing objectives",
+      url: `${baseUrl}/${params.locale}/programs/objectives`,
+      siteName: "AhlulBayt Assembly of Kenya",
+      locale: params.locale,
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/images/opengraph-image.png`, // Your OG image path
+          width: 1200,
+          height: 630,
+          alt: t("objectivesTitle"),
+        },
+      ],
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${baseUrl}/${params.locale}/programs/objectives`,
+    },
+  };
+}
 
 export default function ProgramsObjectives() {
   const t = useTranslations();
