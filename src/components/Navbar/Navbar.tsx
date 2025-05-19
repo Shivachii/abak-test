@@ -13,7 +13,7 @@ import {
 import Sidebar from "./Sidebar";
 import { usePathname } from "next/navigation";
 // import LocaleSwitcher from "../LocaleComps/LocaleSwitcher";
-import LocaleSwitcher from "../Buttons/LocaleSwitcher";
+import { LanguagePicker } from "../Buttons/LocaleSwitcher";
 
 interface LinksProps {
   name: string;
@@ -157,7 +157,7 @@ export default function Navbar() {
           >
             Donate
           </Link>
-          <LocaleSwitcher />
+          <LanguagePicker />
         </div>
       </div>
 
