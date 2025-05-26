@@ -33,10 +33,10 @@ export default function FadeInSection({
       ref={ref}
       initial="hidden"
       animate={controls}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 1 }}
       variants={{
-        hidden: { opacity: 0, x: isMobile ? 0 : 50 },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
       }}
     >
       {children}

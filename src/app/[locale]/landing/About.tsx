@@ -26,13 +26,13 @@ export default function About() {
 
         {/* Image Section */}
         <div className="w-full md:w-1/2">
-          <div className="relative aspect-square md:aspect-video w-full h-auto rounded-md overflow-hidden shadow-md">
+          <div className="relative  w-full h-[350px] rounded-md overflow-hidden shadow-md">
             <Image
               src="/mosqueteachings.jpeg"
               alt="teachings in a mosque"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-center"
+              className="object-cover object-center "
               priority
             />
           </div>

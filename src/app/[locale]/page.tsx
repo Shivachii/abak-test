@@ -17,9 +17,9 @@ export default function Home() {
       {/* DONATE LINK */}
       <DonationCTA />
       <div className="flex flex-col gap-4 md:gap-8 p-4">
-        <FadeInSection>
-          <About />
-        </FadeInSection>
+        <About />
+        {/* <FadeInSection>
+        </FadeInSection> */}
         <FadeInSection delay={0.1}>
           <CorePrinciples />
         </FadeInSection>
