@@ -13,8 +13,10 @@ import {
 import { usePathname } from "next/navigation";
 import { NavbarLogoSmall } from "../Logos/Logo";
 import { LanguagePicker } from "../Buttons/LocaleSwitcher";
+import { useTranslations } from "next-intl";
 
 const Sidebar = () => {
+  const t = useTranslations("sidebar");
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const pathName = usePathname();
@@ -46,11 +48,11 @@ const Sidebar = () => {
   };
 
   const mainsideLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Objectives", href: "/governing-objectives" },
-    { name: "Programs", href: "/programs" },
-    { name: "Events", href: "/events" },
+    { name: t("home"), href: "/" },
+    { name: t("about"), href: "/about" },
+    { name: t("objectives"), href: "/governing-objectives" },
+    { name: t("programs"), href: "/programs" },
+    { name: t("events"), href: "/events" },
   ];
 
   return (
@@ -120,7 +122,7 @@ const Sidebar = () => {
                   pathName === "/contact" ? "text-primary font-bold" : ""
                 }`}
               >
-                Contact
+                {t("contact")}
               </Link>
             </motion.li>
           </ul>
@@ -131,7 +133,7 @@ const Sidebar = () => {
             href={"/donate"}
             className="bg-primary px-2 py-1 rounded-md animate-bounce duration-1000 transition-all hover:bg-primary/90 text-white font-bold flex items-center justify-center h-10 w-80"
           >
-            Donate
+            {t("donate")}
           </Link>
         </div>
 
@@ -215,6 +217,8 @@ const Sidebar = () => {
 export default Sidebar;
 
 function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
+  const t = useTranslations("sidebar");
+
   const [openSection, setOpenSection] = useState<null | string>(null);
 
   const pathName = usePathname();
@@ -229,7 +233,7 @@ function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
           }
           className="text-left w-full font-semibold text-gray-800 flex justify-between items-center"
         >
-          Islamic Learning
+          {t("islamicLearning")}
           <span>{openSection === "learning" ? "−" : "+"}</span>
         </button>
         <motion.ul
@@ -250,20 +254,20 @@ function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
                   : ""
               }`}
             >
-              Qur&apos;an Reflections
+              {t("quranReflections")}
             </Link>
           </li>
           <li>
             <Link
-              href="/islamic-learning/hawza-seminary"
+              href="/islamic-learning/hawza-seyyidah"
               onClick={toggleSidebar}
               className={`hover:underline  text-gray-800 ${
-                pathName === "/islamic-learning/hawza-seminary"
+                pathName === "/islamic-learning/hawza-seyyidah"
                   ? "text-primary font-bold"
                   : ""
               }`}
             >
-              Hawza Seminary
+              {t("hawza")}
             </Link>
           </li>
         </motion.ul>
@@ -277,7 +281,7 @@ function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
           }
           className="text-left w-full font-semibold text-gray-800 flex justify-between items-center"
         >
-          Resources
+          {t("resources")}
           <span>{openSection === "resources" ? "−" : "+"}</span>
         </button>
         <motion.ul
@@ -298,20 +302,20 @@ function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
                   : ""
               }`}
             >
-              Publications
+              {t("publications")}
             </Link>
           </li>
           <li>
             <Link
-              href="/resources/media-gallery"
+              href="/resources/audio-visual"
               onClick={toggleSidebar}
               className={`hover:underline  text-gray-800 ${
-                pathName === "/resources/media-gallery"
+                pathName === "/resources/audio-visual"
                   ? "text-primary font-bold"
                   : ""
               }`}
             >
-              Media Gallery
+              {t("audioVisual")}
             </Link>
           </li>
         </motion.ul>

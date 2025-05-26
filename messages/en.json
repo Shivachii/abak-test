@@ -1,7 +1,94 @@
 {
-  "LocaleSwitcher": {
-    "label": "Select Language",
-    "locale": "{locale, select, en {English} sw {Kiswahili} ar {Arabic} other {Unknown}}"
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "ourWork": "Our Work",
+    "islamicLearning": "Islamic Learning",
+    "resources": "Resources",
+    "contact": "Contact Us",
+    "volunteer": "Volunteer",
+    "donate": "Donate",
+    "email": "ahlulbaytassembly9@gmail.com",
+    "phone": "+254 704 788924",
+    "dropdown": {
+      "hawza": "Hawza Seyyidah Zeinab",
+      "quran": "Qur'an Reflections"
+    },
+    "islamicLearningDropdown": {
+      "hawza": "Hawza Seyyidah Zeinab",
+      "quranReflections": "Qur'an Reflections"
+    },
+    "ourWorkDropdown": {
+      "objectives": "Objectives",
+      "objectivesDesc": "Explore ABAK’s foundational goals and guiding principles.",
+      "programs": "Programs",
+      "programsDesc": "Learn about our ongoing initiatives and community impact.",
+      "events": "Events",
+      "eventsDesc": "Stay informed about our past, current, and upcoming events."
+    },
+    "resourcesDropdown": {
+      "publications": "Publications",
+      "audioVisual": "Audio-Visual"
+    },
+    "descriptions": {
+      "objectives": "Explore ABAK’s foundational goals and guiding principles.",
+      "programs": "Learn about our ongoing initiatives and community impact.",
+      "events": "Stay informed about our past, current, and upcoming events."
+    }
+  },
+
+  "sidebar": {
+    "home": "Home",
+    "about": "About Us",
+    "objectives": "Objectives",
+    "programs": "Programs",
+    "events": "Events",
+    "contact": "Contact Us",
+    "donate": "Donate",
+    "officialInfo": "OFFICIAL INFO",
+    "islamicLearning": "Islamic Learning",
+    "quranReflections": "Qur'an Reflections",
+    "hawza": "Hawza Seyyidah Zeinab",
+    "resources": "Resources",
+    "publications": "Publications",
+    "audioVisual": "Audio-Visual"
+  },
+
+  "footer": {
+    "desc": " ABAK (AhlulBayt Assembly of Kenya) is committed to spreading the noble teachings of Islam through education, community service, and interfaith unity.",
+    "quickLinks": "Quick Links",
+    "contactUs": " Contact Us",
+    "links": {
+      "about": "About Us",
+      "programs": "Programs",
+      "events": "Events",
+      "blog": "Blog",
+      "contact": "Contact Us",
+      "donate": "Donate",
+      "volunteer": "Volunteer"
+    }
+  },
+
+  "hero": {
+    "heading": "The Ahlul-Bayt Assembly of Kenya",
+    "slides": [
+      {
+        "title": "Guided by the Teachings of the Prophet (s.a.w.w) and Ahlul Bayt (a.s)",
+        "description": "ABAK is committed to spreading authentic Islamic knowledge and values throughout Kenya.",
+        "ctaText": "Learn about ABAK"
+      },
+      {
+        "title": "Sayyedah Zeinab",
+        "description": "Our Hawza Seminary shapes future Islamic scholars with deep spiritual, intellectual, and moral training to serve the Ummah with wisdom and sincerity.",
+        "ctaText": "Learn about our Sayyedah Zeinab"
+      },
+      {
+        "title": "From Education to Social Welfare",
+        "description": "ABAK supports Shia communities with learning institutions, content, and vital services.",
+        "ctaText": "See Our Community Work"
+      }
+    ],
+    "donate": "Help us make a difference"
   },
 
   "About": {
@@ -13,7 +100,8 @@
     "joinUs": "Join Us",
     "latestNews": "Latest News",
     "readMore": "Read More",
-    "aboutUs": "About Us"
+    "aboutUs": "About Us",
+    "linkText": "Learn more about us"
   },
 
   "Announcements": {

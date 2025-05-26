@@ -21,7 +21,7 @@ export default function About() {
             <span className="font-semibold">{t("intromid")}</span>.{" "}
             {t("intro2")}
           </p>
-          <UnderlineLink linkText="Learn more about us" href="about" />
+          <UnderlineLink linkText={t("linkText")} href="about" />
         </div>
 
         {/* Image Section */}

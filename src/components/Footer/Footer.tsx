@@ -8,8 +8,10 @@ import {
   Mail,
 } from "lucide-react";
 import { FooterLogo } from "../Logos/Logo";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer className="bg-secondary text-white px-4 py-10 mt-16">
       <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-3">
@@ -18,25 +20,21 @@ export default function Footer() {
           <Link href="/">
             <FooterLogo />
           </Link>
-          <p className="text-sm leading-relaxed text-white">
-            ABAK (AhlulBayt Assembly of Kenya) is committed to spreading the
-            noble teachings of Islam through education, community service, and
-            interfaith unity.
-          </p>
+          <p className="text-sm leading-relaxed text-white">{t("desc")}</p>
         </div>
 
         {/* Navigation Links */}
         <div className="flex flex-col gap-2">
           <h4 className="font-semibold text-lg mb-2 text-tertiary">
-            Quick Links
+            {t("quickLinks")}
           </h4>
           {[
-            { name: "About", href: "/about" },
-            { name: "Programs", href: "/programs" },
-            { name: "Events", href: "/events" },
-            { name: "Blog", href: "/blog" },
-            { name: "Donate", href: "/donate" },
-            { name: "Contact", href: "/contact" },
+            { name: `${t("links.about")}`, href: "/about" },
+            { name: `${t("links.programs")}`, href: "/programs" },
+            { name: `${t("links.events")}`, href: "/events" },
+            { name: `${t("links.blog")}`, href: "/blog" },
+            { name: `${t("links.donate")}`, href: "/donate" },
+            { name: `${t("links.contact")}`, href: "/contact" },
           ].map((link) => (
             <Link
               key={link.name}
@@ -51,7 +49,7 @@ export default function Footer() {
         {/* Contact Info & Socials */}
         <div className="flex flex-col gap-4">
           <h4 className="font-semibold text-lg mb-2 text-tertiary">
-            Contact Us
+            {t("contactUs")}
           </h4>
           <p className="text-sm text-white space-y-2">
             <Link

@@ -6,37 +6,26 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
     image: "/mosqueteachings.jpeg",
-    title:
-      "Guided by the Teachings of the Prophet (s.a.w.w) and Ahlul Bayt (a.s)",
-    description:
-      "ABAK is committed to spreading authentic Islamic knowledge and values throughout Kenya.",
-    ctaText: "Learn about ABAK",
     ctaLink: "/about",
   },
   {
     image: "/hawza.jpg",
-    title: "Sayyedah Zeinab",
-    description:
-      "Our Hawza Seminary shapes future Islamic scholars with deep spiritual, intellectual, and moral training to serve the Ummah with wisdom and sincerity.",
-    ctaText: "Learn about our Sayyedah Zeinab",
     ctaLink: "/islamic-learning/hawza-seyyidah",
   },
-
   {
     image: "/mashallah.jpg",
-    title: "From Education to Social Welfare",
-    description:
-      "ABAK supports Shia communities with learning institutions, content, and vital services.",
-    ctaText: "See Our Community Work",
     ctaLink: "/programs",
   },
 ];
 
 export default function HeroCarousel() {
+  const t = useTranslations("hero");
+
   return (
     <div className="relative w-full h-[70vh] md:h-[80vh] xl:h-[90vh]">
       <Swiper
@@ -59,22 +48,22 @@ export default function HeroCarousel() {
             <div className="relative w-full h-full">
               <Image
                 src={slide.image}
-                alt={slide.title}
+                alt={t(`slides.${index}.title`)}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                className="brightness-[0.4] object-cover object-center "
+                className="brightness-[0.4] object-cover object-center"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col  justify-center max-w-3xl px-4 md:mx-2 text-white gap-4">
+              <div className="absolute inset-0 flex flex-col justify-center max-w-3xl px-4 md:mx-2 text-white gap-4">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-                  The Ahlul-Bayt Assembly of Kenya
+                  {t("heading")}
                 </h1>
                 <span className="h-0.5 w-[310px] md:w-[620px] bg-primary" />
                 <h2 className="text-xl md:text-3xl lg:text-5xl font-bold my-2 md:my-4">
-                  {slide.title}
+                  {t(`slides.${index}.title`)}
                 </h2>
                 <p className="text-base md:text-lg lg:text-xl">
-                  {slide.description}
+                  {t(`slides.${index}.description`)}
                 </p>
                 <div className="flex gap-4 items-center">
                   {slide.ctaLink && (
@@ -82,14 +71,14 @@ export default function HeroCarousel() {
                       href={slide.ctaLink}
                       className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold hidden md:block md:px-6 md:py-3 rounded-sm shadow-lg transition-all duration-300"
                     >
-                      {slide.ctaText}
+                      {t(`slides.${index}.ctaText`)}
                     </Link>
                   )}
                   <Link
                     href="/donate"
                     className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold p-3 md:px-6 md:py-3 rounded-sm shadow-lg transition-all duration-300"
                   >
-                    Help us make a difference
+                    {t("donate")}
                   </Link>
                 </div>
               </div>

@@ -4,6 +4,98 @@
     "locale": "{locale, select, en {Kiingereza} sw {Kiswahili} ar {Kiarabu} other {Haijulikani}}"
   },
 
+  "nav": {
+    "home": "Nyumbani",
+    "about": "Kuhusu Sisi",
+    "ourWork": "Kazi Yetu",
+    "islamicLearning": "Elimu ya Kiislamu",
+    "resources": "Rasilimali",
+    "contact": "Wasiliana Nasi",
+    "volunteer": "Jitolee",
+    "donate": "Changia",
+    "email": "ahlulbaytassembly9@gmail.com",
+    "phone": "+254 704 788924",
+    "dropdown": {
+      "hawza": "Hawza Seyyidah Zeinab",
+      "quran": "Tafakuri ya Qur'ani"
+    },
+    "islamicLearningDropdown": {
+      "hawza": "Hawza Seyyidah Zeinab",
+      "quranReflections": "Tafakuri ya Qur'ani"
+    },
+    "ourWorkDropdown": {
+      "objectives": "Malengo",
+      "objectivesDesc": "Chunguza malengo ya msingi na kanuni za mwongozo za ABAK.",
+      "programs": "Mikakati",
+      "programsDesc": "Jifunze kuhusu juhudi zetu zinazoendelea na athari kwa jamii.",
+      "events": "Matukio",
+      "eventsDesc": "Kaa umejulishwa kuhusu matukio yetu ya zamani, ya sasa, na yajayo."
+    },
+    "resourcesDropdown": {
+      "publications": "Machapisho",
+      "audioVisual": "Sauti na Picha"
+    },
+    "descriptions": {
+      "objectives": "Chunguza malengo ya msingi na kanuni za mwongozo za ABAK.",
+      "programs": "Jifunze kuhusu juhudi zetu zinazoendelea na athari kwa jamii.",
+      "events": "Kaa umejulishwa kuhusu matukio yetu ya zamani, ya sasa, na yajayo."
+    }
+  },
+
+  "sidebar": {
+    "home": "Nyumbani",
+    "about": "Kuhusu Sisi",
+    "objectives": "Malengo",
+    "programs": "Mipango",
+    "events": "Matukio",
+    "contact": "Wasiliana Nasi",
+    "donate": "Changia",
+    "officialInfo": "TAARIFA RASMI",
+    "islamicLearning": "Elimu ya Kiislamu",
+    "quranReflections": "Tafakari za Qur'ani",
+    "hawza": "Hawza Seyyidah Zeinab",
+    "resources": "Rasilimali",
+    "publications": "Machapisho",
+    "audioVisual": "Sauti na Picha"
+  },
+
+  "footer": {
+    "desc": "ABAK (Jumuiya ya AhlulBayt ya Kenya) imejitolea kueneza mafundisho matukufu ya Uislamu kupitia elimu, huduma za kijamii, na mshikamano wa kidini.",
+    "quickLinks": "Viungo vya Haraka",
+    "contactUs": "Wasiliana Nasi",
+    "links": {
+      "about": "Kuhusu Sisi",
+      "programs": "Mikakati",
+      "events": "Matukio",
+      "blog": "Machapisho",
+      "contact": "Wasiliana Nasi",
+      "donate": "Changia",
+      "volunteer": "Jitolee"
+    }
+  },
+
+  "hero": {
+    "heading": "Baraza la Ahlul-Bayt Kenya",
+    "slides": [
+      {
+        "title": "Tumeongozwa na Mafundisho ya Mtume (s.a.w.w) na Ahlul Bayt (a.s)",
+        "description": "ABAK imejitolea kusambaza maarifa ya Kiislamu ya kweli na maadili kote Kenya.",
+        "ctaText": "Jifunze kuhusu ABAK"
+      },
+      {
+        "title": "Sayyedah Zeinab",
+        "description": "Seminari yetu ya Hawza inalea wasomi wa Kiislamu wa baadaye kwa mafunzo ya kiroho, kielimu, na kimaadili ili kuitumikia Ummah kwa hekima na uaminifu.",
+        "ctaText": "Jifunze kuhusu Sayyedah Zeinab"
+      },
+      {
+        "title": "Kutoka Elimu hadi Ustawi wa Jamii",
+        "description": "ABAK inaunga mkono jamii za Kishia kupitia taasisi za elimu, maudhui, na huduma muhimu.",
+        "ctaText": "Tazama Kazi Yetu ya Jamii"
+      }
+    ],
+    "donate": "Tusaidie kuleta mabadiliko"
+  },
+
   "About": {
     "title": "Jumuiya ya AhlulBayt ya Kenya",
     "intro": "Jumuiya ya Ahlul Bayt (a.s) ya Kenya (ABAK) ni shirika lisilo la faida linalojitolea kueneza mafundisho ya Uislamu yaliyofundishwa na Ahlul Bayt (a.s), kizazi kitakatifu cha Mtume wetu mpenzi",
@@ -13,7 +105,8 @@
     "joinUs": "Jiunge Nasi",
     "latestNews": "Habari Mpya",
     "readMore": "Soma Zaidi",
-    "aboutUs": "Kuhusu Sisi"
+    "aboutUs": "Kuhusu Sisi",
+    "linkText": "Jifunze zaidi kuhusu sisi"
   },
 
   "Announcements": {
@@ -210,7 +303,7 @@
     "communityNewsUpdates": "Habari na Sasisho za Jamii",
     "description": "Jua habari mpya, makala, na sasisho kutoka kwa jamii yetu. Tembelea blogu yetu kwa maarifa na hadithi zinazokuhusu.",
     "readMore": "Soma zaidi",
-    "comingSoon": "Machapisho Yanayokuja Hayaendi Saa!",
+    "comingSoon": "Machapisho Yaja!",
     "comingSoonDescription": "Tunafanya kazi kwa bidii kuleta maudhui mapya kwako. Endelea kuwa nasi kwa sasisho za kusisimua."
   },
   "donate": {

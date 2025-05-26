@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import Sidebar from "./Sidebar";
 import { usePathname } from "next/navigation";
-// import LocaleSwitcher from "../LocaleComps/LocaleSwitcher";
 import { LanguagePicker } from "../Buttons/LocaleSwitcher";
+import { useTranslations } from "next-intl";
 
 interface LinksProps {
   name: string;
@@ -21,86 +21,60 @@ interface LinksProps {
   description?: string;
 }
 
-const NavLinks: LinksProps[] = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  {
-    name: "Our Work",
-    href: "#",
-  },
-
-  {
-    name: "Islamic Learning",
-    href: "#",
-  },
-  { name: "Resources", href: "/resources" },
-
-  { name: "Contact Us", href: "/contact" },
-  // {
-  //   name: "Support Us",
-  //   href: "#",
-  // },
-];
-
-// const supportUsLinks: LinksProps[] = [
-//   {
-//     name: "Donate",
-//     href: "/donate",
-//     description:
-//       "Contribute towards our $10,000 monthly goal and uplift communities.",
-//   },
-//   {
-//     name: "Volunteer",
-//     href: "/volunteer",
-//     description:
-//       "Join our mission—share your time, skills, and passion for meaningful impact.",
-//   },
-// ];
-
-const resourceLinks: LinksProps[] = [
-  {
-    name: "Publications",
-    href: "/resources/publications",
-  },
-  {
-    name: "Audio-Visual",
-    href: "/resources/audio-visual",
-  },
-];
-
-const islamicLearningLinks: LinksProps[] = [
-  { name: "Hawza Seyyidah Zeinab", href: "/islamic-learning/hawza-seyyidah" },
-  {
-    name: "Qur'an Reflections",
-    href: "/islamic-learning/quran-reflections",
-  },
-];
-
-const ourWorkLinks: LinksProps[] = [
-  {
-    name: "Objectives",
-    href: "/governing-objectives",
-    description: "Explore ABAK’s foundational goals and guiding principles.",
-  },
-  {
-    name: "Programs",
-    href: "/programs",
-    description: "Learn about our ongoing initiatives and community impact.",
-  },
-  {
-    name: "Events",
-    href: "/events",
-    description: "Stay informed about our past, current, and upcoming events.",
-  },
-];
-
 export default function Navbar() {
+  const t = useTranslations("nav");
+  const NavLinks: LinksProps[] = [
+    { name: t("home"), href: "/" },
+    { name: t("about"), href: "/about" },
+    { name: t("ourWork"), href: "#" },
+    { name: t("islamicLearning"), href: "#" },
+    { name: t("resources"), href: "/resources" },
+    { name: t("contact"), href: "/contact" },
+  ];
+
+  const resourceLinks: LinksProps[] = [
+    {
+      name: t("resourcesDropdown.publications"),
+      href: "/resources/publications",
+    },
+    {
+      name: t("resourcesDropdown.audioVisual"),
+      href: "/resources/audio-visual",
+    },
+  ];
+
+  const islamicLearningLinks: LinksProps[] = [
+    {
+      name: t("islamicLearningDropdown.hawza"),
+      href: "/islamic-learning/hawza-seyyidah",
+    },
+    {
+      name: t("islamicLearningDropdown.quranReflections"),
+      href: "/islamic-learning/quran-reflections",
+    },
+  ];
+
+  const ourWorkLinks: LinksProps[] = [
+    {
+      name: t("ourWorkDropdown.objectives"),
+      href: "/governing-objectives",
+      description: t("ourWorkDropdown.objectivesDesc"),
+    },
+    {
+      name: t("ourWorkDropdown.programs"),
+      href: "/programs",
+      description: t("ourWorkDropdown.programsDesc"),
+    },
+    {
+      name: t("ourWorkDropdown.events"),
+      href: "/events",
+      description: t("ourWorkDropdown.eventsDesc"),
+    },
+  ];
   const pathname = usePathname();
   return (
     <header className="w-full">
-      {/* TOP BAR: Only visible on md and above */}
       <div className="hidden md:flex justify-between items-center px-8 py-2 bg-secondary text-white text-sm">
-        {/* Social Links */}
         <div className="flex items-center gap-4">
           <Link
             href="https://www.facebook.com/+254704788924"
@@ -132,7 +106,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Contact Info & Donate */}
         <div className="flex items-center gap-4">
           <Link
             href="mailto:ahlulbaytassembly9@gmail.com"
@@ -149,21 +122,19 @@ export default function Navbar() {
             href={"/volunteer"}
             className="bg-primary text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-primary/90 transition"
           >
-            Volunteer
+            {t("volunteer")}
           </Link>
           <Link
             href={"/donate"}
             className="bg-primary text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-primary/90 relative "
           >
-            Donate
+            {t("donate")}
           </Link>
           <LanguagePicker />
         </div>
       </div>
 
-      {/* MAIN NAVBAR */}
       <div className="flex items-center justify-between px-4 py-4 bg-white md:px-8">
-        {/* Logo */}
         <Link href="/" className="flex items-center">
           <div className="hidden md:block">
             <NavbarLogo />
@@ -173,12 +144,11 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Nav Links */}
         <nav className="hidden md:flex gap-8 relative">
           {NavLinks.map((link, i) => (
             <div
               key={i}
-              className="p-1 group relative rounded-sm  hover:bg-gray-100 transition-all "
+              className="p-1 group relative rounded-sm hover:bg-gray-100 transition-all"
             >
               <Link href={link.href} className="relative">
                 <p
@@ -189,11 +159,9 @@ export default function Navbar() {
                   }`}
                 >
                   <span>{link.name}</span>
-                  {/* Display ChevronDown only for dropdown items */}
-                  {(link.name === "Islamic Learning" ||
-                    link.name === "Support Us" ||
-                    link.name === "Our Work" ||
-                    link.name === "Resources") && (
+                  {(link.name === t("islamicLearning") ||
+                    link.name === t("ourWork") ||
+                    link.name === t("resources")) && (
                     <ChevronDown
                       width={15}
                       height={15}
@@ -203,63 +171,27 @@ export default function Navbar() {
                 </p>
               </Link>
 
-              {/* Dropdown for "Support Us" */}
-              {/* {link.name === "Support Us" && (
-                <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -right-5 top-8 text-black z-50">
-                  {supportUsLinks.map((subLink, x) => (
-                    <Link
-                      href={subLink.href}
-                      key={x}
-                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100  ${
-                        pathname === subLink.href
-                          ? "bg-slate-100 "
-                          : "text-black"
-                      }  hover:bg-slate-100`}
-                    >
-                      <div className="flex flex-col gap-1 cursor-pointer ">
-                        <span
-                          className={`whitespace-nowrap  ${
-                            pathname === subLink.href
-                              ? "text-primary font-semibold "
-                              : "text-black"
-                          }  hover:bg-slate-100`}
-                        >
-                          {subLink.name}
-                        </span>
-                        <span className="text-[12px] text-gray-500 tracking-tight">
-                          {subLink.description}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )} */}
-
-              {/* Dropdown for "Islamic Learning" */}
-              {link.name === "Islamic Learning" && (
+              {link.name === t("islamicLearning") && (
                 <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-8 text-black z-50">
                   {islamicLearningLinks.map((subLink, a) => (
                     <Link
                       href={subLink.href}
                       key={a}
-                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100  ${
+                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100 ${
                         pathname === subLink.href
-                          ? "bg-slate-100 "
+                          ? "bg-slate-100"
                           : "text-black"
-                      }  hover:bg-slate-100`}
+                      }`}
                     >
-                      <div className="flex flex-col gap-1 cursor-pointer ">
+                      <div className="flex flex-col gap-1 cursor-pointer">
                         <span
-                          className={`whitespace-nowrap  ${
+                          className={`whitespace-nowrap ${
                             pathname === subLink.href
-                              ? "text-primary font-semibold "
+                              ? "text-primary font-semibold"
                               : "text-black"
-                          }  hover:bg-slate-100`}
+                          }`}
                         >
                           {subLink.name}
-                        </span>
-                        <span className="text-[12px] text-gray-500 tracking-tight">
-                          {subLink.description}
                         </span>
                       </div>
                     </Link>
@@ -267,26 +199,25 @@ export default function Navbar() {
                 </div>
               )}
 
-              {/* Dropdown for "Our Work" */}
-              {link.name === "Our Work" && (
+              {link.name === t("ourWork") && (
                 <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-8 text-black z-50">
                   {ourWorkLinks.map((subLink, y) => (
                     <Link
                       href={subLink.href}
                       key={y}
-                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100  ${
+                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100 ${
                         pathname === subLink.href
-                          ? "bg-slate-100 "
+                          ? "bg-slate-100"
                           : "text-black"
-                      }  hover:bg-slate-100`}
+                      }`}
                     >
-                      <div className="flex flex-col gap-1 cursor-pointer ">
+                      <div className="flex flex-col gap-1 cursor-pointer">
                         <span
-                          className={`whitespace-nowrap  ${
+                          className={`whitespace-nowrap ${
                             pathname === subLink.href
-                              ? "text-primary font-semibold "
+                              ? "text-primary font-semibold"
                               : "text-black"
-                          }  hover:bg-slate-100`}
+                          }`}
                         >
                           {subLink.name}
                         </span>
@@ -299,31 +230,27 @@ export default function Navbar() {
                 </div>
               )}
 
-              {/* Dropdown for "Resources" */}
-              {link.name === "Resources" && (
+              {link.name === t("resources") && (
                 <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-7 text-black z-50">
                   {resourceLinks.map((subLink, v) => (
                     <Link
                       href={subLink.href}
                       key={v}
-                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100  ${
+                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100 ${
                         pathname === subLink.href
-                          ? "bg-slate-100 "
+                          ? "bg-slate-100"
                           : "text-black"
-                      }  hover:bg-slate-100`}
+                      }`}
                     >
-                      <div className="flex flex-col gap-1 cursor-pointer ">
+                      <div className="flex flex-col gap-1 cursor-pointer">
                         <span
-                          className={`whitespace-nowrap  ${
+                          className={`whitespace-nowrap ${
                             pathname === subLink.href
-                              ? "text-primary font-semibold "
+                              ? "text-primary font-semibold"
                               : "text-black"
-                          }  hover:bg-slate-100`}
+                          }`}
                         >
                           {subLink.name}
-                        </span>
-                        <span className="text-[12px] text-gray-500 tracking-tight">
-                          {subLink.description}
                         </span>
                       </div>
                     </Link>
@@ -334,7 +261,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Sidebar Toggle on Mobile */}
         <div className="md:hidden">
           <Sidebar />
         </div>
