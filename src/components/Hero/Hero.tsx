@@ -69,14 +69,14 @@ export default function HeroCarousel() {
                   {slide.ctaLink && (
                     <Link
                       href={slide.ctaLink}
-                      className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold hidden md:block md:px-6 md:py-3 rounded-sm shadow-lg transition-all duration-300"
+                      className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold  md:px-6 md:py-3 rounded-sm shadow-lg transition-all duration-300"
                     >
                       {t(`slides.${index}.ctaText`)}
                     </Link>
                   )}
                   <Link
                     href="/donate"
-                    className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold p-3 md:px-6 md:py-3 rounded-sm shadow-lg transition-all duration-300"
+                    className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold hidden md:block p-3 md:px-6 md:py-3 rounded-sm shadow-lg transition-all duration-300"
                   >
                     {t("donate")}
                   </Link>
