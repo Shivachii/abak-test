@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { NavbarLogoSmall } from "../Logos/Logo";
+import { LanguagePicker } from "../Buttons/LocaleSwitcher";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,14 +55,17 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Hamburger Button */}
-      <button
-        onClick={toggleSidebar}
-        aria-label="Toggle Sidebar"
-        className="p-4"
-      >
-        <Menu />
-      </button>
+      <div className="flex gap-4 items-center">
+        <LanguagePicker />
+        {/* Hamburger Button */}
+        <button
+          onClick={toggleSidebar}
+          aria-label="Toggle Sidebar"
+          className="p-4"
+        >
+          <Menu />
+        </button>
+      </div>
 
       {/* Sidebar */}
       <motion.nav

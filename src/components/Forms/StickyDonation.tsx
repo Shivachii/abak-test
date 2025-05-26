@@ -49,7 +49,7 @@ export default function StickyDonateForm() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowForm(window.scrollY > 500);
+      setShowForm(window.scrollY > 400);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -76,7 +76,7 @@ export default function StickyDonateForm() {
     <>
       {/* Show full form on md+ screens */}
       <div
-        className={`hidden md:block fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-500 w-[95%] max-w-6xl ${
+        className={`hidden md:block fixed bottom-1 left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-500 w-[95%] max-w-6xl ${
           showForm ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >

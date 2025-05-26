@@ -8,16 +8,12 @@ const nextIntlMiddleware = createMiddleware({
   localePrefix: "never",
 });
 
-export default function (req: NextRequest): NextResponse {
+function intlMiddlewareHandler(req: NextRequest): NextResponse {
   return nextIntlMiddleware(req);
 }
 
+export default intlMiddlewareHandler;
+
 export const config = {
-  // match only internationalized pathnames
-  matcher: [
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    "/((?!api|_next|_vercel|.*\\..*).*)",
-  ],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

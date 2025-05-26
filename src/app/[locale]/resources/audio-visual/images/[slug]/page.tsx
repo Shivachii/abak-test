@@ -1,5 +1,5 @@
-import { galleryQueryBySlug } from "../../../../../../sanity/lib/queries";
-import { sanityFetch } from "../../../../../../sanity/lib/live";
+import { galleryQueryBySlug } from "../../../../../../../sanity/lib/queries";
+import { sanityFetch } from "../../../../../../../sanity/lib/live";
 import GalleryViewer from "@/components/Gallery/Gallery";
 
 const GalleryPage = async (props: { params: Promise<{ slug: string }> }) => {

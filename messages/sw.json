@@ -86,32 +86,38 @@
   },
   "Projects": {
     "title": "Miradi Yetu",
-    "description": "Mikakati hii inaonyesha jitihada zinazoendelea za ABAK za kujenga uwezo wa kiroho, kielimu, na kijamii kote Kenya na zaidi.",
+    "description": "Miradi hii inaonyesha juhudi za kudumu za ABAK za kujenga uwezo wa kiroho, kielimu, na kijamii kote Kenya na nje ya mipaka yake.",
     "button": "Jifunze Zaidi",
     "items": {
       "hawza": {
-        "title": "Maendeleo ya Seminari ya Hawza",
-        "description": "Kuanzisha seminari ya Kiislamu ya baada ya sekondari kwa ajili ya kuwafundisha wasomi na viongozi wa baadaye walioko kwenye mafundisho ya Ahlul Bayt.",
+        "title": "Hawza Sayyedah Zeinab",
+        "description": "Mpango wa semina ya Kiislamu ya kuwaandaa wanazuoni na viongozi wa baadaye waliopata malezi katika mafundisho ya Ahlul Bayt.",
         "image": "/hawza.jpg",
         "href": "/our-work/hawza"
       },
-      "clinics": {
-        "title": "Kliniki za Kusafirishwa & Huduma za Afya",
-        "description": "Kutoa huduma muhimu za afya na elimu ya ustawi kwa jamii zisizopata huduma kupitia kambi za matibabu zinazotembea.",
-        "image": "/mashallah.jpg",
-        "href": "/our-work/community-services"
-      },
-      "education": {
-        "title": "Miundombinu ya Elimu ya Kiislamu",
-        "description": "Kujenga shule zinazochanganya maadili ya Kiislamu na mfumo rasmi wa elimu wa Kenya ili kukuza wanafunzi waliokomaa kiakili na kiroho.",
+      "mubaligheenTraining": {
+        "title": "Mafunzo ya Mubaligheen",
+        "description": "Mafunzo rasmi ya kuwawezesha wahubiri wa Kiislamu kwa elimu na ujuzi wa kuwaongoza vyema jamii zao.",
         "image": "/mosqueteachings.jpeg",
-        "href": "/our-work/learning-institutions"
+        "href": "/our-work/mubaligheen-training"
+      },
+      "mubaligheenSupport": {
+        "title": "Msaada kwa Mubaligheen",
+        "description": "Ushauri wa mara kwa mara, rasilimali na msaada wa vifaa kwa Mubaligheen kote Kenya ili kuendeleza athari yao katika jamii.",
+        "image": "/abak.jpg",
+        "href": "/our-work/mubaligheen-support"
       },
       "media": {
-        "title": "Studio ya Uzalishaji wa Maudhui",
-        "description": "Kutengeneza maudhui bora ya Kiislamu kama video, sauti, makala kwa ajili ya kuelimisha, kuhamasisha, na kupambana na taarifa zisizo sahihi.",
+        "title": "Uundaji wa Maudhui",
+        "description": "Kutengeneza maudhui ya Kiislamu yenye athari kama vile video, sauti, na makala ili kuelimisha, kuhamasisha, na kupambana na upotoshaji wa taarifa.",
         "image": "/dua.jpg",
         "href": "/our-work/content-creation"
+      },
+      "communitySupport": {
+        "title": "Msaada wa Jamii",
+        "description": "Kutoa huduma za afya kupitia vituo vya afya vinavyosafiri na msaada wa kijamii kwa jamii zisizo na huduma za kutosha.",
+        "image": "/mashallah.jpg",
+        "href": "/our-work/community-support"
       }
     }
   },
@@ -158,30 +164,29 @@
     "vision": "Kuendeleza jamii ya Kenya yenye mshikamano, haki, na yenye utajiri wa kiroho iliyojengwa juu ya maadili na maadili ya Uislamu."
   },
   "leadership": {
-    "title": "Uongozi",
-    "chairman": {
-      "title": "Kaimu Mwenyekiti – Sheikh Ali Saidi Samojah",
-      "name": "Sheikh Ali Saidi Samojah",
-      "description": "Sheikh Samojah ni mtaalamu maarufu, kiongozi wa jamii, na Mwenyekiti wa ABAK. Maarifa yake ya kina, juhudi za mawasiliano, na dhamira yake thabiti kwa mafundisho ya AhlulBayt (a.s) yamehamasisha maelfu kote Kenya na hata zaidi."
-    },
-    "viceChairman": {
-      "title": "Makamu Mwenyekiti – Sheikh Juma Shughuli",
-      "name": "Sheikh Juma Shughuli",
-      "description": "Sheikh Juma Shughuli ni Makamu Mwenyekiti wa ABAK, akisaidia programu zinazoongeza elimu ya jamii na mipango inayotegemea imani."
-    },
-    "treasurer": {
-      "title": "Mhasibu – Sheikh Khamis Mwanjirani",
-      "name": "Sheikh Khamis Mwanjirani",
-      "description": "Kama Mhasibu, Sheikh Mwanjirani anahakikisha uwazi na uwajibikaji katika usimamizi wa fedha na ugawaji wa rasilimali za ABAK."
-    },
-    "secretary": {
-      "title": "Katibu – Ndugu Athman Farsiy",
-      "name": "Ndugu Athman Farsiy",
-      "description": "Ndugu Athman ni Katibu wa ABAK, akaratibu mawasiliano, uhifadhi wa nyaraka, na kuhakikisha shughuli zote za shirika zinafanyika kwa utulivu."
-    },
-    "members": {
-      "title": "Wajumbe wa Bodi",
-      "description": "Bodi ya ABAK pia ina wajumbe kutoka maeneo mbalimbali ya Kenya, kuhakikisha uwakilishi mpana wa vituo na sauti tofauti za jamii."
+    "title": "Muundo wa Uongozi",
+    "description": "Muundo wetu wa uongozi unaakisi dhamira yetu ya uadilifu, ushirikiano, na huduma. Kila ofisi ina jukumu muhimu katika kuelekeza shirika kuelekea dhamira na maono yake.",
+    "offices": {
+      "chairman": {
+        "title": "Mwenyekiti",
+        "description": "Hutoa uongozi wa jumla na kuongoza mikutano ya shirika."
+      },
+      "viceChairman": {
+        "title": "Makamu Mwenyekiti",
+        "description": "Anamsaidia Mwenyekiti na kuchukua majukumu katika kutokuwepo kwake."
+      },
+      "treasurer": {
+        "title": "Mweka Hazina",
+        "description": "Anasimamia mipango ya kifedha, bajeti, na ripoti."
+      },
+      "secretary": {
+        "title": "Katibu",
+        "description": "Anatunza kumbukumbu na kuhakikisha mawasiliano ndani ya shirika."
+      },
+      "boardMembers": {
+        "title": "Wajumbe wa Bodi",
+        "description": "Wanachangia katika uamuzi na kutetea dhamira na maadili."
+      }
     }
   },
   "contact": {
@@ -270,7 +275,7 @@
   },
 
   "hawza": {
-    "title": "Mpango wa Masomo ya Hawza",
+    "title": "Hawza Seyyidah Zeinab",
     "subtitle": "Safari ya kuelekea kwenye maarifa ya Kiislamu na uongozi",
     "about": {
       "title": "Kuhusu Hawza",

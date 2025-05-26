@@ -63,13 +63,13 @@ const resourceLinks: LinksProps[] = [
     href: "/resources/publications",
   },
   {
-    name: "Media Gallery",
-    href: "/resources/media-gallery",
+    name: "Audio-Visual",
+    href: "/resources/audio-visual",
   },
 ];
 
 const islamicLearningLinks: LinksProps[] = [
-  { name: "Hawza Seminary", href: "/islamic-learning/hawza-seminary" },
+  { name: "Hawza Seyyidah Zeinab", href: "/islamic-learning/hawza-seyyidah" },
   {
     name: "Qur'an Reflections",
     href: "/islamic-learning/quran-reflections",

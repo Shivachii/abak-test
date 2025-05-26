@@ -19,11 +19,11 @@ const slides = [
   },
   {
     image: "/hawza.jpg",
-    title: "Nurturing the Next Generation of Scholars",
+    title: "Sayyedah Zeinab",
     description:
       "Our Hawza Seminary shapes future Islamic scholars with deep spiritual, intellectual, and moral training to serve the Ummah with wisdom and sincerity.",
-    ctaText: "Learn about our Hawza",
-    ctaLink: "/islamic-learning/hawza-seminary",
+    ctaText: "Learn about our Sayyedah Zeinab",
+    ctaLink: "/islamic-learning/hawza-seyyidah",
   },
 
   {

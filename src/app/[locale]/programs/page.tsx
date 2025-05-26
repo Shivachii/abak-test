@@ -56,7 +56,13 @@ export async function generateMetadata({
 
 export default function ProjectsPage() {
   const t = useTranslations("Projects");
-  const items = ["hawza", "clinics", "education", "media"];
+  const items = [
+    "hawza",
+    "mubaligheenTraining",
+    "mubaligheenSupport",
+    "media",
+    "communitySupport",
+  ];
 
   return (
     <section className="w-full max-w-7xl mx-auto ">

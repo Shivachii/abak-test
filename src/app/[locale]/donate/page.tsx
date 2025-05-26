@@ -1,8 +1,14 @@
 import { useTranslations } from "next-intl";
-import DonationbyMpesaDialog from "@/components/Dialogs/DonationbyMpesa";
+// import DonationbyMpesaDialog from "@/components/Dialogs/DonationbyMpesa";
 
 import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export async function generateMetadata({
   params,
@@ -68,15 +74,50 @@ export default function DonatePage() {
         <h2 className="text-xl font-bold text-secondary">{t("waysTitle")}</h2>
         <ul className="list-disc pl-6 text-gray-700 space-y-2">
           <li>Mobile Money (M-Pesa Paybill)</li>
-          <li>Bank Transfer</li>
+          <li>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="bank-transfer">
+                <AccordionTrigger className=" text-gray-800">
+                  Bank Transfer
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-gray-700 space-y-1">
+                  <p>
+                    <span className="font-medium">Bank:</span> Diamond Trust
+                    Bank
+                  </p>
+                  <p>
+                    <span className="font-medium">Branch:</span> Lavington
+                    Branch
+                  </p>
+                  <p>
+                    <span className="font-medium">Account Name:</span> Ahlulbayt
+                    (a.s) Assembly
+                  </p>
+
+                  <div>
+                    <p className="font-medium">Account Numbers:</p>
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        <span className="font-medium">KES:</span> 0025429001
+                      </li>
+                      <li>
+                        <span className="font-medium">USD:</span> 0025429002
+                      </li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </li>
+
           <li>Direct Cash or Cheque</li>
           <li>Sponsorship of Programs (Education, Welfare, Da’wah)</li>
         </ul>
       </div>
 
-      <section className="flex gap-8">
+      {/* <section className="flex gap-8">
         <DonationbyMpesaDialog />
-      </section>
+      </section> */}
     </section>
   );
 }

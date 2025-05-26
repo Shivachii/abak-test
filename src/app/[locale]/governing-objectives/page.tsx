@@ -3,6 +3,7 @@ import Banner from "@/components/Banner/Banner";
 import { ObjectivesTabs } from "@/components/Tabs/Tabs";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import ObjectivesDisplay from "@/components/Tabs/Display";
 
 export async function generateMetadata({
   params,
@@ -65,8 +66,11 @@ export default function ProgramsObjectives() {
         <p className="text-gray-700 text-lg leading-relaxed">
           {t("programs.objectivesDescription")}
         </p>
-        <div className="my-4">
+        <div className="my-4 hidden  md:block ">
           <ObjectivesTabs />
+        </div>
+        <div className="my-4 md:hidden">
+          <ObjectivesDisplay />
         </div>
       </div>
     </div>

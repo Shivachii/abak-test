@@ -93,28 +93,34 @@
     "button": "Learn More",
     "items": {
       "hawza": {
-        "title": "Hawza Seminary Development",
-        "description": "Establishing a post-secondary Islamic seminary to train future scholars and leaders grounded in Ahlul Bayt teachings.",
+        "title": "Hawza Sayyedah Zeinab",
+        "description": "A seminary program dedicated to training future scholars and community leaders grounded in the teachings of Ahlul Bayt.",
         "image": "/hawza.jpg",
-        "href": "/our-work/hawza"
+        "href": "/islamic-learning/hawza-seyyidah"
       },
-      "clinics": {
-        "title": "Mobile Clinics & Health Outreach",
-        "description": "Providing essential healthcare and wellness education to underserved communities through mobile medical camps.",
-        "image": "/mashallah.jpg",
-        "href": "/our-work/community-services"
-      },
-      "education": {
-        "title": "Islamic Education Infrastructure",
-        "description": "Building schools that integrate Islamic values with Kenya's formal education system to nurture well-rounded students.",
+      "mubaligheenTraining": {
+        "title": "Mubaligheen Training",
+        "description": "Structured training programs to equip Islamic preachers with the knowledge and skills to effectively guide their communities.",
         "image": "/mosqueteachings.jpeg",
-        "href": "/our-work/learning-institutions"
+        "href": "#"
+      },
+      "mubaligheenSupport": {
+        "title": "Mubaligheen Support",
+        "description": "Ongoing mentorship, resources, and logistical support for Mubaligheen across Kenya to sustain their community impact.",
+        "image": "/abak.jpg",
+        "href": "#"
       },
       "media": {
-        "title": "Content Production Studio",
-        "description": "Producing high-quality Islamic content like video, audio, articles to educate, inspire, and combat misinformation.",
+        "title": "Content Creation",
+        "description": "Developing impactful Islamic multimedia content to educate, inspire, and address misinformation within and beyond the community.",
         "image": "/dua.jpg",
-        "href": "/our-work/content-creation"
+        "href": "#"
+      },
+      "communitySupport": {
+        "title": "Community Support",
+        "description": "Offering mobile health services, welfare outreach, and other forms of support to uplift underserved communities.",
+        "image": "/mashallah.jpg",
+        "href": "#"
       }
     }
   },
@@ -162,31 +168,31 @@
     "visionTitle": "Our Vision",
     "vision": "To nurture a united, just, and spiritually enriched Kenyan society grounded in the ethics and values of Islam."
   },
+
   "leadership": {
-    "title": "Leadership",
-    "chairman": {
-      "title": "Chairman – Sheikh Ali Saidi Samojah",
-      "name": "Sheikh Ali Saidi Samojah",
-      "description": "Sheikh Samojah is a leading scholar, community leader, and the Chairman of ABAK. His deep knowledge, outreach efforts, and unwavering commitment to the mission of AhlulBayt (a.s) teachings have inspired thousands across Kenya and beyond."
-    },
-    "viceChairman": {
-      "title": "Vice Chairman – Sheikh Juma Shughuli",
-      "name": "Sheikh Juma Shughuli",
-      "description": "Sheikh Juma Shughuli serves as the Vice Chairman of ABAK, supporting programs that strengthen community education and faith-based initiatives."
-    },
-    "treasurer": {
-      "title": "Treasurer – Sheikh Khamis Mwanjirani",
-      "name": "Sheikh Khamis Mwanjirani",
-      "description": "As Treasurer, Sheikh Mwanjirani ensures transparency and accountability in ABAK's financial stewardship and resource allocation."
-    },
-    "secretary": {
-      "title": "Secretary – Brother Athman Farsiy",
-      "name": "Brother Athman Farsiy",
-      "description": "Brother Athman serves as the Secretary of ABAK, coordinating communication, documentation, and ensuring the smooth operation of all activities across the organization."
-    },
-    "members": {
-      "title": "Board Members",
-      "description": "ABAK’s board also includes representatives from various regions of Kenya, ensuring inclusive representation of different community centers and voices."
+    "title": "Leadership Structure",
+    "description": "Our leadership structure reflects our commitment to integrity, collaboration, and service. Each office plays a vital role in guiding the organization towards its mission and vision.",
+    "offices": {
+      "chairman": {
+        "title": "Chairman",
+        "description": "Provides overall leadership and chairs organizational meetings."
+      },
+      "viceChairman": {
+        "title": "Vice Chairman",
+        "description": "Supports the Chairman and assumes duties in their absence."
+      },
+      "treasurer": {
+        "title": "Treasurer",
+        "description": "Oversees financial planning, budgeting, and reporting."
+      },
+      "secretary": {
+        "title": "Secretary",
+        "description": "Maintains records and ensures communication within the organization."
+      },
+      "boardMembers": {
+        "title": "Board Members",
+        "description": "Contribute to decision-making and uphold the mission and values."
+      }
     }
   },
 
@@ -277,7 +283,7 @@
     "objectivesDescription": "At the AhlulBayt Assembly of Kenya (ABAK), our mission is guided by a series of well-defined programs and objectives. These focus on spiritual guidance, community development, education, and empowerment. Each objective represents a step toward creating a more informed, unified, and compassionate society rooted in the teachings of the Ahlul Bayt (a.s)."
   },
   "hawza": {
-    "title": "Hawza Studies Program",
+    "title": "Hawza Seyyidah Zeinab",
     "subtitle": "A journey into Islamic knowledge and leadership",
     "about": {
       "title": "About the Hawza",

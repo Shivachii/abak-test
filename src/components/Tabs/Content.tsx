@@ -36,7 +36,7 @@ export const contentData: {
             alt="ABAK Community Services"
             width={400}
             height={300}
-            className="rounded-md object-cover "
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
       </div>
@@ -92,9 +92,9 @@ export const contentData: {
           <Image
             src="/mashallah.jpg"
             alt="Content creation illustration"
-            width={300}
+            width={400}
             height={300}
-            className="rounded-md object-cover"
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
       </div>
@@ -124,9 +124,9 @@ export const contentData: {
           <Image
             src="/hawza/hawzalogo.jpeg"
             alt="ABAK Hawza Seminary"
-            width={200}
-            height={200}
-            className="rounded-md object-cover"
+            width={400}
+            height={300}
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
       </div>
@@ -179,7 +179,7 @@ export const contentData: {
             alt="Islamic Learning Institution"
             width={400}
             height={300}
-            className="rounded-md object-cover"
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
       </div>
@@ -190,15 +190,15 @@ export const contentData: {
     description:
       "ABAK recognizes that well-trained Mubaligheen are essential for nurturing informed and spiritually grounded communities. Through structured programs, the organization equips individuals with the necessary knowledge and skills to educate, inspire, and lead with integrity.",
     content: (
-      <div className="flex flex-col  md:flex-row-reverse items-start md:items-center gap-8">
+      <div className="flex flex-col  md:flex-row-reverse gap-8">
         {/* Image */}
         <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
             src="/abak.jpg"
             alt="Community empowerment"
-            width={360}
-            height={240}
-            className="rounded-md object-cover"
+            width={400}
+            height={300}
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
         {/* Text Content */}
@@ -233,9 +233,9 @@ export const contentData: {
           <Image
             src="/mashallah.jpg"
             alt="Community empowerment"
-            width={360}
-            height={240}
-            className="rounded-md object-cover"
+            width={400}
+            height={300}
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
         {/* Text Content */}
@@ -272,7 +272,7 @@ export const contentData: {
             alt="Mubaligheen Support"
             width={400}
             height={300}
-            className="rounded-md object-cover"
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
 

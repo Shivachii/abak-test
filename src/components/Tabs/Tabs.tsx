@@ -75,7 +75,9 @@ export function ObjectivesTabs() {
                   {data.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2">{data.content}</CardContent>
+              <CardContent className="space-y-2 flex-shrink-0">
+                {data.content}
+              </CardContent>
             </Card>
           </motion.div>
         </TabsContent>
