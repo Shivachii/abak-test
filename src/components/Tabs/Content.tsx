@@ -32,7 +32,7 @@ export const contentData: {
         </div>
         <div className=" hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/community-abak.jpg"
+            src="/child-sit.jpg"
             alt="ABAK Community Services"
             width={400}
             height={300}
@@ -175,7 +175,7 @@ export const contentData: {
         {/* Right: Image */}
         <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/education-abak.jpg" // Replace with your relevant image
+            src="/hawza/img28.jpg" // Replace with your relevant image
             alt="Islamic Learning Institution"
             width={400}
             height={300}
