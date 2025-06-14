@@ -27,7 +27,7 @@ export default function Navbar() {
     { name: t("home"), href: "/" },
     { name: t("about"), href: "/about" },
     { name: t("ourWork"), href: "#" },
-    { name: t("islamicLearning"), href: "#" },
+    { name: t("hawza"), href: "/islamic-learning/hawza-seyyidah" },
     { name: t("resources"), href: "/resources" },
     { name: t("contact"), href: "/contact" },
   ];
@@ -43,16 +43,16 @@ export default function Navbar() {
     },
   ];
 
-  const islamicLearningLinks: LinksProps[] = [
-    {
-      name: t("islamicLearningDropdown.hawza"),
-      href: "/islamic-learning/hawza-seyyidah",
-    },
-    {
-      name: t("islamicLearningDropdown.quranReflections"),
-      href: "/islamic-learning/quran-reflections",
-    },
-  ];
+  // const islamicLearningLinks: LinksProps[] = [
+  //   {
+  //     name: t("islamicLearningDropdown.hawza"),
+  //     href: "/islamic-learning/hawza-seyyidah",
+  //   },
+  //   {
+  //     name: t("islamicLearningDropdown.quranReflections"),
+  //     href: "/islamic-learning/quran-reflections",
+  //   },
+  // ];
 
   const ourWorkLinks: LinksProps[] = [
     {
@@ -159,8 +159,7 @@ export default function Navbar() {
                   }`}
                 >
                   <span>{link.name}</span>
-                  {(link.name === t("islamicLearning") ||
-                    link.name === t("ourWork") ||
+                  {(link.name === t("ourWork") ||
                     link.name === t("resources")) && (
                     <ChevronDown
                       width={15}
@@ -171,7 +170,7 @@ export default function Navbar() {
                 </p>
               </Link>
 
-              {link.name === t("islamicLearning") && (
+              {/* {link.name === t("islamicLearning") && (
                 <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-8 text-black z-50">
                   {islamicLearningLinks.map((subLink, a) => (
                     <Link
@@ -197,7 +196,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-              )}
+              )} */}
 
               {link.name === t("ourWork") && (
                 <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-8 text-black z-50">

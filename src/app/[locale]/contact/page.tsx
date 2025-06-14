@@ -56,7 +56,7 @@ export default function ContactPage() {
 
   return (
     <section className="w-full  bg-white">
-      <Banner title={t("sectionTitle")} />
+      <Banner backgroundImage="/banners/contact.png" />
       <div className="max-w-7xl px-4 py-16 mx-auto flex flex-col gap-16">
         {/* Header */}
         <div className="text-center px-4">

@@ -57,7 +57,7 @@ export default function AboutPage() {
 
   return (
     <section>
-      <Banner title={t("title")} height="h-[200px] md:h-[400px]" />
+      <Banner backgroundImage="/banners/about.png" />
       <div className="w-full px-4 py-12 bg-white text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Intro Section */}

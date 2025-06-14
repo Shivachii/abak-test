@@ -28,6 +28,7 @@ export default function AnnouncementsSection() {
           <h2 className="text-secondary text-sm md:text-base font-bold tracking-widest uppercase">
             {t("heading")}
           </h2>
+
           <p className="text-2xl md:text-3xl font-bold text-primary mt-2">
             {t("title")}
           </p>

@@ -27,7 +27,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/Mpesa/PaymentForm.jsx",
-    "src/app/[locale]/resources/audio-visual/images/page.jsx"
+    "src/app/[locale]/resources/audio-visual/images/page.jsx",
+    "src/app/[locale]/resources/audio-visual/audio/page.tsx",
+    "src/components/ImageViewer/AllGalleryMedia.tsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -2,20 +2,25 @@ import React from "react";
 
 const videos = [
   {
-    title: "The power of Patience",
-    url: "https://www.youtube.com/embed/KwzytY32xlk?si=hhgo19bgPywfl2NO",
+    title: "MARADHI, USAFIRI NA FUNGA YA SAUM || SHEIKH JUMA SHUGHULI",
+    url: "https://www.youtube.com/embed/5-SX4r6dY1Q?si=EsT5XY55WGHL8c5x",
   },
   {
-    title: "Trusting in Allah",
-    url: "https://www.youtube.com/embed/3MqN7Iptaj4?si=xfYmrjyAXMYU7k6b",
+    title: "The philosophy of Hajj | Jummah Khutba | Sheikh Ali Samojah",
+    url: "https://www.youtube.com/embed/tcsPcgErsNk?si=GbiUySpQc9lqz3Lh",
   },
   {
-    title: "Surviving Hardship",
-    url: "https://www.youtube.com/embed/f70tdacW5Lo?si=rG59oSSs94gAZNfA",
+    title: " RAMADHAN 2023 || NANI MWENYE KUFUNGA? || SH. ALI SAMOJAH",
+    url: "https://www.youtube.com/embed/m_1_ByGLULs?si=e0DBVpOpScFq3aAZ",
   },
   {
-    title: "Dealing with difficulty - Haaram Relationships",
-    url: "https://www.youtube.com/embed/raXRX96UOUw?si=n-POUQLuAUuYZfkK",
+    title:
+      " Friday Khutba: Sheikh Ali Samoja || Month of Ramadhan and Importance of Saum",
+    url: "https://www.youtube.com/embed/U-0Pu91-PmU?si=rhYq_KV-T6t20v0W",
+  },
+  {
+    title: "ELIMU YA MAHUSIANO BAINA YA MME NA MKE || SHEIKH ALI SAMOJAH",
+    url: "https://www.youtube.com/embed/n8JEhKFbyVg?si=kSTbLe6nPlG7iP2A",
   },
 ];
 

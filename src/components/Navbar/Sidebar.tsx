@@ -51,6 +51,7 @@ const Sidebar = () => {
     { name: t("home"), href: "/" },
     { name: t("about"), href: "/about" },
     { name: t("objectives"), href: "/governing-objectives" },
+    { name: t("hawza"), href: "/islamic-learning/hawza-seyyidah" },
     { name: t("programs"), href: "/programs" },
     { name: t("events"), href: "/events" },
   ];
@@ -118,6 +119,7 @@ const Sidebar = () => {
             >
               <Link
                 href={"/contact"}
+                onClick={toggleSidebar}
                 className={`hover:underline font-semibold text-gray-800 ${
                   pathName === "/contact" ? "text-primary font-bold" : ""
                 }`}
@@ -226,7 +228,7 @@ function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
   return (
     <>
       {/* Islamic Learning Accordion */}
-      <div className="">
+      {/* <div className="">
         <button
           onClick={() =>
             setOpenSection(openSection === "learning" ? null : "learning")
@@ -271,7 +273,7 @@ function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
             </Link>
           </li>
         </motion.ul>
-      </div>
+      </div> */}
 
       {/* Resources Accordion */}
       <div className="">

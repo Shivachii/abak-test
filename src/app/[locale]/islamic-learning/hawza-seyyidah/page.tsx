@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import HawzaEnrollmentCTA from "@/components/CTA/HawzaEnrollmentCTA";
+import ScholarshipSection from "./scholarship";
+import ImageGrid from "./imagegrid";
 
 export async function generateMetadata({
   params,
@@ -57,20 +60,31 @@ const Hawza = () => {
 
   return (
     <section>
-      <Banner title={t("title")} subtitle={t("subtitle")} />
-      <div className="w-full px-4 py-12 bg-white text-foreground">
+      <Banner
+        // backgroundImage="/banners/hawzahero.png"
+        // height="h-[20px]"
+        title={t("title")}
+        subtitle={t("subtitle")}
+      />
+      <div className="w-full px-4 py-12  text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">
-          {/* About Section */}
-          <div className="text-center space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold text-primary">
-              {t("about.title")}
-            </h1>
-            <h2 className="text-secondary text-sm md:text-base font-bold uppercase tracking-wider">
-              {t("about.subtitle")}
-            </h2>
-            <p className="text-lg leading-relaxed text-gray-700 max-w-3xl mx-auto text-justify md:text-center">
-              {t("about.description")}
-            </p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            {/* About Section */}
+            <div className=" space-y-4 max-w-lg">
+              <h1 className="text-3xl md:text-5xl font-bold text-primary">
+                {t("about.title")}
+              </h1>
+              <h2 className="text-secondary text-sm md:text-base font-bold uppercase tracking-wider">
+                {t("about.subtitle")}
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-700 max-w-3xl mx-auto ">
+                {t("about.description")}
+              </p>
+            </div>
+            {/* images */}
+            <div className="">
+              <ImageGrid />
+            </div>
           </div>
 
           {/* Establishment */}
@@ -217,6 +231,12 @@ const Hawza = () => {
               ))}
             </div>
           </div>
+
+          <ScholarshipSection />
+
+          <section>
+            <HawzaEnrollmentCTA />
+          </section>
 
           {/* Support Section */}
           <div className="space-y-4 text-center">

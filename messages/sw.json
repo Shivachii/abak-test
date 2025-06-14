@@ -8,7 +8,7 @@
     "home": "Nyumbani",
     "about": "Kuhusu Sisi",
     "ourWork": "Kazi Yetu",
-    "islamicLearning": "Elimu ya Kiislamu",
+    "hawza": "Hawza",
     "resources": "Rasilimali",
     "contact": "Wasiliana Nasi",
     "volunteer": "Jitolee",
@@ -19,10 +19,7 @@
       "hawza": "Hawza Seyyidah Zeinab",
       "quran": "Tafakuri ya Qur'ani"
     },
-    "islamicLearningDropdown": {
-      "hawza": "Hawza Seyyidah Zeinab",
-      "quranReflections": "Tafakuri ya Qur'ani"
-    },
+
     "ourWorkDropdown": {
       "objectives": "Malengo",
       "objectivesDesc": "Chunguza malengo ya msingi na kanuni za mwongozo za ABAK.",
@@ -53,7 +50,7 @@
     "officialInfo": "TAARIFA RASMI",
     "islamicLearning": "Elimu ya Kiislamu",
     "quranReflections": "Tafakari za Qur'ani",
-    "hawza": "Hawza Seyyidah Zeinab",
+    "hawza": "Hawza ",
     "resources": "Rasilimali",
     "publications": "Machapisho",
     "audioVisual": "Sauti na Picha"
@@ -75,19 +72,21 @@
   },
 
   "hero": {
-    "heading": "Baraza la Ahlul-Bayt Kenya",
     "slides": [
       {
+        "heading": "Baraza la Ahlul-Bayt Kenya",
         "title": "Tumeongozwa na Mafundisho ya Mtume (s.a.w.w) na Ahlul Bayt (a.s)",
         "description": "ABAK imejitolea kusambaza maarifa ya Kiislamu ya kweli na maadili kote Kenya.",
         "ctaText": "Jifunze kuhusu ABAK"
       },
       {
+        "heading": "Hawza (S.A)",
         "title": "Sayyedah Zeinab",
         "description": "Seminari yetu ya Hawza inalea wasomi wa Kiislamu wa baadaye kwa mafunzo ya kiroho, kielimu, na kimaadili ili kuitumikia Ummah kwa hekima na uaminifu.",
         "ctaText": "Jifunze kuhusu Sayyedah Zeinab"
       },
       {
+        "heading": "Baraza la Ahlul-Bayt Kenya",
         "title": "Kutoka Elimu hadi Ustawi wa Jamii",
         "description": "ABAK inaunga mkono jamii za Kishia kupitia taasisi za elimu, maudhui, na huduma muhimu.",
         "ctaText": "Tazama Kazi Yetu ya Jamii"
@@ -177,9 +176,11 @@
       }
     }
   },
+
   "Projects": {
     "title": "Miradi Yetu",
-    "description": "Miradi hii inaonyesha juhudi za kudumu za ABAK za kujenga uwezo wa kiroho, kielimu, na kijamii kote Kenya na nje ya mipaka yake.",
+    "description": "Kupitia programu zake nyingi, Jumuiya ya Ahlulbayt (A.S) ya Kenya inaendelea kuleta athari kubwa kwa watu binafsi na jamii, ikichanganya maadili ya kiroho na huduma halisi. ABAK inabaki kujitolea kwa maono yake ya kulea Ummah uliowezeshwa, wenye afya, ulioelimika, na ulio na umoja, unaoongozwa na misingi ya huruma, usawa, na imani.",
+    "linkText": "Jifunze zaidi kuhusu miradi yetu",
     "button": "Jifunze Zaidi",
     "items": {
       "hawza": {
@@ -221,28 +222,28 @@
     "cta": "Jifunze zaidi kuhusu malengo yetu",
     "objectives": {
       "propagation": {
-        "title": "Kueneza Uislamu",
-        "description": "Kuhubiri mafundisho ya Ahlul Bayt (a.s) kupitia mihadhara, maandiko, matukio, na mazungumzo ya dini tofauti."
+        "title": "Uenezaji wa Uislamu",
+        "description": "Kuhubiri mafundisho ya Ahlul Bayt (a.s) kupitia hotuba, machapisho, matukio, na mazungumzo ya kidini baina ya imani tofauti."
       },
       "communities": {
-        "title": "Kuandaa Jamii za Shia",
-        "description": "Kuwezesha jamii kupitia mafunzo ya uongozi, ushauri, kambi za vijana, msaada kwa wanafunzi, na kuinua hali za kiuchumi."
+        "title": "Uundaji wa Jamii za Kishia",
+        "description": "Kuwawezesha wanajamii kupitia mafunzo ya uongozi, uelekezaji, kambi za vijana, msaada kwa wanafunzi, na kuinua hali ya kiuchumi."
       },
       "mubaligheen": {
-        "title": "Mafunzo ya Mubaligheen",
-        "description": "Kuanzisha taasisi za kuwafundisha waumini na wasomi wa Kiislamu ili kuhudumia jamii kwa maarifa ya kina na madhumuni."
+        "title": "Mafunzo kwa Waalimu wa Uislamu",
+        "description": "Kusimamisha taasisi za kuwafundisha wahubiri na wasomi wa Kiislamu ili kuwahudumia watu kwa elimu ya kina na malengo ya dhati."
       },
       "content": {
-        "title": "Maendeleo ya Maudhui",
-        "description": "Kutengeneza mihadhara, makala, nyaraka za hadithi, na maudhui ya tamthilia kukuza maadili na utamaduni wa Kiislamu."
+        "title": "Utayarishaji wa Maudhui",
+        "description": "Kutayarisha hotuba, makala, filamu fupi na maudhui ya maigizo ili kueneza maadili na tamaduni za Kiislamu."
       },
       "education": {
-        "title": "Taasisi za Elimu",
-        "description": "Kuweka shule na seminari (Hawza) zenye mtaala uliounganishwa na mafundisho ya Kiislamu kukuza vizazi vijavyo vya Waislamu wenye maarifa."
+        "title": "Taasis za Elimu",
+        "description": "Kusimamisha shule na seminari (Hawza) zilizo na mtaala wa Kiislamu ili kulea vizazi vijavyo vya Waislamu walioko na uelewa."
       },
       "services": {
         "title": "Huduma za Jamii",
-        "description": "Kutoa msaada wa tiba, ushauri, programu za misaada, kliniki zinazotembea, na mifumo ya kukabiliana na majanga kwa ustawi wa jamii."
+        "description": "Kutoa misaada ya kitabibu, ushauri, mipango ya misaada, kliniki za kuhamahama, na huduma za dharura kwa ustawi wa jamii."
       }
     }
   },
@@ -276,8 +277,8 @@
         "title": "Katibu",
         "description": "Anatunza kumbukumbu na kuhakikisha mawasiliano ndani ya shirika."
       },
-      "boardMembers": {
-        "title": "Wajumbe wa Bodi",
+      "countyrepresentatives": {
+        "title": "Wawakilishi wa Kaunti",
         "description": "Wanachangia katika uamuzi na kutetea dhamira na maadili."
       }
     }
@@ -316,54 +317,63 @@
     "upcomingEvents": "Matukio Yanayokuja",
     "joinCommunityInitiatives": "Jiunge na Mipango ya Jamii",
     "stayUpdated": "Kaa na Habari Mpya Kuhusu Matukio Yetu",
+    "linkText": "Pata maelezo zaidi kuhusu matukio yetu",
+    "viewImages": "Tazama Picha",
     "list": [
       {
         "title": "Mkutano wa Muballigheen",
         "date": "Mei 4, 2025",
         "location": "Magharibi",
-        "description": "Mkutano wa kikanda kwa Muballigheen wanaofanya kazi Magharibi ukilenga kuimarisha mafunzo ya kijumuiya na elimu ya Kiislamu."
+        "description": "Mkutano wa kikanda kwa Muballigheen wanaofanya kazi Magharibi ukilenga kuimarisha mafunzo ya kijumuiya na elimu ya Kiislamu.",
+        "images": ["/symposium1.jpg", "/symposium2.jpg"]
       },
       {
         "title": "Nikah kwa Mmoja wa Mubalighat",
         "date": "Aprili 27, 2025",
         "location": "Kichaka Mkwaju, Pwani",
-        "description": "Sherehe ya Nikah yenye baraka iliyohudhurwa na Shk. Ali Samojah, Shk. Juma Shughuli, na Shk. Salim Mwaega, kuadhimisha safari mpya ya Mubalighat."
+        "description": "Sherehe ya Nikah yenye baraka iliyohudhurwa na Shk. Ali Samojah, Shk. Juma Shughuli, na Shk. Salim Mwaega, kuadhimisha safari mpya ya Mubalighat.",
+        "images": ["/nikah1.jpg", "/nikah2.jpg"]
       },
       {
         "title": "Arbaeen kwa Marehemu Shk. Maradi & Mkutano wa Muballighiin",
         "date": "Aprili 6, 2025",
         "location": "Kibuyuni, Kwale",
-        "description": "Kumbukumbu ya maisha ya Marehemu Shk. Maradi na kuwaleta pamoja Muballighiin kwa mkutano wa tafakari na mipango."
+        "description": "Kumbukumbu ya maisha ya Marehemu Shk. Maradi na kuwaleta pamoja Muballighiin kwa mkutano wa tafakari na mipango.",
+        "images": ["/arbaeen1.jpg", "/arbaeen2.jpg"]
       },
       {
         "title": "Mafunzo ya Ramadhani",
         "date": "Machi 1 – Aprili 1, 2025",
         "location": "Parkroad",
-        "description": "Mfululizo wa masomo ya mwezi mzima wakati wa Ramadhani 1446, ukizingatia ukuaji wa kiroho na ushiriki wa jamii."
+        "description": "Mfululizo wa masomo ya mwezi mzima wakati wa Ramadhani 1446, ukizingatia ukuaji wa kiroho na ushiriki wa jamii.",
+        "images": ["ramadhan1.jpg", "ramadhan2,jpg"]
       },
       {
         "title": "Majlis Fa'tiha kwa Shahid Sayyid Hassan Nasrullah & Shahid Sayyid Hashim Swafiyudin",
         "date": "Februari 23, 2025",
         "location": "Parkroad",
-        "description": "Majlis ya heshima kwa maisha na urithi wa mashahidi wawili waliothaminiwa, ikiboresha kumbukumbu na umoja."
+        "description": "Majlis ya heshima kwa maisha na urithi wa mashahidi wawili waliothaminiwa, ikiboresha kumbukumbu na umoja.",
+        "images": ["/majlis1.jpg", "/majlis2.jpg"]
       },
       {
         "title": "Mkutano wa Muballigheen",
         "date": "Februari 8, 2025",
         "location": "Parklands Plaza",
-        "description": "Mkutano unaowaunganisha Muballigheen kubadilishana mawazo, kupokea mafunzo, na kuboresha uongozi wao wa kiroho."
+        "description": "Mkutano unaowaunganisha Muballigheen kubadilishana mawazo, kupokea mafunzo, na kuboresha uongozi wao wa kiroho.",
+        "images": ["/symposium3.jpg", "/symposium4.jpg"]
       },
       {
         "title": "Mkutano wa Muballighiin",
         "date": "Septemba 11, 2024",
         "location": "Ngumo",
-        "description": "Mkutano wa karibu wa Muballighiin kujadili mipango ya sasa, kushirikiana maoni, na kupanga mikakati ya ushawishi wa jamii."
+        "description": "Mkutano wa karibu wa Muballighiin kujadili mipango ya sasa, kushirikiana maoni, na kupanga mikakati ya ushawishi wa jamii.",
+        "images": ["/meeting1.jpg", "/meeting2.jpg"]
       }
     ]
   },
   "programs": {
     "objectivesTitle": "Malengo Yetu",
-    "mainObjectivesHeader": "Tuna malengo makuu 8",
+    "mainObjectivesHeader": "Malengo yetu makuu ",
     "objectivesDescription": "Katika Kikao cha AhlulBayt cha Kenya (ABAK), dhamira yetu inaongozwa na mfululizo wa mipango na malengo yaliyopangwa vizuri. Haya yanazingatia mwongozo wa kiroho, maendeleo ya jamii, elimu, na kuwawezesha watu. Kila lengo linaonyesha hatua kuelekea kuunda jamii yenye uelewa, mshikamano, na huruma iliyojikita katika mafundisho ya Ahlul Bayt (a.s)."
   },
 
@@ -462,6 +472,19 @@
         }
       ]
     },
+
+    "scholarships": {
+      "heading": "Kusaidia Elimu ya Kidini na Kisekula",
+      "intro": "Elimu inabaki kuwa msingi wa ajenda ya maendeleo ya ABAK. Chama kimekuwa kikiunga mkono wanafunzi wanaotaka kuendelea na masomo yao ya kidini na ya kawaida.",
+      "details": "Kupitia mipango ya ufadhili wa masomo, ABAK hutambua na kufadhili wagombeaji wanaostahili kutoka kote nchini, kuwawezesha kupata elimu bora ndani ya Kenya na ng'ambo.",
+      "impact": "Juhudi hizi zinalenga kujenga kizazi cha viongozi wenye maarifa, maadili, na uwajibikaji wa kijamii.",
+      "hawzaTitle": "Ufadhili wa HAWZA",
+      "hawzaDesc": "Kutoa msaada kwa elimu ya seminari ya kidini (Hawza).",
+      "secularTitle": "Masomo ya Kisekula",
+      "secularDesc": "Kufadhili programu za chuo kikuu na taasisi za elimu.",
+      "globalTitle": "Ndani na Nje ya Nchi",
+      "globalDesc": "Ufadhili unapatikana Kenya na kimataifa."
+    },
     "support": {
       "title": "Saidia Hawza",
       "description": "Saidia kuwawezesha wasomi wa Kiislamu wa kike wa siku zijazo. Dhamini mwanafunzi kwa USD 1,000 tu kwa mwaka, ikijumuisha malazi na ada ya masomo.",
@@ -510,5 +533,22 @@
       "three": "Utengenezaji wa Vyombo vya Habari & Maudhui",
       "four": "Mipango ya Kueneza Huduma kwa Jamii"
     }
+  },
+  "mubaligheenSupport": {
+    "title": "Kuwasaidia Mubaligheen Wetu",
+    "intro": "Kuwawezesha walimu wa dini wanaoongoza jamii zetu kwa elimu, hekima, na huruma.",
+    "whySupport": "Kwa Nini Msaada kwa Mubaligheen Ni Muhimu",
+    "description": "Mubaligheen wetu ni uti wa mgongo wa elimu ya kidini na mwongozo wa kijamii. ABAK hutoa rasilimali ili kuhakikisha wanafundisha, kushauri, na kuongoza kwa ufanisi—hasa katika maeneo yaliyoachwa nyuma kote Kenya.",
+    "supportAreas": {
+      "title": "Maeneo Tunayosaidia",
+      "list": [
+        "Posho za Kila Mwezi",
+        "Vitabu na Rasilimali za Kielimu",
+        "Nauli kwa Ajili ya Huduma ya Kidini",
+        "Warsha na Mafunzo Endelevu",
+        "Msaada kwa Da'wa ya Jamii"
+      ]
+    },
+    "cta": "Shiriki au Toa Msaada"
   }
 }

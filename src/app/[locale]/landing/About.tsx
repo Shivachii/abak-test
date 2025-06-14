@@ -6,7 +6,7 @@ export default function About() {
   const t = useTranslations("About");
 
   return (
-    <section className="w-full px-4 py-8 bg-white">
+    <section className="w-full px-4 py-8 bg-white my-20">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
         {/* Text Section */}
         <div className="w-full md:w-1/2 flex flex-col gap-4">

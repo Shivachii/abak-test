@@ -20,7 +20,7 @@ export default function LeadershipSection() {
       key: "secretary",
     },
     {
-      key: "boardMembers",
+      key: "countyrepresentatives",
     },
   ];
 

@@ -9,10 +9,19 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("gallery").title("Gallery"),
       S.documentTypeListItem("media").title("Media"),
       S.documentTypeListItem("tag").title("Tag"),
+      S.documentTypeListItem("audio").title("Audio"),
+      S.documentTypeListItem("images").title("Images"),
       S.divider(),
       ...S.documentTypeListItems().filter(
         (item) =>
           item.getId() &&
-          !["gallery", "media", "publications", "tag"].includes(item.getId()!)
+          ![
+            "gallery",
+            "media",
+            "publications",
+            "tag",
+            "audio",
+            "images",
+          ].includes(item.getId()!)
       ),
     ]);

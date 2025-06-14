@@ -66,14 +66,13 @@ export default function ProjectsPage() {
 
   return (
     <section className="w-full max-w-7xl mx-auto ">
-      <Banner
-        title={t("title")}
-        subtitle={t("description")}
-        backgroundImage=""
-      />
+      <Banner backgroundImage="/banners/projects.png" />
       <div className="px-4 py-16">
+        {/* <p className="md:text-center text-justify text-gray-500 max-w-3xl mx-auto my-4 text-lg leading-relaxed">
+          {t("description")}
+        </p> */}
         {/* Project Cards */}
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2 my-8">
           {items.map((key) => (
             <div
               key={key}

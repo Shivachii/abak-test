@@ -2,12 +2,10 @@ import CorePrinciples from "./landing/Principles";
 import HeroCarousel from "@/components/Hero/Hero";
 import About from "./landing/About";
 import DonationCTA from "@/components/CTA/DonationCTA";
-import ProgramsObjectives from "./landing/Programs";
-import AnnouncementsSection from "./landing/Announcements";
-import { samplePosts } from "../../../lib/sampleposts";
-
-import LatestPosts from "@/components/Posts/Latest/LatestPosts";
+import ProgramsObjectives from "./landing/Objectives";
 import FadeInSection from "@/components/Animations/FadeInSection";
+import Programs from "./landing/Programs";
+import Events from "./landing/Events";
 
 export default function Home() {
   return (
@@ -27,10 +25,11 @@ export default function Home() {
           <ProgramsObjectives />
         </FadeInSection>
         <FadeInSection delay={0.3}>
-          <AnnouncementsSection />
+          <Programs />
         </FadeInSection>
         <FadeInSection delay={0.4}>
-          <LatestPosts posts={samplePosts} />
+          {/* <LatestPosts posts={samplePosts} /> */}
+          <Events />
         </FadeInSection>
       </div>
     </div>

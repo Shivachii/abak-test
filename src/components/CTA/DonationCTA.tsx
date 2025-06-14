@@ -6,7 +6,7 @@ export default function DonationCTA() {
   return (
     <Link
       href="/donate"
-      className="group block md:hidden w-full bg-slate-100 p-4 mb-8   transition-colors "
+      className="group block md:hidden w-full bg-slate-100 p-4 mb-8  transition-colors "
     >
       <div className="flex justify-between items-center group-hover:bg-primary group-hover:text-white transition-colors gap-5 p-2 rounded-md">
         <div className="flex items-center gap-4">

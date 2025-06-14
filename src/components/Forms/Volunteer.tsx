@@ -117,6 +117,7 @@ export default function VolunteerDialog() {
                           <SelectItem value=" hawza-essentials">
                             Hawza essentials
                           </SelectItem>
+                          <SelectItem value="media">Media</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />

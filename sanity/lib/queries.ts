@@ -70,3 +70,41 @@ export const publicationsQuery = `
   "pdfUrl": pdfFile.asset->url
 }
 `;
+
+export const getAllAudioQuery = `*[_type == "audio"]{
+  _id,
+  title,
+  author,
+  "audioUrl": audioFile.asset->url,
+  "thumbnailUrl": thumbnail.asset->url
+}`;
+
+export const getImagesQuery = `
+*[_type == "images"] | order(_createdAt desc) {
+  _id,
+  title,
+  description,
+  "imageUrl": image.asset->url
+}
+`;
+
+export const getAllGalleryMediaPaginatedQuery = (start = 0, end = 8) => `
+  *[_type == "gallery"] | order(_createdAt desc) [${start}...${end}]{
+    title,
+    slug,
+    "media": media[]{
+      ...,
+      _type == "image" => {
+        "type": "image",
+        "url": asset->url,
+        caption
+      },
+      _type == "file" => {
+        "type": "file",
+        "url": asset->url,
+        caption,
+        "extension": asset->extension
+      }
+    }
+  }
+`;

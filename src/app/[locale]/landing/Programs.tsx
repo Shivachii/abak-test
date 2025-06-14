@@ -1,54 +1,62 @@
-"use client";
-
-import UnderlineLink from "@/components/Animations/Underline";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import UnderlineLink from "@/components/Animations/Underline";
 
-export default function ProgramsObjectives() {
-  const t = useTranslations("ProgramsObjectives");
-
-  const objectiveKeys = [
-    "propagation",
-    "communities",
-    "mubaligheen",
-    "content",
-    "education",
-    "services",
+export default function Programs() {
+  const t = useTranslations("Projects");
+  const items = [
+    "hawza",
+    "mubaligheenTraining",
+    "mubaligheenSupport",
+    "communitySupport",
   ];
 
   return (
-    <section className="w-full px-4 py-10 bg-slate-50">
-      <div className="max-w-7xl mx-auto flex flex-col gap-6">
-        <div className="text-center">
-          <h2 className="text-secondary text-sm md:text-base font-bold tracking-widest uppercase">
-            {t("heading")}
-          </h2>
-          <p className="text-2xl md:text-3xl font-bold text-primary mt-2">
-            {t("title")}
-          </p>
-          <p className="mt-2 text-gray-700 text-base md:text-lg max-w-2xl mx-auto">
-            {t("description")}
-          </p>
-        </div>
-
-        {/* Objectives Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
-          {objectiveKeys.map((key) => (
+    <section className="w-full bg-tertiary/10 px-4 py-8 ">
+      <div className="px-4 py-16">
+        <h2 className="text-secondary text-sm md:text-base font-bold tracking-widest uppercase text-center">
+          {t("title")}
+        </h2>
+        <p className="text-2xl md:text-3xl font-bold text-center text-primary mt-2">
+          {t("subtitle")}
+        </p>
+        <p className="md:text-center text-justify text-gray-500 max-w-3xl mx-auto my-4 text-lg leading-relaxed">
+          {t("description")}
+        </p>
+        {/* Project Cards */}
+        <div className="grid gap-10 md:grid-cols-2 my-8">
+          {items.map((key) => (
             <div
               key={key}
-              className="bg-white rounded-lg shadow-md border-l-4 border-tertiary p-5 hover:shadow-lg transition"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
             >
-              <h3 className="text-lg font-semibold text-secondary mb-2">
-                {t(`objectives.${key}.title`)}
-              </h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                {t(`objectives.${key}.description`)}
-              </p>
+              <Image
+                src={t(`items.${key}.image`)}
+                alt={t(`items.${key}.title`)}
+                width={200}
+                height={200}
+                className="w-full h-52 object-cover"
+              />
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-semibold text-secondary">
+                  {t(`items.${key}.title`)}
+                </h3>
+                <p className="text-gray-700 text-sm">
+                  {t(`items.${key}.description`)}
+                </p>
+                <Link href={t(`items.${key}.href`)}>
+                  <Button variant="outline" className="mt-2">
+                    {t("button")}
+                  </Button>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
-
-        <div className="flex justify-start md:justify-end">
-          <UnderlineLink linkText={t("cta")} href="programs-and-objectives" />
+        <div className="flex justify-end">
+          <UnderlineLink linkText={t("linkText")} href="programs" />
         </div>
       </div>
     </section>

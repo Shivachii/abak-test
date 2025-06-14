@@ -1,29 +1,30 @@
 import React from "react";
+import { sanityFetch } from "../../../../../../sanity/lib/live";
+import { getAllAudioQuery } from "../../../../../../sanity/lib/queries";
+import Image from "next/image";
 
-const audios = [
-  {
-    title: "Surah Yaseen Recitation",
-    speaker: "Shaykh Ali",
-    url: "/audios/surah-yaseen.mp3",
-  },
-  {
-    title: "The Life of Lady Fatima (a.s)",
-    speaker: "Ustadh Ahmed",
-    url: "/audios/lady-fatima.mp3",
-  },
-  {
-    title: "Lessons from Karbala",
-    speaker: "Sayyid Hassan",
-    url: "/audios/karbala-lessons.mp3",
-  },
-  {
-    title: "Tafsir of Surah Al-Kahf",
-    speaker: "Imam Yusuf",
-    url: "/audios/tafsir-al-kahf.mp3",
-  },
-];
+type AudioItem = {
+  _id: string;
+  title: string;
+  author: string;
+  audioUrl: string;
+  thumbnailUrl: string;
+};
 
-export default function AudioPage() {
+export default async function AudioPage() {
+  const audios = await sanityFetch({
+    query: getAllAudioQuery,
+  });
+  console.log(audios);
+
+  // if (!audios || audios.data || audios.data.length === 0) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen">
+  //       <h1 className="text-2xl text-red-500">No audio files found</h1>
+  //     </div>
+  //   );
+  // }
+
   return (
     <section className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-3xl sm:text-4xl font-bold text-center text-secondary text-gray-800 mb-10">
@@ -35,22 +36,40 @@ export default function AudioPage() {
         understanding and stay connected to our message wherever you are.
       </p>
 
-      <div className="space-y-8">
-        {audios.map((audio, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {audios.data.map((audio: AudioItem) => (
           <div
-            key={index}
-            className="bg-white shadow-md rounded-xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between"
+            key={audio._id}
+            className="bg-white rounded-xl border shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col h-full group"
           >
-            <div className="mb-4 sm:mb-0">
-              <h2 className="text-lg font-semibold text-gray-800">
-                {audio.title}
-              </h2>
-              <p className="text-sm text-gray-500">by {audio.speaker}</p>
+            {/* Thumbnail */}
+            <div className="w-full flex justify-center pt-5">
+              <Image
+                src={audio.thumbnailUrl}
+                alt={`Thumbnail for ${audio.title}`}
+                width={96}
+                height={96}
+                className="rounded-md object-cover object-center w-72 h-72 "
+              />
             </div>
-            <audio controls className="w-full sm:w-64 mt-2 sm:mt-0">
-              <source src={audio.url} type="audio/mp3" />
-              Your browser does not support the audio element.
-            </audio>
+
+            {/* Content */}
+            <div className="flex flex-col justify-between p-5 flex-1 space-y-3">
+              <div>
+                <h2 className="text-lg font-semibold text-gray-800 line-clamp-2">
+                  {audio.title}
+                </h2>
+                <p className="text-sm text-gray-500">by {audio.author}</p>
+              </div>
+
+              <audio
+                controls
+                className="w-full rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary mt-auto"
+              >
+                <source src={audio.audioUrl} type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
           </div>
         ))}
       </div>

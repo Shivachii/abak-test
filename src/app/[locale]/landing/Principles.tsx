@@ -36,7 +36,7 @@ export default function CorePrinciples() {
             <ul className="space-y-4">
               {principles.map((key) => (
                 <li key={key} className="flex items-center gap-3">
-                  <CheckCircle className="text-tertiary shrink-0" size={18} />
+                  <CheckCircle className="text-secondary shrink-0" size={18} />
                   <span className="text-gray-800 font-medium leading-relaxed">
                     {t(`values.principles.${key}`)}
                   </span>

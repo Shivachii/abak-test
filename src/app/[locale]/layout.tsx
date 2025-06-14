@@ -13,7 +13,7 @@ import { SanityLive } from "../../../sanity/lib/live";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "../../i18n/routing";
-import StickyDonateForm from "@/components/Forms/StickyDonation";
+// import StickyDonateForm from "@/components/Forms/StickyDonation";
 
 export default async function FrontendLayout({
   children,
@@ -42,7 +42,7 @@ export default async function FrontendLayout({
           loading: <Loader2 className="animate-spin text-gray-500" />,
         }}
       />
-      <StickyDonateForm />
+      {/* <StickyDonateForm /> */}
       <ScrollToTop />
       <SanityLive />
       <Footer />

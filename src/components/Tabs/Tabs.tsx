@@ -41,7 +41,7 @@ const Triggers = [
     name: "Community Services",
     value: "community-services",
   },
-  { name: "Hawza Seminary", value: "hawza-seminary" },
+  { name: "Hawza", value: "hawza-seminary" },
 ];
 
 export function ObjectivesTabs() {

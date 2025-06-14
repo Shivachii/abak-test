@@ -30,7 +30,7 @@ export function Logo() {
 export function FooterLogo() {
   return (
     <Image
-      src="/logo.jpg"
+      src="/logo.png"
       alt="Main ABAK Navbar Logo"
       width={100}
       height={100}

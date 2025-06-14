@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About Us",
     "ourWork": "Our Work",
-    "islamicLearning": "Islamic Learning",
+    "hawza": "Hawza ",
     "resources": "Resources",
     "contact": "Contact Us",
     "volunteer": "Volunteer",
@@ -14,10 +14,7 @@
       "hawza": "Hawza Seyyidah Zeinab",
       "quran": "Qur'an Reflections"
     },
-    "islamicLearningDropdown": {
-      "hawza": "Hawza Seyyidah Zeinab",
-      "quranReflections": "Qur'an Reflections"
-    },
+
     "ourWorkDropdown": {
       "objectives": "Objectives",
       "objectivesDesc": "Explore ABAK’s foundational goals and guiding principles.",
@@ -48,7 +45,7 @@
     "officialInfo": "OFFICIAL INFO",
     "islamicLearning": "Islamic Learning",
     "quranReflections": "Qur'an Reflections",
-    "hawza": "Hawza Seyyidah Zeinab",
+    "hawza": "Hawza ",
     "resources": "Resources",
     "publications": "Publications",
     "audioVisual": "Audio-Visual"
@@ -70,22 +67,24 @@
   },
 
   "hero": {
-    "heading": "The Ahlul-Bayt Assembly of Kenya",
     "slides": [
       {
+        "heading": "The Ahlul-Bayt Assembly of Kenya",
         "title": "Guided by the Teachings of the Prophet (s.a.w.w) and Ahlul Bayt (a.s)",
         "description": "ABAK is committed to spreading authentic Islamic knowledge and values throughout Kenya.",
         "ctaText": "Learn about ABAK"
       },
       {
+        "heading": "Hawza (S.A)",
         "title": "Sayyedah Zeinab",
         "description": "Our Hawza Seminary shapes future Islamic scholars with deep spiritual, intellectual, and moral training to serve the Ummah with wisdom and sincerity.",
         "ctaText": "Learn about our Sayyedah Zeinab"
       },
       {
+        "heading": "The Ahlul-Bayt Assembly of Kenya",
         "title": "From Education to Social Welfare",
         "description": "ABAK supports Shia communities with learning institutions, content, and vital services.",
-        "ctaText": "See Our Community Work"
+        "ctaText": "See Our Community Services"
       }
     ],
     "donate": "Help us make a difference"
@@ -177,11 +176,13 @@
 
   "Projects": {
     "title": "Our Projects",
-    "description": "These initiatives reflect ABAK's ongoing efforts to build spiritual, educational, and social capacity across Kenya and beyond.",
+    "subtitle": "Empowering Communities through faith and service",
+    "description": "Through its multifaceted programs, the Ahlulbayt (A.S) Assembly of Kenya continues to make a profound impact on individuals and communities, blending spiritual values with tangible service. ABAK remains committed to its vision of nurturing an empowered, healthy, educated, and united Ummah, driven by the principles of compassion, equity, and faith.",
+    "linkText": "Learn more about our projects",
     "button": "Learn More",
     "items": {
       "hawza": {
-        "title": "Hawza Sayyedah Zeinab",
+        "title": "Hawza Seyyidah Zeinab",
         "description": "A seminary program dedicated to training future scholars and community leaders grounded in the teachings of Ahlul Bayt.",
         "image": "/hawza.jpg",
         "href": "/islamic-learning/hawza-seyyidah"
@@ -190,25 +191,25 @@
         "title": "Mubaligheen Training",
         "description": "Structured training programs to equip Islamic preachers with the knowledge and skills to effectively guide their communities.",
         "image": "/mosqueteachings.jpeg",
-        "href": "#"
+        "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
         "title": "Mubaligheen Support",
         "description": "Ongoing mentorship, resources, and logistical support for Mubaligheen across Kenya to sustain their community impact.",
         "image": "/abak.jpg",
-        "href": "#"
+        "href": "/programs/mubaligheen-support"
       },
       "media": {
         "title": "Content Creation",
         "description": "Developing impactful Islamic multimedia content to educate, inspire, and address misinformation within and beyond the community.",
-        "image": "/dua.jpg",
-        "href": "#"
+        "image": "/content.png",
+        "href": "/resources/audio-visual"
       },
       "communitySupport": {
-        "title": "Community Support",
+        "title": "Community Services",
         "description": "Offering mobile health services, welfare outreach, and other forms of support to uplift underserved communities.",
-        "image": "/mashallah.jpg",
-        "href": "#"
+        "image": "/community.png",
+        "href": "/programs/community-services"
       }
     }
   },
@@ -224,7 +225,7 @@
         "description": "Preaching the teachings of Ahlul Bayt (a.s) through sermons, literature, events, and interfaith dialogue."
       },
       "communities": {
-        "title": "Organizing Shia Communities",
+        "title": "Organization of Shia Communities",
         "description": "Empowering communities through leadership training, mentorship, youth camps, student support, and economic upliftment."
       },
       "mubaligheen": {
@@ -232,11 +233,11 @@
         "description": "Establishing institutions to train Islamic preachers and scholars to serve society with deep knowledge and purpose."
       },
       "content": {
-        "title": "Content Development",
+        "title": "Content Creation",
         "description": "Producing sermons, articles, documentaries, and drama-based content to promote Islamic values and culture."
       },
       "education": {
-        "title": "Educational Institutions",
+        "title": "Learning Institutions",
         "description": "Setting up schools and seminaries (Hawza) with Islamic-integrated curricula to nurture future generations of informed Muslims."
       },
       "services": {
@@ -277,8 +278,8 @@
         "title": "Secretary",
         "description": "Maintains records and ensures communication within the organization."
       },
-      "boardMembers": {
-        "title": "Board Members",
+      "countyrepresentatives": {
+        "title": "County Representatives",
         "description": "Contribute to decision-making and uphold the mission and values."
       }
     }
@@ -301,6 +302,7 @@
     },
     "mapTitle": "Find us on the map"
   },
+
   "donate": {
     "title": "Support Our Mission",
     "description": "Your donation helps ABAK spread the teachings of Ahlul Bayt (a.s), uplift communities, and empower future generations through education, service, and faith.",
@@ -308,6 +310,7 @@
     "button": "Donate Now",
     "intro": "Support AhlulBayt Assembly of Kenya by donating through M-Pesa, bank transfer, or sponsoring our programs."
   },
+
   "Posts": {
     "latestPosts": "Latest Posts",
     "communityNewsUpdates": "Community News & Updates",
@@ -316,22 +319,27 @@
     "comingSoon": "Posts Coming Soon!",
     "comingSoonDescription": "We're working hard to bring you fresh content. Stay tuned for exciting updates."
   },
+
   "events": {
     "upcomingEvents": "Upcoming Events",
     "joinCommunityInitiatives": "Join Our Community Initiatives",
     "stayUpdated": "Stay informed about upcoming programs, symposia, and spiritual gatherings.",
+    "linkText": "Find out more about our events",
+    "viewImages": "View Images",
     "list": [
       {
         "title": "Muballigheen Symposium",
         "date": "May 4, 2025",
         "location": "Western",
-        "description": "A regional symposium for Western-based Muballigheen focused on strengthening regional outreach and Islamic education programs."
+        "description": "A regional symposium for Western-based Muballigheen focused on strengthening regional outreach and Islamic education programs.",
+        "images": ["/symposium1.jpg", "/symposium2.jpg"]
       },
       {
         "title": "Nikah for One of the Mubalighat",
         "date": "April 27, 2025",
         "location": "Kichaka Mkwaju, Coast",
-        "description": "A blessed Nikah celebration attended by Shk. Ali Samojah, Shk. Juma Shughuli, and Shk. Salim Mwaega, honoring a Muballighat's new journey."
+        "description": "A blessed Nikah celebration attended by Shk. Ali Samojah, Shk. Juma Shughuli, and Shk. Salim Mwaega, honoring a Muballighat's new journey.",
+        "images": ["/nikah1.jpg", "/nikah2.jpg"]
       },
       {
         "title": "Arbaeen for Late Shk. Maradi & Meeting with Muballighiin",
@@ -343,7 +351,8 @@
         "title": "Ramadhan Classes",
         "date": "March 1 – April 1, 2025",
         "location": "Parkroad",
-        "description": "A month-long series of educational sessions during Ramadhan 1446, focusing on spiritual growth and community engagement."
+        "description": "A month-long series of educational sessions during Ramadhan 1446, focusing on spiritual growth and community engagement.",
+        "images": ["/ramadhan1.jpg", "/ramadhan2.jpg"]
       },
       {
         "title": "Majlis Fa'tiha for Shahid Sayyid Hassan Nasrullah & Shahid Sayyid Hashim Swafiyudin",
@@ -355,19 +364,21 @@
         "title": "Muballigheen Symposium",
         "date": "February 8, 2025",
         "location": "Parklands Plaza",
-        "description": "A symposium bringing together Muballigheen to exchange ideas, receive training, and enhance their spiritual leadership skills."
+        "description": "A symposium bringing together Muballigheen to exchange ideas, receive training, and enhance their spiritual leadership skills.",
+        "images": ["/symposium3.jpg", "/symposium4.jpg"]
       },
       {
         "title": "Muballighiin Meeting",
         "date": "September 11, 2024",
         "location": "Ngumo",
-        "description": "A focused gathering of Muballigheiin to discuss current initiatives, share feedback, and strategize for future community outreach."
+        "description": "A focused gathering of Muballigheiin to discuss current initiatives, share feedback, and strategize for future community outreach.",
+        "images": ["/meeting1.jpg", "/meeting2.jpg"]
       }
     ]
   },
   "programs": {
     "objectivesTitle": "Our Objectives",
-    "mainObjectivesHeader": "We have 8 main objectives",
+    "mainObjectivesHeader": "Our main objectives",
     "objectivesDescription": "At the AhlulBayt Assembly of Kenya (ABAK), our mission is guided by a series of well-defined programs and objectives. These focus on spiritual guidance, community development, education, and empowerment. Each objective represents a step toward creating a more informed, unified, and compassionate society rooted in the teachings of the Ahlul Bayt (a.s)."
   },
   "hawza": {
@@ -465,6 +476,20 @@
         }
       ]
     },
+
+    "scholarships": {
+      "heading": "Supporting Religious and Secular Education",
+      "intro": "Education remains a cornerstone of ABAK’s developmental agenda. The Assembly has consistently supported students who aspire to pursue further studies in both religious and secular disciplines.",
+      "details": "Through structured scholarship programs, ABAK identifies and sponsors deserving candidates from across the country, enabling them to access quality education in Kenya and abroad.",
+      "impact": "These efforts are geared toward building a generation of knowledgeable, ethically-grounded, and socially responsible leaders.",
+      "hawzaTitle": "HAWZA Scholarships",
+      "hawzaDesc": "Providing support for religious seminary education (Hawza).",
+      "secularTitle": "Secular Studies",
+      "secularDesc": "Funding for university and college-level programs.",
+      "globalTitle": "Local & Abroad",
+      "globalDesc": "Sponsorships available within Kenya and internationally."
+    },
+
     "support": {
       "title": "Support the Hawza",
       "description": "Help empower future female Islamic scholars. Sponsor a student with just 1,000 USD per year, covering accommodation and tuition.",
@@ -512,5 +537,78 @@
       "three": "Media & Content Creation",
       "four": "Community Outreach Programs"
     }
+  },
+
+  "communityServices": {
+    "title": "Community Services",
+    "subtitle": "Empowering Communities through Compassionate Service",
+    "services": {
+      "health": {
+        "title": "Promoting Health through Mobile Clinics and Awareness Programs ",
+        "description": "In response to healthcare challenges faced by marginalized communities, ABAK has actively promoted mobile clinic initiatives and community health awareness campaigns. These mobile units offer basic medical services, screenings, and health education in remote and underserved areas. The program plays a vital role in early detection of illnesses and improving general health literacy among the population."
+      },
+      "islamicMedicine": {
+        "title": "Promoting Islamic Medicine and Traditional Practices",
+        "description": "ABAK recognizes the value of prophetic and Islamic medicine as part of a comprehensive approach to wellness. The Assembly has championed efforts to revive and promote these time-tested practices, including the use of herbal treatments, Hijama (cupping), and other prophetic healing methods. Educational sessions and workshops are conducted to raise awareness on these practices within the framework of Islamic teachings and modern scientific understanding."
+      },
+      "disasterResponse": {
+        "title": "Establishing Disaster and Emergency Response Mechanisms",
+        "description": "Disaster preparedness and rapid emergency response are critical components of ABAK’s humanitarian agenda. The organization has taken significant steps in developing a responsive mechanism to deal with natural disasters, health emergencies, and other crises. By collaborating with local institutions and volunteers, ABAK ensures timely relief and support to affected communities, demonstrating solidarity in moments of need."
+      },
+      "counseling": {
+        "title": "Engaging Counselors to Address Social Issues",
+        "description": "Understanding the rising mental health and social challenges within communities, ABAK has engaged professional counselors and social workers to address issues such as family breakdown, youth delinquency, drug abuse, and depression. These counseling programs are tailored to provide spiritual, psychological, and emotional support rooted in Islamic ethics, helping individuals and families rebuild stability and confidence."
+      },
+      "reliefPrograms": {
+        "title": "Facilitating Relief Programs ",
+        "description": "ABAK remains at the forefront of relief distribution, especially during times of hardship such as drought, pandemics, and economic downturns. The Assembly routinely facilitates food distribution, clothing drives, and provision of essential household items to the most vulnerable members of society, including orphans, widows, the elderly, and internally displaced persons."
+      },
+      "economicUpliftment": {
+        "title": "Economic Upliftment  ",
+        "description": "In a bid to promote self-reliance and economic dignity, ABAK has initiated various economic empowerment programs. The Qardh Hassanah Fund offers interest-free loans to small entrepreneurs and families, enabling them to start or expand income-generating activities. Similarly, the Al Qaim Sacco provides members with access to savings, credit, and financial literacy training, fostering a culture of economic resilience and community-based development."
+      }
+    }
+  },
+
+  "mubaligheenSupport": {
+    "title": "Supporting Our Mubaligheen",
+    "intro": "Empowering religious educators who guide our communities with knowledge, wisdom, and compassion.",
+    "whySupport": "Why Mubaligheen Support Matters",
+    "description": "Our Mubaligheen are the backbone of religious education and community guidance. ABAK provides resources to ensure they can teach, counsel, and lead effectively—especially in underserved regions across Kenya.",
+    "supportAreas": {
+      "title": "Our Areas of Support",
+      "list": [
+        "Monthly Stipends",
+        "Educational Resources & Books",
+        "Transport Allowance for Outreach",
+        "Workshops & Continuing Education",
+        "Community-based Da'wa Support"
+      ]
+    },
+    "cta": "Get Involved or Support"
+  },
+
+  "mubaligheenTraining": {
+    "title": "Mubaligheen Training & Capacity Building",
+    "intro": "Empowering religious scholars to lead, guide, and inspire communities across Kenya and East Africa.",
+    "whyImportant": "Why Mubaligheen Training Matters",
+    "description": "Recognizing the pivotal role of religious scholars and preachers (mubalighuun), ABAK has invested heavily in their training and capacity building. Regular seminars are held in various regions across Kenya to equip mubalighuun with the skills and knowledge necessary for effective community leadership. These efforts ensure that the message of Islam is delivered with wisdom, compassion, and relevance to modern challenges. Through structured mentorship and continuous learning, mubalighuun are empowered to be both spiritual guides and agents of positive change.",
+    "trainingAreas": {
+      "title": "Key Areas of Training",
+      "list": [
+        "Islamic jurisprudence and contemporary issues",
+        "Effective communication and public speaking",
+        "Community counseling and family matters",
+        "Youth engagement and social media ethics",
+        "Conflict resolution and peacebuilding",
+        "Interfaith dialogue and religious tolerance",
+        "Mental health awareness in religious practice"
+      ]
+    },
+    "symposium": {
+      "title": "Regional Symposiums & Collaboration",
+      "body": "ABAK recently hosted a groundbreaking regional symposium that brought together mubalighuun from across East Africa. This forum fostered rich dialogue, peer learning, and strategic partnerships aimed at strengthening the religious voice in our societies. It marked a significant step in building a unified and informed network of scholars addressing local and regional challenges."
+    },
+    "cta": "Are you a mubaligh seeking to grow your impact? Reach out to us to join our next training session or regional forum."
   }
 }
