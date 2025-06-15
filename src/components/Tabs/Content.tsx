@@ -32,7 +32,7 @@ export const contentData: {
         </div>
         <div className=" hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/child-sit.jpg"
+            src="/arbaeen2.jpg"
             alt="ABAK Community Services"
             width={400}
             height={300}
@@ -48,23 +48,34 @@ export const contentData: {
     description:
       "ABAK is dedicated to spreading the teachings of Islam as understood through the lens of the Ahlul Bayt. By promoting Tabligh rooted in compassion, knowledge, and authenticity, ABAK seeks to guide individuals toward spiritual awareness while preserving the true essence of Islamic values in the Kenyan context.",
     content: (
-      <div className="">
-        {" "}
-        <h4 className="text-secondary text-sm md:text-base font-semibold tracking-widest uppercase mb-2">
+      <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="">
           {" "}
-          Strategies for implementation
-        </h4>
-        <ul className="space-y-3">
-          {Strategies.map((strategy, i) => (
-            <li key={i} className="flex items-start gap-3 text-gray-800">
-              <CheckCircle
-                className="mt-1 text-primary flex-shrink-0"
-                size={20}
-              />
-              <span>{strategy}</span>
-            </li>
-          ))}
-        </ul>
+          <h4 className="text-secondary text-sm md:text-base font-semibold tracking-widest uppercase mb-2">
+            {" "}
+            Strategies for implementation
+          </h4>
+          <ul className="space-y-3">
+            {Strategies.map((strategy, i) => (
+              <li key={i} className="flex items-start gap-3 text-gray-800">
+                <CheckCircle
+                  className="mt-1 text-primary flex-shrink-0"
+                  size={20}
+                />
+                <span>{strategy}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className=" hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
+          <Image
+            src="/ramadhan1.jpg"
+            alt="ABAK Community Services"
+            width={400}
+            height={300}
+            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
+          />
+        </div>
       </div>
     ),
   },
@@ -90,11 +101,11 @@ export const contentData: {
         {/* Optional Image */}
         <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/mashallah.jpg"
+            src="/content.png"
             alt="Content creation illustration"
-            width={400}
+            width={500}
             height={300}
-            className="w-[400px] h-[300px] object-cover rounded-md shadow-md"
+            className="w-[450px] h-[300px] object-cover rounded-md shadow-md"
           />
         </div>
       </div>
@@ -194,7 +205,7 @@ export const contentData: {
         {/* Image */}
         <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/abak.jpg"
+            src="/mubaligheen.jpeg"
             alt="Community empowerment"
             width={400}
             height={300}
@@ -231,7 +242,7 @@ export const contentData: {
         {/* Image */}
         <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/mashallah.jpg"
+            src="/hawza/g1.jpg"
             alt="Community empowerment"
             width={400}
             height={300}
@@ -268,7 +279,7 @@ export const contentData: {
         {/* Image */}
         <div className="hidden md:block md:flex-shrink-0 rounded-md  overflow-hidden">
           <Image
-            src="/abak.jpg"
+            src="/mubsupport.jpeg"
             alt="Mubaligheen Support"
             width={400}
             height={300}

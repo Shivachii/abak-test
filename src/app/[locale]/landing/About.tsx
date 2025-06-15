@@ -28,7 +28,7 @@ export default function About() {
         <div className="w-full md:w-1/2">
           <div className="relative  w-full h-[350px] rounded-md overflow-hidden shadow-md">
             <Image
-              src="/mosqueteachings.jpeg"
+              src="/about.jpg"
               alt="teachings in a mosque"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

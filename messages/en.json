@@ -184,19 +184,19 @@
       "hawza": {
         "title": "Hawza Seyyidah Zeinab",
         "description": "A seminary program dedicated to training future scholars and community leaders grounded in the teachings of Ahlul Bayt.",
-        "image": "/hawza.jpg",
+        "image": "/hawza/hawzalogo.jpeg",
         "href": "/islamic-learning/hawza-seyyidah"
       },
       "mubaligheenTraining": {
         "title": "Mubaligheen Training",
         "description": "Structured training programs to equip Islamic preachers with the knowledge and skills to effectively guide their communities.",
-        "image": "/mosqueteachings.jpeg",
+        "image": "/mubaligheen.jpeg",
         "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
         "title": "Mubaligheen Support",
         "description": "Ongoing mentorship, resources, and logistical support for Mubaligheen across Kenya to sustain their community impact.",
-        "image": "/abak.jpg",
+        "image": "/mubsupport.jpeg",
         "href": "/programs/mubaligheen-support"
       },
       "media": {
@@ -208,7 +208,7 @@
       "communitySupport": {
         "title": "Community Services",
         "description": "Offering mobile health services, welfare outreach, and other forms of support to uplift underserved communities.",
-        "image": "/community.png",
+        "image": "/arbaeen2.jpg",
         "href": "/programs/community-services"
       }
     }
@@ -338,14 +338,14 @@
         "title": "Nikah for One of the Mubalighat",
         "date": "April 27, 2025",
         "location": "Kichaka Mkwaju, Coast",
-        "description": "A blessed Nikah celebration attended by Shk. Ali Samojah, Shk. Juma Shughuli, and Shk. Salim Mwaega, honoring a Muballighat's new journey.",
-        "images": ["/nikah1.jpg", "/nikah2.jpg"]
+        "description": "A blessed Nikah celebration attended by Shk. Ali Samojah, Shk. Juma Shughuli, and Shk. Salim Mwaega, honoring a Muballighat's new journey."
       },
       {
         "title": "Arbaeen for Late Shk. Maradi & Meeting with Muballighiin",
         "date": "April 6, 2025",
         "location": "Kibuyuni, Kwale",
-        "description": "Commemorating the life of Late Shk. Maradi and uniting Muballighiin in a meaningful gathering for reflection and planning."
+        "description": "Commemorating the life of Late Shk. Maradi and uniting Muballighiin in a meaningful gathering for reflection and planning.",
+        "images": ["/arbaeen1.jpg", "/arbaeen2.jpg"]
       },
       {
         "title": "Ramadhan Classes",
@@ -381,6 +381,7 @@
     "mainObjectivesHeader": "Our main objectives",
     "objectivesDescription": "At the AhlulBayt Assembly of Kenya (ABAK), our mission is guided by a series of well-defined programs and objectives. These focus on spiritual guidance, community development, education, and empowerment. Each objective represents a step toward creating a more informed, unified, and compassionate society rooted in the teachings of the Ahlul Bayt (a.s)."
   },
+
   "hawza": {
     "title": "Hawza Seyyidah Zeinab",
     "subtitle": "A journey into Islamic knowledge and leadership",
@@ -517,16 +518,61 @@
       ]
     }
   },
+
   "publications": {
     "title": "Publications",
     "subtitle": "Explore our research, reports, and community publications.",
     "view_button": "View / Download"
   },
+
   "galleries": {
     "title": "Media Galleries",
     "subtitle": " Welcome to our Media Galleries – a curated collection of images, videos and documents showcasing our events, initiatives, and impact. Explore each gallery to get a visual glimpse into our work and community stories.",
-    "error": "No preview"
+    "error": "No preview",
+    "sections": {
+      "images": {
+        "title": "Images",
+        "desc": "Explore our photo gallery capturing key moments."
+      },
+      "videos": {
+        "title": "Videos",
+        "desc": "Watch lectures, events, and special programs."
+      },
+      "audio": {
+        "title": "Audio",
+        "desc": "Listen to Islamic talks and recitations."
+      },
+      "button": "View"
+    }
   },
+
+  "videos": {
+    "title": "Video Content",
+    "description": "Welcome to our Video Gallery – a growing archive of talks, lectures, and highlights from our programs and events. Watch and engage with insightful content that reflects our mission and community efforts.",
+    "items": [
+      {
+        "title": "MARADHI, USAFIRI NA FUNGA YA SAUM || SHEIKH JUMA SHUGHULI",
+        "url": "https://www.youtube.com/embed/5-SX4r6dY1Q?si=EsT5XY55WGHL8c5x"
+      },
+      {
+        "title": "The philosophy of Hajj | Jummah Khutba | Sheikh Ali Samojah",
+        "url": "https://www.youtube.com/embed/tcsPcgErsNk?si=GbiUySpQc9lqz3Lh"
+      },
+      {
+        "title": "RAMADHAN 2023 || NANI MWENYE KUFUNGA? || SH. ALI SAMOJAH",
+        "url": "https://www.youtube.com/embed/m_1_ByGLULs?si=e0DBVpOpScFq3aAZ"
+      },
+      {
+        "title": "Friday Khutba: Sheikh Ali Samoja || Month of Ramadhan and Importance of Saum",
+        "url": "https://www.youtube.com/embed/U-0Pu91-PmU?si=rhYq_KV-T6t20v0W"
+      },
+      {
+        "title": "ELIMU YA MAHUSIANO BAINA YA MME NA MKE || SHEIKH ALI SAMOJAH",
+        "url": "https://www.youtube.com/embed/n8JEhKFbyVg?si=kSTbLe6nPlG7iP2A"
+      }
+    ]
+  },
+
   "volunteer": {
     "title": "Become a Volunteer",
     "subtitle": "Join hands with ABAK to serve the community, spread knowledge, and make a lasting impact. Your time and skills are valuable in building a better future.",

@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function ImageGrid() {
   const images = [
-    { src: "/hawza/img19.jpg", alt: "Event 1" },
-    { src: "/hawza/img28.jpg", alt: "Event 2" },
-    { src: "/hawza/img29.jpg", alt: "Event 3" },
-    { src: "/hawza/img40.jpg", alt: "Event 4" },
+    { src: "/hawza/g1.jpg", alt: "Event 1" },
+    { src: "/hawza/g2.jpg", alt: "Event 2" },
+    { src: "/hawza/g4.jpg", alt: "Event 3" },
+    { src: "/hawza/g3.jpg", alt: "Event 4" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 mx-auto">

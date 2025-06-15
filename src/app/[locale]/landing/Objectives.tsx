@@ -48,7 +48,7 @@ export default function ProgramsObjectives() {
         </div>
 
         <div className="flex justify-start md:justify-end">
-          <UnderlineLink linkText={t("cta")} href="programs-and-objectives" />
+          <UnderlineLink linkText={t("cta")} href="governing-objectives" />
         </div>
       </div>
     </section>

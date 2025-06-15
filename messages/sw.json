@@ -129,6 +129,7 @@
       "cta": "Tazama Ratiba"
     }
   },
+
   "CorePrinciples": {
     "values": {
       "heading": "Maadili Yetu Muhimu",
@@ -155,6 +156,7 @@
       }
     }
   },
+
   "QuranReflections": {
     "heroTitle": "Tafakari za Qur’an",
     "heroSubtitle": "Gundua tafakari za kina na mafundisho kutoka katika Qur’an Tukufu ya kuongoza maisha yako ya kila siku.",
@@ -179,6 +181,7 @@
 
   "Projects": {
     "title": "Miradi Yetu",
+    "subtitle": "Kuwawezesha Jamii kupitia Imani na Huduma",
     "description": "Kupitia programu zake nyingi, Jumuiya ya Ahlulbayt (A.S) ya Kenya inaendelea kuleta athari kubwa kwa watu binafsi na jamii, ikichanganya maadili ya kiroho na huduma halisi. ABAK inabaki kujitolea kwa maono yake ya kulea Ummah uliowezeshwa, wenye afya, ulioelimika, na ulio na umoja, unaoongozwa na misingi ya huruma, usawa, na imani.",
     "linkText": "Jifunze zaidi kuhusu miradi yetu",
     "button": "Jifunze Zaidi",
@@ -186,35 +189,36 @@
       "hawza": {
         "title": "Hawza Sayyedah Zeinab",
         "description": "Mpango wa semina ya Kiislamu ya kuwaandaa wanazuoni na viongozi wa baadaye waliopata malezi katika mafundisho ya Ahlul Bayt.",
-        "image": "/hawza.jpg",
-        "href": "/our-work/hawza"
+        "image": "/hawza/hawzalogo.jpeg",
+        "href": "/islamic-learning/hawza-seyyidah"
       },
       "mubaligheenTraining": {
         "title": "Mafunzo ya Mubaligheen",
         "description": "Mafunzo rasmi ya kuwawezesha wahubiri wa Kiislamu kwa elimu na ujuzi wa kuwaongoza vyema jamii zao.",
-        "image": "/mosqueteachings.jpeg",
-        "href": "/our-work/mubaligheen-training"
+        "image": "/mubaligheen.jpeg",
+        "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
         "title": "Msaada kwa Mubaligheen",
         "description": "Ushauri wa mara kwa mara, rasilimali na msaada wa vifaa kwa Mubaligheen kote Kenya ili kuendeleza athari yao katika jamii.",
-        "image": "/abak.jpg",
-        "href": "/our-work/mubaligheen-support"
+        "image": "/mubsupport.jpeg",
+        "href": "/programs/mubaligheen-support"
       },
       "media": {
         "title": "Uundaji wa Maudhui",
         "description": "Kutengeneza maudhui ya Kiislamu yenye athari kama vile video, sauti, na makala ili kuelimisha, kuhamasisha, na kupambana na upotoshaji wa taarifa.",
-        "image": "/dua.jpg",
-        "href": "/our-work/content-creation"
+        "image": "/content.png",
+        "href": "/resources/audio-visual"
       },
       "communitySupport": {
         "title": "Msaada wa Jamii",
         "description": "Kutoa huduma za afya kupitia vituo vya afya vinavyosafiri na msaada wa kijamii kwa jamii zisizo na huduma za kutosha.",
-        "image": "/mashallah.jpg",
-        "href": "/our-work/community-support"
+        "image": "/arbaeen2.jpg",
+        "href": "/programs/community-services"
       }
     }
   },
+
   "ProgramsObjectives": {
     "heading": "Dhamira Yetu Katika Vitendo",
     "title": "Malengo Yetu",
@@ -247,6 +251,7 @@
       }
     }
   },
+
   "about": {
     "title": "Kuhusu Sisi",
     "name": "Kikao cha AhlulBayt cha Kenya (ABAK)",
@@ -257,6 +262,7 @@
     "visionTitle": "Maono Yetu",
     "vision": "Kuendeleza jamii ya Kenya yenye mshikamano, haki, na yenye utajiri wa kiroho iliyojengwa juu ya maadili na maadili ya Uislamu."
   },
+
   "leadership": {
     "title": "Muundo wa Uongozi",
     "description": "Muundo wetu wa uongozi unaakisi dhamira yetu ya uadilifu, ushirikiano, na huduma. Kila ofisi ina jukumu muhimu katika kuelekeza shirika kuelekea dhamira na maono yake.",
@@ -283,6 +289,7 @@
       }
     }
   },
+
   "contact": {
     "sectionTitle": "Wasiliana Nasi",
     "headline": "Tungependa Kusikia Kutoka Kwako",
@@ -299,6 +306,7 @@
     },
     "mapTitle": "Tupate kwenye Ramani"
   },
+
   "Posts": {
     "latestPosts": "Machapisho ya Hivi Karibuni",
     "communityNewsUpdates": "Habari na Sasisho za Jamii",
@@ -307,12 +315,14 @@
     "comingSoon": "Machapisho Yaja!",
     "comingSoonDescription": "Tunafanya kazi kwa bidii kuleta maudhui mapya kwako. Endelea kuwa nasi kwa sasisho za kusisimua."
   },
+
   "donate": {
     "title": "Tusaidie Kufanikisha Dhamira Yetu",
     "description": "Mchango wako husaidia ABAK kueneza mafundisho ya Ahlul Bayt (a.s), kuinua jamii, na kuwawezesha vizazi vijavyo kupitia elimu, huduma, na imani.",
     "waysTitle": "Njia za Kutoa Mchango",
     "button": "Changia Sasa"
   },
+
   "events": {
     "upcomingEvents": "Matukio Yanayokuja",
     "joinCommunityInitiatives": "Jiunge na Mipango ya Jamii",
@@ -331,8 +341,7 @@
         "title": "Nikah kwa Mmoja wa Mubalighat",
         "date": "Aprili 27, 2025",
         "location": "Kichaka Mkwaju, Pwani",
-        "description": "Sherehe ya Nikah yenye baraka iliyohudhurwa na Shk. Ali Samojah, Shk. Juma Shughuli, na Shk. Salim Mwaega, kuadhimisha safari mpya ya Mubalighat.",
-        "images": ["/nikah1.jpg", "/nikah2.jpg"]
+        "description": "Sherehe ya Nikah yenye baraka iliyohudhurwa na Shk. Ali Samojah, Shk. Juma Shughuli, na Shk. Salim Mwaega, kuadhimisha safari mpya ya Mubalighat."
       },
       {
         "title": "Arbaeen kwa Marehemu Shk. Maradi & Mkutano wa Muballighiin",
@@ -352,8 +361,7 @@
         "title": "Majlis Fa'tiha kwa Shahid Sayyid Hassan Nasrullah & Shahid Sayyid Hashim Swafiyudin",
         "date": "Februari 23, 2025",
         "location": "Parkroad",
-        "description": "Majlis ya heshima kwa maisha na urithi wa mashahidi wawili waliothaminiwa, ikiboresha kumbukumbu na umoja.",
-        "images": ["/majlis1.jpg", "/majlis2.jpg"]
+        "description": "Majlis ya heshima kwa maisha na urithi wa mashahidi wawili waliothaminiwa, ikiboresha kumbukumbu na umoja."
       },
       {
         "title": "Mkutano wa Muballigheen",
@@ -371,6 +379,7 @@
       }
     ]
   },
+
   "programs": {
     "objectivesTitle": "Malengo Yetu",
     "mainObjectivesHeader": "Malengo yetu makuu ",
@@ -518,11 +527,55 @@
     "subtitle": "Gundua tafiti zetu, ripoti, na machapisho ya jamii.",
     "view_button": "Tazama / Pakua"
   },
+
   "galleries": {
     "title": "Makumbusho ya Vyombo vya Habari",
     "subtitle": "Karibu kwenye Makumbusho yetu ya Vyombo vya Habari – mkusanyiko wa picha, video, na nyaraka zinazoonyesha matukio yetu, mipango, na athari zetu. Tembelea kila makumbusho kupata picha halisi za kazi na hadithi za jamii yetu.",
-    "error": "Hakuna onyesho la awali"
+    "error": "Hakuna onyesho la awali",
+    "sections": {
+      "images": {
+        "title": "Picha",
+        "desc": "Chunguza maktaba yetu ya picha inayoonyesha matukio muhimu."
+      },
+      "videos": {
+        "title": "Video",
+        "desc": "Tazama mihadhara, matukio, na vipindi maalum."
+      },
+      "audio": {
+        "title": "Sauti",
+        "desc": "Sikiliza mihadhara ya Kiislamu na tilawa."
+      },
+      "button": "Tazama"
+    }
   },
+
+  "videos": {
+    "title": "Maudhui ya Video",
+    "description": "Karibu kwenye Maktaba yetu ya Video – hazina inayokua ya mihadhara, hotuba, na matukio kutoka kwenye programu zetu. Tazama na husika na maudhui yenye hekima yanayoonyesha dhamira yetu na juhudi za kijamii.",
+    "items": [
+      {
+        "title": "MARADHI, USAFIRI NA FUNGA YA SAUM || SHEIKH JUMA SHUGHULI",
+        "url": "https://www.youtube.com/embed/5-SX4r6dY1Q?si=EsT5XY55WGHL8c5x"
+      },
+      {
+        "title": "Falsafa ya Hija | Khutba ya Ijumaa | Sheikh Ali Samojah",
+        "url": "https://www.youtube.com/embed/tcsPcgErsNk?si=GbiUySpQc9lqz3Lh"
+      },
+      {
+        "title": "RAMADHAN 2023 || NANI MWENYE KUFUNGA? || SH. ALI SAMOJAH",
+        "url": "https://www.youtube.com/embed/m_1_ByGLULs?si=e0DBVpOpScFq3aAZ"
+      },
+      {
+        "title": "Khutba ya Ijumaa: Sheikh Ali Samoja || Mwezi wa Ramadhani na Umuhimu wa Saumu",
+        "url": "https://www.youtube.com/embed/U-0Pu91-PmU?si=rhYq_KV-T6t20v0W"
+      },
+      {
+        "title": "ELIMU YA MAHUSIANO BAINA YA MUME NA MKE || SHEIKH ALI SAMOJAH",
+        "url": "https://www.youtube.com/embed/n8JEhKFbyVg?si=kSTbLe6nPlG7iP2A"
+      }
+    ]
+  },
+
   "volunteer": {
     "title": "Kuwa Msaidizi wa Kujitolea",
     "subtitle": "Jiunge na ABAK kuhudumia jamii, kueneza maarifa, na kuleta mabadiliko ya kudumu. Muda na ujuzi wako ni muhimu katika kujenga mustakabali bora.",
@@ -534,6 +587,38 @@
       "four": "Mipango ya Kueneza Huduma kwa Jamii"
     }
   },
+
+  "communityServices": {
+    "title": "Huduma za Jamii",
+    "subtitle": "Kuwawezesha Jamii Kupitia Huduma za Huruma",
+    "services": {
+      "health": {
+        "title": "Kukuza Afya Kupitia Kliniki za Mitembezi na Programu za Uhamasishaji",
+        "description": "Kukabiliana na changamoto za afya zinazowakumba jamii zilizotengwa, ABAK imeanzisha kliniki za mitembezi na kampeni za uhamasishaji wa afya. Kliniki hizi hutoa huduma za matibabu ya msingi, uchunguzi wa afya, na elimu kuhusu afya katika maeneo ya mbali na yasiyo na huduma. Mpango huu huchangia pakubwa kugundua magonjwa mapema na kuboresha uelewa wa afya kwa ujumla katika jamii."
+      },
+      "islamicMedicine": {
+        "title": "Kukuza Tiba ya Kiislamu na Mbinu za Jadi",
+        "description": "ABAK inatambua thamani ya tiba ya Mtume na tiba za Kiislamu kama sehemu ya njia jumuishi ya ustawi wa afya. Jumuiya imeendeleza juhudi za kufufua na kukuza mbinu hizi zilizothibitishwa kwa muda, ikiwemo matumizi ya dawa za mitishamba, Hijama (kufanyiwa kwa ventosa), na mbinu nyingine za uponyaji wa Mtume. Vipindi vya elimu na warsha hufanyika ili kuhamasisha jamii kuhusu mbinu hizi kwa kuzingatia mafundisho ya Kiislamu na sayansi ya kisasa."
+      },
+      "disasterResponse": {
+        "title": "Kuanzisha Mifumo ya Kukabili Maafa na Dharura",
+        "description": "Utayari wa kukabiliana na maafa na majibu ya haraka ya dharura ni sehemu muhimu ya ajenda ya kibinadamu ya ABAK. Jumuiya imechukua hatua muhimu kuanzisha mifumo ya haraka kushughulikia maafa ya asili, dharura za kiafya, na migogoro mingine. Kwa kushirikiana na taasisi za ndani na wajitoleaji, ABAK huhakikisha msaada unafika kwa wakati kwa jamii zilizoathirika, ikionyesha mshikamano wakati wa dhiki."
+      },
+      "counseling": {
+        "title": "Kuwaajiri Washauri Kuwasaidia Jamii Kukabiliana na Changamoto za Kijamii",
+        "description": "Kwa kutambua changamoto za afya ya akili na kijamii zinazoendelea kuongezeka, ABAK imewaajiri washauri wa kitaalamu na wataalamu wa kijamii kushughulikia masuala kama kuvunjika kwa familia, utovu wa nidhamu kwa vijana, matumizi ya dawa za kulevya, na msongo wa mawazo. Programu hizi za ushauri zinatolewa kwa kuzingatia maadili ya Kiislamu ili kusaidia watu binafsi na familia kurejesha uthabiti na kujiamini."
+      },
+      "reliefPrograms": {
+        "title": "Kuratibu Misaada ya Dharura",
+        "description": "ABAK iko mstari wa mbele katika kugawa misaada wakati wa dhiki kama vile ukame, janga la magonjwa, na matatizo ya kiuchumi. Jumuiya husambaza chakula, mavazi, na bidhaa muhimu kwa walio katika mazingira magumu zaidi kama vile mayatima, wajane, wazee, na wakimbizi wa ndani."
+      },
+      "economicUpliftment": {
+        "title": "Uwezeshaji wa Kiuchumi",
+        "description": "Ili kukuza kujitegemea na heshima ya kiuchumi, ABAK imeanzisha programu mbalimbali za kuwawezesha wananchi kiuchumi. Mfuko wa Qardh Hassanah unatoa mikopo isiyo na riba kwa wafanyabiashara wadogo na familia ili waanzishe au kupanua shughuli zao za kujipatia kipato. Vilevile, Al Qaim Sacco huwasaidia wanachama kujiwekea akiba, kupata mikopo, na mafunzo ya maarifa ya kifedha ili kuimarisha uthabiti wa kiuchumi wa jamii."
+      }
+    }
+  },
+
   "mubaligheenSupport": {
     "title": "Kuwasaidia Mubaligheen Wetu",
     "intro": "Kuwawezesha walimu wa dini wanaoongoza jamii zetu kwa elimu, hekima, na huruma.",
@@ -550,5 +635,29 @@
       ]
     },
     "cta": "Shiriki au Toa Msaada"
+  },
+
+  "mubaligheenTraining": {
+    "title": "Mafunzo na Ujenzi wa Uwezo kwa Mubaligheen",
+    "intro": "Kuwawezesha wanazuoni wa dini kuongoza, kuelimisha, na kuhamasisha jamii kote Kenya na Afrika Mashariki.",
+    "whyImportant": "Kwa Nini Mafunzo ya Mubaligheen ni Muhimu",
+    "description": "Kwa kutambua jukumu muhimu la wanazuoni wa Kiislamu na wahubiri (mubaligheen), ABAK imewekeza kwa kiasi kikubwa katika mafunzo na ujenzi wa uwezo wao. Semina hufanyika mara kwa mara katika maeneo mbalimbali nchini Kenya ili kuwapa mubaligheen ujuzi na maarifa yanayohitajika kwa uongozi bora wa kijamii. Juhudi hizi huhakikisha kuwa ujumbe wa Uislamu unawasilishwa kwa hekima, huruma, na kuendana na changamoto za kisasa. Kupitia ushauri wa kitaasisi na ujifunzaji wa kudumu, mubaligheen wanakuwa viongozi wa kiroho na mawakala wa mabadiliko chanya.",
+    "trainingAreas": {
+      "title": "Maeneo Muhimu ya Mafunzo",
+      "list": [
+        "Fiqhi ya Kiislamu na masuala ya kisasa",
+        "Mawasiliano madhubuti na uwasilishaji wa hadhara",
+        "Ushauri wa kijamii na masuala ya kifamilia",
+        "Kuhusisha vijana na maadili ya mitandao ya kijamii",
+        "Utatuzi wa migogoro na ujenzi wa amani",
+        "Mazungumzo ya kidini na uvumilivu wa imani mbalimbali",
+        "Uhamasishaji kuhusu afya ya akili katika ibada za kidini"
+      ]
+    },
+    "symposium": {
+      "title": "Makongamano ya Kikanda na Ushirikiano",
+      "body": "ABAK iliratibu hivi majuzi kongamano la kikanda lililowaleta pamoja mubaligheen kutoka kote Afrika Mashariki. Jukwaa hili lilichangia mazungumzo ya kina, ujifunzaji wa rika, na ushirikiano wa kimkakati kwa ajili ya kuimarisha sauti ya kidini katika jamii zetu. Hili lilikuwa hatua muhimu katika kujenga mtandao wa wanazuoni walio na umoja na maarifa kwa ajili ya kukabiliana na changamoto za ndani na kikanda."
+    },
+    "cta": "Je, wewe ni mubalighi unayetaka kukuza athari yako? Wasiliana nasi ili kujiunga na kikao chetu kijacho cha mafunzo au kongamano la kikanda."
   }
 }

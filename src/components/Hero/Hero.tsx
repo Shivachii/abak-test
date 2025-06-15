@@ -10,7 +10,7 @@ import { useTranslations } from "next-intl";
 
 const slides = [
   {
-    image: "/mosqueteachings.jpeg",
+    image: "/about.jpg",
     ctaLink: "/about",
   },
   {

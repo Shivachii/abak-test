@@ -6,42 +6,46 @@ const CommunityPage = () => {
   const t = useTranslations("communityServices.services");
   const w = useTranslations("communityServices");
 
-  const sections = [
+  const groupedSections = [
     {
-      key: "health",
-      title: t("health.title"),
-      description: t("health.description"),
-      image: "/images/health-clinic.jpg",
+      image: "/relief.jpg",
+      items: [
+        {
+          key: "health",
+          title: t("health.title"),
+          description: t("health.description"),
+        },
+        {
+          key: "islamicMedicine",
+          title: t("islamicMedicine.title"),
+          description: t("islamicMedicine.description"),
+        },
+        {
+          key: "disasterResponse",
+          title: t("disasterResponse.title"),
+          description: t("disasterResponse.description"),
+        },
+      ],
     },
     {
-      key: "islamicMedicine",
-      title: t("islamicMedicine.title"),
-      description: t("islamicMedicine.description"),
-      image: "/images/prophetic-medicine.jpg",
-    },
-    {
-      key: "disasterResponse",
-      title: t("disasterResponse.title"),
-      description: t("disasterResponse.description"),
-      image: "/images/disaster-relief.jpg",
-    },
-    {
-      key: "counseling",
-      title: t("counseling.title"),
-      description: t("counseling.description"),
-      image: "/images/counseling.jpg",
-    },
-    {
-      key: "reliefPrograms",
-      title: t("reliefPrograms.title"),
-      description: t("reliefPrograms.description"),
-      image: "/images/relief.jpg",
-    },
-    {
-      key: "economicUpliftment",
-      title: t("economicUpliftment.title"),
-      description: t("economicUpliftment.description"),
-      image: "/images/economic-empowerment.jpg",
+      image: "/commserv.jpg",
+      items: [
+        {
+          key: "counseling",
+          title: t("counseling.title"),
+          description: t("counseling.description"),
+        },
+        {
+          key: "reliefPrograms",
+          title: t("reliefPrograms.title"),
+          description: t("reliefPrograms.description"),
+        },
+        {
+          key: "economicUpliftment",
+          title: t("economicUpliftment.title"),
+          description: t("economicUpliftment.description"),
+        },
+      ],
     },
   ];
 
@@ -57,34 +61,40 @@ const CommunityPage = () => {
           <p className="text-gray-600 max-w-2xl mx-auto">{w("subtitle")}</p>
         </div>
 
-        <div className="grid gap-10">
-          {sections.map((item, idx) => (
+        {/* Grouped sections */}
+        <div className="space-y-16">
+          {groupedSections.map((group, i) => (
             <div
-              key={item.key}
+              key={i}
               className={`flex flex-col ${
-                idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100`}
+                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } items-stretch gap-8`}
             >
-              {/* Image */}
-              <div className="relative w-full md:w-1/2 h-56 md:h-auto">
+              {/* Image Block */}
+              <div className="relative w-full md:w-1/2 h-96 rounded-xl overflow-hidden shadow-md">
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src={group.image}
+                  alt="Community Service"
                   fill
                   className="object-cover"
                 />
               </div>
 
-              {/* Text Content */}
-              <div className="w-full md:w-1/2 p-6 md:p-8 flex items-center">
-                <div>
-                  <h3 className="text-2xl font-semibold text-secondary mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-700 text-justify md:text-start leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+              {/* Cards Block */}
+              <div className="w-full md:w-1/2 grid gap-6">
+                {group.items.map((item) => (
+                  <div
+                    key={item.key}
+                    className="bg-white p-6 rounded-xl shadow border border-gray-100"
+                  >
+                    <h3 className="text-xl font-semibold text-secondary mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm text-justify leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
