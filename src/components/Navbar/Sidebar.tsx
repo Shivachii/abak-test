@@ -133,6 +133,7 @@ const Sidebar = () => {
         <div className="flex items-center justify-center py-2 my-4">
           <Link
             href={"/donate"}
+            onClick={toggleSidebar}
             className="bg-primary px-2 py-1 rounded-md animate-bounce duration-1000 transition-all hover:bg-primary/90 text-white font-bold flex items-center justify-center h-10 w-80"
           >
             {t("donate")}
