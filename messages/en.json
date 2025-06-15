@@ -188,13 +188,13 @@
         "href": "/islamic-learning/hawza-seyyidah"
       },
       "mubaligheenTraining": {
-        "title": "Mubaligheen Training",
+        "title": "Training of Mubaligheen",
         "description": "Structured training programs to equip Islamic preachers with the knowledge and skills to effectively guide their communities.",
         "image": "/mubaligheen.jpeg",
         "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
-        "title": "Mubaligheen Support",
+        "title": "Support of Mubaligheen",
         "description": "Ongoing mentorship, resources, and logistical support for Mubaligheen across Kenya to sustain their community impact.",
         "image": "/mubsupport.jpeg",
         "href": "/programs/mubaligheen-support"
@@ -376,6 +376,7 @@
       }
     ]
   },
+
   "programs": {
     "objectivesTitle": "Our Objectives",
     "mainObjectivesHeader": "Our main objectives",

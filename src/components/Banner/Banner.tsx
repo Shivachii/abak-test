@@ -33,7 +33,9 @@ export default function Banner({
             layout="responsive"
             sizes="100vw"
             priority
-            className=" md:object-cover object-center "
+            // placeholder="blur"
+            // blurDataURL="/images/blur-placeholder.jpg" // Optional custom blur image
+            className="md:object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/40" />
         </>

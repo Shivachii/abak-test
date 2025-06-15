@@ -1,13 +1,7 @@
 import Link from "next/link";
-import {
-  FacebookIcon,
-  Twitter,
-  Instagram,
-  Youtube,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { FacebookIcon, Instagram, Youtube, Phone, Mail } from "lucide-react";
 import { FooterLogo } from "../Logos/Logo";
+import { IconBrandX } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 
 export default function Footer() {
@@ -77,7 +71,7 @@ export default function Footer() {
               target="_blank"
               aria-label="Twitter"
             >
-              <Twitter className="hover:text-amber-300" />
+              <IconBrandX className="hover:text-amber-300" />
             </Link>
             <Link
               href="https://www.instagram.com/ahlulbaytassembly/"

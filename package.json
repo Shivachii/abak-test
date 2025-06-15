@@ -24,6 +24,7 @@
     "@sanity/icons": "^3.5.7",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.70.0",
+    "@tabler/icons-react": "^3.34.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "axios": "^1.9.0",
     "class-variance-authority": "^0.7.1",

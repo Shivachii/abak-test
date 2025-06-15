@@ -228,11 +228,10 @@ const Hawza = () => {
             </div>
           </div>
 
-          <ScholarshipSection />
-
           <section>
             <HawzaEnrollmentCTA />
           </section>
+          <ScholarshipSection />
 
           {/* Support Section */}
           <div className="space-y-4 text-center">
