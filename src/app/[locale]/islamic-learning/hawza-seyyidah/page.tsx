@@ -60,14 +60,8 @@ const Hawza = () => {
 
   return (
     <section>
-      <div className="h-full md:h-[710px]">
-        <Banner
-          backgroundImage="/banners/hawzahero.png"
-          // height="h-[20px]"
-          // title={t("title")}
-          // subtitle={t("subtitle")}
-        />
-      </div>
+      <Banner backgroundImage="/banners/hawza.png" />
+
       <div className="w-full px-4 py-12  text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
