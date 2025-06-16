@@ -30,7 +30,6 @@ export default function Banner({
             alt="Page banner background"
             width={1600}
             height={800}
-            layout="responsive"
             sizes="100vw"
             priority
             // placeholder="blur"

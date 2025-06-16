@@ -32,7 +32,7 @@ export const contentData: {
         </div>
         <div className=" hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/arbaeen2.jpg"
+            src="/comm.jpg"
             alt="ABAK Community Services"
             width={400}
             height={300}
@@ -205,7 +205,7 @@ export const contentData: {
         {/* Image */}
         <div className="hidden md:flex md:flex-shrink-0 rounded-md shadow-md overflow-hidden">
           <Image
-            src="/mubaligheen.jpeg"
+            src="/train1.jpg"
             alt="Community empowerment"
             width={400}
             height={300}

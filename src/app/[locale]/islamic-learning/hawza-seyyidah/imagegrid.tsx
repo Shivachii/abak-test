@@ -12,14 +12,14 @@ export default function ImageGrid() {
       {images.map((img, index) => (
         <div
           key={index}
-          className="relative w-full h-40 md:h-48 rounded-lg overflow-hidden "
+          className="relative w-auto h-auto rounded-lg overflow-hidden "
         >
           <Image
             src={img.src}
             alt={img.alt || `Image ${index + 1}`}
             width={300}
             height={300}
-            className="object-center object-cover"
+            className="object-center object-cover w-full h-40 md:h-48 "
             sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 200px"
           />
         </div>
