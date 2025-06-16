@@ -27,7 +27,7 @@ export default function Footer() {
             { name: `${t("links.programs")}`, href: "/programs" },
             { name: `${t("links.events")}`, href: "/events" },
             // { name: `${t("links.resources")}`, href: "/resources" },
-            { name: `${t("links.donate")}`, href: "/donate" },
+            // { name: `${t("links.donate")}`, href: "/donate" },
             { name: `${t("links.contact")}`, href: "/contact" },
           ].map((link) => (
             <Link

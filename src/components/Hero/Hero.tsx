@@ -64,7 +64,7 @@ export default function HeroCarousel() {
                   {t(`slides.${index}.heading`)}
                 </h1>
 
-                <div className="h-0.5 w-16 bg-primary mx-auto md:mx-0 rounded-full" />
+                <div className="h-1 w-16 bg-secondary mx-auto md:mx-0 rounded-full" />
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   {t(`slides.${index}.title`)}
@@ -84,12 +84,12 @@ export default function HeroCarousel() {
                       {t(`slides.${index}.ctaText`)}
                     </Link>
                   )}
-                  <Link
+                  {/* <Link
                     href="/donate"
                     className="bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-semibold px-5 py-2 rounded-md shadow-md transition-transform hover:scale-105"
                   >
                     {t("donate")}
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>

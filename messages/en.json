@@ -190,7 +190,7 @@
       "mubaligheenTraining": {
         "title": "Training of Mubaligheen",
         "description": "Structured training programs to equip Islamic preachers with the knowledge and skills to effectively guide their communities.",
-        "image": "/mubaligheen.jpeg",
+        "image": "/train1.jpg",
         "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
@@ -208,7 +208,7 @@
       "communitySupport": {
         "title": "Community Services",
         "description": "Offering mobile health services, welfare outreach, and other forms of support to uplift underserved communities.",
-        "image": "/arbaeen2.jpg",
+        "image": "/comm.jpg",
         "href": "/programs/community-services"
       }
     }

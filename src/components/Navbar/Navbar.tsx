@@ -124,12 +124,12 @@ export default function Navbar() {
           >
             {t("volunteer")}
           </Link>
-          <Link
+          {/* <Link
             href={"/donate"}
             className="bg-primary text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-primary/90 relative "
           >
             {t("donate")}
-          </Link>
+          </Link> */}
           <LanguagePicker />
         </div>
       </div>

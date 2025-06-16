@@ -130,7 +130,7 @@ const Sidebar = () => {
           </ul>
         </nav>
 
-        <div className="flex items-center justify-center py-2 my-4">
+        {/* <div className="flex items-center justify-center py-2 my-4">
           <Link
             href={"/donate"}
             onClick={toggleSidebar}
@@ -138,7 +138,7 @@ const Sidebar = () => {
           >
             {t("donate")}
           </Link>
-        </div>
+        </div> */}
 
         {/* Footer Section */}
         <div className="mt-auto">

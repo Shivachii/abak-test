@@ -195,7 +195,7 @@
       "mubaligheenTraining": {
         "title": "Mafunzo ya Mubaligheen",
         "description": "Mafunzo rasmi ya kuwawezesha wahubiri wa Kiislamu kwa elimu na ujuzi wa kuwaongoza vyema jamii zao.",
-        "image": "/mubaligheen.jpeg",
+        "image": "/train1.jpg",
         "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
@@ -213,7 +213,7 @@
       "communitySupport": {
         "title": "Msaada wa Jamii",
         "description": "Kutoa huduma za afya kupitia vituo vya afya vinavyosafiri na msaada wa kijamii kwa jamii zisizo na huduma za kutosha.",
-        "image": "/arbaeen2.jpg",
+        "image": "/comm.jpg",
         "href": "/programs/community-services"
       }
     }

@@ -189,7 +189,7 @@
       "mubaligheenTraining": {
         "title": "تدريب المبلغين",
         "description": "برامج تدريبية منظمة لتأهيل المبلغين بالمعرفة والمهارات اللازمة لقيادة مجتمعاتهم بفعالية.",
-        "image": "/mubaligheen.jpeg",
+        "image": "/train1.jpg",
         "href": "/programs/mubaligheen-training"
       },
       "mubaligheenSupport": {
@@ -207,7 +207,7 @@
       "communitySupport": {
         "title": "دعم المجتمع",
         "description": "توفير خدمات طبية متنقلة ومساعدات اجتماعية لرفع مستوى المجتمعات المحرومة.",
-        "image": "/arbaeen2.jpg",
+        "image": "/comm.jpg",
         "href": "/programs/community-services"
       }
     }

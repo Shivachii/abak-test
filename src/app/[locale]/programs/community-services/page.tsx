@@ -8,7 +8,7 @@ const CommunityPage = () => {
 
   const groupedSections = [
     {
-      image: "/relief.jpg",
+      image: "/comm.jpg",
       items: [
         {
           key: "health",
@@ -76,6 +76,7 @@ const CommunityPage = () => {
                   src={group.image}
                   alt="Community Service"
                   fill
+                  sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                   className="object-cover"
                 />
               </div>
