@@ -5,7 +5,7 @@ export default function AESPSection() {
   const t = useTranslations("aesp");
 
   return (
-    <section className="p-4 md:py-5 ">
+    <section id="aesp" className="p-4 md:py-5 ">
       <div className="max-w-6xl mx-auto px-2 sm:px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-x-12 items-start">
           {/* Left Section - Title and Intro */}

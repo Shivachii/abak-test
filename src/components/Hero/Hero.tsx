@@ -19,7 +19,7 @@ const slides = [
   },
   {
     image: "/hawza/img197.jpg",
-    ctaLink: "/programs",
+    ctaLink: "#aesp",
   },
 ];
 

@@ -60,6 +60,14 @@ export const LanguagePicker: React.FC = () => {
         >
           Arabic
         </DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem
+          checked={locale === "fa"}
+          onClick={() => {
+            handleLocaleChange("fa");
+          }}
+        >
+          Persian
+        </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
