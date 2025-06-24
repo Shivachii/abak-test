@@ -17,22 +17,22 @@ import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title:
-    "AhlulBayt Assembly of Kenya (ABAK) | Spreading the Light of the Ahlul Bayt (a.s)",
+    "AhlulBayt Assembly of Kenya (ABAK) | Spreading the Light of the Ahlul Bayt (a.s) ",
   description:
-    "ABAK is dedicated to spreading the teachings of the Ahlul Bayt (a.s) in Kenya through education, humanitarian programs, media outreach, and community empowerment.",
+    "ABAK is dedicated to spreading the teachings of the Ahlul Bayt (a.s)  in Kenya through education, humanitarian programs, media outreach, and community empowerment.",
   keywords: [
     "AhlulBayt Kenya",
     "ABAK",
     "Shi'a Muslim Kenya",
     "Islamic education Kenya",
-    "Ahlul Bayt outreach",
+    "Ahlul Bayt (a.s) outreach",
     "Shia Islam East Africa",
     "Muslim community service Kenya",
   ],
   openGraph: {
     title: "AhlulBayt Assembly of Kenya (ABAK)",
     description:
-      "Join ABAK in promoting the message of the Ahlul Bayt (a.s) through educational, charitable, and community-driven programs in Kenya.",
+      "Join ABAK in promoting the message of the Ahlul Bayt (a.s)  through educational, charitable, and community-driven programs in Kenya.",
     url: "https://www.abak.or.ke",
     siteName: "AhlulBayt Assembly of Kenya",
     images: [

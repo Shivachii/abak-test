@@ -7,6 +7,8 @@ import FadeInSection from "@/components/Animations/FadeInSection";
 import Programs from "./landing/Programs";
 import Events from "./landing/Events";
 
+import { FinancialSection } from "./landing/Financial";
+
 export default function Home() {
   return (
     <div className="flex flex-col ">
@@ -27,8 +29,10 @@ export default function Home() {
         <FadeInSection delay={0.3}>
           <Programs />
         </FadeInSection>
+        <FadeInSection delay={0.5}>
+          <FinancialSection />
+        </FadeInSection>
         <FadeInSection delay={0.4}>
-          {/* <LatestPosts posts={samplePosts} /> */}
           <Events />
         </FadeInSection>
       </div>

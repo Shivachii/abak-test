@@ -4,7 +4,7 @@ export const courses = [
     duration: "4 Weeks",
     startDate: "June 10, 2025",
     description:
-      "Explore the principles of leadership based on teachings from the Ahlul Bayt.",
+      "Explore the principles of leadership based on teachings from the Ahlul Bayt (a.s).",
   },
   {
     title: "Effective Community Mobilization",

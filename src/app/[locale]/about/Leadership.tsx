@@ -22,6 +22,12 @@ export default function LeadershipSection() {
     {
       key: "countyrepresentatives",
     },
+    {
+      key: "womenwingrepresentatives",
+    },
+    {
+      key: "youthleader",
+    },
   ];
 
   return (

@@ -16,7 +16,7 @@
     "email": "ahlulbaytassembly9@gmail.com",
     "phone": "+254 704 788924",
     "dropdown": {
-      "hawza": "Hawza Seyyidah Zeinab",
+      "hawza": "Seyyidah Zeinab (sa)",
       "quran": "Tafakuri ya Qur'ani"
     },
 
@@ -75,13 +75,13 @@
     "slides": [
       {
         "heading": "Baraza la Ahlul-Bayt Kenya",
-        "title": "Tumeongozwa na Mafundisho ya Mtume (s.a.w.w) na Ahlul Bayt (a.s)",
+        "title": "Tumeongozwa na Mafundisho ya Mtume (s.a.w.w) na Ahlul Bayt (a.s) ",
         "description": "ABAK imejitolea kusambaza maarifa ya Kiislamu ya kweli na maadili kote Kenya.",
         "ctaText": "Jifunze kuhusu ABAK"
       },
       {
-        "heading": "Hawza (S.A)",
-        "title": "Sayyedah Zeinab",
+        "heading": "Hawza ",
+        "title": "Sayyedah Zeinab (sa)",
         "description": "Seminari yetu ya Hawza inalea wasomi wa Kiislamu wa baadaye kwa mafunzo ya kiroho, kielimu, na kimaadili ili kuitumikia Ummah kwa hekima na uaminifu.",
         "ctaText": "Jifunze kuhusu Sayyedah Zeinab"
       },
@@ -97,7 +97,7 @@
 
   "About": {
     "title": "Jumuiya ya AhlulBayt ya Kenya",
-    "intro": "Jumuiya ya Ahlul Bayt (a.s) ya Kenya (ABAK) ni shirika lisilo la faida linalojitolea kueneza mafundisho ya Uislamu yaliyofundishwa na Ahlul Bayt (a.s), kizazi kitakatifu cha Mtume wetu mpenzi",
+    "intro": "Jumuiya ya Ahlul Bayt (a.s)  ya Kenya (ABAK) ni shirika lisilo la faida linalojitolea kueneza mafundisho ya Uislamu yaliyofundishwa na Ahlul Bayt (a.s) , kizazi kitakatifu cha Mtume wetu mpenzi",
     "intromid": " Muhammad (s.a.w.w).",
     "intro2": "Lengo letu ni kuleta mafanikio katika maisha haya na ya Akhera kwa kushirikisha jamii pana mafundisho haya.",
     "learnMore": "Jifunze Zaidi",
@@ -134,9 +134,9 @@
     "values": {
       "heading": "Maadili Yetu Muhimu",
       "title": "Misingi Msingi Inayoongoza ABAK",
-      "description": "Baraza la AhlulBayt limejengwa juu ya misingi sita muhimu inayotengeneza dhamira yetu, vitendo, na jamii yetu.",
+      "description": "Baraza la Ahlul Bayt (a.s) limejengwa juu ya misingi sita muhimu inayotengeneza dhamira yetu, vitendo, na jamii yetu.",
       "principles": {
-        "faithfulness": "Uaminifu kwa Mafundisho ya Ahlul Bayt (a.s)",
+        "faithfulness": "Uaminifu kwa Mafundisho ya Ahlul Bayt (a.s) ",
         "unity": "Umoja na Kuishi kwa Amani",
         "inclusivity": "Ushirikishwaji na Ushirikiano",
         "community": "Huduma Inayozingatia Jamii",
@@ -148,7 +148,7 @@
       "heading": "Dhamira Yetu & Maono",
       "mission": {
         "title": "Dhamira",
-        "description": "Kuanzisha taasisi na njia zinazotangaza Uislamu kwa kila mtu, na kutoa mwongozo wa kuishi imani kama ilivyofundishwa na Mtume (s.a.w.w) na Ahlul Bayt wake (a.s)."
+        "description": "Kuanzisha taasisi na njia zinazotangaza Uislamu kwa kila mtu, na kutoa mwongozo wa kuishi imani kama ilivyofundishwa na Mtume (s.a.w.w) na Ahlul Bayt (a.s) wake (a.s)."
       },
       "vision": {
         "title": "Maono",
@@ -187,8 +187,8 @@
     "button": "Jifunze Zaidi",
     "items": {
       "hawza": {
-        "title": "Hawza Sayyedah Zeinab",
-        "description": "Mpango wa semina ya Kiislamu ya kuwaandaa wanazuoni na viongozi wa baadaye waliopata malezi katika mafundisho ya Ahlul Bayt.",
+        "title": "Sayyedah Zeinab (sa)",
+        "description": "Mpango wa semina ya Kiislamu ya kuwaandaa wanazuoni na viongozi wa baadaye waliopata malezi katika mafundisho ya Ahlul Bayt (a.s).",
         "image": "/hawza/hawzalogo.jpeg",
         "href": "/islamic-learning/hawza-seyyidah"
       },
@@ -227,7 +227,7 @@
     "objectives": {
       "propagation": {
         "title": "Uenezaji wa Uislamu",
-        "description": "Kuhubiri mafundisho ya Ahlul Bayt (a.s) kupitia hotuba, machapisho, matukio, na mazungumzo ya kidini baina ya imani tofauti."
+        "description": "Kuhubiri mafundisho ya Ahlul Bayt (a.s)  kupitia hotuba, machapisho, matukio, na mazungumzo ya kidini baina ya imani tofauti."
       },
       "communities": {
         "title": "Uundaji wa Jamii za Kishia",
@@ -286,6 +286,14 @@
       "countyrepresentatives": {
         "title": "Wawakilishi wa Kaunti",
         "description": "Wanachangia katika uamuzi na kutetea dhamira na maadili."
+      },
+      "womenwingrepresentatives": {
+        "title": "Wawakilishi wa Wanawake",
+        "description": "Wanatetea uwezeshaji wa wanawake, kuhakikisha ushiriki wa kijinsia, na kuongoza mipango inayolenga mahitaji na maendeleo ya wanawake katika jamii."
+      },
+      "youthleader": {
+        "title": "Kiongozi wa Vijana",
+        "description": "Anawakilisha maslahi ya vijana, anahamasisha ushiriki wao kikamilifu, na kuongoza programu za kuwawezesha na kuwahusisha vijana katika jamii."
       }
     }
   },
@@ -318,7 +326,7 @@
 
   "donate": {
     "title": "Tusaidie Kufanikisha Dhamira Yetu",
-    "description": "Mchango wako husaidia ABAK kueneza mafundisho ya Ahlul Bayt (a.s), kuinua jamii, na kuwawezesha vizazi vijavyo kupitia elimu, huduma, na imani.",
+    "description": "Mchango wako husaidia ABAK kueneza mafundisho ya Ahlul Bayt (a.s) , kuinua jamii, na kuwawezesha vizazi vijavyo kupitia elimu, huduma, na imani.",
     "waysTitle": "Njia za Kutoa Mchango",
     "button": "Changia Sasa"
   },
@@ -383,11 +391,11 @@
   "programs": {
     "objectivesTitle": "Malengo Yetu",
     "mainObjectivesHeader": "Malengo yetu makuu ",
-    "objectivesDescription": "Katika Kikao cha AhlulBayt cha Kenya (ABAK), dhamira yetu inaongozwa na mfululizo wa mipango na malengo yaliyopangwa vizuri. Haya yanazingatia mwongozo wa kiroho, maendeleo ya jamii, elimu, na kuwawezesha watu. Kila lengo linaonyesha hatua kuelekea kuunda jamii yenye uelewa, mshikamano, na huruma iliyojikita katika mafundisho ya Ahlul Bayt (a.s)."
+    "objectivesDescription": "Katika Kikao cha AhlulBayt cha Kenya (ABAK), dhamira yetu inaongozwa na mfululizo wa mipango na malengo yaliyopangwa vizuri. Haya yanazingatia mwongozo wa kiroho, maendeleo ya jamii, elimu, na kuwawezesha watu. Kila lengo linaonyesha hatua kuelekea kuunda jamii yenye uelewa, mshikamano, na huruma iliyojikita katika mafundisho ya Ahlul Bayt (a.s) ."
   },
 
   "hawza": {
-    "title": "Hawza Seyyidah Zeinab",
+    "title": "Seyyidah Zeinab (sa)",
     "subtitle": "Safari ya kuelekea kwenye maarifa ya Kiislamu na uongozi",
     "about": {
       "title": "Kuhusu Hawza",
@@ -659,5 +667,56 @@
       "body": "ABAK iliratibu hivi majuzi kongamano la kikanda lililowaleta pamoja mubaligheen kutoka kote Afrika Mashariki. Jukwaa hili lilichangia mazungumzo ya kina, ujifunzaji wa rika, na ushirikiano wa kimkakati kwa ajili ya kuimarisha sauti ya kidini katika jamii zetu. Hili lilikuwa hatua muhimu katika kujenga mtandao wa wanazuoni walio na umoja na maarifa kwa ajili ya kukabiliana na changamoto za ndani na kikanda."
     },
     "cta": "Je, wewe ni mubalighi unayetaka kukuza athari yako? Wasiliana nasi ili kujiunga na kikao chetu kijacho cha mafunzo au kongamano la kikanda."
+  },
+
+  "financial": {
+    "title": "Mipango ya Msaada wa Kifedha",
+    "subtitle": "Kuwawezesha Watu Kupitia Msaada wa Kifedha wa Kimaadili",
+    "intro": "ABAK imejitolea kutoa msaada wa kifedha kwa wale wanaohitaji, kuhakikisha hakuna anayesalia nyuma. Mipango yetu imelenga kuinua watu binafsi na familia kupitia msaada wa kifedha wa kimaadili."
+  },
+
+  "qardh": {
+    "title": "ABAK - Mfuko wa Qardh Hassanah",
+    "summary": "Mpango wa misaada ya kifedha usio na riba kwa njia ya kimaadili na kujitegemea.",
+    "objectivesTitle": "Malengo",
+    "objectives": [
+      "Kutoa mikopo isiyo na riba kwa wanaohitaji",
+      "Kusaidia biashara ndogo, wanafunzi, na familia zenye kipato cha chini",
+      "Kukuza mshikamano wa kijamii na maadili mema",
+      "Kuanzisha mfuko wa mkopo unaozunguka endelevu"
+    ],
+    "benefitsTitle": "Faida Kuu",
+    "benefits": [
+      "Kukuza ustawi wa kijamii na huruma",
+      "Upatikanaji wa fedha kwa makundi yaliyo pembezoni",
+      "Kuhamasisha ukopaji wa kuwajibika",
+      "Kupunguza mzunguko wa madeni",
+      "Njia mbadala ya kimaadili kwa mikopo ya kawaida"
+    ],
+    "governanceTitle": "Usimamizi na Uongozi",
+    "governance": "Inasimamiwa na Kamati ya ABAK-QHFC kuhakikisha uwazi na uwajibikaji.",
+    "eligibilityTitle": "Vigezo vya Ustahiki na Masharti ya Mkopo",
+    "eligibility": "Waombaji wanapaswa kuonyesha uhitaji, kuwa na marejeo, na kukubali masharti rahisi ya kurejesha.",
+    "fundingTitle": "Vyanzo vya Fedha",
+    "funding": "Inafadhiliwa na michango, Zakat, Sadaqah, Waqf na misaada ya taasisi.",
+    "cta": "Omba mkopo wa Qardh Hassanah leo ili kuimarisha maisha yako ya baadaye."
+  },
+
+  "aesp": {
+    "title": "Mpango wa Msaada wa Elimu wa ABAK (AESP)",
+    "intro": "Kuwawezesha wanafunzi wanaohitaji kupitia ufadhili uliopangwa na msaada wa kifedha.",
+    "subsection": {
+      "title": "Tunahitaji nini",
+      "sections": {
+        "personal": "Taarifa Binafsi",
+        "academic": "Maelezo ya Kielimu",
+        "family": "Historia ya Familia",
+        "financial": "Taarifa za Kifedha",
+        "summary": "Muhtasari wa Wasifu wa Mwanafunzi",
+        "documents": "Orodha ya Nyaraka Zinazohitajika"
+      }
+    },
+    "disclaimer": "Taarifa zote zitathibitishwa kwa usahihi wake.",
+    "cta": "Omba Mpango wetu wa Usaidizi wa Elimu"
   }
 }

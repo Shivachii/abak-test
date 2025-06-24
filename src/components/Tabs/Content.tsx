@@ -16,7 +16,7 @@ export const contentData: {
   "community-services": {
     title: "Community Services",
     description:
-      "Rooted in the principle of social justice, ABAK provides comprehensive community services to uplift lives and promote well-being. From health and education to economic support and counseling, these efforts reflect the compassionate ethos of the Ahlul Bayt.",
+      "Rooted in the principle of social justice, ABAK provides comprehensive community services to uplift lives and promote well-being. From health and education to economic support and counseling, these efforts reflect the compassionate ethos of the Ahlul Bayt (a.s).",
     content: (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <div className="flex-1 space-y-5">
@@ -44,9 +44,9 @@ export const contentData: {
   },
   "propagation-of-islam": {
     title:
-      "Propagation of Islam (Tabligh) according to the Madh-hab Ahlul Bayt (a.s)",
+      "Propagation of Islam (Tabligh) according to the Madh-hab Ahlul Bayt (a.s) ",
     description:
-      "ABAK is dedicated to spreading the teachings of Islam as understood through the lens of the Ahlul Bayt. By promoting Tabligh rooted in compassion, knowledge, and authenticity, ABAK seeks to guide individuals toward spiritual awareness while preserving the true essence of Islamic values in the Kenyan context.",
+      "ABAK is dedicated to spreading the teachings of Islam as understood through the lens of the Ahlul Bayt (a.s). By promoting Tabligh rooted in compassion, knowledge, and authenticity, ABAK seeks to guide individuals toward spiritual awareness while preserving the true essence of Islamic values in the Kenyan context.",
     content: (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <div className="">
@@ -82,7 +82,7 @@ export const contentData: {
   "content-creation": {
     title: "Content Creation",
     description:
-      "ABAK is investing in the creation of relevant, authentic, and engaging Islamic content to respond to modern challenges and media trends. This empowers youth and communities to access the teachings of the Ahlul Bayt in formats that resonate with today’s digital audiences.",
+      "ABAK is investing in the creation of relevant, authentic, and engaging Islamic content to respond to modern challenges and media trends. This empowers youth and communities to access the teachings of the Ahlul Bayt (a.s) in formats that resonate with today’s digital audiences.",
     content: (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         {/* List */}
@@ -114,7 +114,7 @@ export const contentData: {
   "hawza-seminary": {
     title: "Hawza Seminary",
     description:
-      "ABAK champions the development of a local Hawza Seminary to cultivate scholars grounded in the teachings of the Ahlul Bayt. This initiative ensures the sustainability of religious leadership in Kenya and strengthens the intellectual foundation of the Shia community.",
+      "ABAK champions the development of a local Hawza Seminary to cultivate scholars grounded in the teachings of the Ahlul Bayt (a.s). This initiative ensures the sustainability of religious leadership in Kenya and strengthens the intellectual foundation of the Shia community.",
     content: (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         {/* List of Hawza Features */}
