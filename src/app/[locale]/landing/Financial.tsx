@@ -7,7 +7,7 @@ export function FinancialSection() {
 
   return (
     <section className="bg-slate-50">
-      <div className="px-4 py-8 text-center">
+      <div className="px-4 py-8 text-center flex flex-col gap-4">
         <h2 className="text-secondary text-sm md:text-base font-bold tracking-widest uppercase">
           {t("title")}
         </h2>
