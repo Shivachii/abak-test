@@ -13,7 +13,7 @@
     "contact": "Wasiliana Nasi",
     "volunteer": "Jitolee",
     "donate": "Changia",
-    "email": "ahlulbaytassembly9@gmail.com",
+    "email": "info@ahlulbaytassembly.org",
     "phone": "+254 704 788924",
     "dropdown": {
       "hawza": "Seyyidah Zeinab (sa)",
@@ -363,7 +363,7 @@
         "date": "Machi 1 – Aprili 1, 2025",
         "location": "Parkroad",
         "description": "Mfululizo wa masomo ya mwezi mzima wakati wa Ramadhani 1446, ukizingatia ukuaji wa kiroho na ushiriki wa jamii.",
-        "images": ["ramadhan1.jpg", "ramadhan2,jpg"]
+        "images": ["/ramadhan1.jpg", "/ramadhan2.jpg"]
       },
       {
         "title": "Majlis Fa'tiha kwa Shahid Sayyid Hassan Nasrullah & Shahid Sayyid Hashim Swafiyudin",

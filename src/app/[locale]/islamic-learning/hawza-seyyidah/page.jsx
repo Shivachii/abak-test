@@ -1,19 +1,14 @@
 import Banner from "@/components/Banner/Banner";
-import React from "react";
-import { Activity, Binoculars, Target } from "lucide-react";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import HawzaEnrollmentCTA from "@/components/CTA/HawzaEnrollmentCTA";
 import ScholarshipSection from "./scholarship";
+import Image from "next/image";
 import ImageGrid from "./imagegrid";
+import { Activity, Binoculars, Target } from "lucide-react";
+import { sanityFetch } from "../../../../../sanity/lib/live";
+import { HAWZA_PAGE_QUERY } from "../../../../../sanity/lib/pageQueries";
+import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }) {
   const t = await getTranslations({
     locale: params.locale,
     namespace: "hawza",
@@ -55,8 +50,14 @@ export async function generateMetadata({
   };
 }
 
-const Hawza = () => {
-  const t = useTranslations("hawza");
+export default async function Hawza({ params }) {
+  const { locale } = params;
+  const { data } = await sanityFetch({
+    query: HAWZA_PAGE_QUERY,
+    params: { lang: locale },
+  });
+
+  const t = await getTranslations("hawza");
 
   return (
     <section>
@@ -68,17 +69,16 @@ const Hawza = () => {
             {/* About Section */}
             <div className=" space-y-4 max-w-lg">
               <h1 className="text-3xl md:text-5xl font-bold text-primary">
-                {t("about.title")}
+                {data.about.title}
               </h1>
               <h2 className="text-secondary text-sm md:text-base font-bold uppercase tracking-wider">
-                {t("about.subtitle")}
+                {data.about.subtitle}
               </h2>
-              <p className="text-lg leading-relaxed text-gray-700 max-w-3xl mx-auto ">
-                {t("about.description")}
+              <p className="text-lg leading-relaxed text-gray-700 max-w-3xl mx-auto">
+                {data.about.description}
               </p>
             </div>
-            {/* images */}
-            <div className="">
+            <div>
               <ImageGrid />
             </div>
           </div>
@@ -91,33 +91,23 @@ const Hawza = () => {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex flex-col gap-6 md:w-1/2">
                 {[
-                  {
-                    title: t("establishment.vision.title"),
-                    icon: <Binoculars />,
-                    desc: t("establishment.vision.description"),
-                  },
-                  {
-                    title: t("establishment.mission.title"),
-                    icon: <Target />,
-                    desc: t("establishment.mission.description"),
-                  },
-                  {
-                    title: t("establishment.impact.title"),
-                    icon: <Activity />,
-                    desc: t("establishment.impact.description"),
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="p-4">
+                  { key: "vision", icon: <Binoculars /> },
+                  { key: "mission", icon: <Target /> },
+                  { key: "impact", icon: <Activity /> },
+                ].map(({ key, icon }) => (
+                  <div key={key} className="p-4">
                     <h3 className="text-xl font-semibold text-secondary mb-2 flex items-center gap-3">
-                      {item.icon} {item.title}
+                      {icon} {data.establishment[key].title}
                     </h3>
-                    <p className="text-gray-700">{item.desc}</p>
+                    <p className="text-gray-700">
+                      {data.establishment[key].description}
+                    </p>
                   </div>
                 ))}
               </div>
               <div className="w-full lg:w-1/2 flex items-center">
                 <Image
-                  src={"/hawza/img29.jpg"}
+                  src="/hawza/img29.jpg"
                   alt="Hawza Visual"
                   width={700}
                   height={700}
@@ -127,7 +117,7 @@ const Hawza = () => {
             </div>
           </div>
 
-          {/* Admissions Criteria */}
+          {/* Admissions and Students */}
           <div className="space-y-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               {/* Admission Criteria */}
@@ -183,17 +173,15 @@ const Hawza = () => {
             </h2>
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="w-full lg:w-1/2 space-y-6">
-                {[0, 1, 2].map((i) => (
+                {data.curriculum.map((item, i) => (
                   <div
                     key={i}
                     className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition"
                   >
                     <h3 className="text-xl font-semibold text-secondary mb-2">
-                      {t(`curriculum.items.${i}.title`)}
+                      {item.title}
                     </h3>
-                    <p className="text-gray-700">
-                      {t(`curriculum.items.${i}.description`)}
-                    </p>
+                    <p className="text-gray-700">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -215,25 +203,30 @@ const Hawza = () => {
               {t("facilities.title")}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {[0, 1, 2, 3].map((i) => (
+              {data.facilities.map((item, i) => (
                 <div key={i} className="bg-gray-50 p-4 rounded shadow-sm">
                   <h3 className="text-xl font-semibold text-secondary mb-2">
-                    {t(`facilities.items.${i}.title`)}
+                    {item.title}
                   </h3>
-                  <p className="text-gray-700">
-                    {t(`facilities.items.${i}.description`)}
-                  </p>
+                  <p className="text-gray-700">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <section>
-            <HawzaEnrollmentCTA />
-          </section>
-          <ScholarshipSection />
+          {/* CTA */}
+          <HawzaEnrollmentCTA />
 
-          {/* Support Section */}
+          {/* Scholarship */}
+          <ScholarshipSection
+            heading={data.scholarshipSection.heading}
+            intro={data.scholarshipSection.intro}
+            details={data.scholarshipSection.details}
+            impact={data.scholarshipSection.impact}
+            types={data.scholarshipSection.types}
+            imageUrl={data.scholarshipSection.image?.asset?.url}
+          />
+          {/* Support */}
           <div className="space-y-4 text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-primary">
               {t("support.title")}
@@ -254,6 +247,4 @@ const Hawza = () => {
       </div>
     </section>
   );
-};
-
-export default Hawza;
+}

@@ -108,11 +108,11 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="mailto:ahlulbaytassembly9@gmail.com"
+            href="mailto:info@ahlulbaytassembly.org"
             className="flex items-center gap-1"
           >
             <Mail size={18} className="text-primary" />
-            ahlulbaytassembly9@gmail.com
+            info@ahlulbaytassembly.org
           </Link>
           <Link href="tel:+254704788924" className="flex items-center gap-1">
             <Phone size={18} className="text-primary" />

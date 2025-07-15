@@ -2,8 +2,10 @@ import Banner from "@/components/Banner/Banner";
 import ContactForm from "@/components/Forms/ContactForm";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { sanityFetch } from "../../../../sanity/lib/live";
+import { CONTACT_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { ContactData } from "../../../../lib/sanityPageTypes/types";
 
 export async function generateMetadata({
   params,
@@ -37,7 +39,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${baseUrl}/opengraph-image.png`, // customize this path
+          url: `${baseUrl}/opengraph-image.png`,
           width: 1200,
           height: 630,
           alt: t("sectionTitle"),
@@ -51,53 +53,56 @@ export async function generateMetadata({
   };
 }
 
-export default function ContactPage() {
-  const t = useTranslations("contact");
+export default async function ContactPage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const { data }: { data: ContactData } = await sanityFetch({
+    query: CONTACT_PAGE_QUERY,
+    params: { lang: locale },
+  });
 
   return (
-    <section className="w-full  bg-white">
+    <section className="w-full bg-white">
       <Banner backgroundImage="/banners/contact.png" />
       <div className="max-w-7xl px-4 py-16 mx-auto flex flex-col gap-16">
-        {/* Header */}
         <div className="text-center px-4">
           <p className="text-3xl md:text-4xl font-bold text-primary mt-2">
-            {t("headline")}
+            {data.headline}
           </p>
           <p className="mt-2 text-gray-600 text-base max-w-2xl mx-auto leading-relaxed">
-            {t("intro")}
+            {data.intro}
           </p>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start px-4">
-          {/* Contact Form */}
           <div className="w-full">
             <ContactForm />
           </div>
 
-          {/* Info Section */}
           <div className="flex flex-col gap-8">
             <div>
               <h3 className="text-lg font-semibold text-secondary mb-2">
-                {t("info.title")}
+                {data.infoTitle}
               </h3>
               <p className="mb-2 text-gray-700 md:leading-1.5">
-                {t("info.note")}
+                {data.infoNote}
               </p>
               <div className="space-y-4 text-sm text-gray-800">
                 <div className="flex flex-col gap-3 shadow-sm hover:shadow-md p-4 rounded-sm">
-                  <strong>{t("info.addressTitle")}</strong>
+                  <strong>{data.addressTitle}</strong>
                   <span className="flex items-center gap-3">
                     <MapPin
                       className="text-white p-2 bg-primary rounded-full mt-0.5"
                       width={35}
                       height={35}
                     />
-                    {t("info.address")}
+                    {data.address}
                   </span>
                 </div>
                 <div className="flex flex-col gap-3 shadow-sm hover:shadow-md p-4 rounded-sm">
-                  <strong>{t("info.emailTitle")}</strong>
+                  <strong>{data.emailTitle}</strong>
                   <span className="flex items-center gap-3">
                     <Mail
                       className="text-white p-2 bg-primary rounded-full mt-0.5"
@@ -105,22 +110,22 @@ export default function ContactPage() {
                       height={35}
                     />
                     <div className="flex flex-col">
-                      {t.raw("info.emails").map((email: string) => (
+                      {data.emails.map((email) => (
                         <span key={email}>{email}</span>
                       ))}
                     </div>
                   </span>
                 </div>
                 <div className="flex flex-col gap-3 shadow-sm hover:shadow-md p-4 rounded-sm">
-                  <strong>{t("info.phoneTitle")}</strong>
+                  <strong>{data.phoneTitle}</strong>
                   <span className="flex items-center gap-3">
                     <Phone
-                      className="text-white p-2  bg-primary rounded-full "
+                      className="text-white p-2 bg-primary rounded-full"
                       width={35}
                       height={35}
                     />
                     <div className="flex flex-col">
-                      {t.raw("info.phones").map((phone: string) => (
+                      {data.phones.map((phone) => (
                         <span key={phone}>{phone}</span>
                       ))}
                     </div>
@@ -129,7 +134,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Google Maps */}
+            {/* Google Map */}
             <div className="w-full overflow-hidden rounded-lg shadow-md aspect-video">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.845407835713!2d36.802865914154846!3d-1.288263535623419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d2f55ea4cb%3A0xa1e14972e65e3f1e!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1681212121212!5m2!1sen!2ske"

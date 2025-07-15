@@ -47,11 +47,11 @@ export default function Footer() {
           </h4>
           <p className="text-sm text-white space-y-2">
             <Link
-              href="mailto:ahlulbaytassembly9@gmail.com"
+              href="mailto:info@ahlulbaytassembly.org"
               className="flex gap-1 items-center"
             >
               <Mail className="text-primary" size={18} />
-              ahlulbaytassembly9@gmail.com
+              info@ahlulbaytassembly.org
             </Link>
             <Link className="flex gap-1 items-center" href="tel:254704 788924">
               <Phone className="text-primary" size={18} />

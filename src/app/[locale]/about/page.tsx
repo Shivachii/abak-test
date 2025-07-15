@@ -1,9 +1,10 @@
 import Banner from "@/components/Banner/Banner";
 import LeadershipSection from "./Leadership";
-import { useTranslations } from "next-intl";
 import FadeInSection from "@/components/Animations/FadeInSection";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { sanityFetch } from "../../../../sanity/lib/live";
+import { ABOUT_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
 
 export async function generateMetadata({
   params,
@@ -52,8 +53,17 @@ export async function generateMetadata({
   };
 }
 
-export default function AboutPage() {
-  const t = useTranslations("about");
+type AboutPageProps = {
+  params: { locale: string };
+};
+
+export default async function AboutPage({
+  params: { locale },
+}: AboutPageProps) {
+  const { data } = await sanityFetch({
+    query: ABOUT_PAGE_QUERY,
+    params: { lang: locale },
+  });
 
   return (
     <section>
@@ -63,13 +73,13 @@ export default function AboutPage() {
           {/* Intro Section */}
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-primary my-2">
-              {t("name")}
+              {data?.name}
             </h1>
             <h2 className="text-secondary text-sm md:text-base font-bold uppercase tracking-wider">
-              {t("who")}
+              {data?.who}
             </h2>
             <p className="md:text-center text-justify text-gray-700 max-w-3xl mx-auto mt-4 text-lg leading-relaxed">
-              {t("description")}
+              {data?.description}
             </p>
           </div>
 
@@ -78,15 +88,15 @@ export default function AboutPage() {
             <div className="grid gap-8 md:grid-cols-2">
               <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-secondary mb-2">
-                  {t("missionTitle")}
+                  {data?.missionTitle}
                 </h3>
-                <p className="text-gray-700">{t("mission")}</p>
+                <p className="text-gray-700">{data?.mission}</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-secondary mb-2">
-                  {t("visionTitle")}
+                  {data?.visionTitle}
                 </h3>
-                <p className="text-gray-700">{t("vision")}</p>
+                <p className="text-gray-700">{data?.vision}</p>
               </div>
             </div>
           </FadeInSection>

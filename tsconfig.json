@@ -29,7 +29,14 @@
     "src/components/Mpesa/PaymentForm.jsx",
     "src/app/[locale]/resources/audio-visual/images/page.jsx",
     "src/app/[locale]/resources/audio-visual/audio/page.tsx",
-    "src/components/ImageViewer/AllGalleryMedia.tsx"
+    "src/components/ImageViewer/AllGalleryMedia.tsx",
+    "src/app/[locale]/landing/Qardh.jsx",
+    "src/app/[locale]/landing/Programs.jsx",
+    "src/app/[locale]/landing/Financial.jsx",
+    "src/app/[locale]/islamic-learning/hawza-seyyidah/page.jsx",
+    "src/components/Hero/Hero.jsx",
+    "src/app/[locale]/programs/community-services/page.jsx",
+    "src/app/[locale]/programs/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

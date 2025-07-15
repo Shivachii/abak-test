@@ -8,7 +8,7 @@
     "contact": "تواصل معنا",
     "volunteer": "تطوع",
     "donate": "تبرع",
-    "email": "ahlulbaytassembly9@gmail.com",
+    "email": "info@ahlulbaytassembly.org",
     "phone": "+254 704 788924",
     "dropdown": {
       "hawza": "حوزة السيدة زينب",
@@ -357,14 +357,13 @@
         "date": "1 مارس – 1 أبريل 2025",
         "location": "بارك رود",
         "description": "سلسلة دروس تعليمية طوال شهر رمضان 1446 تركز على النمو الروحي والمشاركة المجتمعية.",
-        "images": ["ramadhan1.jpg", "ramadhan2,jpg"]
+        "images": ["/ramadhan1.jpg", "/ramadhan2.jpg"]
       },
       {
         "title": "مجلس الفاتحة للشهيد السيد حسن نصر الله و الشهيد السيد هاشم الصفوي",
         "date": "23 فبراير 2025",
         "location": "بارك رود",
-        "description": "مجلس رسمي لتكريم حياة وإرث اثنين من الشهداء الموقرين، يعزز التذكر والوحدة.",
-        "images": ["/majlis1.jpg", "/majlis2.jpg"]
+        "description": "مجلس رسمي لتكريم حياة وإرث اثنين من الشهداء الموقرين، يعزز التذكر والوحدة."
       },
       {
         "title": "ندوة المبَلِّغين",

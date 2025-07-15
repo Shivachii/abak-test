@@ -1,7 +1,9 @@
+// app/[locale]/get-involved/volunteer/page.tsx
 import VolunteerDialog from "@/components/Forms/Volunteer";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { sanityFetch } from "../../../../sanity/lib/live";
+import { VOLUNTEER_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
 
 export async function generateMetadata({
   params,
@@ -50,26 +52,33 @@ export async function generateMetadata({
   };
 }
 
-export default function VolunteerPage() {
-  const t = useTranslations("volunteer");
+export default async function VolunteerPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { data } = await sanityFetch({
+    query: VOLUNTEER_PAGE_QUERY,
+    params: { lang: params.locale },
+  });
+
   return (
     <section className="px-6 py-16 max-w-4xl mx-auto space-y-10">
       <div className="text-center space-y-4">
         <h1 className="text-3xl md:text-4xl font-bold text-primary">
-          {t("title")}
+          {data?.title}
         </h1>
-        <p className="text-gray-700 text-lg">{t("subtitle")}</p>
+        <p className="text-gray-700 text-lg">{data?.subtitle}</p>
       </div>
 
       <div className="bg-secondary/10 border border-secondary p-6 rounded-lg space-y-4 shadow-sm">
         <h2 className="text-xl font-bold text-secondary">
-          {t("opportunitytitle")}
+          {data?.opportunityTitle}
         </h2>
         <ul className="list-disc pl-6 text-gray-700 space-y-2">
-          <li> {t("opportunities.one")}</li>
-          <li> {t("opportunities.two")}</li>
-          <li> {t("opportunities.three")}</li>
-          <li> {t("opportunities.four")}</li>
+          {data?.opportunities?.map((item: string, index: number) => (
+            <li key={index}>{item}</li>
+          ))}
         </ul>
       </div>
 
