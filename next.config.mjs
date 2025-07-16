@@ -6,11 +6,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**.vercel.app",
+        hostname: "abak-test-el7cwrscf-shivachiis-projects.vercel.app",
       },
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
+      },
+      {
+        protocol: "https",
+        hostname: "ahlulbaytassembly.org",
       },
     ],
   },

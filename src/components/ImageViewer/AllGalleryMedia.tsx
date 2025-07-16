@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { urlFor } from "../../../sanity/lib/image";
 
 interface Gallery {
   title: string;
@@ -36,6 +37,8 @@ export default function AllGalleryMedia({
       gallerySlug: gallery.slug.current,
     }))
   );
+
+  console.log("All Gallery Media Items:", allItems);
 
   const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
