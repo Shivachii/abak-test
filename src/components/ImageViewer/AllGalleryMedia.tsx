@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { urlFor } from "../../../sanity/lib/image";
 
 interface Gallery {
   title: string;
