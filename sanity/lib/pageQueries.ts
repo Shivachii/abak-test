@@ -233,60 +233,71 @@ export const MUBALIGHEEN_SUPPORT_QUERY = `
 `;
 
 export const HAWZA_PAGE_QUERY = `
- *[_type == "hawzaPage" && lang == $lang][0]{
-  locale,
-  title,
-  subtitle,
-  about {
+  *[_type == "hawzaPage" && lang == $lang][0]{
     title,
     subtitle,
-    description
-  },
-  establishment {
-    mainTitle,
-    vision { title, description },
-    mission { title, description },
-    impact { title, description }
-  },
-  admissions[] {
-    title,
-    description
-  },
-  students[] {
-    title,
-    description
-  },
-  curriculum[] {
-    title,
-    description
-  },
-  facilities[] {
-    title,
-    description
-  },
-  support {
-    title,
-    description,
-    bank_details[] {
-      label,
-      value
-    }
-  },
-  scholarshipSection {
-    heading,
-    intro,
-    details,
-    impact,
-    types[] {
-      icon,
+    about {
       title,
+      subtitle,
       description
     },
-    image {
-      asset->{
-        url
+    establishment {
+      title,
+      vision { title, description },
+      mission { title, description },
+      impact { title, description }
+    },
+    admissionsSection {
+      title,
+      admissions[] {
+        title,
+        description
+      }
+    },
+    studentsSection {
+      title,
+      students[] {
+        title,
+        description
+      }
+    },
+    curriculumSection {
+      title,
+      curriculum[] {
+        title,
+        description
+      }
+    },
+    Facilities {
+      title,
+      facilities[] {
+        title,
+        description
+      }
+    },
+    scholarshipSection {
+      heading,
+      intro,
+      details,
+      impact,
+      types[] {
+        icon,
+        title,
+        description
+      },
+      image {
+        asset->{
+          url
+        }
+      }
+    },
+    support {
+      title,
+      description,
+      bank_details[] {
+        label,
+        value
       }
     }
   }
-}
 `;

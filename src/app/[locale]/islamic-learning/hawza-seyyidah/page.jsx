@@ -57,17 +57,15 @@ export default async function Hawza({ params }) {
     params: { lang: locale },
   });
 
-  const t = await getTranslations("hawza");
-
   return (
     <section>
       <Banner backgroundImage="/banners/hawza.png" />
 
-      <div className="w-full px-4 py-12  text-foreground">
+      <div className="w-full px-4 py-12 text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">
+          {/* About Section */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            {/* About Section */}
-            <div className=" space-y-4 max-w-lg">
+            <div className="space-y-4 max-w-lg">
               <h1 className="text-3xl md:text-5xl font-bold text-primary">
                 {data.about.title}
               </h1>
@@ -86,24 +84,30 @@ export default async function Hawza({ params }) {
           {/* Establishment */}
           <div className="space-y-6">
             <h2 className="text-2xl md:text-4xl font-bold text-primary">
-              {t("establishment.title")}
+              {data.establishment.title}
             </h2>
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex flex-col gap-6 md:w-1/2">
-                {[
-                  { key: "vision", icon: <Binoculars /> },
-                  { key: "mission", icon: <Target /> },
-                  { key: "impact", icon: <Activity /> },
-                ].map(({ key, icon }) => (
-                  <div key={key} className="p-4">
-                    <h3 className="text-xl font-semibold text-secondary mb-2 flex items-center gap-3">
-                      {icon} {data.establishment[key].title}
-                    </h3>
-                    <p className="text-gray-700">
-                      {data.establishment[key].description}
-                    </p>
-                  </div>
-                ))}
+                {["vision", "mission", "impact"].map((key) => {
+                  const Icon =
+                    key === "vision" ? (
+                      <Binoculars />
+                    ) : key === "mission" ? (
+                      <Target />
+                    ) : (
+                      <Activity />
+                    );
+                  return (
+                    <div key={key} className="p-4">
+                      <h3 className="text-xl font-semibold text-secondary mb-2 flex items-center gap-3">
+                        {Icon} {data.establishment[key].title}
+                      </h3>
+                      <p className="text-gray-700">
+                        {data.establishment[key].description}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
               <div className="w-full lg:w-1/2 flex items-center">
                 <Image
@@ -123,42 +127,38 @@ export default async function Hawza({ params }) {
               {/* Admission Criteria */}
               <div className="space-y-6">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary">
-                  {t("admissions.title")}
+                  {data.admissionsSection.title}
                 </h2>
                 <div className="space-y-6">
-                  {[0, 1, 2].map((i) => (
+                  {data.admissionsSection.admissions.map((item, i) => (
                     <div
                       key={i}
                       className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition"
                     >
                       <h3 className="text-xl font-semibold text-secondary mb-2">
-                        {t(`admissions.criteria.${i}.title`)}
+                        {item.title}
                       </h3>
-                      <p className="text-gray-700">
-                        {t(`admissions.criteria.${i}.description`)}
-                      </p>
+                      <p className="text-gray-700">{item.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Student Profile */}
+              {/* Student Profiles */}
               <div className="space-y-6">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary">
-                  {t("students.title")}
+                  {data.studentsSection.title}
                 </h2>
                 <div className="space-y-6">
-                  {[0, 1, 2].map((i) => (
+                  {data.studentsSection.students.map((i) => (
                     <div
-                      key={i}
+                      key={i._key}
                       className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition"
                     >
                       <h3 className="text-xl font-semibold text-secondary mb-2">
-                        {t(`students.profile.${i}.title`)}
+                        {i.title}
                       </h3>
-                      <p className="text-gray-700">
-                        {t(`students.profile.${i}.description`)}
-                      </p>
+                      <p className="text-gray-700">{i.description}</p>
                     </div>
                   ))}
                 </div>
@@ -169,11 +169,11 @@ export default async function Hawza({ params }) {
           {/* Curriculum */}
           <div className="space-y-6">
             <h2 className="text-2xl md:text-4xl font-bold text-primary">
-              {t("curriculum.title")}
+              {data.curriculumSection?.title}
             </h2>
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="w-full lg:w-1/2 space-y-6">
-                {data.curriculum.map((item, i) => (
+                {data.curriculumSection?.curriculum?.map((item, i) => (
                   <div
                     key={i}
                     className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition"
@@ -200,10 +200,10 @@ export default async function Hawza({ params }) {
           {/* Facilities */}
           <div className="space-y-6">
             <h2 className="text-2xl md:text-4xl font-bold text-primary">
-              {t("facilities.title")}
+              {data.Facilities.title}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {data.facilities.map((item, i) => (
+              {data.Facilities.facilities.map((item, i) => (
                 <div key={i} className="bg-gray-50 p-4 rounded shadow-sm">
                   <h3 className="text-xl font-semibold text-secondary mb-2">
                     {item.title}
@@ -217,7 +217,7 @@ export default async function Hawza({ params }) {
           {/* CTA */}
           <HawzaEnrollmentCTA />
 
-          {/* Scholarship */}
+          {/* Scholarship Section */}
           <ScholarshipSection
             heading={data.scholarshipSection.heading}
             intro={data.scholarshipSection.intro}
@@ -226,19 +226,19 @@ export default async function Hawza({ params }) {
             types={data.scholarshipSection.types}
             imageUrl={data.scholarshipSection.image?.asset?.url}
           />
-          {/* Support */}
+
+          {/* Support Section */}
           <div className="space-y-4 text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-primary">
-              {t("support.title")}
+              {data.support.title}
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              {t("support.description")}
+              {data.support.description}
             </p>
             <div className="bg-gray-100 p-4 rounded max-w-xl mx-auto text-left space-y-1">
-              {[0, 1, 2, 3, 4].map((i) => (
+              {data.support.bank_details.map((item, i) => (
                 <p key={i}>
-                  <strong>{t(`support.bank_details.${i}.label`)}</strong>{" "}
-                  {t(`support.bank_details.${i}.value`)}
+                  <strong>{item.label}:</strong> {item.value}
                 </p>
               ))}
             </div>

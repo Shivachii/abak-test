@@ -313,7 +313,7 @@ export const homePageType = defineType({
                 defineField({
                   name: "href",
                   title: "Link URL",
-                  type: "url",
+                  type: "string",
                 }),
               ],
             },
@@ -336,7 +336,7 @@ export const homePageType = defineType({
         defineField({
           name: "ctaLink",
           title: "Bottom CTA Link URL",
-          type: "url",
+          type: "string",
         }),
       ],
     }),

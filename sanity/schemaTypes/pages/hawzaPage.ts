@@ -169,7 +169,7 @@ export const hawzaPage = defineType({
     }),
 
     defineField({
-      name: "Curriculum",
+      name: "curriculumSection",
       type: "object",
       title: "Curriculum Section",
       fields: [
