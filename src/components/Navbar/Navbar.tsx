@@ -28,7 +28,7 @@ export default function Navbar() {
     { name: t("about"), href: "/about" },
     { name: t("ourWork"), href: "#" },
     { name: t("hawza"), href: "/islamic-learning/hawza-seyyidah" },
-    { name: t("resources"), href: "/resources" },
+    { name: t("resources"), href: "#" },
     { name: t("contact"), href: "/contact" },
   ];
 
