@@ -22,6 +22,8 @@ export async function generateStaticParams() {
 }
 
 export default async function EventPage({ params }) {
+  const { slug, locale } = params;
+
   const { data } = await sanityFetch({
     query: `*[_type == "event" && lang == $lang && slug.current == $slug][0]{
       title,
@@ -31,26 +33,27 @@ export default async function EventPage({ params }) {
       "imageUrl": images,
       "bannerImage": bannerImage.asset->url,
       "gallery": gallery->{
-  title,
-  "mediaItems": media[]{
-    _key,
-    _type,
-    ...select(
-      _type == "image" => {
-        "url": asset->url,
-        "assetId": asset->_ref,
-        "type": "image"
-      },
-      _type == "file" => {
-        "url": asset->url,
-        "assetId": asset->_ref,
-        "type": "file",
-        caption
+        title,
+        "mediaItems": media[] {
+          _key,
+          _type,
+          ...select(
+            _type == "image" => {
+              "url": asset->url,
+              "assetId": asset->_ref,
+              "type": "image"
+            },
+            _type == "file" => {
+              "url": asset->url,
+              "assetId": asset->_ref,
+              "type": "file",
+              caption
+            }
+          )
+        }
       }
-    )
-  }
-} }`,
-    params: { slug: params.slug, lang: params.locale },
+    }`,
+    params: { slug, lang: locale },
   });
 
   const event = data;

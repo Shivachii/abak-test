@@ -45,6 +45,7 @@ export default function EventCarousel({
                 alt={item.caption || "Event media"}
                 width={600}
                 height={400}
+                priority
                 className="rounded-xl object-cover w-full h-64"
               />
             ) : (
