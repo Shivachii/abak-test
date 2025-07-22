@@ -64,7 +64,7 @@ export default async function EventPage({ params }) {
       {event.bannerImage && (
         <div className="relative w-full h-80 md:h-[500px]">
           <Image
-            src={urlFor(event.bannerImage).url()}
+            src={event.bannerImage}
             alt={event.title}
             fill
             className="object-cover object-center"
