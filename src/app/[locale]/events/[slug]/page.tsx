@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { sanityFetch } from "../../../../../sanity/lib/live";
+// import { sanityFetch } from "../../../../../sanity/lib/live";
 import { EVENTS_SLUGS_QUERY } from "../../../../../sanity/lib/queries";
 import { client } from "../../../../../sanity/lib/client";
 // import { Metadata } from "next";
@@ -38,37 +38,37 @@ export default async function EventPage({
 }) {
   const { slug, locale } = params;
 
-  const { data } = await sanityFetch({
-    query: `*[_type == "event" && lang == $lang && slug.current == $slug][0]{
+  const data = await client.fetch(
+    `*[_type == "event" && lang == $lang && slug.current == $slug][0]{
+    title,
+    date,
+    location,
+    description,
+    "imageUrl": images,
+    "bannerImage": bannerImage.asset->url,
+    "gallery": gallery->{
       title,
-      date,
-      location,
-      description,
-      "imageUrl": images,
-      "bannerImage": bannerImage.asset->url,
-      "gallery": gallery->{
-        title,
-        "mediaItems": media[] {
-          _key,
-          _type,
-          ...select(
-            _type == "image" => {
-              "url": asset->url,
-              "assetId": asset->_ref,
-              "type": "image"
-            },
-            _type == "file" => {
-              "url": asset->url,
-              "assetId": asset->_ref,
-              "type": "file",
-              caption
-            }
-          )
-        }
+      "mediaItems": media[] {
+        _key,
+        _type,
+        ...select(
+          _type == "image" => {
+            "url": asset->url,
+            "assetId": asset->_ref,
+            "type": "image"
+          },
+          _type == "file" => {
+            "url": asset->url,
+            "assetId": asset->_ref,
+            "type": "file",
+            caption
+          }
+        )
       }
-    }`,
-    params: { slug, lang: locale },
-  });
+    }
+  }`,
+    { slug, lang: locale }
+  );
 
   const event = data;
 
