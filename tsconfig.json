@@ -41,7 +41,7 @@
     "src/app/[locale]/events/page.jsx",
     "src/components/Navbar/Navbar.tsx",
     "src/app/[locale]/resources/audio-visual/videos/page.jsx",
-    "src/app/[locale]/events/[slug]/page.jsx"
+    "src/app/[locale]/events/[slug]/page.tsx"
   ],
   "exclude": ["node_modules"]
 }
