@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { sanityFetch } from "../../../../../sanity/lib/live";
 import { EVENTS_SLUGS_QUERY } from "../../../../../sanity/lib/queries";
 import { client } from "../../../../../sanity/lib/client";
-import { urlFor } from "../../../../../sanity/lib/image";
 import EventCarousel from "@/components/ImageViewer/EventsImages";
 
 export async function generateMetadata({ params }) {
