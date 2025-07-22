@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { sanityFetch } from "../../../../../sanity/lib/live";
 import { EVENTS_SLUGS_QUERY } from "../../../../../sanity/lib/queries";
 import { client } from "../../../../../sanity/lib/client";
-import EventCarousel from "@/components/ImageViewer/EventsImages";
+// import EventCarousel from "@/components/ImageViewer/EventsImages";
 
 export async function generateMetadata({ params }) {
   const event = await sanityFetch({
@@ -101,10 +101,10 @@ export default async function EventPage({ params }) {
           ))}
         </div>
 
-        {Array.isArray(event.gallery?.mediaItems) &&
+        {/* {Array.isArray(event.gallery?.mediaItems) &&
           event.gallery.mediaItems.length > 0 && (
             <EventCarousel mediaItems={event.gallery.mediaItems} />
-          )}
+          )} */}
       </div>
     </div>
   );
