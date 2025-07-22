@@ -1,135 +1,106 @@
 "use client";
+
 import Link from "next/link";
-import { NavbarLogo, NavbarLogoSmall } from "../Logos/Logo";
+import { usePathname } from "next/navigation";
 import {
-  ChevronDown,
   FacebookIcon,
+  Twitter,
   Instagram,
+  Youtube,
   Mail,
   Phone,
-  Twitter,
-  Youtube,
+  ChevronDown,
 } from "lucide-react";
-import Sidebar from "./Sidebar";
-import { usePathname } from "next/navigation";
-import { LanguagePicker } from "../Buttons/LocaleSwitcher";
-import { useTranslations } from "next-intl";
 
-interface LinksProps {
-  name: string;
+import Sidebar from "@/components/Navbar/Sidebar";
+import { LanguagePicker } from "../Buttons/LocaleSwitcher";
+import { NavbarLogo, NavbarLogoSmall } from "../Logos/Logo";
+
+interface LinkItem {
+  label: string;
   href: string;
   description?: string;
+  children?: LinkItem[];
 }
 
-export default function Navbar() {
-  const t = useTranslations("nav");
-  const NavLinks: LinksProps[] = [
-    { name: t("home"), href: "/" },
-    { name: t("about"), href: "/about" },
-    { name: t("ourWork"), href: "#" },
-    { name: t("hawza"), href: "/islamic-learning/hawza-seyyidah" },
-    { name: t("resources"), href: "#" },
-    { name: t("contact"), href: "/contact" },
-  ];
+interface NavbarProps {
+  data: {
+    navLinks: LinkItem[];
+    ctaButtons: {
+      label: string;
+      href: string;
+      style: "primary" | "secondary";
+    }[];
+    siteSettings: {
+      socialLinks: { platform: string; url: string }[];
+      contactInfo: { email: string; phone: string };
+    };
+  };
+}
 
-  const resourceLinks: LinksProps[] = [
-    {
-      name: t("resourcesDropdown.publications"),
-      href: "/resources/publications",
-    },
-    {
-      name: t("resourcesDropdown.audioVisual"),
-      href: "/resources/audio-visual",
-    },
-  ];
-
-  // const islamicLearningLinks: LinksProps[] = [
-  //   {
-  //     name: t("islamicLearningDropdown.hawza"),
-  //     href: "/islamic-learning/hawza-seyyidah",
-  //   },
-  //   {
-  //     name: t("islamicLearningDropdown.quranReflections"),
-  //     href: "/islamic-learning/quran-reflections",
-  //   },
-  // ];
-
-  const ourWorkLinks: LinksProps[] = [
-    {
-      name: t("ourWorkDropdown.objectives"),
-      href: "/governing-objectives",
-      description: t("ourWorkDropdown.objectivesDesc"),
-    },
-    {
-      name: t("ourWorkDropdown.programs"),
-      href: "/programs",
-      description: t("ourWorkDropdown.programsDesc"),
-    },
-    {
-      name: t("ourWorkDropdown.events"),
-      href: "/events",
-      description: t("ourWorkDropdown.eventsDesc"),
-    },
-  ];
+export default function Navbar({ data }: NavbarProps) {
   const pathname = usePathname();
+  const socials = data.siteSettings?.socialLinks || [];
+  const contact = data.siteSettings?.contactInfo || {};
+
   return (
     <header className="w-full">
       <div className="hidden md:flex justify-between items-center px-8 py-2 bg-secondary text-white text-sm">
         <div className="flex items-center gap-4">
-          <Link
-            href="https://www.facebook.com/+254704788924"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <FacebookIcon size={18} className="hover:text-primary transition" />
-          </Link>
-          <Link
-            href="https://twitter.com/Ahlul_Bayt_Ke"
-            target="_blank"
-            aria-label="Twitter"
-          >
-            <Twitter size={18} className="hover:text-primary transition" />
-          </Link>
-          <Link
-            href="https://www.instagram.com/ahlulbaytassembly/"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <Instagram size={18} className="hover:text-primary transition" />
-          </Link>
-          <Link
-            href="https://www.youtube.com/@AhlulBaytAssemblyKenya"
-            target="_blank"
-            aria-label="YouTube"
-          >
-            <Youtube size={18} className="hover:text-primary transition" />
-          </Link>
+          {socials.map((social, i) => {
+            const Icon =
+              social.platform === "Facebook"
+                ? FacebookIcon
+                : social.platform === "Twitter"
+                  ? Twitter
+                  : social.platform === "Instagram"
+                    ? Instagram
+                    : social.platform === "YouTube"
+                      ? Youtube
+                      : null;
+            return (
+              Icon && (
+                <Link
+                  key={i}
+                  href={social.url}
+                  target="_blank"
+                  aria-label={social.platform}
+                >
+                  <Icon size={18} className="hover:text-primary transition" />
+                </Link>
+              )
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-4">
           <Link
-            href="mailto:info@ahlulbaytassembly.org"
+            href={`mailto:${contact.email}`}
             className="flex items-center gap-1"
           >
             <Mail size={18} className="text-primary" />
-            info@ahlulbaytassembly.org
-          </Link>
-          <Link href="tel:+254704788924" className="flex items-center gap-1">
-            <Phone size={18} className="text-primary" />
-            +254 704 788924
+            {contact.email}
           </Link>
           <Link
-            href={"/volunteer"}
-            className="bg-primary text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-primary/90 transition"
+            href={`tel:${contact.phone}`}
+            className="flex items-center gap-1"
           >
-            {t("volunteer")}
+            <Phone size={18} className="text-primary" />
+            {contact.phone}
           </Link>
-          {/* <Link
-            href={"/donate"}
-            className="bg-primary text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-primary/90 relative "
-          >
-            {t("donate")}
-          </Link> */}
+          {data.ctaButtons.map((cta, index) => (
+            <Link
+              key={index}
+              href={cta.href}
+              className={`${
+                cta.style === "primary"
+                  ? "bg-primary text-gray-700"
+                  : "bg-white text-primary border border-primary"
+              } px-4 py-2 rounded-md shadow-md hover:opacity-90 transition`}
+            >
+              {cta.label}
+            </Link>
+          ))}
           <LanguagePicker />
         </div>
       </div>
@@ -145,7 +116,7 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex gap-8 relative">
-          {NavLinks.map((link, i) => (
+          {data.navLinks.map((link, i) => (
             <div
               key={i}
               className="p-1 group relative rounded-sm hover:bg-gray-100 transition-all"
@@ -158,9 +129,8 @@ export default function Navbar() {
                       : "text-black"
                   }`}
                 >
-                  <span>{link.name}</span>
-                  {(link.name === t("ourWork") ||
-                    link.name === t("resources")) && (
+                  <span>{link.label}</span>
+                  {Array.isArray(link.children) && link.children.length > 0 && (
                     <ChevronDown
                       width={15}
                       height={15}
@@ -170,87 +140,31 @@ export default function Navbar() {
                 </p>
               </Link>
 
-              {/* {link.name === t("islamicLearning") && (
+              {link.children && link.children.length > 0 && (
                 <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-8 text-black z-50">
-                  {islamicLearningLinks.map((subLink, a) => (
+                  {link.children.map((child, y) => (
                     <Link
-                      href={subLink.href}
-                      key={a}
-                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100 ${
-                        pathname === subLink.href
-                          ? "bg-slate-100"
-                          : "text-black"
-                      }`}
-                    >
-                      <div className="flex flex-col gap-1 cursor-pointer">
-                        <span
-                          className={`whitespace-nowrap ${
-                            pathname === subLink.href
-                              ? "text-primary font-semibold"
-                              : "text-black"
-                          }`}
-                        >
-                          {subLink.name}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )} */}
-
-              {link.name === t("ourWork") && (
-                <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-8 text-black z-50">
-                  {ourWorkLinks.map((subLink, y) => (
-                    <Link
-                      href={subLink.href}
+                      href={child.href}
                       key={y}
                       className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100 ${
-                        pathname === subLink.href
-                          ? "bg-slate-100"
-                          : "text-black"
+                        pathname === child.href ? "bg-slate-100" : "text-black"
                       }`}
                     >
                       <div className="flex flex-col gap-1 cursor-pointer">
                         <span
                           className={`whitespace-nowrap ${
-                            pathname === subLink.href
+                            pathname === child.href
                               ? "text-primary font-semibold"
                               : "text-black"
                           }`}
                         >
-                          {subLink.name}
+                          {child.label}
                         </span>
-                        <span className="text-[12px] text-gray-500 tracking-tight">
-                          {subLink.description}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )}
-
-              {link.name === t("resources") && (
-                <div className="absolute hidden gap-1 w-max grid-cols-1 rounded-lg py-3 px-2 shadow-md transition-all group-hover:grid bg-white -left-9 top-7 text-black z-50">
-                  {resourceLinks.map((subLink, v) => (
-                    <Link
-                      href={subLink.href}
-                      key={v}
-                      className={`flex flex-col py-1 pl-6 pr-8 rounded-sm items-start hover:bg-slate-100 ${
-                        pathname === subLink.href
-                          ? "bg-slate-100"
-                          : "text-black"
-                      }`}
-                    >
-                      <div className="flex flex-col gap-1 cursor-pointer">
-                        <span
-                          className={`whitespace-nowrap ${
-                            pathname === subLink.href
-                              ? "text-primary font-semibold"
-                              : "text-black"
-                          }`}
-                        >
-                          {subLink.name}
-                        </span>
+                        {child.description && (
+                          <span className="text-[12px] text-gray-500 tracking-tight">
+                            {child.description}
+                          </span>
+                        )}
                       </div>
                     </Link>
                   ))}

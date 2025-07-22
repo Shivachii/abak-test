@@ -43,11 +43,5 @@ export const mediaType = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "tag" }] }],
-    }),
   ],
 });

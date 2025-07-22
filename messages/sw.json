@@ -339,6 +339,13 @@
     "viewImages": "Tazama Picha",
     "list": [
       {
+        "title": "Maadhimisho ya Siku ya Ashura",
+        "date": "Julai 5, 2025",
+        "location": "Parkroad Husseiniya",
+        "description": "Tukio liliandaliwa na ABAK & NSN kwa msaada wa SAAJ Jamaat. Matembelezi ya kilomita 4 hadi Makaburi ya Kariokor yaliambatana na usomaji wa Qur'an, Ziyara ya Ashura na mazishi ya lugha nyingi. Onyesho lenye nguvu la umoja miongoni mwa wafuasi wa Ahlulbayt (as).",
+        "images": ["/ashura1.jpg", "/ashura2.jpg"]
+      },
+      {
         "title": "Mkutano wa Muballigheen",
         "date": "Mei 4, 2025",
         "location": "Magharibi",
@@ -379,10 +386,10 @@
         "images": ["/symposium3.jpg", "/symposium4.jpg"]
       },
       {
-        "title": "Mkutano wa Muballighiin",
+        "title": "Mkutano wa Muballigheen",
         "date": "Septemba 11, 2024",
         "location": "Ngumo",
-        "description": "Mkutano wa karibu wa Muballighiin kujadili mipango ya sasa, kushirikiana maoni, na kupanga mikakati ya ushawishi wa jamii.",
+        "description": "Mkutano wa karibu wa Muballigheen kujadili mipango ya sasa, kushirikiana maoni, na kupanga mikakati ya ushawishi wa jamii.",
         "images": ["/meeting1.jpg", "/meeting2.jpg"]
       }
     ]

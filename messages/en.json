@@ -59,7 +59,7 @@
       "about": "About Us",
       "programs": "Programs",
       "events": "Events",
-      "blog": "Blog",
+
       "contact": "Contact Us",
       "donate": "Donate",
       "volunteer": "Volunteer"
@@ -336,6 +336,13 @@
     "viewImages": "View Images",
     "list": [
       {
+        "title": "Day of Ashura Commemoration",
+        "date": "July 5, 2025",
+        "location": "Parkroad Husseiniya",
+        "description": "The event was organized by ABAK & NSN with support from SAAJ Jamaat. The 4km walk to Kariokor Graveyard featured Quran recitation, Ashura Ziarat & a multilingual funeral. A powerful display of unity among the followers of Ahlulbayt (as).",
+        "images": ["/ashura1.jpg", "/ashura2.jpg"]
+      },
+      {
         "title": "Muballigheen Symposium",
         "date": "May 4, 2025",
         "location": "Western",
@@ -376,10 +383,10 @@
         "images": ["/symposium3.jpg", "/symposium4.jpg"]
       },
       {
-        "title": "Muballighiin Meeting",
+        "title": "Muballigheen Meeting",
         "date": "September 11, 2024",
         "location": "Ngumo",
-        "description": "A focused gathering of Muballigheiin to discuss current initiatives, share feedback, and strategize for future community outreach.",
+        "description": "A focused gathering of Muballigheen to discuss current initiatives, share feedback, and strategize for future community outreach.",
         "images": ["/meeting1.jpg", "/meeting2.jpg"]
       }
     ]

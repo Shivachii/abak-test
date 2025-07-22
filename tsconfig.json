@@ -36,7 +36,12 @@
     "src/app/[locale]/islamic-learning/hawza-seyyidah/page.jsx",
     "src/components/Hero/Hero.jsx",
     "src/app/[locale]/programs/community-services/page.jsx",
-    "src/app/[locale]/programs/page.jsx"
+    "src/app/[locale]/programs/page.jsx",
+    "src/app/api/contact/contact.js",
+    "src/app/[locale]/events/page.jsx",
+    "src/components/Navbar/Navbar.tsx",
+    "src/app/[locale]/resources/audio-visual/videos/page.jsx",
+    "src/app/[locale]/events/[slug]/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

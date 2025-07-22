@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: #facc15; /* Tailwind yellow-400 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom-swiper .swiper-button-next:hover,
+.custom-swiper .swiper-button-prev:hover {
+  color: #eab308; /* Tailwind yellow-500 */
+}
+
+.custom-swiper .swiper-pagination {
+  bottom: 0px !important;
+  text-align: center;
+}
+
+.custom-swiper .swiper-pagination-bullet {
+  background-color: #facc15; /* yellow-400 */
+  opacity: 0.5;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background-color: #facc15;
+  opacity: 1;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

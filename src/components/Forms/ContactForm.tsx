@@ -13,6 +13,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Please input your name"),
@@ -26,10 +28,30 @@ export default function ContactForm() {
     defaultValues: { name: "", email: "", message: "" },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("Form Data:", values);
-    // Handle sending here (e.g., fetch to API or Formspree)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (res.ok) {
+        toast.success("Message sent successfully!");
+        form.reset();
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      toast.error(String(error) || "An unexpected error occurred.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   return (
     <Form {...form}>
       <form
@@ -89,14 +111,15 @@ export default function ContactForm() {
         <div className="flex flex-col sm:flex-row justify-between gap-4 pt-2">
           <Button
             type="submit"
+            disabled={isSubmitting}
             className="w-full sm:w-1/2 bg-black text-white hover:bg-black/90 transition-colors"
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
           <Button
             type="button"
             onClick={() => form.reset()}
-            className="w-full sm:w-1/2 bg-black text-white hover:bg-black/90  transition-colors"
+            className="w-full sm:w-1/2 bg-black text-white hover:bg-black/90 transition-colors"
           >
             Reset
           </Button>

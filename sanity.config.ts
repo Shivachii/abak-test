@@ -25,14 +25,14 @@ export default defineConfig({
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
-    documentInternationalization({
-      // Required configuration
-      supportedLanguages: [
-        { id: "ar", title: "Arabic" },
-        { id: "en", title: "English" },
-        { id: "sw", title: "Swahili" },
-      ],
-      schemaTypes: ["gallery", "media", "publications", "tag"],
-    }),
+    // documentInternationalization({
+    //   // Required configuration
+    //   supportedLanguages: [
+    //     { id: "ar", title: "Arabic" },
+    //     { id: "en", title: "English" },
+    //     { id: "sw", title: "Swahili" },
+    //   ],
+    //   schemaTypes: ["gallery", "media", "publications"],
+    // }),
   ],
 });

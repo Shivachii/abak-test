@@ -1,27 +1,64 @@
 import type { StructureResolver } from "sanity/structure";
-
+import { client } from "../sanity/lib/client";
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
-export const structure: StructureResolver = (S) =>
-  S.list()
+export const structure: StructureResolver = async (S) => {
+  const parentItems = await client.fetch(
+    `*[_type == "parentEvent"]{_id, title}`
+  );
+
+  return S.list()
     .title("ABAKCMS")
     .items([
+      S.documentTypeListItem("navbar").title("Navbar"),
+      S.documentTypeListItem("footer").title("Footer"),
+      S.documentTypeListItem("siteSettings").title("Site settings"),
+
+      S.divider(),
+
       S.documentTypeListItem("publications").title("Publications"),
       S.documentTypeListItem("gallery").title("Gallery"),
-      S.documentTypeListItem("media").title("Media"),
-      S.documentTypeListItem("tag").title("Tag"),
-      S.documentTypeListItem("audio").title("Audio"),
-      S.documentTypeListItem("images").title("Images"),
-      S.divider(),
-      ...S.documentTypeListItems().filter(
-        (item) =>
-          item.getId() &&
-          ![
-            "gallery",
-            "media",
-            "publications",
-            "tag",
-            "audio",
-            "images",
-          ].includes(item.getId()!)
+      S.documentTypeListItem("youtubevideoGallery").title(
+        "Youtube Video Gallery"
       ),
+      S.documentTypeListItem("audio").title("Audio"),
+      S.documentTypeListItem("parentEvent").title("Event Groups"),
+
+      S.listItem()
+        .title("Events")
+        .child(
+          S.list()
+            .title("Events by Group")
+            .items(
+              parentItems.map((group: any) =>
+                S.listItem()
+                  .title(group.title)
+                  .child(
+                    S.documentList()
+                      .title("Translations")
+                      .filter('_type == "event" && parent._ref == $id')
+                      .params({ id: group._id })
+                  )
+              )
+            )
+        ),
+
+      S.divider(),
+      S.documentTypeListItem("homePage").title("Home Page"),
+      S.documentTypeListItem("aboutPage").title("About Page"),
+      S.documentTypeListItem("communityServicesPage").title(
+        "Community Services Page"
+      ),
+      S.documentTypeListItem("contactPage").title("Contact Page"),
+      S.documentTypeListItem("hawzaPage").title("Hawza Page"),
+      S.documentTypeListItem("mubaligheenSupportPage").title(
+        "Mubaligheen Support Page"
+      ),
+      S.documentTypeListItem("mubaligheenTrainingPage").title(
+        "Mubaligheen Training Page"
+      ),
+      S.documentTypeListItem("projectsPage").title("Projects Page"),
+      S.documentTypeListItem("qardhPage").title("Qardh Hassanah Page"),
+      S.documentTypeListItem("volunteerPage").title("Volunteer Page"),
+      S.documentTypeListItem("donatePage").title("Donate Page"),
     ]);
+};

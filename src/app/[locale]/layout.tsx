@@ -13,6 +13,7 @@ import { SanityLive } from "../../../sanity/lib/live";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "../../i18n/routing";
+import { fetchNavbar, getFooterData } from "../../../sanity/lib/fetchNavbar";
 // import StickyDonateForm from "@/components/Forms/StickyDonation";
 
 export default async function FrontendLayout({
@@ -26,10 +27,14 @@ export default async function FrontendLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  const navData = await fetchNavbar((await params).locale);
+  const footerData = await getFooterData((await params).locale);
+
   return (
     <section>
       {" "}
-      <Navbar />
+      <Navbar data={navData} />
       {children}
       <Toaster
         position="top-right"
@@ -45,7 +50,7 @@ export default async function FrontendLayout({
       {/* <StickyDonateForm /> */}
       <ScrollToTop />
       <SanityLive />
-      <Footer />
+      <Footer data={footerData} />
     </section>
   );
 }

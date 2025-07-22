@@ -1,8 +1,15 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { sanityFetch } from "../../../../../../sanity/lib/live";
+import { YOUTUBE_LINKS_QUERY } from "../../../../../../sanity/lib/queries";
 
-export default function VideosPage() {
-  const t = useTranslations("videos");
-  const videoList = t.raw("items") as { title: string; url: string }[];
+export default async function VideosPage() {
+  const t = await getTranslations("videos");
+
+  const { data } = await sanityFetch({
+    query: YOUTUBE_LINKS_QUERY,
+  });
+
+  const videos = data?.videos ?? [];
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
@@ -14,7 +21,7 @@ export default function VideosPage() {
       </p>
 
       <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
-        {videoList.map((video, index) => (
+        {videos.map((video, index) => (
           <div
             key={index}
             className="rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105"

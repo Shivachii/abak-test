@@ -87,12 +87,5 @@ export const galleryType = defineType({
         }),
       ],
     }),
-
-    defineField({
-      name: "tag",
-      title: "Gallery Tags",
-      type: "array",
-      of: [defineArrayMember({ type: "reference", to: [{ type: "tag" }] })],
-    }),
   ],
 });

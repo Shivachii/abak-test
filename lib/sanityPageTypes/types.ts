@@ -141,3 +141,18 @@ export interface EventsProps {
     events: Event[];
   };
 }
+
+export interface EventItem {
+  _id: string;
+  title: string;
+  slug: string;
+  date: string;
+  location: string;
+  description: string;
+  images?: string; // bannerImage url
+  lang: "en" | "sw" | "ar" | "fa";
+  parent?: {
+    title: string;
+    slug: string;
+  };
+}

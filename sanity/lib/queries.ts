@@ -45,11 +45,7 @@ export const galleryQuery = `*[_type == "gallery"]{
         }
       )
     },
-    "tags": tag[]->{
-      _id,
-      title,
-      slug
-    }
+    
   }`;
 
 export const allGalleriesQuery = `
@@ -107,4 +103,65 @@ export const getAllGalleryMediaPaginatedQuery = (start = 0, end = 8) => `
       }
     }
   }
+`;
+
+export const EVENTS_QUERY = `
+*[_type == "event" && lang == $lang && defined(slug.current)]{
+  _id,
+  title,
+  "slug": slug.current,
+  date,
+  location,
+  description,
+  "images": bannerImage.asset->url,
+  lang,
+  parent->{title, slug}
+} | order(date desc)
+`;
+
+export const EVENT_QUERY = `
+*[_type == "event" && slug.current == $slug][0]{
+title,
+date,
+location,
+description, 
+"bannerImage": bannerImage.asset->url,
+"gallery": gallery->{
+  title,
+  "mediaItems": media[]{
+    _key,
+    _type,
+    ...select(
+      _type == "image" => {
+        "url": asset->url,
+        "assetId": asset->_ref,
+        "type": "image"
+      },
+      _type == "file" => {
+        "url": asset->url,
+        "assetId": asset->_ref,
+        "type": "file",
+        caption
+      }
+    )
+  }
+}
+}
+`;
+
+export const allSlugs = `*[_type == "event" && slug.current == $slug][0]{
+      title
+    }`;
+
+export const EVENTS_SLUGS_QUERY = `*[_type == "event" && defined(slug.current)][]{
+      "slug": slug.current
+    }`;
+
+export const YOUTUBE_LINKS_QUERY = `
+*[_type == "youtubevideoGallery"][0] {
+  videos[] {
+    title,
+    url
+  }
+}
 `;
