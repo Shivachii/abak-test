@@ -1,29 +1,19 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-// import { sanityFetch } from "../../../../../sanity/lib/live";
 import { EVENTS_SLUGS_QUERY } from "../../../../../sanity/lib/queries";
 import { client } from "../../../../../sanity/lib/client";
-// import { Metadata } from "next";
 import EventCarousel from "@/components/ImageViewer/EventsImages";
-
-// type Props = {
-//   params: Promise<{ slug: string }>;
-// };
-
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   const event = await sanityFetch({
-//     query: `*[_type == "event" && slug.current == $slug][0]{ title }`,
-//     params: { slug: params },
-//   });
-
-//   return {
-//     title: event || "Event",s
-//   };
-// }
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(EVENTS_SLUGS_QUERY);
-  return slugs.map((slug: { slug: string }) => ({ slug: slug.slug }));
+
+  const locales = ["en", "ar", "sw", "fa"];
+  return slugs.flatMap((slug: { slug: string }) =>
+    locales.map((locale) => ({
+      slug: slug.slug,
+      locale,
+    }))
+  );
 }
 
 interface EventPageParams {
@@ -34,9 +24,10 @@ interface EventPageParams {
 export default async function EventPage({
   params,
 }: {
-  params: EventPageParams;
+  params: Promise<EventPageParams>; // Make params a Promise
 }) {
-  const { slug, locale } = params;
+  // Await the params
+  const { slug, locale } = await params;
 
   const data = await client.fetch(
     `*[_type == "event" && lang == $lang && slug.current == $slug][0]{
@@ -74,6 +65,19 @@ export default async function EventPage({
 
   if (!event) return notFound();
 
+  // Helper function for date formatting
+  const formatDate = (dateString: string) => {
+    try {
+      return new Date(dateString).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    } catch {
+      return "Date not available";
+    }
+  };
+
   return (
     <div className="min-h-screen text-foreground bg-background">
       {/* Banner Image */}
@@ -81,7 +85,7 @@ export default async function EventPage({
         <div className="relative w-full h-80 md:h-[500px]">
           <Image
             src={event.bannerImage}
-            alt={event.title}
+            alt={event.title || "Event banner"}
             fill
             className="object-cover object-center"
             priority
@@ -99,11 +103,11 @@ export default async function EventPage({
         <div className="mb-6 space-y-1 text-sm text-muted-foreground">
           <p>
             <strong className="text-foreground">Date:</strong>{" "}
-            {new Date(event.date).toDateString()}
+            {event.date ? formatDate(event.date) : "Date not available"}
           </p>
           <p>
             <strong className="text-foreground">Location:</strong>{" "}
-            {event.location}
+            {event.location || "Location not available"}
           </p>
         </div>
 
