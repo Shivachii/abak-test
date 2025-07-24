@@ -1,4 +1,3 @@
-// schemas/contactPage.ts
 import { DocumentTextIcon } from "@sanity/icons";
 import { defineField, defineType, defineArrayMember } from "sanity";
 

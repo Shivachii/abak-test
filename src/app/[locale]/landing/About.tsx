@@ -1,7 +1,7 @@
 import UnderlineLink from "@/components/Animations/Underline";
 import Image from "next/image";
 import { urlFor } from "../../../../sanity/lib/image";
-import { AboutProps } from "../../../../lib/sanityPageTypes/types";
+import { AboutProps } from "../../../lib/types/sanityPageTypes/types";
 
 export default function About({ data }: AboutProps) {
   return (

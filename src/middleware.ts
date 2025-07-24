@@ -1,4 +1,4 @@
-import { type Locale, locales } from "../lib/locales";
+import { type Locale, locales } from "./lib/locales/locales";
 import createMiddleware from "next-intl/middleware";
 import { type NextRequest, type NextResponse } from "next/server";
 
@@ -15,5 +15,5 @@ function intlMiddlewareHandler(req: NextRequest): NextResponse {
 export default intlMiddlewareHandler;
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|_next|_vercel|studio|.*\\..*).*)"],
 };

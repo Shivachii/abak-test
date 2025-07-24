@@ -21,7 +21,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { QardhSchema } from "../../../lib/formSchemas/QardhForm";
+import { QardhSchema } from "../../lib/formSchemas/QardhForm";
 import { Input } from "../ui/input";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 // import { PersonalSection } from "./sections/PersonalSection"

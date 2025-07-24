@@ -8,7 +8,7 @@ import {
   shiaCommunities,
   Strategies,
   SupportAreas,
-} from "../../../lib/objectivesContent";
+} from "../../lib/objectivesContent";
 
 export const contentData: {
   [key: string]: { title: string; description: string; content?: JSX.Element };

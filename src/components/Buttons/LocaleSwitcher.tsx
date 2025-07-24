@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { type Locale } from "../../../lib/locales";
+import { type Locale } from "../../lib/locales/locales";
 import { GlobeIcon } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";

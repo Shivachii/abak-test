@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { sanityFetch } from "../../../../sanity/lib/live";
 import { EVENTS_QUERY } from "../../../../sanity/lib/queries";
+import { EVENTS_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
 import { getTranslations } from "next-intl/server";
 import { urlFor } from "../../../../sanity/lib/image";
 
@@ -12,6 +13,10 @@ export default async function EventsPage({ params }) {
 
   const { data } = await sanityFetch({
     query: EVENTS_QUERY,
+    params: { lang: params.locale },
+  });
+  const pageData = await sanityFetch({
+    query: EVENTS_PAGE_QUERY,
     params: { lang: params.locale },
   });
 
@@ -24,10 +29,10 @@ export default async function EventsPage({ params }) {
       <div className="px-4 py-12">
         <div className="text-center mb-10">
           <p className="text-3xl font-bold text-primary mt-2">
-            {t("joinCommunityInitiatives")}
+            {pageData?.title || t("joinCommunityInitiatives")}
           </p>
           <p className="text-gray-700 mt-3 max-w-2xl mx-auto">
-            {t("stayUpdated")}
+            {pageData?.subtitle || t("stayUpdated")}
           </p>
         </div>
 

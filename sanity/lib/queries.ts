@@ -149,6 +149,16 @@ description,
 }
 `;
 
+export const RECENT_EVENTS_QUERY = `*[_type == "event" && lang == $lang] | order(date desc)  [0...3] {
+  _id,
+  title,
+  date,
+  slug,
+  "bannerImage": bannerImage.asset->url,
+  location,
+  description
+}`;
+
 export const allSlugs = `*[_type == "event" && slug.current == $slug][0]{
       title
     }`;

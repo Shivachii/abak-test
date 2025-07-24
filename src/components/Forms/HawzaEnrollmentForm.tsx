@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { formSchema } from "../../../lib/formSchemas/HawzaForm";
+import { formSchema } from "../../lib/formSchemas/HawzaForm";
 
 export default function HawzaEnrollmentForm() {
   const [step, setStep] = useState(1);

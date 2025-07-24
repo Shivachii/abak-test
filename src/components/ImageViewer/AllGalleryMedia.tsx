@@ -37,8 +37,6 @@ export default function AllGalleryMedia({
     }))
   );
 
-  console.log("All Gallery Media Items:", allItems);
-
   const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);

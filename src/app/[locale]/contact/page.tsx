@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "../../../../sanity/lib/live";
 import { CONTACT_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
-import { ContactData } from "../../../../lib/sanityPageTypes/types";
+import { ContactData } from "../../../lib/types/sanityPageTypes/types";
 
 export async function generateMetadata({
   params,

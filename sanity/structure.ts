@@ -9,9 +9,18 @@ export const structure: StructureResolver = async (S) => {
   return S.list()
     .title("ABAKCMS")
     .items([
-      S.documentTypeListItem("navbar").title("Navbar"),
-      S.documentTypeListItem("footer").title("Footer"),
       S.documentTypeListItem("siteSettings").title("Site settings"),
+      S.documentTypeListItem("localizedLink").title("Translated Links"),
+      S.documentTypeListItem("navigationGroup").title("Navigation Groups"),
+      S.documentTypeListItem("navLink").title("Nav Links"),
+      S.divider(),
+      S.documentTypeListItem("navbar").title("Navbar"),
+      S.documentTypeListItem("sidebar").title("Sidebar"),
+      S.documentTypeListItem("footer").title("Footer"),
+      S.divider(),
+
+      S.documentTypeListItem("formBuilder").title("Form Builder"),
+      // S.documentTypeListItem("objectivesSection").title("Objectives Section"),
 
       S.divider(),
 
@@ -45,6 +54,7 @@ export const structure: StructureResolver = async (S) => {
       S.divider(),
       S.documentTypeListItem("homePage").title("Home Page"),
       S.documentTypeListItem("aboutPage").title("About Page"),
+      S.documentTypeListItem("eventsPage").title("Events Page"),
       S.documentTypeListItem("communityServicesPage").title(
         "Community Services Page"
       ),

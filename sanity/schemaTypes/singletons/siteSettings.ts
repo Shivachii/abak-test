@@ -1,9 +1,11 @@
+import { SettingsIcon } from "lucide-react";
 import { defineType, defineField } from "sanity";
 
 export const siteSettingsType = defineType({
   name: "siteSettings",
   title: "Contact Site Settings",
-  type: "document", // singleton
+  type: "document",
+  icon: SettingsIcon,
   fields: [
     defineField({
       name: "socialLinks",

@@ -2,21 +2,31 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  Phone,
-  Mail,
-  Linkedin,
-  Facebook,
-  Menu,
-  SidebarClose,
-} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { NavbarLogoSmall } from "../Logos/Logo";
 import { LanguagePicker } from "../Buttons/LocaleSwitcher";
-import { useTranslations } from "next-intl";
+import { getIcon } from "@/helpers/iconPicker";
+import { Mail, Menu, Phone, SidebarClose } from "lucide-react";
 
-const Sidebar = () => {
-  const t = useTranslations("sidebar");
+interface SidebarProps {
+  data: {
+    quickLinks: {
+      label: string;
+      href: string;
+      children?: { label: string; href: string }[];
+    }[];
+    contactInfo: {
+      email: string;
+      phone: string;
+    };
+    socialLinks: {
+      platform: string;
+      url: string;
+    }[];
+  };
+}
+
+const Sidebar = ({ data }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const pathName = usePathname();
@@ -47,14 +57,7 @@ const Sidebar = () => {
     }),
   };
 
-  const mainsideLinks = [
-    { name: t("home"), href: "/" },
-    { name: t("about"), href: "/about" },
-    { name: t("objectives"), href: "/governing-objectives" },
-    { name: t("hawza"), href: "/islamic-learning/hawza-seyyidah" },
-    { name: t("programs"), href: "/programs" },
-    { name: t("events"), href: "/events" },
-  ];
+  const { contactInfo: contact, socialLinks: socials, quickLinks } = data;
 
   return (
     <>
@@ -91,33 +94,41 @@ const Sidebar = () => {
         {/* Navigation Links */}
         <nav className="mt-8 mb-5">
           <ul className="flex flex-col space-y-4">
-            {mainsideLinks.map((link, i) => (
-              <motion.li
-                variants={linkVariants}
-                initial="hidden"
-                animate="visible"
-                custom={i}
-                key={link.name}
-              >
-                <Link
-                  href={link.href}
-                  onClick={toggleSidebar}
-                  className={`hover:underline font-semibold text-gray-800 ${
-                    pathName === link.href ? "text-primary font-bold" : ""
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </motion.li>
-            ))}
-            <Accodrions toggleSidebar={toggleSidebar} />
+            <ul className="flex flex-col space-y-4">
+              {quickLinks.map((link, i) => {
+                const hasChildren = link.children && link.children.length > 0;
 
+                return (
+                  <motion.li
+                    variants={linkVariants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={i}
+                    key={link.label}
+                  >
+                    {hasChildren ? (
+                      <Accordions link={link} toggleSidebar={toggleSidebar} />
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={toggleSidebar}
+                        className={`hover:underline font-semibold text-gray-800 ${
+                          pathName === link.href ? "text-primary font-bold" : ""
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </motion.li>
+                );
+              })}
+            </ul>
             <motion.li
               variants={linkVariants}
               initial="hidden"
               animate="visible"
             >
-              <Link
+              {/* <Link
                 href={"/contact"}
                 onClick={toggleSidebar}
                 className={`hover:underline font-semibold text-gray-800 ${
@@ -125,20 +136,10 @@ const Sidebar = () => {
                 }`}
               >
                 {t("contact")}
-              </Link>
+              </Link> */}
             </motion.li>
           </ul>
         </nav>
-
-        {/* <div className="flex items-center justify-center py-2 my-4">
-          <Link
-            href={"/donate"}
-            onClick={toggleSidebar}
-            className="bg-primary px-2 py-1 rounded-md animate-bounce duration-1000 transition-all hover:bg-primary/90 text-white font-bold flex items-center justify-center h-10 w-80"
-          >
-            {t("donate")}
-          </Link>
-        </div> */}
 
         {/* Footer Section */}
         <div className="mt-auto">
@@ -146,60 +147,51 @@ const Sidebar = () => {
             <p className="font-bold">OFFICIAL INFO</p>
             <ul className="flex flex-col space-y-3">
               <li>
-                <Link
-                  href="mailto:ahlulbaytassembly9@gmail.com"
-                  className="flex items-center gap-2"
-                >
-                  <Mail className="text-primary" size={20} />
-                  ahlulbaytassembly9@gmail.com
-                </Link>
+                {contact.email ? (
+                  <Link
+                    href={`mailto:${contact.email}`}
+                    className="flex items-center gap-1 hover:text-primary transition"
+                  >
+                    <Mail size={18} className="text-primary" />
+                    {contact.email}
+                  </Link>
+                ) : null}
               </li>
               <li>
-                <Link
-                  href="tel:+254704788924"
-                  className="flex items-center gap-2"
-                >
-                  <Phone className="text-primary" size={20} />
-                  +254 704 788924
-                </Link>
+                {contact?.phone ? (
+                  <Link
+                    href={`tel:${contact.phone}`}
+                    className="flex items-center gap-1 hover:text-primary transition"
+                  >
+                    <Phone size={18} className="text-primary" />
+                    {contact.phone}
+                  </Link>
+                ) : null}
               </li>
             </ul>
             <hr />
             <div className="w-full pt-4">
               <div className="flex space-x-4 items-center">
-                {[
-                  {
-                    href: "https://facebook.com/yourpage",
-                    icon: (
-                      <Facebook
-                        fill="#fff"
-                        strokeWidth={0}
-                        width={20}
-                        height={20}
-                      />
-                    ),
-                  },
-                  {
-                    href: "https://linkedin.com/company/yourpage",
-                    icon: (
-                      <Linkedin
-                        fill="#fff"
-                        strokeWidth={0}
-                        width={20}
-                        height={20}
-                      />
-                    ),
-                  },
-                ].map((social, index) => (
-                  <Link
-                    key={index}
-                    href={social.href}
-                    aria-label={social.href}
-                    className="bg-maroon rounded-full p-2 flex justify-center items-center"
-                  >
-                    {social.icon}
-                  </Link>
-                ))}
+                {socials.map((social, i) => {
+                  const Icon = getIcon(social.platform);
+
+                  return (
+                    Icon && (
+                      <Link
+                        key={i}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit our ${social.platform} page`}
+                      >
+                        <Icon
+                          size={18}
+                          className="hover:text-primary transition"
+                        />
+                      </Link>
+                    )
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -219,110 +211,59 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-function Accodrions({ toggleSidebar }: { toggleSidebar: () => void }) {
-  const t = useTranslations("sidebar");
+type AccordionProps = {
+  toggleSidebar: () => void;
+  link: {
+    label: string;
+    href: string;
+    children?: {
+      label: string;
+      description?: string;
+      href: string;
+    }[];
+  };
+};
 
-  const [openSection, setOpenSection] = useState<null | string>(null);
+function Accordions({ link, toggleSidebar }: AccordionProps) {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
-  const pathName = usePathname();
+  const hasChildren = link.children && link.children.length > 0;
 
   return (
-    <>
-      {/* Islamic Learning Accordion */}
-      {/* <div className="">
-        <button
-          onClick={() =>
-            setOpenSection(openSection === "learning" ? null : "learning")
-          }
-          className="text-left w-full font-semibold text-gray-800 flex justify-between items-center"
-        >
-          {t("islamicLearning")}
-          <span>{openSection === "learning" ? "−" : "+"}</span>
-        </button>
-        <motion.ul
-          initial={false}
-          animate={{
-            height: openSection === "learning" ? "auto" : 0,
-            opacity: openSection === "learning" ? 1 : 0,
-          }}
-          className="overflow-hidden flex flex-col pl-4 space-y-3 mt-2 text-sm"
-        >
-          <li>
-            <Link
-              href="/islamic-learning/quran-reflections"
-              onClick={toggleSidebar}
-              className={`hover:underline \ text-gray-800 ${
-                pathName === "/islamic-learning/quran-reflections"
-                  ? "text-primary font-bold"
-                  : ""
-              }`}
-            >
-              {t("quranReflections")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/islamic-learning/hawza-seyyidah"
-              onClick={toggleSidebar}
-              className={`hover:underline  text-gray-800 ${
-                pathName === "/islamic-learning/hawza-seyyidah"
-                  ? "text-primary font-bold"
-                  : ""
-              }`}
-            >
-              {t("hawza")}
-            </Link>
-          </li>
-        </motion.ul>
-      </div> */}
+    <div className="mb-2">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full text-left font-semibold text-gray-800 flex justify-between items-center"
+      >
+        {link.label}
+        <span>{open ? "−" : "+"}</span>
+      </button>
 
-      {/* Resources Accordion */}
-      <div className="">
-        <button
-          onClick={() =>
-            setOpenSection(openSection === "resources" ? null : "resources")
-          }
-          className="text-left w-full font-semibold text-gray-800 flex justify-between items-center"
-        >
-          {t("resources")}
-          <span>{openSection === "resources" ? "−" : "+"}</span>
-        </button>
-        <motion.ul
-          initial={false}
-          animate={{
-            height: openSection === "resources" ? "auto" : 0,
-            opacity: openSection === "resources" ? 1 : 0,
-          }}
-          className="overflow-hidden flex flex-col pl-4 space-y-3 mt-2 text-sm"
-        >
-          <li>
-            <Link
-              href="/resources/publications"
-              onClick={toggleSidebar}
-              className={`hover:underline  text-gray-800 ${
-                pathName === "/resources/publications"
-                  ? "text-primary font-bold"
-                  : ""
-              }`}
-            >
-              {t("publications")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/resources/audio-visual"
-              onClick={toggleSidebar}
-              className={`hover:underline  text-gray-800 ${
-                pathName === "/resources/audio-visual"
-                  ? "text-primary font-bold"
-                  : ""
-              }`}
-            >
-              {t("audioVisual")}
-            </Link>
-          </li>
-        </motion.ul>
-      </div>
-    </>
+      <motion.ul
+        initial={false}
+        animate={{
+          height: open ? "auto" : 0,
+          opacity: open ? 1 : 0,
+        }}
+        className="overflow-hidden flex flex-col pl-4 space-y-2 mt-2 text-sm"
+      >
+        {hasChildren &&
+          link.children!.map((child) => (
+            <li key={child.label}>
+              <Link
+                href={child.href}
+                onClick={toggleSidebar}
+                className={`hover:underline text-gray-800 ${
+                  pathname === child.href ? "text-primary font-bold" : ""
+                }`}
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+      </motion.ul>
+    </div>
   );
 }

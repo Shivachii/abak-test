@@ -21,7 +21,7 @@ import {
 import PaymentSuccess from "./Success";
 import STKPushQueryLoading from "./StkQueryLoading";
 import { useRef, useState } from "react";
-import { STKError } from "../../../lib/stkError";
+import { STKError } from "../../lib/types/stkError/stkError";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),

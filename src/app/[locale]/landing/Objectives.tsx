@@ -1,6 +1,6 @@
 import UnderlineLink from "@/components/Animations/Underline";
 
-import { Props } from "../../../../lib/sanityPageTypes/types";
+import { Props } from "../../../lib/types/sanityPageTypes/types";
 
 export default function ProgramsObjectives({ data }: Props) {
   return (

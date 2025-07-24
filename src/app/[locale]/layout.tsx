@@ -9,11 +9,13 @@ import {
   XCircle,
   Loader2,
 } from "lucide-react";
-import { SanityLive } from "../../../sanity/lib/live";
+import { sanityFetch, SanityLive } from "../../../sanity/lib/live";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "../../i18n/routing";
-import { fetchNavbar, getFooterData } from "../../../sanity/lib/fetchNavbar";
+import { getFooterData, getSidebarData } from "../../../sanity/lib/fetchNavbar";
+import { NAVBAR_QUERY } from "../../../sanity/lib/componentQueries";
+import { processNavbarDataServer } from "@/hooks/navbarDataFetcher/processNavbarData.server";
 // import StickyDonateForm from "@/components/Forms/StickyDonation";
 
 export default async function FrontendLayout({
@@ -27,14 +29,31 @@ export default async function FrontendLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  const { data } = await sanityFetch({
+    query: NAVBAR_QUERY,
+    params: { lang: locale },
+  });
 
-  const navData = await fetchNavbar((await params).locale);
+  // ✅ Correct: process only the navLinks and ctaButtons fields
+  const { navLinks, ctaButtons, siteSettings } = data;
+
+  const processedNavbar = processNavbarDataServer(
+    { navLinks, ctaButtons },
+    locale
+  );
+
   const footerData = await getFooterData((await params).locale);
+  const sidebarData = await getSidebarData((await params).locale);
 
   return (
     <section>
       {" "}
-      <Navbar data={navData} />
+      <Navbar
+        navLinks={processedNavbar.navLinks}
+        ctaButtons={processedNavbar.ctaButtons}
+        siteSettings={siteSettings}
+        sidebarData={sidebarData}
+      />
       {children}
       <Toaster
         position="top-right"

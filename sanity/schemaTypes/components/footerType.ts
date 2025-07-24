@@ -11,7 +11,6 @@ export const footerType = defineType({
       name: "lang",
       title: "Language",
       type: "string",
-
       options: {
         list: [
           { title: "English", value: "en" },
@@ -23,24 +22,50 @@ export const footerType = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "description",
       title: "Footer Description",
       type: "text",
       rows: 3,
     }),
+
     defineField({
-      name: "quickLinks",
-      title: "Quick Links",
+      name: "footerLinks",
+      title: "Navigation Links",
       type: "array",
       of: [
-        {
+        defineField({
+          name: "navLinkGroup",
+          title: "Nav Link Group",
           type: "object",
           fields: [
-            { name: "label", title: "Label", type: "string" },
-            { name: "href", title: "link", type: "string" },
+            defineField({
+              name: "link",
+              title: "Main Link",
+              type: "reference",
+              to: [{ type: "localizedLink" }],
+              validation: (Rule) => Rule.required(),
+            }),
           ],
-        },
+          preview: {
+            select: {
+              linkEn: "link.label.en",
+              linkSw: "link.label.sw",
+              linkAr: "link.label.ar",
+              linkFa: "link.label.fa",
+              children: "children",
+            },
+            prepare({ linkEn, linkSw, linkAr, linkFa }) {
+              const fallbackLabel =
+                linkEn || linkSw || linkAr || linkFa || "No Label";
+
+              return {
+                title: fallbackLabel,
+              };
+            },
+          },
+        }),
       ],
     }),
 
@@ -51,6 +76,7 @@ export const footerType = defineType({
       to: [{ type: "siteSettings" }],
     }),
   ],
+
   preview: {
     select: {
       title: "lang",

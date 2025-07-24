@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { EVENTS_SLUGS_QUERY } from "../../../../../sanity/lib/queries";
 import { client } from "../../../../../sanity/lib/client";
 import EventCarousel from "@/components/ImageViewer/EventsImages";
+import { formatDate } from "@/helpers/formatDate";
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(EVENTS_SLUGS_QUERY);
@@ -24,9 +25,8 @@ interface EventPageParams {
 export default async function EventPage({
   params,
 }: {
-  params: Promise<EventPageParams>; // Make params a Promise
+  params: Promise<EventPageParams>;
 }) {
-  // Await the params
   const { slug, locale } = await params;
 
   const data = await client.fetch(
@@ -64,19 +64,6 @@ export default async function EventPage({
   const event = data;
 
   if (!event) return notFound();
-
-  // Helper function for date formatting
-  const formatDate = (dateString: string) => {
-    try {
-      return new Date(dateString).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-    } catch {
-      return "Date not available";
-    }
-  };
 
   return (
     <div className="min-h-screen text-foreground bg-background">

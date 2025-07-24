@@ -16,7 +16,7 @@ export const navbarType = defineType({
           { title: "English", value: "en" },
           { title: "Swahili", value: "sw" },
           { title: "Arabic", value: "ar" },
-          { title: "Persian", value: "fa" },
+          { title: "Farsi", value: "fa" },
         ],
         layout: "radio",
       },
@@ -25,43 +25,52 @@ export const navbarType = defineType({
 
     defineField({
       name: "navLinks",
-      title: "Nav Links",
+      title: "Navigation Links",
       type: "array",
       of: [
-        {
+        defineField({
+          name: "navLinkGroup",
+          title: "Nav Link Group",
           type: "object",
           fields: [
-            defineField({ name: "label", title: "Label", type: "string" }),
-            defineField({ name: "href", title: "Link", type: "string" }),
+            defineField({
+              name: "link",
+              title: "Main Link",
+              type: "reference",
+              to: [{ type: "localizedLink" }],
+              validation: (Rule) => Rule.required(),
+            }),
             defineField({
               name: "children",
               title: "Dropdown Items",
               type: "array",
               of: [
                 {
-                  type: "object",
-                  fields: [
-                    defineField({
-                      name: "label",
-                      title: "Label",
-                      type: "string",
-                    }),
-                    defineField({
-                      name: "href",
-                      title: "Link",
-                      type: "string",
-                    }),
-                    defineField({
-                      name: "description",
-                      title: "Description (optional)",
-                      type: "string",
-                    }),
-                  ],
+                  type: "reference",
+                  to: [{ type: "localizedLink" }],
                 },
               ],
             }),
           ],
-        },
+          preview: {
+            select: {
+              linkEn: "link.label.en",
+              linkSw: "link.label.sw",
+              linkAr: "link.label.ar",
+              linkFa: "link.label.fa",
+              children: "children",
+            },
+            prepare({ linkEn, linkSw, linkAr, linkFa, children }) {
+              const fallbackLabel =
+                linkEn || linkSw || linkAr || linkFa || "No Label";
+
+              return {
+                title: fallbackLabel,
+                subtitle: `${children?.length || 0} dropdown link(s)`,
+              };
+            },
+          },
+        }),
       ],
     }),
 
@@ -70,25 +79,32 @@ export const navbarType = defineType({
       title: "Call To Action Buttons",
       type: "array",
       of: [
-        {
+        defineField({
+          name: "cta",
+          title: "CTA Button",
           type: "object",
           fields: [
-            defineField({ name: "label", title: "Label", type: "string" }),
-            defineField({ name: "href", title: "Link", type: "string" }),
+            defineField({
+              name: "link",
+              title: "Button Link",
+              type: "reference",
+              to: [{ type: "localizedLink" }],
+              validation: (Rule) => Rule.required(),
+            }),
             defineField({
               name: "style",
               title: "Button Style",
               type: "string",
               options: {
                 list: [
-                  { title: "Primary", value: "primary" },
-                  { title: "Secondary", value: "secondary" },
+                  { title: "Primary (Yellow)", value: "primary" },
+                  { title: "Secondary (Green)", value: "secondary" },
                 ],
                 layout: "radio",
               },
             }),
           ],
-        },
+        }),
       ],
     }),
 
@@ -99,13 +115,14 @@ export const navbarType = defineType({
       to: [{ type: "siteSettings" }],
     }),
   ],
+
   preview: {
     select: {
       title: "lang",
     },
     prepare({ title }) {
       return {
-        title: `Navbar (${title.toUpperCase()})`,
+        title: `Navbar (${title?.toUpperCase?.()})`,
       };
     },
   },

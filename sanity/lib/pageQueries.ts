@@ -301,3 +301,7 @@ export const HAWZA_PAGE_QUERY = `
     }
   }
 `;
+
+export const EVENTS_PAGE_QUERY = `*[_type == "eventsPage" && lang == $lang][0]{
+title, 
+subtitle}`;

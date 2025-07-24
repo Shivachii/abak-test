@@ -45,7 +45,7 @@ export default async function Home({
           <FinancialSection data={data.financialSupport} />
         </FadeInSection>
         <FadeInSection delay={0.4}>
-          <Events data={data.communityInitiatives} />
+          <Events data={data.communityInitiatives} locale={locale} />
         </FadeInSection>
       </div>
     </div>

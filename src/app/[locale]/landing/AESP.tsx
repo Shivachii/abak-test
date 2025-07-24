@@ -1,5 +1,5 @@
 import UnderlineLink from "@/components/Animations/Underline";
-import { AESPSectionData } from "../../../../lib/sanityPageTypes/types";
+import { AESPSectionData } from "../../../lib/types/sanityPageTypes/types";
 
 export default function AESPSection({ data }: { data: AESPSectionData }) {
   return (

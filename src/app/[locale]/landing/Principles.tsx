@@ -1,5 +1,5 @@
 import { CheckCircle, Rocket, Target } from "lucide-react";
-import { CorePrinciplesProps } from "../../../../lib/sanityPageTypes/types";
+import { CorePrinciplesProps } from "../../../lib/types/sanityPageTypes/types";
 
 export default function CorePrinciples({
   data,
