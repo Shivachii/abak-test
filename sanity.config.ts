@@ -13,7 +13,6 @@ import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 import { seoMetaFields } from "sanity-plugin-seo";
-import { contactFormPlugin } from "@multidots/sanity-plugin-contact-form";
 
 export default defineConfig({
   basePath: "/studio",
@@ -28,6 +27,5 @@ export default defineConfig({
     visionTool({ defaultApiVersion: apiVersion }),
 
     seoMetaFields(),
-    contactFormPlugin(),
   ],
 });
