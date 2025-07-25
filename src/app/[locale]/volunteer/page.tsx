@@ -1,55 +1,18 @@
-// app/[locale]/get-involved/volunteer/page.tsx
 import VolunteerDialog from "@/components/Forms/Volunteer";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "../../../../sanity/lib/live";
-import { VOLUNTEER_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { VOLUNTEER_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
+
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "volunteer",
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "volunteerPage",
   });
-
-  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
-
-  return {
-    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-    description: "Join us in making a difference through volunteering.",
-    keywords: [
-      "Volunteer ABAK",
-      "AhlulBayt Kenya volunteering",
-      "Islamic service opportunities",
-      "Community involvement",
-      "Islamic NGO Kenya",
-      "ABAK volunteers",
-      "Youth Islamic service",
-    ],
-    openGraph: {
-      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-      description: "Join us in making a difference through volunteering.",
-      url: `${baseUrl}/${params.locale}/get-involved/volunteer`,
-      siteName: "AhlulBayt Assembly of Kenya",
-      locale: params.locale,
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/images/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-    },
-    robots: "index, follow",
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}/get-involved/volunteer`,
-    },
-  };
 }
 
 export default async function VolunteerPage({

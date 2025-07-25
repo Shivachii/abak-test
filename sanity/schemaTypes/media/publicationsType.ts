@@ -6,49 +6,64 @@ export const publicationsType = defineType({
   title: "Publications",
   type: "document",
   icon: DocumentTextIcon,
+
+  fieldsets: [
+    {
+      name: "details",
+      title: "Publication Details",
+      options: { collapsible: true, collapsed: false },
+    },
+  ],
+
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      fieldset: "details",
+      validation: (Rule) => Rule.required().error("Title is required"),
     }),
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
+      fieldset: "details",
       options: {
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      description: "URL-friendly identifier generated from the title",
+      validation: (Rule) => Rule.required().error("Slug is required"),
     }),
     defineField({
       name: "description",
-      title: "Description",
+      title: "Short Description",
       type: "text",
       rows: 3,
+      fieldset: "details",
+      description: "Optional summary or excerpt of the publication",
     }),
     defineField({
       name: "pdfFile",
-      title: "PDF File",
+      title: "Upload PDF File",
       type: "file",
+      fieldset: "details",
       options: {
         accept: ".pdf",
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("PDF file is required"),
     }),
   ],
 
   preview: {
     select: {
       title: "title",
-      description: "description",
+      subtitle: "description",
     },
-    prepare({ title, description }) {
+    prepare({ title, subtitle }) {
       return {
-        title,
-        subtitle: description,
+        title: title || "Untitled Publication",
+        subtitle: subtitle || "No description provided",
       };
     },
   },

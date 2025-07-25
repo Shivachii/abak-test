@@ -1,0 +1,41 @@
+import {
+  Heart,
+  Users,
+  BookOpen,
+  GraduationCap,
+  Stethoscope,
+  DollarSign,
+  MessageCircle,
+  Home,
+  Camera,
+  Video,
+  Mic,
+  Edit,
+  Globe,
+  Smartphone,
+  BookOpenCheck,
+  CheckCircle,
+  Award,
+} from "lucide-react";
+
+export const iconMap = {
+  Heart,
+  Users,
+  BookOpen,
+  GraduationCap,
+  Stethoscope,
+  DollarSign,
+  MessageCircle,
+  Home,
+  Camera,
+  Video,
+  Mic,
+  Edit,
+  Globe,
+  Smartphone,
+  BookOpenCheck,
+  CheckCircle,
+  Award,
+};
+
+export const getIcon = (iconName) => iconMap[iconName] || CheckCircle;

@@ -22,7 +22,7 @@ export default function GalleryListPage() {
 
   return (
     <section className="max-w-7xl">
-      <Banner backgroundImage="/banners/audiovisual.png" />
+      <Banner backgroundImage="/banners/audiovisual.jpg" />
       <section className="px-4 py-16 mx-auto">
         <div className="text-center">
           <h1 className="text-3xl sm:text-4xl font-bold text-secondary mb-4">

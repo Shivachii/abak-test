@@ -6,29 +6,56 @@ export const galleryType = defineType({
   title: "Gallery",
   type: "document",
   icon: VideoIcon,
+
+  fieldsets: [
+    {
+      name: "meta",
+      title: "Gallery Metadata",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "media",
+      title: "Media Content",
+      options: { collapsible: true, collapsed: false },
+    },
+  ],
+
   fields: [
     defineField({
       name: "title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      fieldset: "meta",
+      title: "Gallery Title",
+      validation: (Rule) => Rule.required().error("Title is required"),
     }),
+
     defineField({
       name: "slug",
       type: "slug",
-      options: { source: "title", maxLength: 96 },
-      validation: (Rule) => Rule.required(),
+      fieldset: "meta",
+      title: "Gallery Slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required().error("Slug is required"),
     }),
+
     defineField({
       name: "description",
       type: "text",
+      fieldset: "meta",
+      title: "Gallery Description",
+      description:
+        "Optional description for the gallery (used for SEO or internal notes).",
     }),
+
     defineField({
       name: "previewImage",
       title: "Preview Image",
       type: "image",
-      options: {
-        hotspot: true,
-      },
+      fieldset: "media",
+      options: { hotspot: true },
       fields: [
         {
           name: "caption",
@@ -39,12 +66,14 @@ export const galleryType = defineType({
           },
         },
       ],
+      description: "Thumbnail or cover image for the gallery.",
     }),
 
     defineField({
       name: "media",
       title: "Media Items",
       type: "array",
+      fieldset: "media",
       of: [
         defineArrayMember({
           type: "image",
@@ -53,8 +82,7 @@ export const galleryType = defineType({
               title: "caption",
               media: "asset",
             },
-            prepare(selection) {
-              const { title, media } = selection;
+            prepare({ title, media }) {
               return {
                 title: title || "Image",
                 media,
@@ -76,8 +104,7 @@ export const galleryType = defineType({
               title: "caption",
               media: "asset",
             },
-            prepare(selection) {
-              const { title, media } = selection;
+            prepare({ title, media }) {
               return {
                 title: title || "File (Video/Audio/Other)",
                 media,
@@ -86,6 +113,22 @@ export const galleryType = defineType({
           },
         }),
       ],
+      description:
+        "Upload images, videos, or other media related to the gallery.",
     }),
   ],
+
+  preview: {
+    select: {
+      title: "title",
+      media: "previewImage",
+    },
+    prepare({ title, media }) {
+      return {
+        title: title || "Untitled Gallery",
+        subtitle: "Media Gallery",
+        media,
+      };
+    },
+  },
 });

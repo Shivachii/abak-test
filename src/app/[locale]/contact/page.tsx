@@ -1,56 +1,20 @@
 import Banner from "@/components/Banner/Banner";
 import ContactForm from "@/components/Forms/ContactForm";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "../../../../sanity/lib/live";
-import { CONTACT_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { CONTACT_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
 import { ContactData } from "../../../lib/types/sanityPageTypes/types";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "contact",
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "contactPage",
   });
-
-  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
-
-  return {
-    title: `${t("sectionTitle")} | AhlulBayt Assembly of Kenya`,
-    description: t("intro1"),
-    keywords: [
-      "contact ABAK",
-      "AhlulBayt Kenya contact",
-      "Islamic organization Kenya",
-      "Shia NGO Kenya",
-      "Islamic charity Nairobi",
-      "ABAK email phone address",
-    ],
-    openGraph: {
-      title: `${t("sectionTitle")} | AhlulBayt Assembly of Kenya`,
-      description: t("intro1"),
-      url: `${baseUrl}/${params.locale}/contact`,
-      siteName: "AhlulBayt Assembly of Kenya",
-      locale: params.locale,
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: t("sectionTitle"),
-        },
-      ],
-    },
-    robots: "index, follow",
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}/contact`,
-    },
-  };
 }
 
 export default async function ContactPage({
@@ -65,7 +29,7 @@ export default async function ContactPage({
 
   return (
     <section className="w-full bg-white">
-      <Banner backgroundImage="/banners/contact.png" />
+      <Banner backgroundImage="/banners/contact.jpg" />
       <div className="max-w-7xl px-4 py-16 mx-auto flex flex-col gap-16">
         <div className="text-center px-4">
           <p className="text-3xl md:text-4xl font-bold text-primary mt-2">

@@ -1,5 +1,9 @@
 import { client } from "./client";
-import { NAVBAR_QUERY, FOOTER_QUERY, SIDEBAR_QUERY } from "./componentQueries";
+import {
+  NAVBAR_QUERY,
+  FOOTER_QUERY,
+  SIDEBAR_QUERY,
+} from "./queries/componentQueries/componentQueries";
 import { sanityFetch } from "./live";
 
 export async function fetchNavbar(locale: string) {

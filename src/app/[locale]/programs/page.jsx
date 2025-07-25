@@ -2,53 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Banner from "@/components/Banner/Banner";
-
-import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "../../../../sanity/lib/live";
-import { PROJECTS_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { PROJECTS_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({ params }) {
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "Projects",
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "projectsPage",
   });
-
-  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
-
-  return {
-    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-    description: t("description"),
-    keywords: [
-      "ABAK Projects",
-      "Islamic education",
-      "Hawza Kenya",
-      "Free clinics",
-      "Media da'wah",
-      "Community programs",
-      "AhlulBayt Assembly",
-      "Social impact Islam",
-    ],
-    openGraph: {
-      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-      description: t("description"),
-      url: `${baseUrl}/${params.locale}/programs/projects`,
-      siteName: "AhlulBayt Assembly of Kenya",
-      locale: params.locale,
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-    },
-    robots: "index, follow",
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}/programs/projects`,
-    },
-  };
 }
 
 export default async function ProjectsPage({ params }) {
@@ -59,7 +21,7 @@ export default async function ProjectsPage({ params }) {
 
   return (
     <section className="w-full max-w-7xl mx-auto">
-      <Banner backgroundImage="/banners/projects.png" />
+      <Banner backgroundImage="/banners/projects.jpg" />
       <div className="px-4 py-16">
         <div className="grid gap-10 md:grid-cols-2 my-8">
           {data?.projects?.map((project, idx) => (

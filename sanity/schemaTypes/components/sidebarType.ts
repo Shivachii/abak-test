@@ -6,11 +6,26 @@ export const sidebarType = defineType({
   title: "Sidebar Navigation",
   type: "document",
   icon: PanelLeftIcon,
+
+  fieldsets: [
+    {
+      name: "content",
+      title: "Sidebar Content",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "config",
+      title: "Configuration",
+      options: { collapsible: true, collapsed: true },
+    },
+  ],
+
   fields: [
     defineField({
       name: "lang",
       title: "Language",
       type: "string",
+      fieldset: "config",
       options: {
         list: [
           { title: "English", value: "en" },
@@ -27,6 +42,9 @@ export const sidebarType = defineType({
       name: "sidebarLinks",
       title: "Navigation Links",
       type: "array",
+      fieldset: "content",
+      description:
+        "Define the main and nested accordion links for the sidebar.",
       of: [
         defineField({
           name: "navLinkGroup",
@@ -40,7 +58,6 @@ export const sidebarType = defineType({
               to: [{ type: "localizedLink" }],
               validation: (Rule) => Rule.required(),
             }),
-
             defineField({
               name: "children",
               title: "Accordion Links",
@@ -66,10 +83,9 @@ export const sidebarType = defineType({
             prepare({ linkEn, linkSw, linkAr, linkFa, children }) {
               const fallbackLabel =
                 linkEn || linkSw || linkAr || linkFa || "No Label";
-
               return {
                 title: fallbackLabel,
-                subtitle: `${children?.length || 0} dropdown link(s)`,
+                subtitle: `${children?.length || 0} accordion link(s)`,
               };
             },
           },
@@ -82,14 +98,16 @@ export const sidebarType = defineType({
       title: "Sidebar Contact Details",
       type: "reference",
       to: [{ type: "siteSettings" }],
+      description: "Pull contact info (e.g., phone, email) from Site Settings.",
+      fieldset: "config",
     }),
   ],
+
   preview: {
     select: {
       title: "lang",
-      subtitle: "description",
     },
-    prepare({ title, subtitle }) {
+    prepare({ title }) {
       const langMap: Record<string, string> = {
         en: "English",
         sw: "Swahili",
@@ -97,10 +115,7 @@ export const sidebarType = defineType({
         fa: "Farsi",
       };
       return {
-        title: `Sidebar (${langMap[title] || title})`,
-        subtitle: subtitle
-          ? subtitle.slice(0, 60) + (subtitle.length > 60 ? "…" : "")
-          : "No description",
+        title: `Sidebar Navigation (${langMap[title] || title})`,
       };
     },
   },

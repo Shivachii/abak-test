@@ -2,7 +2,6 @@ import { type SchemaTypeDefinition } from "sanity";
 
 import { blockContentType } from "./blockContentType";
 import { galleryType } from "./media/galleryType";
-// import { mediaType } from "./mediaType";
 import { publicationsType } from "./media/publicationsType";
 import { audioType } from "./media/audioType";
 import { aboutPageType } from "./pages/aboutPage";
@@ -25,12 +24,21 @@ import { siteSettingsType } from "./singletons/siteSettings";
 import { youtubevideoGallery } from "./media/youtubeLinksType";
 import { formBuilder } from "./forms/formBuilderType";
 import { eventsPageType } from "./pages/eventsPage";
-import { objectiveItem } from "./objectiveItem";
-import { objectivesSection } from "./objectivesSection";
 import { navigationGroup } from "./components/navigationGroup";
 import { i18nText } from "./singletons/i18nText";
 import { localizedLink } from "./singletons/localizedLinks";
 import { navLinkType } from "./singletons/navLink";
+import seoType from "./singletons/seoType";
+
+import { bankInfo } from "./singletons/bankInfo";
+import { audioVisualPageType } from "./pages/audioVisualPage";
+
+import { publicationsPageType } from "./pages/publicationsPage";
+import { imagePageType } from "./pages/imagesPage";
+import { videosPageType } from "./pages/videosPage";
+import { audioPageType } from "./pages/audioPage";
+import { objectivesType } from "./singletons/objective";
+import { objectivesSettings } from "./singletons/objectivesSettings";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -38,11 +46,15 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
     // Common settings & singletons
     siteSettingsType,
+    bankInfo,
+    seoType,
+
     localizedLink,
     navigationGroup,
     navLinkType,
     i18nText,
-
+    objectivesType,
+    objectivesSettings,
     // Components
     navbarType,
     sidebarType,
@@ -50,8 +62,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     formBuilder,
 
     // Uploads/Media
-    objectivesSection,
-    objectiveItem,
+
     galleryType,
     youtubevideoGallery,
     publicationsType,
@@ -72,5 +83,10 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     qardhPageType,
     volunteerPageType,
     hawzaPage,
+    audioVisualPageType,
+    imagePageType,
+    videosPageType,
+    audioPageType,
+    publicationsPageType,
   ],
 };

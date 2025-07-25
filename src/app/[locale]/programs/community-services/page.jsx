@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Banner from "@/components/Banner/Banner";
 import { sanityFetch } from "../../../../../sanity/lib/live";
-import { COMMUNITY_SERVICES_QUERY } from "../../../../../sanity/lib/pageQueries";
+import { COMMUNITY_SERVICES_QUERY } from "../../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
+
+export async function generateMetadata({ params }) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "communityServicesPage",
+  });
+}
 
 export default async function CommunityPage({ params }) {
   const { data } = await sanityFetch({
@@ -11,7 +19,7 @@ export default async function CommunityPage({ params }) {
 
   return (
     <section className="w-full max-w-7xl mx-auto">
-      <Banner backgroundImage="/banners/community.png" />
+      <Banner backgroundImage="/banners/community.jpg" />
 
       <section className="px-4 py-16">
         <div className="text-center mb-14">

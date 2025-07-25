@@ -175,3 +175,45 @@ export const YOUTUBE_LINKS_QUERY = `
   }
 }
 `;
+
+export const objectivesQuery = `
+  *[_type == "objective"] | order(order asc) {
+    _id,
+    title,
+    slug,
+    tabName,
+    description,
+    order,
+    contentType,
+    image {
+      asset-> {
+        url
+      },
+      alt
+    },
+    imagePosition,
+    simpleItems[] {
+      icon,
+      label
+    },
+    strategiesTitle,
+    strategies,
+    supportAreas[] {
+      title,
+      items
+    },
+    learningFeatures[] {
+      icon,
+      description
+    }
+  }
+`;
+export const objectivesSettingsQuery = `
+  *[_type == "objectivesSettings"][0] {
+    sectionTitle,
+    sectionSubtitle,
+    defaultTab-> {
+      slug
+    }
+  }
+`;

@@ -1,6 +1,3 @@
-import { type Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-
 import {
   Accordion,
   AccordionContent,
@@ -8,54 +5,18 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { sanityFetch } from "../../../../sanity/lib/live";
-import { DONATE_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { DONATE_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "donate",
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "donatePage",
   });
-
-  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
-
-  return {
-    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-    description: t("intro"),
-    keywords: [
-      "donate ABAK",
-      "Islamic donation Kenya",
-      "charity M-Pesa Kenya",
-      "AhlulBayt donation",
-      "sponsor Islamic programs",
-      "Zakat Kenya",
-      "donate education Kenya",
-      "ABAK M-Pesa Paybill",
-    ],
-    openGraph: {
-      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-      description: t("intro"),
-      url: `${baseUrl}/${params.locale}/donate`,
-      siteName: "AhlulBayt Assembly of Kenya",
-      locale: params.locale,
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-    },
-    robots: "index, follow",
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}/donate`,
-    },
-  };
 }
 
 type DonatePageProps = {
@@ -86,7 +47,7 @@ export default async function DonatePage({
             <li key={idx}>{method}</li>
           ))}
 
-          {data?.bankInfo && (
+          {data?.bankInfo.bankDetails.accounts.map && (
             <li>
               <Accordion type="single" collapsible>
                 <AccordionItem value="bank-transfer">
@@ -96,21 +57,21 @@ export default async function DonatePage({
                   <AccordionContent className="text-sm text-gray-700 space-y-1">
                     <p>
                       <span className="font-medium">Bank:</span>{" "}
-                      {data.bankInfo.bank}
+                      {data.bankInfo.bankDetails.bank}
                     </p>
                     <p>
                       <span className="font-medium">Branch:</span>{" "}
-                      {data.bankInfo.branch}
+                      {data.bankInfo.bankDetails.branch}
                     </p>
                     <p>
                       <span className="font-medium">Account Name:</span>{" "}
-                      {data.bankInfo.accountName}
+                      {data.bankInfo.bankDetails.accountName}
                     </p>
 
                     <div>
                       <p className="font-medium">Account Numbers:</p>
                       <ul className="list-disc list-inside ml-4">
-                        {data.bankInfo.accounts.map(
+                        {data.bankInfo.bankDetails.accounts.map(
                           (acc: { label: string; number: string }) => (
                             <li key={acc.number}>
                               <span className="font-medium">{acc.label}:</span>{" "}

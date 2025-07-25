@@ -4,9 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { sanityFetch } from "../../../../sanity/lib/live";
 import { EVENTS_QUERY } from "../../../../sanity/lib/queries";
-import { EVENTS_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { EVENTS_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
 import { getTranslations } from "next-intl/server";
 import { urlFor } from "../../../../sanity/lib/image";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
+
+export async function generateMetadata({ params }) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "eventsPage",
+  });
+}
 
 export default async function EventsPage({ params }) {
   const t = await getTranslations("events");
@@ -24,7 +32,7 @@ export default async function EventsPage({ params }) {
 
   return (
     <section className="w-full max-w-7xl mx-auto">
-      <Banner backgroundImage="/banners/events.png" />
+      <Banner backgroundImage="/banners/events.jpg" />
 
       <div className="px-4 py-12">
         <div className="text-center mb-10">

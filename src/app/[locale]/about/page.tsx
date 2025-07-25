@@ -1,56 +1,19 @@
 import Banner from "@/components/Banner/Banner";
 import LeadershipSection from "./Leadership";
 import FadeInSection from "@/components/Animations/FadeInSection";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "../../../../sanity/lib/live";
-import { ABOUT_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { ABOUT_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "about",
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "aboutPage",
   });
-
-  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
-
-  return {
-    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-    description: "Learn more about ABAK, our mission, vision, and leadership.",
-    keywords: [
-      "Islamic organization Kenya",
-      "AhlulBayt Kenya",
-      "Shia community Kenya",
-      "ABAK",
-      "Islamic charity Nairobi",
-      "Muslim NGO Kenya",
-    ],
-    openGraph: {
-      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-      description:
-        "Learn more about ABAK, our mission, vision, and leadership.",
-      url: `${baseUrl}/${params.locale}/about`,
-      type: "website",
-      siteName: "AhlulBayt Assembly of Kenya",
-      locale: params.locale,
-      images: [
-        {
-          url: `${baseUrl}/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-    },
-    robots: "index, follow",
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}/about`,
-    },
-  };
 }
 
 type AboutPageProps = {
@@ -67,7 +30,7 @@ export default async function AboutPage({
 
   return (
     <section>
-      <Banner backgroundImage="/banners/about.png" />
+      <Banner backgroundImage="/banners/about.jpg" />
       <div className="w-full px-4 py-12 bg-white text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Intro Section */}

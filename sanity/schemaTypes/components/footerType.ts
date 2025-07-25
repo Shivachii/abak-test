@@ -6,11 +6,37 @@ export const footerType = defineType({
   title: "Footer",
   type: "document",
   icon: MenuIcon,
+
+  fieldsets: [
+    {
+      name: "language",
+      title: "Language Settings",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "description",
+      title: "Footer Description",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "navigation",
+      title: "Navigation Links",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "contact",
+      title: "Footer Contact Details",
+      options: { collapsible: true, collapsed: false },
+    },
+  ],
+
   fields: [
     defineField({
       name: "lang",
       title: "Language",
       type: "string",
+      description: "Choose the language this footer version is for.",
+      fieldset: "language",
       options: {
         list: [
           { title: "English", value: "en" },
@@ -27,6 +53,8 @@ export const footerType = defineType({
       name: "description",
       title: "Footer Description",
       type: "text",
+      fieldset: "description",
+      description: "A short descriptive paragraph in the footer.",
       rows: 3,
     }),
 
@@ -34,6 +62,8 @@ export const footerType = defineType({
       name: "footerLinks",
       title: "Navigation Links",
       type: "array",
+      fieldset: "navigation",
+      description: "Add navigation links grouped by main link references.",
       of: [
         defineField({
           name: "navLinkGroup",
@@ -45,6 +75,7 @@ export const footerType = defineType({
               title: "Main Link",
               type: "reference",
               to: [{ type: "localizedLink" }],
+              description: "Reference to a translated link document.",
               validation: (Rule) => Rule.required(),
             }),
           ],
@@ -54,12 +85,10 @@ export const footerType = defineType({
               linkSw: "link.label.sw",
               linkAr: "link.label.ar",
               linkFa: "link.label.fa",
-              children: "children",
             },
             prepare({ linkEn, linkSw, linkAr, linkFa }) {
               const fallbackLabel =
-                linkEn || linkSw || linkAr || linkFa || "No Label";
-
+                linkEn || linkSw || linkAr || linkFa || "Unnamed Link";
               return {
                 title: fallbackLabel,
               };
@@ -73,7 +102,10 @@ export const footerType = defineType({
       name: "siteSettings",
       title: "Footer Contact Details",
       type: "reference",
+      fieldset: "contact",
       to: [{ type: "siteSettings" }],
+      description:
+        "Reference to global contact information stored in site settings.",
     }),
   ],
 
@@ -93,7 +125,7 @@ export const footerType = defineType({
         title: `Footer (${langMap[title] || title})`,
         subtitle: subtitle
           ? subtitle.slice(0, 60) + (subtitle.length > 60 ? "…" : "")
-          : "No description",
+          : "No description provided",
       };
     },
   },

@@ -6,11 +6,37 @@ export const navbarType = defineType({
   title: "Navbar",
   type: "document",
   icon: MenuIcon,
+
+  fieldsets: [
+    {
+      name: "language",
+      title: "Language Settings",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "navigation",
+      title: "Navigation Links",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "cta",
+      title: "Call To Action Buttons",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "contact",
+      title: "Navbar Contact Details",
+      options: { collapsible: true, collapsed: true },
+    },
+  ],
+
   fields: [
     defineField({
       name: "lang",
       title: "Language",
       type: "string",
+      description: "Select the language for this navbar version.",
+      fieldset: "language",
       options: {
         list: [
           { title: "English", value: "en" },
@@ -27,6 +53,9 @@ export const navbarType = defineType({
       name: "navLinks",
       title: "Navigation Links",
       type: "array",
+      fieldset: "navigation",
+      description:
+        "List of top-level navigation links, optionally with dropdowns.",
       of: [
         defineField({
           name: "navLinkGroup",
@@ -38,12 +67,14 @@ export const navbarType = defineType({
               title: "Main Link",
               type: "reference",
               to: [{ type: "localizedLink" }],
+              description: "Top-level link for this nav group.",
               validation: (Rule) => Rule.required(),
             }),
             defineField({
               name: "children",
               title: "Dropdown Items",
               type: "array",
+              description: "Optional dropdown links under this main link.",
               of: [
                 {
                   type: "reference",
@@ -78,6 +109,9 @@ export const navbarType = defineType({
       name: "ctaButtons",
       title: "Call To Action Buttons",
       type: "array",
+      fieldset: "cta",
+      description:
+        "Buttons that appear in the navbar, like 'Donate' or 'Apply'.",
       of: [
         defineField({
           name: "cta",
@@ -90,11 +124,13 @@ export const navbarType = defineType({
               type: "reference",
               to: [{ type: "localizedLink" }],
               validation: (Rule) => Rule.required(),
+              description: "Reference to the destination page.",
             }),
             defineField({
               name: "style",
               title: "Button Style",
               type: "string",
+              description: "Select a visual style for this button.",
               options: {
                 list: [
                   { title: "Primary (Yellow)", value: "primary" },
@@ -112,17 +148,29 @@ export const navbarType = defineType({
       name: "siteSettings",
       title: "Navbar Contact Details",
       type: "reference",
+      fieldset: "contact",
       to: [{ type: "siteSettings" }],
+      description:
+        "Reference to site-wide contact information (phone, email, etc.).",
     }),
   ],
 
   preview: {
     select: {
       title: "lang",
+      navCount: "navLinks.length",
+      ctaCount: "ctaButtons.length",
     },
-    prepare({ title }) {
+    prepare({ title, navCount, ctaCount }) {
+      const langMap: Record<string, string> = {
+        en: "English",
+        sw: "Swahili",
+        ar: "Arabic",
+        fa: "Farsi",
+      };
       return {
-        title: `Navbar (${title?.toUpperCase?.()})`,
+        title: `Navbar (${langMap[title] || title})`,
+        subtitle: `${navCount || 0} nav link(s), ${ctaCount || 0} CTA(s)`,
       };
     },
   },

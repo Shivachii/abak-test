@@ -43,7 +43,13 @@
     "src/app/[locale]/resources/audio-visual/videos/page.jsx",
     "src/app/[locale]/events/[slug]/page.tsx",
     "src/components/EventsViewer/EventsViewer.jsx",
-    "sanity/schemaTypes/singletons/localizedLinks.ts"
+    "sanity/schemaTypes/singletons/localizedLinks.ts",
+    "src/helpers/objectivesIconMapper.js",
+    "src/app/[locale]/governing-objectives/page.tsx",
+    "src/components/Objectives/contentRenderer.js",
+    "src/components/Tabs/Tabs.tsx",
+    "src/components/Tabs/Display.tsx",
+    "sanity/schemaTypes/singletons/objectives.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -3,7 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Banner from "@/components/Banner/Banner";
 import { sanityFetch } from "../../../../../sanity/lib/live";
-import { MUBALIGHEEN_SUPPORT_QUERY } from "../../../../../sanity/lib/pageQueries";
+import { MUBALIGHEEN_SUPPORT_QUERY } from "../../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "mubaligheenSupportPage",
+  });
+}
 
 export default async function MubaligheenSupportPage({
   params,
@@ -17,7 +29,7 @@ export default async function MubaligheenSupportPage({
 
   return (
     <section className="w-full max-w-7xl mx-auto">
-      <Banner backgroundImage="/banners/support.png" />
+      <Banner backgroundImage="/banners/support.jpg" />
       <section className="px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">

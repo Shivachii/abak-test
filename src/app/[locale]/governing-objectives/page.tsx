@@ -55,7 +55,7 @@ export default function ProgramsObjectives() {
 
   return (
     <div className="w-full">
-      <Banner backgroundImage="/banners/objectives.png" />
+      <Banner backgroundImage="/banners/objectives.jpg" />
       <div className="px-4 py-12 flex flex-col gap-2 mx-auto max-w-7xl ">
         <h3 className="text-3xl font-bold text-secondary tracking-wide ">
           {t("programs.mainObjectivesHeader")}

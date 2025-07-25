@@ -5,49 +5,15 @@ import Image from "next/image";
 import ImageGrid from "./imagegrid";
 import { Activity, Binoculars, Target } from "lucide-react";
 import { sanityFetch } from "../../../../../sanity/lib/live";
-import { HAWZA_PAGE_QUERY } from "../../../../../sanity/lib/pageQueries";
-import { getTranslations } from "next-intl/server";
+import { HAWZA_PAGE_QUERY } from "../../../../../sanity/lib/queries/pageQueries/pageQueries";
+
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({ params }) {
-  const t = await getTranslations({
-    locale: params.locale,
-    namespace: "hawza",
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "hawzaPage",
   });
-
-  const baseUrl = process.env.NEXT_BASE_PUBLIC_URL || "http://localhost:3000";
-
-  return {
-    title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-    description: t("subtitle"),
-    keywords: [
-      "Hawza studies Kenya",
-      "Islamic seminary Nairobi",
-      "Shia education",
-      "AhlulBayt learning",
-      "Islamic curriculum Kenya",
-      "Religious education East Africa",
-    ],
-    openGraph: {
-      title: `${t("title")} | AhlulBayt Assembly of Kenya`,
-      description: t("subtitle"),
-      url: `${baseUrl}/${params.locale}/hawza`,
-      siteName: "AhlulBayt Assembly of Kenya",
-      locale: params.locale,
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/hawza/img29.jpg`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-    },
-    robots: "index, follow",
-    alternates: {
-      canonical: `${baseUrl}/${params.locale}/hawza`,
-    },
-  };
 }
 
 export default async function Hawza({ params }) {
@@ -59,7 +25,7 @@ export default async function Hawza({ params }) {
 
   return (
     <section>
-      <Banner backgroundImage="/banners/hawza.png" />
+      <Banner backgroundImage="/banners/hawza.jpg" />
 
       <div className="w-full px-4 py-12 text-foreground">
         <div className="max-w-7xl mx-auto space-y-16">

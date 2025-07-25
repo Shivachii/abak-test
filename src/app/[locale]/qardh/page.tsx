@@ -1,15 +1,19 @@
-// app/[locale]/qardh-hassanah/page.tsx
 import { QardhForm } from "@/components/Forms/QardhForm";
-import { Metadata } from "next";
 import { sanityFetch } from "../../../../sanity/lib/live";
-import { QARDH_PAGE_QUERY } from "../../../../sanity/lib/pageQueries";
+import { QARDH_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
 
-export const metadata: Metadata = {
-  title: "ABAK – Qardh Hassanah Fund",
-  description:
-    "Ethical, interest-free financial assistance by AhlulBayt Assembly of Kenya",
-};
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "qardhPage",
+  });
+}
 export default async function QardhHassanahPage({
   params,
 }: {
@@ -98,7 +102,9 @@ export default async function QardhHassanahPage({
               {data?.challengesTitle}
             </h3>
             <ul className="list-disc list-inside space-y-1">
-              {data?.challenges?.map((c: string) => <li key={c}>{c}</li>)}
+              {data?.challenges?.map((c: string) => (
+                <li key={c}>{c}</li>
+              ))}
             </ul>
           </div>
           <div>
@@ -106,7 +112,9 @@ export default async function QardhHassanahPage({
               {data?.futureTitle}
             </h3>
             <ul className="list-disc list-inside space-y-1">
-              {data?.future?.map((f: string) => <li key={f}>{f}</li>)}
+              {data?.future?.map((f: string) => (
+                <li key={f}>{f}</li>
+              ))}
             </ul>
           </div>
         </section>

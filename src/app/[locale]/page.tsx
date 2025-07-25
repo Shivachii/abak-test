@@ -9,7 +9,19 @@ import Events from "./landing/Events";
 
 import { FinancialSection } from "./landing/Financial";
 import { sanityFetch } from "../../../sanity/lib/live";
-import { homePageQuery } from "../../../sanity/lib/pageQueries";
+import { homePageQuery } from "../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "homePage",
+  });
+}
 
 export default async function Home({
   params: { locale },

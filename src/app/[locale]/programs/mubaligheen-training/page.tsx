@@ -2,7 +2,19 @@
 import Image from "next/image";
 import Banner from "@/components/Banner/Banner";
 import { sanityFetch } from "../../../../../sanity/lib/live";
-import { MUBALIGHEEN_TRAINING_QUERY } from "../../../../../sanity/lib/pageQueries";
+import { MUBALIGHEEN_TRAINING_QUERY } from "../../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "mubaligheenTrainingPage",
+  });
+}
 
 export default async function MubaligheenTrainingPage({
   params,
@@ -16,7 +28,7 @@ export default async function MubaligheenTrainingPage({
 
   return (
     <section className="max-w-7xl mx-auto space-y-12">
-      <Banner backgroundImage="/banners/training.png" />
+      <Banner backgroundImage="/banners/training.jpg" />
 
       <section className="px-4 py-16 bg-gray-50 space-y-20">
         {/* Page Header */}

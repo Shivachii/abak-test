@@ -85,3 +85,70 @@ export function ObjectivesTabs() {
     </Tabs>
   );
 }
+
+// "use client";
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card";
+
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { motion } from "framer-motion";
+// import { ContentRenderer } from "../Objectives/contentRenderer";
+
+// export function ObjectivesTabs({ objectives = [], defaultTab }) {
+//   if (!objectives.length) return null;
+
+//   const defaultValue =
+//     defaultTab?.slug?.current || objectives[0]?.slug?.current;
+
+//   return (
+//     <Tabs
+//       defaultValue={defaultValue}
+//       className="flex flex-col md:flex-row md:max-w-5xl lg:max-w-7xl p-2 gap-3 overflow-hidden"
+//     >
+//       <TabsList className="max-w-full flex flex-row gap-2 overflow-x-auto md:overflow-visible md:flex-col whitespace-nowrap px-1">
+//         {objectives.map((objective) => (
+//           <TabsTrigger
+//             key={objective.slug.current}
+//             value={objective.slug.current}
+//           >
+//             {objective.tabName}
+//           </TabsTrigger>
+//         ))}
+//       </TabsList>
+
+//       {objectives.map((objective) => (
+//         <TabsContent
+//           key={objective.slug.current}
+//           value={objective.slug.current}
+//         >
+//           <motion.div
+//             animate={{
+//               x: [0, 100, 0],
+//               transition: { ease: ["easeOut"] },
+//               opacity: [0, 0, 1],
+//             }}
+//           >
+//             <Card>
+//               <CardHeader>
+//                 <CardTitle className="text-2xl font-semibold text-primary">
+//                   {objective.title}
+//                 </CardTitle>
+//                 <CardDescription className="text-muted-foreground text-base">
+//                   {objective.description}
+//                 </CardDescription>
+//               </CardHeader>
+//               <CardContent className="space-y-2 flex-shrink-0">
+//                 <ContentRenderer objective={objective} />
+//               </CardContent>
+//             </Card>
+//           </motion.div>
+//         </TabsContent>
+//       ))}
+//     </Tabs>
+//   );
+// }

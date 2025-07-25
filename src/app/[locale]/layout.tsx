@@ -14,7 +14,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "../../i18n/routing";
 import { getFooterData, getSidebarData } from "../../../sanity/lib/fetchNavbar";
-import { NAVBAR_QUERY } from "../../../sanity/lib/componentQueries";
+import { NAVBAR_QUERY } from "../../../sanity/lib/queries/componentQueries/componentQueries";
 import { processNavbarDataServer } from "@/hooks/navbarDataFetcher/processNavbarData.server";
 // import StickyDonateForm from "@/components/Forms/StickyDonation";
 

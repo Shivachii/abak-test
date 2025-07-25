@@ -1,20 +1,65 @@
-// schemas/homePage.ts
+import { DocumentTextIcon } from "@sanity/icons";
 import { defineType, defineField } from "sanity";
 
 export const homePageType = defineType({
   name: "homePage",
   title: "Home Page",
   type: "document",
+  icon: DocumentTextIcon,
+  fieldsets: [
+    {
+      name: "content",
+      title: "General Content",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "about",
+      title: "About Us Section",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "core",
+      title: "Core Values Section",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "objectives",
+      title: "Governing Objectives",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "support",
+      title: "Support Sections (Qardh Hassanah + AESP)",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "project",
+      title: "Projects Section",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "community",
+      title: "Community (Events) Section",
+      options: { collapsible: true, collapsed: true },
+    },
+    // {
+    //   name: "seo",
+    //   title: "SEO",
+    //   options: { collapsible: true, collapsed: true },
+    // },
+  ],
   fields: [
     defineField({
       name: "translationId",
       type: "string",
       hidden: true,
     }),
+
     defineField({
       name: "lang",
       title: "Language",
       type: "string",
+      fieldset: "content",
       options: {
         list: [
           { title: "English", value: "en" },
@@ -30,6 +75,7 @@ export const homePageType = defineType({
     defineField({
       name: "hero",
       title: "Hero Section",
+      fieldset: "content",
       type: "object",
       fields: [
         defineField({
@@ -45,9 +91,7 @@ export const homePageType = defineType({
                   name: "image",
                   title: "Slide Image",
                   type: "image",
-                  options: {
-                    hotspot: true,
-                  },
+                  validation: (Rule) => Rule.required(),
                 }),
                 defineField({
                   name: "heading",
@@ -88,6 +132,7 @@ export const homePageType = defineType({
     defineField({
       name: "aboutUs",
       title: "About Us Section",
+      fieldset: "about",
       type: "object",
       fields: [
         defineField({
@@ -124,14 +169,12 @@ export const homePageType = defineType({
           type: "string",
           description: "E.g., “Learn More”, “See More About Us”, etc.",
         }),
-        defineField({
-          name: "image",
-          title: "Image",
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-        }),
+        // defineField({
+        //   name: "image",
+        //   title: "About Us Section Image (from Media Library)",
+        //   type: "mediaAssets",
+        //   description: "Select an image from the global media library",
+        // }),
       ],
     }),
 
@@ -139,6 +182,7 @@ export const homePageType = defineType({
     defineField({
       name: "coreValues",
       title: "Core Values Section",
+      fieldset: "core",
       type: "object",
       fields: [
         // Core Values Block
@@ -206,6 +250,7 @@ export const homePageType = defineType({
       name: "objectives",
       title: "Objectives Section",
       type: "object",
+      fieldset: "objectives",
       fields: [
         defineField({
           name: "heading",
@@ -266,6 +311,7 @@ export const homePageType = defineType({
     defineField({
       name: "projects",
       title: "Projects / Programs Section",
+      fieldset: "project",
       type: "object",
       fields: [
         defineField({
@@ -294,12 +340,13 @@ export const homePageType = defineType({
               type: "object",
               title: "Project Item",
               fields: [
-                defineField({
-                  name: "image",
-                  title: "Image",
-                  type: "image",
-                  options: { hotspot: true },
-                }),
+                // defineField({
+                //   name: "image",
+                //   title: "Project Card Image (from Media Library)",
+                //   type: "mediaAssets",
+                //   description: "Select an image from the global media library",
+                // }),
+
                 defineField({
                   name: "title",
                   title: "Title",
@@ -345,6 +392,7 @@ export const homePageType = defineType({
     defineField({
       name: "financialSupport",
       title: "Financial Support Section",
+      fieldset: "support",
       type: "object",
       fields: [
         // General Introduction
@@ -486,6 +534,7 @@ export const homePageType = defineType({
     defineField({
       name: "communityInitiatives",
       title: "Community Initiatives / Events Section",
+      fieldset: "community",
       type: "object",
       fields: [
         defineField({
@@ -547,18 +596,34 @@ export const homePageType = defineType({
           title: "CTA Link URL",
           type: "url",
         }),
+        defineField({
+          name: "seo",
+          title: "SEO",
+          type: "seo",
+          fieldset: "seo",
+        }),
       ],
+    }),
+
+    // SEO
+    defineField({
+      name: "seo",
+      title: "SEO Metadata",
+      type: "seo",
+      description:
+        "Customize how this page appears in search results and social sharing.",
+      // fieldset: "seo",
     }),
   ],
   preview: {
     select: {
-      title: "headline",
-      subtitle: "lang",
+      lang: "lang",
+      seoTitle: "seo.title",
     },
-    prepare({ title, subtitle }) {
+    prepare({ lang, seoTitle }) {
       return {
-        title: title || `Home Page`,
-        subtitle: subtitle?.toUpperCase(),
+        title: seoTitle || "Home Page",
+        subtitle: lang ? `Language: ${lang.toUpperCase()}` : "No language set",
       };
     },
   },
