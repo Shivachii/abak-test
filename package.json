@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
-    "@multidots/sanity-plugin-contact-form": "^1.0.3",
     "@paystack/inline-js": "^2.22.4",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-checkbox": "^1.3.2",
