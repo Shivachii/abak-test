@@ -9,11 +9,45 @@ export async function generatePageMetadata({
   type: string;
 }): Promise<Metadata> {
   const query = `
-    {
-      "page": *[_type == $type && lang == $lang][0] { seo },
-      "site": *[_type == "siteSettings" && lang == $lang][0] { seo }
+  {
+    "page": *[_type == $type && lang == $lang][0] {
+      seo {
+        metaTitle,
+        metaDescription,
+        keywords,
+        canonicalUrl,
+        ogTitle,
+        ogDescription,
+        twitterCard,
+        ogImage {
+          asset->{
+            url
+          }
+        },
+        noIndex,
+        noFollow
+      }
+    },
+    "site": *[_type == "siteSettings" && lang == $lang][0] {
+      seo {
+        metaTitle,
+        metaDescription,
+        keywords,
+        canonicalUrl,
+        ogTitle,
+        ogDescription,
+        twitterCard,
+        ogImage {
+          asset->{
+            url
+          }
+        },
+        noIndex,
+        noFollow
+      }
     }
-  `;
+  }
+`;
 
   const result = await sanityFetch({
     query,
@@ -40,7 +74,7 @@ export async function generatePageMetadata({
       description: seo.ogDescription || seo.metaDescription,
       images: seo.ogImage?.asset?.url
         ? [{ url: seo.ogImage.asset.url }]
-        : undefined,
+        : "/logo.jpg",
       type: "website",
       locale: lang,
     },

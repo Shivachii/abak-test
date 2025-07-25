@@ -9,8 +9,7 @@ export const homePageQuery = `
     ogDescription,
     ogImage {
       asset->{
-        url,
-        metadata { lqip, dimensions }
+        url
       }
     },
     twitterCard,
