@@ -1,5 +1,5 @@
 import { DialogForm } from "./layouts/DialogForm";
-import { MultiStepForm } from "./layouts/MultiStepForm";
+import MultiStepForm from "./layouts/MultistepForm";
 import { SinglePageForm } from "./layouts/SinglePageForm";
 
 export default function DynamicForm({ form }) {

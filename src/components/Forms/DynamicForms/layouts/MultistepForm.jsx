@@ -16,7 +16,7 @@ export function chunkFieldsIntoSteps(fields, chunkSize = 3) {
   return chunks;
 }
 
-export function MultiStepForm({ formConfig }) {
+export default function MultiStepForm({ formConfig }) {
   const steps = chunkFieldsIntoSteps(formConfig.fields, 3); // 3 fields per step
   const [currentStep, setCurrentStep] = useState(0);
 
