@@ -47,12 +47,16 @@ export const structure: StructureResolver = async (S) => {
 
       // 🖼 Media Section
       S.listItem()
-        .title("Media")
+        .title("Uploads")
         .icon(ImagesIcon)
         .child(
           S.list()
             .title("Media Content")
             .items([
+              S.documentTypeListItem("publications").title(
+                "Publications Gallery"
+              ),
+
               S.documentTypeListItem("gallery").title("Image Gallery"),
               S.documentTypeListItem("youtubevideoGallery").title(
                 "YouTube Gallery"
@@ -63,6 +67,7 @@ export const structure: StructureResolver = async (S) => {
 
       // 🧾 Forms
       S.documentTypeListItem("formBuilder").title("Form Builder"),
+      S.documentTypeListItem("downloadableForm").title("Downloadable Forms"),
 
       S.divider(),
 
@@ -88,9 +93,6 @@ export const structure: StructureResolver = async (S) => {
             )
         ),
 
-      S.divider(),
-      S.documentTypeListItem("objective").title("Objectives"),
-      S.documentTypeListItem("objectivesSettings").title("Objectives"),
       S.divider(),
 
       // 📄 Pages

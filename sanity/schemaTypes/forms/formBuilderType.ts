@@ -1,5 +1,6 @@
 import { ComposeIcon } from "@sanity/icons";
 import { defineType, defineField } from "sanity";
+import { formFieldNameOptions } from "../../constants/sharedFormConstants";
 
 export const formBuilder = defineType({
   name: "formBuilder",
@@ -32,7 +33,7 @@ export const formBuilder = defineType({
       type: "string",
       fieldset: "general",
       options: {
-        list: ["Contact", "Volunteer", "Qardh", "AESP"],
+        list: ["Contact", "Volunteer", "Qardh", "AESP", "Hawza"],
       },
       description:
         "Used to categorize this form (for internal or frontend use).",
@@ -97,6 +98,9 @@ export const formBuilder = defineType({
               type: "string",
               description: "Used as the key in form submissions.",
               validation: (Rule) => Rule.required(),
+              options: {
+                list: formFieldNameOptions,
+              },
             }),
             defineField({
               name: "inputType",
@@ -154,6 +158,22 @@ export const formBuilder = defineType({
           },
         }),
       ],
+    }),
+    defineField({
+      name: "layout",
+      title: "Form Layout",
+      type: "string",
+      fieldset: "general",
+      options: {
+        list: [
+          { title: "Single Page", value: "single" },
+          { title: "Dialog", value: "dialog" },
+          { title: "Multi Step", value: "multiStep" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "single",
+      description: "How the form should be displayed in the frontend.",
     }),
 
     defineField({

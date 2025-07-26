@@ -217,3 +217,37 @@ export const objectivesSettingsQuery = `
     }
   }
 `;
+
+export const getFormBySlugQuery = `
+  *[_type == "downloadableForm" && slug.current == $slug][0]{
+    title,
+    description,
+    file {
+      asset->{
+        url,
+        originalFilename
+      }
+    },
+    previewImage
+  }
+`;
+
+export const formBySlugQuery = `
+  *[_type == "formBuilder" && slug.current == $slug][0] {
+    _id,
+    title,
+    tagline,
+    description,
+    layout,
+    category,
+    successMessage,
+    fields[]{
+      label,
+      name,
+      inputType,
+      placeholder,
+      required,
+      options
+    }
+  }
+`;

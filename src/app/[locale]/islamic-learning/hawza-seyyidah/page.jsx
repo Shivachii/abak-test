@@ -1,12 +1,17 @@
 import Banner from "@/components/Banner/Banner";
-import HawzaEnrollmentCTA from "@/components/CTA/HawzaEnrollmentCTA";
+import DynamicForm from "@/components/Forms/DynamicForms/FormBuilder";
+
 import ScholarshipSection from "./scholarship";
 import Image from "next/image";
 import ImageGrid from "./imagegrid";
 import { Activity, Binoculars, Target } from "lucide-react";
 import { sanityFetch } from "../../../../../sanity/lib/live";
 import { HAWZA_PAGE_QUERY } from "../../../../../sanity/lib/queries/pageQueries/pageQueries";
-
+import {
+  formBySlugQuery,
+  getFormBySlugQuery,
+} from "../../../../../sanity/lib/queries";
+import { PDFViewer } from "@/components/PDFViewer/PDFViiewer";
 import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 export async function generateMetadata({ params }) {
@@ -21,6 +26,15 @@ export default async function Hawza({ params }) {
   const { data } = await sanityFetch({
     query: HAWZA_PAGE_QUERY,
     params: { lang: locale },
+  });
+
+  const { data: formData } = await sanityFetch({
+    query: getFormBySlugQuery,
+    params: { slug: "hawza-enrollment" },
+  });
+  const { data: dynamicForm } = await sanityFetch({
+    query: formBySlugQuery,
+    params: { slug: "hawza-enrollment" },
   });
 
   return (
@@ -181,8 +195,17 @@ export default async function Hawza({ params }) {
           </div>
 
           {/* CTA */}
-          <HawzaEnrollmentCTA />
-
+          <DynamicForm form={dynamicForm} />
+          <section className="text-center my-5">
+            {/* PDF Download Viewer */}
+            {formData?.file?.asset?.url && (
+              <PDFViewer
+                title={formData.title}
+                fileUrl={formData.file.asset.url}
+                mode="button"
+              />
+            )}
+          </section>
           {/* Scholarship Section */}
           <ScholarshipSection
             heading={data.scholarshipSection.heading}

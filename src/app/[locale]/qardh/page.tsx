@@ -1,8 +1,12 @@
-import { QardhForm } from "@/components/Forms/QardhForm";
 import { sanityFetch } from "../../../../sanity/lib/live";
 import { QARDH_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
-
+import {
+  getFormBySlugQuery,
+  formBySlugQuery,
+} from "../../../../sanity/lib/queries";
+import { PDFViewer } from "@/components/PDFViewer/PDFViiewer";
 import { generatePageMetadata } from "@/hooks/seo/metadata";
+import DynamicForm from "@/components/Forms/DynamicForms/FormBuilder";
 
 export async function generateMetadata({
   params,
@@ -23,6 +27,16 @@ export default async function QardhHassanahPage({
     query: QARDH_PAGE_QUERY,
     params: { lang: params.locale },
   });
+  const { data: formData } = await sanityFetch({
+    query: getFormBySlugQuery,
+    params: { slug: "qardh-form" },
+  });
+  const { data: dynamicForm } = await sanityFetch({
+    query: formBySlugQuery,
+    params: { slug: "qardh-hassanah-application" },
+  });
+
+  if (!dynamicForm) return <p>Form not found</p>;
 
   return (
     <main className="px-4 sm:px-6 lg:px-8 py-10 bg-slate-50 text-gray-800">
@@ -124,7 +138,17 @@ export default async function QardhHassanahPage({
           <h2 className="text-2xl font-semibold text-primary mb-4">
             {data?.applyTitle}
           </h2>
-          <QardhForm />
+          <section className="flex flex-col md:flex-row items-center justify-center gap-4 p-4">
+            {/* Dynamic Form Layout Renderer */}
+            <DynamicForm form={dynamicForm} />
+            {formData?.file?.asset?.url && (
+              <PDFViewer
+                title={formData.title}
+                fileUrl={formData.file.asset.url}
+                mode="button"
+              />
+            )}
+          </section>
         </section>
       </div>
     </main>

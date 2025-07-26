@@ -76,14 +76,6 @@ export const contactPageType = defineType({
       description:
         "Optional welcome paragraph or description above the contact form.",
     }),
-    defineField({
-      name: "contactForm",
-      title: "Select Contact Form",
-      type: "reference",
-      to: [{ type: "contactForm" }],
-      fieldset: "content",
-      description: "Choose which embedded form will appear on the page.",
-    }),
 
     defineField({
       name: "infoTitle",

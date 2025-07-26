@@ -39,6 +39,7 @@ import { videosPageType } from "./pages/videosPage";
 import { audioPageType } from "./pages/audioPage";
 import { objectivesType } from "./singletons/objective";
 import { objectivesSettings } from "./singletons/objectivesSettings";
+import { downloadableForm } from "./forms/downloadableForm";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -60,6 +61,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     sidebarType,
     footerType,
     formBuilder,
+    downloadableForm,
 
     // Uploads/Media
 
