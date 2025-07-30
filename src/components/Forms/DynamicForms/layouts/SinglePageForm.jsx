@@ -2,6 +2,8 @@
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export function SinglePageForm({ formConfig }) {
   const [submitStatus, setSubmitStatus] = useState(null);
