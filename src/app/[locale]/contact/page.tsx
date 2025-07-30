@@ -31,7 +31,7 @@ export default async function ContactPage({
 
   const { data: dynamicForm } = await sanityFetch({
     query: formBySlugQuery,
-    params: { slug: "aesp-form" },
+    params: { slug: "contact-form" },
   });
 
   return (
