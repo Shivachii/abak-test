@@ -1,5 +1,5 @@
 import { sendAdminNotification } from "../../../lib/email/sendAdmin";
-import { sendUserConfirmation } from "../../../lib/email/confirmation";
+import { sendUserConfirmation } from "../../../lib/email/sendConfirmation";
 
 export async function POST(request) {
   try {

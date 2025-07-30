@@ -1,15 +1,25 @@
 import {
   createCPanelTransporter,
   createFallbackTransporter,
-} from "./emailService";
+} from "./transporterCreator";
 import { formatFormData } from "./formatter";
 
+const recipientMap = {
+  hawza: process.env.HAWZA_EMAIL,
+  aesp: process.env.AESP_EMAIL,
+  contact: process.env.CONTACT_EMAIL,
+  qardh: process.env.QARDH_EMAIL,
+  volunteer: process.env.VOLUNTEER_EMAIL,
+};
+
 export const sendAdminNotification = async (formData, submissionData) => {
+  const formCategory = formData.formCategory?.toLowerCase();
+  const recipientEmail = recipientMap[formCategory] || process.env.ADMIN_EMAIL;
   let transporter = createCPanelTransporter();
 
   const mailOptions = {
     from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
-    to: process.env.ADMIN_EMAIL,
+    to: recipientEmail,
     subject: `New ${formData.formCategory} Form Submission - ${formData.formTitle}`,
     html: formatFormData(submissionData, formData.formTitle),
     // Optional: Add text version for better compatibility

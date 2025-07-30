@@ -3,8 +3,8 @@ import nodemailer from "nodemailer";
 export const createCPanelTransporter = () => {
   const config = {
     host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || "587"),
-    secure: process.env.SMTP_PORT === "465", // true for port 465, false otherwise
+    port: parseInt(process.env.SMTP_PORT || process.env.SMTP_PORT_2),
+    secure: process.env.SMTP_PORT === 465,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,

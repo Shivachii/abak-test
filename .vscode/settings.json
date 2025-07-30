@@ -1,4 +1,9 @@
 {
   "i18n-ally.localesPaths": ["messages", "src/i18n"],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "explorer.compactFolders": false,
+  "cSpell.words": ["aesp", "hawza", "qardh"]
 }

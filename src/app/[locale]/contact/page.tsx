@@ -1,10 +1,12 @@
 import Banner from "@/components/Banner/Banner";
-import ContactForm from "@/components/Forms/ContactForm";
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import { sanityFetch } from "../../../../sanity/lib/live";
 import { CONTACT_PAGE_QUERY } from "../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { formBySlugQuery } from "../../../../sanity/lib/queries";
 import { ContactData } from "../../../lib/types/sanityPageTypes/types";
 import { generatePageMetadata } from "@/hooks/seo/metadata";
+import DynamicForm from "@/components/Forms/DynamicForms/FormBuilder";
 
 export async function generateMetadata({
   params,
@@ -27,6 +29,11 @@ export default async function ContactPage({
     params: { lang: locale },
   });
 
+  const { data: dynamicForm } = await sanityFetch({
+    query: formBySlugQuery,
+    params: { slug: "aesp-form" },
+  });
+
   return (
     <section className="w-full bg-white">
       <Banner backgroundImage="/banners/contact.jpg" />
@@ -42,7 +49,7 @@ export default async function ContactPage({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start px-4">
           <div className="w-full">
-            <ContactForm />
+            <DynamicForm form={dynamicForm} />
           </div>
 
           <div className="flex flex-col gap-8">

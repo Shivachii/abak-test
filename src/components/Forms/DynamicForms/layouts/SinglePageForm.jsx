@@ -1,5 +1,8 @@
+"use client";
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
 export function SinglePageForm({ formConfig }) {
   const [submitStatus, setSubmitStatus] = useState(null);
   const schema = formSchemaFromSanity(formConfig.fields);
@@ -102,8 +105,8 @@ export function SinglePageForm({ formConfig }) {
               {submitStatus?.type === "loading"
                 ? "Sending..."
                 : form.formState.isSubmitting
-                  ? "Submitting..."
-                  : "Submit"}
+                ? "Submitting..."
+                : "Submit"}
             </Button>
           </div>
         </form>
