@@ -17,19 +17,25 @@ export default async function GalleryPage({ params }) {
     query: getAllGalleryMediaPaginatedQuery(),
   });
 
-  const {
-    data: { galleryPage },
-  } = await sanityFetch({
+  const pageResponse = await sanityFetch({
     query: IMAGES_PAGE_QUERY,
     params: { lang: locale },
   });
+
+  const galleryPage = pageResponse?.data?.galleryPage;
+
+  if (!galleryPage) {
+    console.warn(`No galleryPage data found for locale: ${locale}`);
+  }
 
   return (
     <AllGalleryMedia
       galleries={data}
       pageData={{
-        pageTitle: galleryPage.title,
-        pageDescription: galleryPage.description,
+        pageTitle: galleryPage?.title || "Our Image Gallery",
+        pageDescription:
+          galleryPage?.description ||
+          "Welcome to our Image Gallery – a curated collection of powerful photographs capturing the spirit of our events, community initiatives, and milestones. Explore these visuals for an inspiring glimpse into our journey and impact.",
       }}
     />
   );
