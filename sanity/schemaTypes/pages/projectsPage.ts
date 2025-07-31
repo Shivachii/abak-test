@@ -147,7 +147,7 @@ export const projectsPageType = defineType({
     prepare({ title, subtitle, media }) {
       return {
         title: title || "Untitled Projects Page",
-        subtitle: subtitle?.toUpperCase(),
+        subtitle: `Language: ${subtitle?.toUpperCase()}`,
         media,
       };
     },

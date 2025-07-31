@@ -360,7 +360,7 @@ export const IMAGES_PAGE_QUERY = `*[_type == "imagesPage" && lang == $lang][0]{
     title,
     description,
     keywords,
-    ogImage {
+    ogImage { 
       asset->{
         url,
         metadata { lqip }

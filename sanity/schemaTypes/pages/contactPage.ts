@@ -153,7 +153,7 @@ export const contactPageType = defineType({
     prepare({ title, subtitle }) {
       return {
         title: title || "Untitled Contact Page",
-        subtitle: subtitle?.toUpperCase(),
+        subtitle: `Language: ${subtitle?.toUpperCase()}`,
       };
     },
   },

@@ -128,7 +128,7 @@ export const donatePageType = defineType({
     prepare({ title, subtitle }) {
       return {
         title: title || "Untitled Donate Page",
-        subtitle: subtitle?.toUpperCase(),
+        subtitle: `Language: ${subtitle?.toUpperCase()}`,
       };
     },
   },

@@ -145,7 +145,9 @@ export const communityServicesPageType = defineType({
             prepare({ image, services }) {
               const count = services?.length || 0;
               return {
-                title: `Service Group (${count} service${count === 1 ? "" : "s"})`,
+                title: `Service Group (${count} service${
+                  count === 1 ? "" : "s"
+                })`,
                 subtitle: count
                   ? "Click to edit services"
                   : "No services added yet",
@@ -166,7 +168,7 @@ export const communityServicesPageType = defineType({
     prepare({ title, subtitle }) {
       return {
         title: title || "Untitled Community Services Page",
-        subtitle: subtitle?.toUpperCase(),
+        subtitle: `Language: ${subtitle?.toUpperCase()}`,
       };
     },
   },

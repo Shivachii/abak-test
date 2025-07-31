@@ -134,7 +134,7 @@ export const aboutPageType = defineType({
       return {
         title: title || "Untitled",
         subtitle: subtitle
-          ? `Lang: ${subtitle.toUpperCase()}`
+          ? `Language: ${subtitle.toUpperCase()}`
           : "No language set",
       };
     },

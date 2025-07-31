@@ -62,7 +62,9 @@ export const publicationsPageType = defineType({
     prepare({ title }) {
       return {
         title: "Publications Page",
-        subtitle: title ? title.toUpperCase() : "No language selected",
+        subtitle: title
+          ? `Language: ${title.toUpperCase()}`
+          : "No language selected",
       };
     },
   },
