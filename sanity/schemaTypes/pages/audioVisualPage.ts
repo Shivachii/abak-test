@@ -13,7 +13,13 @@ export const audioVisualPageType = defineType({
       title: "SEO & Language",
       options: { collapsible: true, collapsed: true },
     },
+    {
+      name: "content",
+      title: "Page Content",
+      options: { collapsible: true, collapsed: false },
+    },
   ],
+
   fields: [
     defineField({
       name: "translationId",
@@ -38,6 +44,7 @@ export const audioVisualPageType = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "seo",
       title: "SEO Settings",
@@ -46,5 +53,46 @@ export const audioVisualPageType = defineType({
         "Customize how this page appears in search engines and social sharing.",
       fieldset: "seo",
     }),
+
+    defineField({
+      name: "title",
+      title: "Page Title",
+      type: "string",
+      description: "Main heading shown at the top of the page.",
+      fieldset: "content",
+      validation: (Rule) =>
+        Rule.required()
+          .min(5)
+          .max(100)
+          .warning("Keep it clear and descriptive"),
+    }),
+
+    defineField({
+      name: "description",
+      title: "Page Description",
+      type: "text",
+      description:
+        "A short paragraph displayed on the page to introduce its content.",
+      fieldset: "content",
+      rows: 3,
+      validation: (Rule) =>
+        Rule.required()
+          .min(20)
+          .max(300)
+          .warning("Aim for clarity and inspiration"),
+    }),
   ],
+
+  preview: {
+    select: {
+      title: "title",
+      lang: "lang",
+    },
+    prepare({ title, lang }) {
+      return {
+        title: title || "Untitled AV Page",
+        subtitle: lang ? `Language: ${lang}` : "No language selected",
+      };
+    },
+  },
 });

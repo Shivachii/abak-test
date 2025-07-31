@@ -10,8 +10,13 @@ export const audioPageType = defineType({
   fieldsets: [
     {
       name: "seo",
-      title: "Seo Settings",
+      title: "Seo & Language",
       options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "content",
+      title: "Page Content",
+      options: { collapsible: true, collapsed: false },
     },
   ],
   fields: [
@@ -26,6 +31,7 @@ export const audioPageType = defineType({
       title: "Language",
       type: "string",
       description: "Select the language for this version of the page.",
+      fieldset: "seo",
       options: {
         list: [
           { title: "English", value: "en" },
@@ -45,5 +51,44 @@ export const audioPageType = defineType({
         "Customize how this page appears in search engines and social sharing.",
       fieldset: "seo",
     }),
+    defineField({
+      name: "title",
+      title: "Page Title",
+      type: "string",
+      description: "Main heading shown at the top of the page.",
+      fieldset: "content",
+      validation: (Rule) =>
+        Rule.required()
+          .min(5)
+          .max(100)
+          .warning("Keep it clear and descriptive"),
+    }),
+
+    defineField({
+      name: "description",
+      title: "Page Description",
+      type: "text",
+      description:
+        "A short paragraph displayed on the page to introduce its content.",
+      fieldset: "content",
+      rows: 3,
+      validation: (Rule) =>
+        Rule.required()
+          .min(20)
+          .max(300)
+          .warning("Aim for clarity and inspiration"),
+    }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      lang: "lang",
+    },
+    prepare({ title, lang }) {
+      return {
+        title: title || "Untitled Audio Page",
+        subtitle: lang ? `Language: ${lang}` : "No language selected",
+      };
+    },
+  },
 });

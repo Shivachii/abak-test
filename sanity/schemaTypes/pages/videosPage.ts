@@ -13,6 +13,11 @@ export const videosPageType = defineType({
       title: "SEO and Language",
       options: { collapsible: true, collapsed: true },
     },
+    {
+      name: "content",
+      title: "Page Content",
+      options: { collapsible: true, collapsed: false },
+    },
   ],
 
   fields: [
@@ -48,15 +53,36 @@ export const videosPageType = defineType({
         "Customize how this page appears in search engines and when shared on social platforms.",
       fieldset: "seo",
     }),
+
+    defineField({
+      name: "title",
+      title: "Page Title",
+      type: "string",
+      description: "Displayed as the main heading on the videos gallery page.",
+      fieldset: "content",
+      validation: (Rule) => Rule.required().min(5).max(100),
+    }),
+
+    defineField({
+      name: "description",
+      title: "Page Description",
+      type: "text",
+      description:
+        "A short paragraph introducing the video gallery to visitors.",
+      rows: 3,
+      fieldset: "content",
+      validation: (Rule) => Rule.required().min(20).max(300),
+    }),
   ],
 
   preview: {
     select: {
+      title: "title",
       lang: "lang",
     },
-    prepare({ lang }) {
+    prepare({ title, lang }) {
       return {
-        title: "Videos Gallery Page",
+        title: title || "Videos Gallery Page",
         subtitle: lang ? `Language: ${lang}` : "No language selected",
       };
     },
