@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default async function VideosPage() {
+export default async function VideosPage({ params }) {
   const { locale } = params;
   const t = await getTranslations("videos");
 

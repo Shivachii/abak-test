@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default async function GalleryPage() {
+export default async function GalleryPage({ params }) {
   const { locale } = params;
   const { data } = await sanityFetch({
     query: getAllGalleryMediaPaginatedQuery(),
