@@ -106,7 +106,9 @@ export const volunteerPageType = defineType({
     prepare({ title, subtitle }) {
       return {
         title: title || "Untitled Volunteer Page",
-        subtitle: subtitle ? `Language: ${subtitle}` : "No language set",
+        subtitle: subtitle
+          ? `Language: ${subtitle.toUpperCase()}`
+          : "No language set",
       };
     },
   },

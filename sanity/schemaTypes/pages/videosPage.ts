@@ -83,7 +83,9 @@ export const videosPageType = defineType({
     prepare({ title, lang }) {
       return {
         title: title || "Videos Gallery Page",
-        subtitle: lang ? `Language: ${lang}` : "No language selected",
+        subtitle: lang
+          ? `Language: ${lang.toUpperCase()}`
+          : "No language selected",
       };
     },
   },

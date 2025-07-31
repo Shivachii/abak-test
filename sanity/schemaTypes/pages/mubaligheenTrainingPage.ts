@@ -167,7 +167,9 @@ export const mubaligheenTrainingPageType = defineType({
     prepare({ title, subtitle, media }) {
       return {
         title: title || "Untitled Training Page",
-        subtitle: subtitle ? `Language: ${subtitle}` : "No language selected",
+        subtitle: subtitle
+          ? `Language: ${subtitle.toUpperCase()}`
+          : "No language selected",
         media,
       };
     },

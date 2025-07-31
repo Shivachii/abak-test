@@ -1,23 +1,38 @@
 import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "../../../../../../sanity/lib/live";
 import { YOUTUBE_LINKS_QUERY } from "../../../../../../sanity/lib/queries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
+import { VIDEOS_PAGE_QUERY } from "../../../../../../sanity/lib/queries/pageQueries/pageQueries";
+
+export async function generateMetadata({ params }) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "audiovisualPage",
+  });
+}
 
 export default async function VideosPage() {
+  const { locale } = params;
   const t = await getTranslations("videos");
 
   const { data } = await sanityFetch({
     query: YOUTUBE_LINKS_QUERY,
   });
 
+  const { data: pageData } = await sanityFetch({
+    query: VIDEOS_PAGE_QUERY,
+    params: { lang: locale },
+  });
+
   const videos = data?.videos ?? [];
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl sm:text-4xl font-bold text-center text-secondary text-gray-800 mb-8">
-        {t("title")}
+      <h1 className="text-3xl sm:text-4xl font-bold text-center text-secondary  mb-8">
+        {pageData?.title || t("title")}
       </h1>
       <p className="text-lg mb-8 text-justify mt-4 text-gray-600 max-w-2xl mx-auto">
-        {t("description")}
+        {pageData?.description || t("description")}
       </p>
 
       <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">

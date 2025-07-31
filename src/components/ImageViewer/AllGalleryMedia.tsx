@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 interface Gallery {
   title: string;
+
   slug: {
     current: string;
   };
@@ -24,10 +25,17 @@ interface MediaItem extends MediaItemRaw {
   gallerySlug: string;
 }
 
+type pageData = {
+  pageTitle: string;
+  pageDescription: string;
+};
+
 export default function AllGalleryMedia({
   galleries,
+  pageData: { pageTitle, pageDescription },
 }: {
   galleries: Gallery[];
+  pageData: pageData;
 }) {
   const allItems: MediaItem[] = galleries.flatMap((gallery) =>
     (gallery.media || []).map((item) => ({
@@ -59,13 +67,11 @@ export default function AllGalleryMedia({
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-secondary">
-        Our Image Gallery
+        {pageTitle || "Our Image Gallery"}
       </h1>
       <p className="text-lg mb-8 text-justify mt-4 text-gray-600 max-w-2xl mx-auto">
-        Welcome to our Image Gallery – a curated collection of powerful
-        photographs capturing the spirit of our events, community initiatives,
-        and milestones. Explore these visuals for an inspiring glimpse into our
-        journey and impact.
+        {pageDescription ||
+          "Welcome to our Image Gallery – a curated collection of powerful photographs capturing the spirit of our events, community initiatives, and milestones. Explore these visuals for an inspiring glimpse into our journey and impact."}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {loading

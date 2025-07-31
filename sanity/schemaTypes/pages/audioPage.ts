@@ -87,7 +87,9 @@ export const audioPageType = defineType({
     prepare({ title, lang }) {
       return {
         title: title || "Untitled Audio Page",
-        subtitle: lang ? `Language: ${lang}` : "No language selected",
+        subtitle: lang
+          ? `Language: ${lang.toUpperCase()}`
+          : "No language selected",
       };
     },
   },

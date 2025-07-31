@@ -91,7 +91,9 @@ export const audioVisualPageType = defineType({
     prepare({ title, lang }) {
       return {
         title: title || "Untitled AV Page",
-        subtitle: lang ? `Language: ${lang}` : "No language selected",
+        subtitle: lang
+          ? `Language: ${lang.toUpperCase()}`
+          : "No language selected",
       };
     },
   },

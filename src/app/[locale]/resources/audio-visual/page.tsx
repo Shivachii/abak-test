@@ -1,9 +1,34 @@
 import Banner from "@/components/Banner/Banner";
-import { useTranslations } from "next-intl";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 import Link from "next/link";
+import { sanityFetch } from "../../../../../sanity/lib/live";
+import { AUDIO_VISUAL_PAGE_QUERY } from "../../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { getTranslations } from "next-intl/server";
 
-export default function GalleryListPage() {
-  const t = useTranslations("galleries");
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "audiovisualPage",
+  });
+}
+
+type PageProps = {
+  params: { locale: string };
+};
+
+export default async function GalleryListPage({
+  params: { locale },
+}: PageProps) {
+  const { data } = await sanityFetch({
+    query: AUDIO_VISUAL_PAGE_QUERY,
+    params: { lang: locale },
+  });
+
+  const t = await getTranslations("galleries");
 
   const sections = [
     {
@@ -26,10 +51,10 @@ export default function GalleryListPage() {
       <section className="px-4 py-16 mx-auto">
         <div className="text-center">
           <h1 className="text-3xl sm:text-4xl font-bold text-secondary mb-4">
-            {t("title")}
+            {data?.title || t("title")}
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {t("subtitle")}
+            {data?.description || t("subtitle")}
           </p>
         </div>
 

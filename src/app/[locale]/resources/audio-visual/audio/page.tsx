@@ -2,6 +2,8 @@ import React from "react";
 import { sanityFetch } from "../../../../../../sanity/lib/live";
 import { getAllAudioQuery } from "../../../../../../sanity/lib/queries";
 import Image from "next/image";
+import { AUDIO_PAGE_QUERY } from "../../../../../../sanity/lib/queries/pageQueries/pageQueries";
+import { generatePageMetadata } from "@/hooks/seo/metadata";
 
 type AudioItem = {
   _id: string;
@@ -11,29 +13,39 @@ type AudioItem = {
   thumbnailUrl: string;
 };
 
-export default async function AudioPage() {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return await generatePageMetadata({
+    lang: params.locale,
+    type: "audioPage",
+  });
+}
+
+export default async function AudioPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
   const audios = await sanityFetch({
     query: getAllAudioQuery,
   });
-  console.log(audios);
 
-  // if (!audios || audios.data || audios.data.length === 0) {
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <h1 className="text-2xl text-red-500">No audio files found</h1>
-  //     </div>
-  //   );
-  // }
+  const { data: pageData } = await sanityFetch({
+    query: AUDIO_PAGE_QUERY,
+    params: { lang: params.locale },
+  });
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-3xl sm:text-4xl font-bold text-center text-secondary text-gray-800 mb-10">
-        Islamic Audio Lectures & Recitations
+        {pageData?.title || "Islamic Audio Lectures & Recitations"}
       </h1>
       <p className="text-lg mb-8 text-justify mt-4 text-gray-600 max-w-2xl mx-auto">
-        Welcome to our Audio Library – a collection of spiritually enriching
-        recitations, lectures, and reflections. Listen in to deepen your
-        understanding and stay connected to our message wherever you are.
+        {pageData?.description ||
+          "Welcome to our Audio Library – a collection of spiritually enriching recitations, lectures, and reflections. Listen in to deepen your understanding and stay connected to our message wherever you are."}
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
