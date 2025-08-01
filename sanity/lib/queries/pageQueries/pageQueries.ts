@@ -1,21 +1,5 @@
 export const homePageQuery = `
   *[_type == "homePage" && lang == $lang][0]{
-   seo {
-    metaTitle,
-    metaDescription,
-    keywords,
-    canonicalUrl,
-    ogTitle,
-    ogDescription,
-    ogImage {
-      asset->{
-        url
-      }
-    },
-    twitterCard,
-    noIndex,
-    noFollow
-  },
     hero {
       slides[] {
         image,
@@ -255,14 +239,6 @@ export const HAWZA_PAGE_QUERY = `
     lang,
     title,
     subtitle,
-    seo {
-      title,
-      description,
-      keywords,
-      image {
-        asset->{url}
-      }
-    },
     about {
       title,
       subtitle,
@@ -336,18 +312,6 @@ export const AUDIO_PAGE_QUERY = `*[_type == "audioPage" && lang == $lang][0]{
   title,
   description,
   lang,
-  seo {
-    title,
-    description,
-    keywords,
-    ogImage {
-      asset->{
-        url,
-        metadata { lqip }
-      },
-      alt
-    }
-  }
 }
 `;
 
@@ -356,18 +320,6 @@ export const IMAGES_PAGE_QUERY = `*[_type == "imagesPage" && lang == $lang][0]{
   title,
   description,
   lang,
-  seo {
-    title,
-    description,
-    keywords,
-    ogImage { 
-      asset->{
-        url,
-        metadata { lqip }
-      },
-      alt
-    }
-  }
 }
 `;
 
@@ -376,18 +328,6 @@ export const AUDIO_VISUAL_PAGE_QUERY = `*[_type == "audiovisualPage" && lang == 
   title,
   description,
   lang,
-  seo {
-    title,
-    description,
-    keywords,
-    ogImage {
-      asset->{
-        url,
-        metadata { lqip }
-      },
-      alt
-    }
-  }
 }
 `;
 
@@ -396,17 +336,5 @@ export const VIDEOS_PAGE_QUERY = `*[_type == "videoPage" && lang == $lang][0]{
   title,
   description,
   lang,
-  seo {
-    title,
-    description,
-    keywords,
-    ogImage {
-      asset->{
-        url,
-        metadata { lqip }
-      },
-      alt
-    }
-  }
 }
 `;
