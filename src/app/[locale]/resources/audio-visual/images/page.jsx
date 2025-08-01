@@ -19,7 +19,7 @@ export default async function GalleryPage({ params }) {
 
   const { data: pageData } = await sanityFetch({
     query: IMAGES_PAGE_QUERY,
-    params: locale,
+    params: { lang: locale },
   });
 
   return (
