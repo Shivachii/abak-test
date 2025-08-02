@@ -143,13 +143,13 @@ export const formBuilder = defineType({
       ],
     }),
 
-    defineField({
-      name: "requiredDocuments",
-      title: "Required Documents",
-      type: "array",
-      fieldset: "general",
-      of: [{ type: "requiredDocument" }],
-    }),
+    // defineField({
+    //   name: "requiredDocuments",
+    //   title: "Required Documents",
+    //   type: "array",
+    //   fieldset: "general",
+    //   of: [{ type: "requiredDocument" }],
+    // }),
 
     defineField({
       name: "successMessage",

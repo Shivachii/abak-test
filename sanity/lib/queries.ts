@@ -339,18 +339,13 @@ export const formBySlugQuery = `
         addressConfig{
           includeFields
         },
-                
+
         currencyConfig{
           currency,
           showSymbol
         }
       }
     },
-    requiredDocuments[]->{
-      _id,
-      name,
-      required,
-      description
-    }
+ 
   }
 `;
