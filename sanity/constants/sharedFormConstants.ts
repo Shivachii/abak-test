@@ -5,6 +5,7 @@ export const formFieldNameOptions = [
   { title: "Gender", value: "gender" },
   { title: "Religion", value: "religion" },
   { title: "Date of Birth", value: "dob" },
+  { title: "Place of Birth", value: "pob" },
   { title: "Nationality", value: "nationality" },
   { title: "National ID / Passport No", value: "idNumber" },
   { title: "Phone Number", value: "phone" },
@@ -28,9 +29,23 @@ export const formFieldNameOptions = [
     value: "frequentMosque",
   },
 
+  // Father
+  { title: "Father’s Full Name", value: "fatherName" },
+  { title: "Father’s Residence", value: "fatherResidence" },
+  { title: "Father’s Occupation", value: "fatherOccupation" },
+  { title: "Father’s Contact Number", value: "fatherPhone" },
+  { title: "Father’s Email", value: "fatherEmail" },
+
+  // Mother
+  { title: "Mother’s Full Name", value: "motherName" },
+  { title: "Mother’s Residence", value: "motherResidence" },
+  { title: "Mother’s Occupation", value: "motherrOccupation" },
+  { title: "Mother’s Contact Number", value: "motherPhone" },
+  { title: "Mother’s Email", value: "motherEmail" },
+
   // Guardian
   { title: "Guardian’s Full Name", value: "guardianName" },
-  { title: "Relation to Student", value: "guardianRelation" },
+  { title: "Guardian's Relation to Student", value: "guardianRelation" },
   { title: "Guardian’s Residence", value: "guardianResidence" },
   { title: "Guardian’s Occupation", value: "guardianOccupation" },
   { title: "Guardian’s Contact Number", value: "guardianPhone" },
@@ -48,6 +63,10 @@ export const formFieldNameOptions = [
   {
     title: "Have you previously received financial aid?",
     value: "receivedAid",
+  },
+  {
+    title: "Please provide brief details of the aid received",
+    value: "aidDetails",
   },
   {
     title: "Any outstanding family or financial obligations",

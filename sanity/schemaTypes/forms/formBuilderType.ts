@@ -1,6 +1,5 @@
 import { ComposeIcon } from "@sanity/icons";
 import { defineType, defineField } from "sanity";
-import { formFieldNameOptions } from "../../constants/sharedFormConstants";
 
 export const formBuilder = defineType({
   name: "formBuilder",
@@ -11,7 +10,7 @@ export const formBuilder = defineType({
   fieldsets: [
     {
       name: "general",
-      title: "Form Information",
+      title: "Form Overview",
       options: { collapsible: true, collapsed: false },
     },
     {
@@ -20,25 +19,28 @@ export const formBuilder = defineType({
       options: { collapsible: true, collapsed: false },
     },
     {
+      name: "documents",
+      title: "Required Documents",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "financial",
+      title: "Financial Support Categories",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
       name: "messages",
       title: "Submission Feedback",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "settings",
+      title: "Advanced Settings",
       options: { collapsible: true, collapsed: true },
     },
   ],
 
   fields: [
-    defineField({
-      name: "category",
-      title: "Form Category",
-      type: "string",
-      fieldset: "general",
-      options: {
-        list: ["Contact", "Volunteer", "Qardh", "AESP", "Hawza"],
-      },
-      description:
-        "Used to categorize this form (for internal or frontend use).",
-    }),
-
     defineField({
       name: "title",
       title: "Form Title",
@@ -48,23 +50,12 @@ export const formBuilder = defineType({
     }),
 
     defineField({
-      name: "slug",
-      title: "Form Slug",
-      type: "slug",
-      fieldset: "general",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-
-    defineField({
       name: "tagline",
-      title: "Form Tagline",
+      title: "Short Tagline",
       type: "text",
       fieldset: "general",
-      description: "A short tagline or sentence about this form.",
+      rows: 2,
+      description: "A brief sentence that explains this form's purpose.",
     }),
 
     defineField({
@@ -72,7 +63,70 @@ export const formBuilder = defineType({
       title: "Form Description",
       type: "text",
       fieldset: "general",
-      description: "More detailed information or context for the form.",
+      rows: 3,
+      description: "More detailed information or instructions for the form.",
+    }),
+
+    defineField({
+      name: "groupIntoSections",
+      title: "Group Fields into Sections?",
+      type: "boolean",
+      fieldset: "fields",
+      initialValue: false,
+      description:
+        "Enable to organize the form into multiple sections (steps).",
+    }),
+
+    defineField({
+      name: "sections",
+      title: "Sections",
+      type: "array",
+      fieldset: "fields",
+      hidden: ({ document }) => !document?.groupIntoSections,
+      of: [
+        defineField({
+          name: "section",
+          title: "Section",
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Section Title",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "description",
+              title: "Section Description",
+              type: "text",
+              rows: 2,
+            }),
+            defineField({
+              name: "fields",
+              title: "Fields in This Section",
+              type: "array",
+              of: [
+                {
+                  type: "reference",
+                  to: [{ type: "formField" }],
+                },
+              ],
+            }),
+          ],
+          preview: {
+            select: {
+              title: "title",
+              fieldCount: "fields.length",
+            },
+            prepare({ title, fieldCount }) {
+              return {
+                title: title || "Untitled Section",
+                subtitle: `${fieldCount || 0} fields`,
+              };
+            },
+          },
+        }),
+      ],
     }),
 
     defineField({
@@ -80,108 +134,69 @@ export const formBuilder = defineType({
       title: "Form Fields",
       type: "array",
       fieldset: "fields",
+      hidden: ({ document }) => Boolean(document?.groupIntoSections),
       of: [
-        defineField({
-          name: "field",
-          title: "Field",
-          type: "object",
-          fields: [
-            defineField({
-              name: "label",
-              title: "Field Label",
-              type: "string",
-              validation: (Rule) => Rule.required(),
-            }),
-            defineField({
-              name: "name",
-              title: "Field Name (Key)",
-              type: "string",
-              description: "Used as the key in form submissions.",
-              validation: (Rule) => Rule.required(),
-              options: {
-                list: formFieldNameOptions,
-              },
-            }),
-            defineField({
-              name: "inputType",
-              title: "Input Type",
-              type: "string",
-              initialValue: "text",
-              options: {
-                layout: "dropdown",
-                list: [
-                  { title: "Text", value: "text" },
-                  { title: "Email", value: "email" },
-                  { title: "Textarea", value: "textarea" },
-                  { title: "Select", value: "select" },
-                  { title: "Checkbox", value: "checkbox" },
-                  { title: "Radio", value: "radio" },
-                  { title: "Date", value: "date" },
-                  { title: "Phone", value: "tel" },
-                  { title: "Number", value: "number" },
-                  { title: "File upload", value: "file" },
-                ],
-              },
-              validation: (Rule) => Rule.required(),
-            }),
-            defineField({
-              name: "placeholder",
-              title: "Placeholder Text",
-              type: "string",
-            }),
-            defineField({
-              name: "required",
-              title: "Is this field required?",
-              type: "boolean",
-              initialValue: false,
-            }),
-            defineField({
-              name: "options",
-              title: "Options (for Select, Radio, or Checkbox)",
-              type: "array",
-              of: [{ type: "string" }],
-              hidden: ({ parent }) =>
-                !["select", "checkbox", "radio"].includes(parent?.inputType),
-            }),
-          ],
-          preview: {
-            select: {
-              title: "label",
-              subtitle: "inputType",
-            },
-            prepare({ title, subtitle }) {
-              return {
-                title: title || "Untitled Field",
-                subtitle: `Input Type: ${subtitle || "text"}`,
-              };
-            },
-          },
-        }),
+        {
+          type: "reference",
+          to: [{ type: "formField" }],
+        },
       ],
     }),
+
     defineField({
-      name: "layout",
-      title: "Form Layout",
-      type: "string",
+      name: "requiredDocuments",
+      title: "Required Documents",
+      type: "array",
       fieldset: "general",
-      options: {
-        list: [
-          { title: "Single Page", value: "single" },
-          { title: "Dialog", value: "dialog" },
-          { title: "Multi Step", value: "multiStep" },
-        ],
-        layout: "radio",
-      },
-      initialValue: "single",
-      description: "How the form should be displayed in the frontend.",
+      of: [{ type: "requiredDocument" }],
     }),
 
     defineField({
       name: "successMessage",
-      title: "Success Message",
+      title: "Submission Confirmation",
       type: "string",
       fieldset: "messages",
-      description: "Displayed to users after successful submission.",
+      description:
+        "What to show the user after successfully submitting the form.",
+    }),
+
+    // --- Advanced settings hidden by default ---
+    defineField({
+      name: "layout",
+      title: "Frontend Layout",
+      type: "string",
+      fieldset: "settings",
+      options: {
+        list: [
+          { title: "Single Page", value: "single" },
+          { title: "Dialog (Popup)", value: "dialog" },
+          { title: "Multi-Step", value: "multiStep" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "single",
+    }),
+
+    defineField({
+      name: "category",
+      title: "Form Type",
+      type: "string",
+      fieldset: "settings",
+      options: {
+        list: ["Contact", "Volunteer", "Qardh", "AESP", "Hawza"],
+      },
+      description: "Used for frontend filtering and logic.",
+    }),
+
+    defineField({
+      name: "slug",
+      title: "Slug (URL ID)",
+      type: "slug",
+      fieldset: "settings",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
     }),
   ],
 

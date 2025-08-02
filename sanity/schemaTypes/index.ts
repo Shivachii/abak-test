@@ -40,6 +40,9 @@ import { audioPageType } from "./pages/audioPage";
 import { objectivesType } from "./singletons/objective";
 import { objectivesSettings } from "./singletons/objectivesSettings";
 import { downloadableForm } from "./forms/downloadableForm";
+import { formField } from "./forms/formFields";
+import { sponsorshipCategory } from "./forms/sponshorshipCategories";
+import { requiredDocument } from "./forms/requiredDocuments";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -61,6 +64,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     sidebarType,
     footerType,
     formBuilder,
+    formField,
+    sponsorshipCategory,
+    requiredDocument,
     downloadableForm,
 
     // Uploads/Media

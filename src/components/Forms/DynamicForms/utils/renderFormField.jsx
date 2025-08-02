@@ -44,7 +44,6 @@ function renderInputByType(field, formField) {
     case "text":
     case "email":
     case "tel":
-    case "date":
     case "number":
       return (
         <Input
@@ -54,17 +53,35 @@ function renderInputByType(field, formField) {
         />
       );
 
+    case "date":
+      return <Input type={field.inputType} {...formField} className="w-max" />;
+
     case "textarea":
       return <Textarea placeholder={field.placeholder} {...formField} />;
 
     case "checkbox":
       return (
-        <div className="flex items-center space-x-2">
-          <Checkbox
-            checked={formField.value}
-            onCheckedChange={formField.onChange}
-          />
-          <Label>{field.label}</Label>
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+          {field.options?.map((option) => {
+            const isChecked = formField.value?.includes(option);
+
+            return (
+              <div key={option} className="flex items-center gap-2">
+                <Checkbox
+                  value={option}
+                  checked={isChecked}
+                  onCheckedChange={(checked) => {
+                    const current = formField.value || [];
+                    const nextValue = checked
+                      ? [...current, option] // add
+                      : current.filter((val) => val !== option); // remove
+                    formField.onChange(nextValue);
+                  }}
+                />
+                <Label>{option}</Label>
+              </div>
+            );
+          })}
         </div>
       );
 
@@ -100,7 +117,13 @@ function renderInputByType(field, formField) {
       return (
         <Input
           type="file"
-          onChange={(e) => formField.onChange(e.target.files?.[0])}
+          multiple={field.multiple}
+          onChange={(e) => {
+            const files = e.target.files;
+            if (!files) return;
+
+            formField.onChange(field.multiple ? Array.from(files) : files[0]);
+          }}
         />
       );
 

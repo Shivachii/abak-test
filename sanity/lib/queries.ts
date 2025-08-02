@@ -235,19 +235,122 @@ export const getFormBySlugQuery = `
 export const formBySlugQuery = `
   *[_type == "formBuilder" && slug.current == $slug][0] {
     _id,
+    _rev,
+    _createdAt,
+    _updatedAt,
     title,
     tagline,
     description,
     layout,
     category,
     successMessage,
-    fields[]{
-      label,
+    groupIntoSections,
+    slug,
+
+    groupIntoSections == true => {
+      sections[]{
+        title,
+        description,
+        fields[]->{
+          _id,
+          label,
+          name,
+          inputType,
+          placeholder,
+          required,
+          description,
+          options,
+          multiple,
+          maxFiles,
+          acceptedFileTypes,
+          
+          conditionalLogic{
+            enabled,
+            conditions[]{
+              fieldName,
+              operator,
+              value
+            }
+          },
+          
+          validation{
+            minLength,
+            maxLength,
+            customMessage
+          },
+          
+          layout{
+            width
+          },
+          
+          personDetails{
+            includeFields
+          },
+          
+          addressConfig{
+            includeFields
+          },
+          
+          currencyConfig{
+            currency,
+            showSymbol
+          }
+        }
+      }
+    },
+
+    groupIntoSections != true => {
+      fields[]->{
+        _id,
+        label,
+        name,
+        inputType,
+        placeholder,
+        required,
+        description,
+        options,
+        multiple,
+        maxFiles,
+        acceptedFileTypes,
+        
+        conditionalLogic{
+          enabled,
+          conditions[]{
+            fieldName,
+            operator,
+            value
+          }
+        },
+        
+        validation{
+          minLength,
+          maxLength,
+          customMessage
+        },
+        
+        layout{
+          width
+        },
+
+        personDetails{
+          includeFields
+        },  
+
+        addressConfig{
+          includeFields
+        },
+                
+        currencyConfig{
+          currency,
+          showSymbol
+        }
+      }
+    },
+    requiredDocuments[]->{
+      _id,
       name,
-      inputType,
-      placeholder,
       required,
-      options
+      description
     }
   }
 `;
